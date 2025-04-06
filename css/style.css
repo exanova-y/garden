@@ -1,0 +1,96 @@
+/* Minimalist website CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 40px;
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-bottom: 40px;
+}
+
+.ascii-art {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.ascii-art pre {
+    font-family: monospace;
+    line-height: 1.2;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.art-caption {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+h2 {
+    font-weight: normal;
+    font-style: italic;
+    margin: 30px 0 20px;
+}
+
+.category {
+    margin-bottom: 15px;
+}
+
+.category p:first-child {
+    font-weight: normal;
+}
+
+.image-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+}
