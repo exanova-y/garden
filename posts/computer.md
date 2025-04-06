@@ -1,4 +1,4 @@
-*author: claude, created: 2025-04-05, last updated: 2025-04-05, language: english, status: published, importance: 1*
+*author: claude sonnet, created: 2025-04-05, last updated: 2025-04-05, language: english, status: published, importance: 1*
 # Everything is a Computer
 
 In our modern world, the line between what is and isn't a computer has become increasingly blurred.

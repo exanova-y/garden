@@ -1,41 +1,24 @@
 # Link Stash
 
-A chronological collection of interesting links I've found while browsing the web.
+*author: yoyo, created: 2025-04-03, last updated: 2025-04-05, status: in-progress, importance: 1*
 
-## April 2025
+## Blog rolls
+- [Nicky Case](https://ncase.me)
+- [Alif is Swag](https://www.alifjakir.com/)
+- [Dunya Baradari](https://dunya-baradari.com/)
+- [Tetraslam](https://www.tetraslam.world/)
+- [Ekkolapto](https://ekkolapto.substack.com/)
+- [Shtetl Optimized](https://scottaaronson.blog/)
+- [Yuxi on the wired](https://yuxi-liu-wired.github.io/)
+- [Alex K Chen](https://www.quora.com/profile/Alex-K-Chen)
+- [Esther is a confused human being](https://learnlearnlearn.substack.com/)
+- [Drops and clumps](https://graphfei.substack.com/)
 
-### April 5, 2025
 
-- [Minimalist Web Design Principles](https://example.com/minimalist-design) - The art of designing with less.
-- [The History of ASCII Art](https://example.com/ascii-art-history) - How text became visual art.
-- [Markdown Syntax Guide](https://example.com/markdown-guide) - Everything you need to know about writing in Markdown.
+## 2025
 
-### April 3, 2025
-
-- [Quantum Computing Explained](https://example.com/quantum-computing) - Understanding qubits and quantum states.
-- [The Digital Minimalism Movement](https://example.com/digital-minimalism) - Using technology with intention.
-
-## March 2025
-
-### March 28, 2025
-
-- [The Art of Plain Text](https://example.com/plain-text) - Why plain text remains relevant in a rich media world.
-- [Static Site Generators Comparison](https://example.com/static-sites) - Choosing the right tool for simple websites.
-- [CSS Zen Garden](https://example.com/css-zen) - Same HTML, different CSS, completely different designs.
-
-### March 15, 2025
-
-- [The Psychology of White Space](https://example.com/white-space) - How emptiness shapes our perception.
-- [Sustainable Web Design](https://example.com/sustainable-web) - Creating websites with minimal environmental impact.
-- [Typography Fundamentals](https://example.com/typography) - The building blocks of readable content.
-
-## February 2025
-
-### February 27, 2025
-
-- [The Rise of Personal Websites](https://example.com/personal-sites) - Why everyone should have their own corner of the web.
-- [Ethical Web Development](https://example.com/ethical-web) - Building with privacy and accessibility in mind.
-
----
-
-*This link stash is maintained manually. Last updated: April 5, 2025*
+- [Every human online is my lover (cyborgism.wiki)](https://cyborgism.wiki/hypha/every_human_online_is_my_lover)
+- [Alphaxiv](https://www.alphaxiv.org/explore)
+- [MoCha: Towards Movie-Grade Talking Character Synthesis](https://arxiv.org/pdf/2503.23307)
+- [Do you need permission from irb to do research? (dynomight.net)](https://dynomight.net/irb/)
+## 2024

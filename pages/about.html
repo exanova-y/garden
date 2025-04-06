@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Minimalist Website</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/markdown.css">
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">home</a></li>
+                <li><a href="/">home</a></li>
                 <li><a href="about.html">about</a></li>
                 <li><a href="links.html">link stash</a></li>
                 <li><a href="chronological.html">chronological</a></li>
@@ -20,7 +23,10 @@
 
     <main>
         <section class="about">
-            <p class="subtitle">Yoyo cat is a minimalist website that explores the intersection of technology, art, and personal growth.</p>
+            <div id="about-content" class="markdown-content">
+                <!-- About content will be loaded here -->
+                <p>Loading about information...</p>
+            </div>
         </section>
     </main>
 
@@ -30,5 +36,33 @@
 
     <script src="../js/config.js"></script>
     <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const aboutContent = document.getElementById('about-content');
+            
+            try {
+                // Fetch the about markdown file
+                const response = await fetch('../posts/about.md');
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to load about content: ${response.status} ${response.statusText}`);
+                }
+                
+                const markdown = await response.text();
+                
+                // Render the markdown to HTML
+                aboutContent.innerHTML = marked.parse(markdown);
+                
+            } catch (error) {
+                console.error('Error loading about content:', error);
+                aboutContent.innerHTML = `<p>Error loading about content: ${error.message}</p>`;
+            }
+            
+            // Apply site configuration
+            if (typeof applyConfigVariables === 'function') {
+                applyConfigVariables();
+            }
+        });
+    </script>
 </body>
 </html>

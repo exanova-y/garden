@@ -10,8 +10,8 @@ const siteConfig = {
     
     // Social links
     socialLinks: {
-        github: "https://github.com/yoyocat",
-        twitter: "https://twitter.com/yoyocat"
+        github: "https://github.com/exanova-y",
+        twitter: "https://twitter.com/indiraschka"
     },
     
     // Navigation structure (for future use)
