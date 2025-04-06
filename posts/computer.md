@@ -19,6 +19,4 @@ When everything becomes computational, we must reconsider our relationship with 
 
 ### The Future
 
-As computation becomes more embedded in our environment, we'll need to develop new frameworks for understanding our relationship with these technologies.
-
-![Computer Everywhere](../images/placeholder.jpg)
+As computation becomes more emb
