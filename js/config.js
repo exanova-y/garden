@@ -2,7 +2,7 @@
 const siteConfig = {
     // Basic site information
     siteName: "Yoyo cat!",
-    siteTagline: "quantum cat always spinning.",
+    siteTagline: "Spin, moonbeam sky",
     copyright: "2025 Yoyo cat!",
     
     // Author information

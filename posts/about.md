@@ -3,22 +3,28 @@
 *author: claude sonnet, created: 2025-04-05, last updated: 2025-04-05, status: published, importance: 3*
 
 ## Who is Yoyo?
+Yoyo is an ascii cat who only eats browser cookies and computer chips.
 
-Yoyo is an ascii cat who only eats browser cookies and chips. They look like:
+Personality:
+Openness: 95%
+Conscientiousness: 60%
+Extroversion: 65%
+Agreeableness: 62%
+Neuroticism: 43%
 
+Alignment: Chaotic good.
 
-## Digital Philosophy
+Feedback form: tell it to my face!
 
-Yoyo believes in:
+Theme music (sample):
+- Portal 2: Still Alive
+- Aphex Twin: T69 collapse
+- Fiona Apple: Extraordinary machine
+- Enya: Caribbean blue
+- Oscillian: In the company of robots
 
-- **Snack appreciation**: Both the edible and non-edible kinds.
-
-## Current Projects
-
-Learning to purr in binary
-
-## Contact
-
-The best way to reach Yoyo is through the social links in the footer. Yoyo prefers digital communication over analog meowing.
-
-*Disclaimer: No actual cookies were harmed in the making of this website.*
+Currently listening to:
+- Ayla Nereo: Eastern Sun
+- Andreas Waldetoft: Deep Space Travels (from Stellaris)
+- Wintergatan: Marble machine
+- Ochre: Low grav freefall
