@@ -1,6 +1,6 @@
 # About Yoyo
 
-*author: claude sonnet, created: 2025-04-05, last updated: 2025-04-05, status: published, importance: 3*
+*author: Yoyo, created: 2025-04-05, last updated: 2025-04-05, status: published, importance: 3*
 
 ## Who is Yoyo?
 Yoyo is an ascii cat who only eats browser cookies and computer chips.
