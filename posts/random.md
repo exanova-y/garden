@@ -1,4 +1,5 @@
-Note: contains many old writings.
+
+These are my random notes across the years which don't fall into read logs or status updates. It contains many old writings, trigger warning: mental health, gender.
 
 2025:
 - My life trajectory could be significantly altered and the decision-makers are *on holiday*. I can wait for the perfect time or I can act with speed. Events likely run out of spots if you apply near the end. 
@@ -17,9 +18,11 @@ I was totally immersed in a not "CMU capture the flag” random puzzlehunt in an
 2020:
 I got sent the article “The AI revolution” from WaitButWhy. It was totally immersive. I thought this Eliezer person was interesting! Plus, I’ve been recommended to read his Harry Potter and Methods of Rationality several times by discord users. 2 hours later, I stumbled upon LessWrong. The writing automatically clicked. I loved the nuanced aspects of cognition brought into awareness by invented jargon. While certain school classes caused so much boredom akin to physical pain, I felt warm and fuzzy on this website and started crying in a corner. Yay, there are others who think about the same stuff! That year, LessWrong Community Weekend took place on some random discord server. I got up with excess energy very early in the morning to hear people discuss cryonics in the vc. My internet friend shared with me wealth of cool links about Heaven is Terrifying, homomorphic encryption, The Measurements of Decay, Cold Takes, the Codex, Visakan and fascinating stuff. I was a too intimidated to join a meetup. The next thing I knew, I was dragging a curious, innocent school friend to Kitchener-Waterloo rationalist meetup organized by Jenn! We were excitedly pointing at random objects in the room and squawking in broken Toki Pona. “[Me yellow]!” An Asian girl said as she pointed at herself. Well, rationalists have clear flaws but are like my extended family: Huge wall of texts and thinking. (Don’t throw your mind away and Time-Time tradeoffs are very representative posts) Where are the graphics, non-verbal communication, engineering and code 😭 (https://uli.rocks/p/rationality-sucks/) 
 
+As a cognitive science enthusiast I noticed working memory volume does actually change over time! I was reminded of my working memory test results in high school.
+
 2019:
 - Attempted to exit the matrix. Failed. Tried again. Failed. Respawned in a void field of snow _███...A friend let me crash at their place. Friendship token self-destructed. 
-- junior honour roll in financial literacy contest
+- but anyway, I was on the junior honour roll in financial literacy contest!
 
 2016:
 
