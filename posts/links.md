@@ -41,6 +41,7 @@
 ## readlogs (subset)
 ## 2025
 - [Every human online is my lover (cyborgism.wiki)](https://cyborgism.wiki/hypha/every_human_online_is_my_lover)
+- [Steal like an artist](https://laithaljunaidy.com/books/assets/files/Steal-LikeanArtist.pdf)
 - [Alphaxiv](https://www.alphaxiv.org/explore)
 
 ## 2024
