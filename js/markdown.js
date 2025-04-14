@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     const postContent = document.getElementById('post-content');
     if (!postContent) return;
     
+    // Initialize marked with the footnote extension if available
+    if (typeof markedFootnote !== 'undefined') {
+        marked.use(markedFootnote());
+    }
+    
     // Get the markdown file path from the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const markdownFile = urlParams.get('post');

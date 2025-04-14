@@ -95,3 +95,35 @@
 .back-link:hover {
     text-decoration: underline;
 }
+
+/* Footnotes styling */
+.footnotes {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.footnotes ol {
+    padding-left: 20px;
+}
+
+.footnotes li {
+    margin-bottom: 10px;
+}
+
+.footnote-ref {
+    font-size: 0.75em;
+    position: relative;
+    top: -0.5em;
+    text-decoration: none;
+}
+
+.footnote-backref {
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.footnote-backref:hover {
+    text-decoration: underline;
+}
