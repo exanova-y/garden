@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Processing images with living neurons
+date: 2025-01-14
+author: Yoyo Yuan
+image: /assets/images/potion.webp
+tags:
+    - focused
+    - neural and evolutionary computing
+    - BCIs
+show_on_home: true
+---
+This is an experiment ran in an *ancient* [image processing with living neurons paper](https://pubmed.ncbi.nlm.nih.gov/15759567/) in 2005, where the authors filtered a 10 x 6 MEA array corresponding to a 256-pixel image. With slight extensions you should be able to draw some minecraft items, which are also 16 x 16.
+![items](/assets/images/mc.webp) However, I didn't find a huge amount of [derivative work](https://www.connectedpapers.com/main/11b26ec8ee02fec51f8a6f3684adbce2c75790fe/Toward-the-neurocomputer%3A-image-Processing-and-pattern-recognition-with-neuronal-cultures/derivative). 
+
+### Methodology
+The authors extract neurons from the hippocampus of three-day-old rats and store them in a cold dissection medium to maintain tissue viability—from keeping an appropriate salt balance, pH levels, supplying glucose and inhibiting too much glutamate activity that can kill neurons. Then they apply a digestion medium with enzymes (Trypsin, DNase I) to break down connective tissue and isolate individual neurons.
+
+The authors used a 10 x 6 microelectrode array supplied by MultiChannel Systems. An MEA is a 2D grid of electrodes, each capable of capturing the neuron's electrical activity and stimulating it with voltage pulses. A limitation from MCS is how each electrode can only be used as either stimulation or response, but not both. They’re characterized by the centre-to-centre distance between electrodes, ranging from 30 to 200 micrometres. Normally, the grid is surrounded by a ring on a larger board, which is the culture chamber.
+
+
+Example array from [multichannel systems](https://www.multichannelsystems.com)
+![mea](/assets/images/mea.jpg)
+There is an underlying thermostat to maintain the temperature. One electrode is used as ground.
+
+These researchers added a coating of polyornithine which creates a positively charged surface for subsequent attachments to stick. Note: cells and neurons are negatively charged on the inside with the -70 mV resting potential. But polyornithine alone is not enough, we also need biological cues for neuron connectivity. Thus we apply the BD matrigel on top 20 minutes before seeding the neurons.
+
+![basement membrane](/assets/images/skin.jpg)
+100 μL of cell suspension is placed onto the MEA’s electrode area with approximately 80 000 cells/cm^2. Researchers let them sit for 20 minutes at room temperature. Then, we add 1 mL of culture medium to the MEA. Cultures are maintained in the incubator set to 37°C, 5% CO, and 95% humidity. Neuronal cultures older than 25 days usually exhibit robust and reproducible responses.
+
+### Training
+Supervised learning is used meaning labelled inputs and explicit feedback. This paper provides an L-shaped stimulus and a T-shaped stimulus through electrodes.
+
+The stimulation is low-frequency and short bursts: it alternates between positive and negative with magnitudes of 0.2 V—1V each time (bipolar stimulation), lasting for 100 microseconds at each polarity using the STG1004 Stimulus Generator.
+
+The feedback mechanism is high-frequency and long bursts. There are 40 trains of bipolar pulses +/- 0.9 V lasting for 200 microseconds every 2 seconds. Each train then contains 100 pulses at 250 Hz itself. The long burst means it is a tetanus.
+
+As previously mentioned in Training biological neural cultures: Towards Hebbian Learning, we evaluate if learning occurred by checking for three values: Reaching convergence criteria (e.g. demonstrating the error function is converging), connectivity changes and controlled firing rather than random firing.
+
+### Convergence criteria
+- Selectivity of neurons
+- Reliability across trials
+- Connectivity changes
+
+Spatial maps of the pre and post-tetanus response to see if the activity becomes more like the image filter
+Controlled firing
+
+Measuring average firing rates before and after applying the tetanus
+The total firing activity during a time window before and after the tetanus
+
+### Extensions
+- use 16 x 16 microelectrode array
+- Given that the number of pixels is limited, we change from direct mapping to using Gaussian splatting.
+- Predict the stock market`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

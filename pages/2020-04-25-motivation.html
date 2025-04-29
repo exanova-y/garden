@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Every motivational speaker ever
+author: Yoyo Yuan
+image: 
+date: 2020-04-25
+tags:
+  - writing
+  - tech-satire
+  - fiction
+---
+
+"Ladies and gentlemen, please welcome our speaker from the latest trending startup!" A guy walked on to the stage.
+
+“Two years ago, I lived in a crowded slum and only had $20 in my bank account. I was chronically depressed, unmotivated and lonely. However, one evening changed everything. At that moment, I was crying about the meaningless of life on the balcony. All of a sudden, our senior neighbour screamed at me and warned: “Our building is on fire, get out now!" My tears disappeared as I saw him pour water onto the fire, proceeding to shake violently and fell. It was an electrical fire!
+
+I felt pity for the old man and his lack of physics knowledge. From that moment, I decided to master everything about physics. I purchased all of the physics textbooks. Money didn't matter, because I stole the books and into mephistopheles I become. 
+
+I study for 16 hours daily on a polyphasic sleep schedule and ate only bread. My neighbours' kids would squawk at me for being such a loner and self-absorbed. But I, with messianic determination, ignored them.
+
+After a year, the kids revered me like a god. I was nominated for the impressive context, and I achieved 1st place in the city. **But I am NOT satisfied!** With the $3000 prize money, I could buy food, video games and help my parents with their farm. Instead, I bought a plane ticket to Boston.
+
+I snuck up into an MIT lecture room, walked up to a lecturer and told him outright he was wrong. He was shaking his head and loudly disagreeing as I delivered a proof on the blackboard. The students were so enthralled that they started throwing **physics textbooks** in the air, from condensed matter physics to quantum mechanics. After class, he admitted that I was right!
+
+He revered me so much that I became his lab assistant. Without finishing high school, I was soon nominated as a PhD candidate and an employee of the MIT Media lab! Haha, I blogged, while some losers have spent 16 years in high school, I am only 16 years old when I entered, my age glorifies me, defines me. I told him, within 3 months, I will solve world hunger, cancer and all the biggest problems through gaining enough capital. He was in denial, but that’s just the pessimism of the experts. 
+
+The professor was waiting forever and forever for grant money, so I took a break and launched two startups in the meanwhile.
+
+That day, I took a picture of me and set it as my phone background. If this is what a typical teenager can do in two years, what can you?
+
+The motivational speaker stepped off the stage, chugging a can of energy drink and popped a pill into his mouth. "Sleep is for the weak." He said.He suddenly had a heart attack and passed away.`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

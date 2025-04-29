@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: My friends are vanishing into the void
+image: 
+date: 2023-07-10
+tags:
+  - writing
+  - personal
+author: Yoyo Yuan
+---
+a/n: A non-technical post from naive/younger me. Older me thinks this is a bit complain-y. 
+
+Growing up, I never paid much attention to gender and thought this was a poor use of energy. I was a very social STEM kid with plenty of guy and queer friends. Forming close friends came naturally. I also attended plenty of "women in STEM" events for perks and thought people’s struggles with gender were skill issues.
+
+When I came to SF, I was (reluctantly) little bit more open to the gender dynamics.
+
+Quoting male perspective from LessWrong:
+
+> “in order to be respectful it is absolutely necessary that I address the attraction question when orienting to a woman. Even if we're ‘just being friendly’. . . I cannot ignore when a given person is a woman. I can acknowledge when it in fact doesn't matter; there's no sexual dynamic between me and my sister for instance. But it really is an extra step I have to sort out with women.”
+
+I have a non-binary friend, but people still binarize them and mistake their pronouns all the time :( Aella also blogs that she sees them as one gender or the other.
+
+The extreme version of this interpretive lens is a recent tweet calling: Dear young women, please don’t stay at hacker houses with imbalanced gender ratios. They’re only temporarily safe.
+
+To that, my opinion is that you need to select 99th percentile hacker houses. But the truth is people will almost always perceive the gender node in your identity web.
+
+The friending process also is super different from childhood; The current trend is more like this:
+
+- I befriended cool people at parties.
+- The friending process is fast.
+- We have late-night chats of interactive theorem proving, dynamic programming, etc etc etc
+- Me: Yippee, more nerdy close friends!
+-I make an effort to establish and maintain close friendships while the other brings in more intensity.
+- I realized a large fraction of people are only interested in being more than friends and they vanish. The opposite is also true: due to the risk of attraction, some potential close friends oscillate and keep me at a distance - more often its younger people
+- lost 5 aura points
+
+**Sample convos from ambiguous situations:**
+
+
+
+> They: how do you feel about math?   
+> me: I’m curious about open problems in math despite knowing virtually nothing   
+> They: as a date idea.  
+> Me: I don't know how to date. But I'm going to this party if you wanna join.   
+> *disappears*
+
+
+> They: what kind of people do you like?   
+> Me: I seek excellent outliers.   
+> They: I'm an outlier who founded a startup on AI agents. I have three intelligent kids competing in Olympiads.  
+> Me, *ignoring cues*: Well this Australian startup is doing the same thing, it’s purely for industry though. *I began rambling about vibecamp and post-rationality archetypes*    
+> Them: Am I attractive? What kind of intimacy do you like? Do you want to be penetrated? hugging me (I realized,attraction is easily hackable!)
+
+
+
+> My other friends have gone to the bathroom so it’s just the two of us    
+> They: we should do something special - read a paper about modular elliptic curves :) my parents are suspicious of me learning Chinese because they think I'm trying to impress a crush…   
+> (I think was the case where I wasn’t able to be close friends but was kept at a distance.)   
+
+
+
+I found out seems to be fairly common among my nerdy female friends. I asked an older friend to give me a reality check.
+
+> “Unfortunately, if they text you in a hyper-focusing manner, it may mean they're looking to date. Connecting through a technical topic can def help, but they can fake interest.”
+
+**tl;dr**
+
+Uni students often are pure as angels! It’s their responsibility to understand incentives and people’s intentions in the wider world. It should likely get better with practice and won’t cry over friends vanishing lol.
+
+Will they become a close friend or a stranger? Transforming ambiguous dynamics is just a kind of selection--like trading or job applications, you win some, you lose some. You ought to keep sampling up the heavy-tailed distribution for the conversion rate to manifest.
+
+`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

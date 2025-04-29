@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Explaining Hikikomori in Japan
+Author: Yoyo Yuan
+image: /assets/images/hikikomori.jpg
+date: 2023-10-23
+tags:
+    - writing
+    - world problems
+    - loneliness
+    - geeky network
+    - psychology
+    - focused
+---
+a/n: During high school, I personally connected with 100 of geeks from 25+ countries online to help them fight loneliness. Extending my notes on senior loneliness problem in East Asia, I wrote about the complex causality of hikikomori for complex systems class at Minerva.
+
+A young man shut his door and didn’t come out for years. Mr. A was just a typical university student: He led a casual life and socialized with friends, holding part-time jobs on the side. However, he found himself in the same unstable job and aging past 30. Determined to find a permanent position, he quit his current job. However, after repeatedly unsuccessful attempts he withdrew completely, playing video games until midnight at home. After a quarrel, he cut off his brother and was financially supported by his mother. Mr. A also avoided any face-to-face contact (Kato et al., 2019).
+
+Mr. A is an example of a ‘primary hikikomori’, accounting for 1.46 million in Japan as of 2023 (“1.5 Million People in Japan Living as Social Recluses, Many as a Result of the Pandemic,” 2023). 5 factors define a primary hikikomori according to trained Japanese clinicians:
+
+- Spending most of their time at home for at least 6 months
+- Persistent avoidance of social situations, including both work and school
+- Significant distress associated with social isolation
+- No apparent physical or mental etiology forcing the social withdrawal symptoms
+- Be working age i.e. 15 - 64 years old (Suwa & Suzuki, 2013)
+
+The definition of primary hikikomori is crucial for them to be recognized and receive help. This paper will explain the occurrence of primary hikikomori with the help of complex causality, system dynamics and network analysis lenses. 
+
+### Complex causality
+![complex causality](/assets/images/hiki-causality.png)
+Fig. 1. Causal diagram for hikikomori.
+
+Psychologically, hikikomoris base their self-image on others’ expectations. Others expect one to excel in examinations and jobs. Some individuals fall behind; Rather than getting up from major failures, they isolate themselves to avoid the negative judgement of others and protect their self-esteem. As isolation continues, the expected and the actual paths diverge even further. Individuals cling to the expected self in an attempt to protect their self-esteem, avoiding any behaviour—conversations, job interviews–that further damages it (Kato et al., 2019). Maintaining reputation is a reinforcing feedback loop that contributes to one becoming hikikomori. Avoidant behaviour and inability to get up after major failures are necessary factors which reinforce each other. When this feedback loop lasts for more than 6 months, it is necessary and sufficient to cause hikikomori behaviour. These psychological factors are shown by purple nodes in the causal diagram.
+
+In Japan, school refusal started to become prevalent in the 1970s and 80s (Cerantola, 2019). On “17 October 2019, the government announced that absenteeism among elementary and junior high school students had hit a record high, with 164,528 children absent for 30 days or more during 2018” (Cerantola, 2019). School refusal can be a salient factor for entering into a reinforcing loop as mentioned above. Anthropologist Anne Allison suggests that after World War II, the Japanese education system became focused on “highly competitive and rigorous high-school testing…The goal was to prepare students for equally arduous employment in Japan’s industrial capitalist economy” (Berlatsky, 2013). Some students experience bullying, which is even termed “natural selection” by some parents. In 1998, in response to increased school refusal, the Japanese government proposed the relaxed-education policy, which intends to give younger generations less pressure. It was implemented for twenty years, however, as reflected by Japan’s decreasing rank on PISA exams since 2000, schools became inattentive to fundamentals (Zhou, 2017). As capitalism continues, it means that students also have to attend cram schools. Competition, control, bullying and relaxed-education policy are four salient factors for school refusal, shown in blue in the causal diagram.
+
+From the 1920s to the Japan post-war economic boom, it was easy for men to get a permanent position at a big company to support a family (Dwyer, 2009). The collapse of the bubble during the 1990s brought instability, uninviting work conditions and unemployment (Kato et al., 2019). After the 2008 financial crisis, many Japanese companies discontinued the permanent employment practice, causing job insecurity (Dwyer, 2009). Economic factors were displayed using yellow nodes.
+
+Japan is a collectivist culture where common goals are emphasized above individual needs, leading to three main implications. Firstly, people are valued if they support the goals of others, forming an interdependent society. Dependence is an acceptable mode of behaviour in Japan even in adult life. For example, as part of the heightened industrialization in the 1980s, employees are encouraged to view their companies and colleagues as part of an extended family, forming close ties (Kato et al., 2019). Interdependence can become parent-child overdependence where the child resorts to parental support after failure. Next, parents have much determination in their child’s goals and high expectations fueled by capitalism. Note that interdependence and parental expectations don’t necessarily conflict with each other: It’s common for therapists to hear parents speak proudly about their hikikomori child’s excellence, believing they can still achieve something in the future while continuing to financially support unemployed children. There is a gender stereotype for men to be strong across cultures. Japanese parents have high expectations for their sons to enter elite universities and land a job in top corporations, and parents are alarmed by the slightest deviation (Ma, 2016). Parents’ expectations tie into the child upholding self-image as aforementioned. Thirdly, in a collectivist culture, one also wants to be quiet about their own needs, giving rise to indirect communication. Particularly, "Making oneself disappear” in social situations where one is shamed has long been considered a virtue, fueling hikikomori’s avoidant behaviour (Kato et al, 2019). Therefore collectivism has three implications that intensify hikikomori behaviour. Psychological, workplace, educational, cultural and global causes spanning the multiple levels of analysis are all salient factors to the emergent property of primary hikikomori.
+
+### System mapping
+![system mapping](/assets/images/hiki-mapping.png)
+Fig. 2. A 2-dimensional phase space for individual’s achievement style
+
+Two factors: Time needed to get up after major failures, amount of avoidant behaviour to maintain reputation and the duration of this reinforcing feedback loop can be used to estimate if an individual is hikikomori.
+
+### System dynamics
+Similarly, from the same two factors, an achievement styles phase space can be constructed. The phase space contains 5 basins around their respective attractors. Firstly our causal diagram explains the attractor on the top right. However, if the failure bounceback time is less than 6 months and an individual is highly avoidant, they’re classified as an independent person. Next to the hikikomori is the depression basin. The characteristic hopelessness contributes to an attractor with a long bounceback time and moderate avoidant behaviour. Similarly, achievers are attracted to showing only their successes and strive to get up from failures extremely fast. Finally, we have a white space since many vastly different individuals have low avoidant behaviour and their trajectory is unpredictable.
+
+External forces can cause a regime shift. Kenta became a hikikomori after being ostracized at school for his high-pitched voice. A young woman known as a “rental sister” began sliding letters under his door, gradually inviting him to walk in nature, exercise and eat out, helping to reduce his avoidance. She supported his self-esteem, reducing the failure bounceback time. Kenta still lives on his parents’ money but has moved out (BBC News, 2019). 
+
+Rental sisters can help hikikomori break the bifactor feedback loop. They are a type of home-visit service offered by the non-profit organization ‘Newstart’. Later, hikikomoris will transition to a program to live together with other hikikomori, work as a team in restaurants and bakeries and receive employment seminars (Ismail, 2020). 
+
+Yuto became hikikomori after burnout at the end of high school. After being helped by Newstart for a year, he was studying for his driver’s license, attending school to become a graphic designer. He maintains a good relationship with his parents. Now, he lands in the white space on the phase diagram (Ismail, 2020). As of 2021, “New Start has helped around 3,000 Hikikomori go back to regular life” and about 80% of clients successfully reestablished themselves (BBC News, 2019).
+Network
+
+![Network diagram](/assets/images/hiki-network.png)
+Figure 3. A network diagram based on three hikikomoris at different stages of recovery. 
+
+Based on the case studies for hikikomoris at different stages of recovery, a sample network consisting of the individual and their respective activities were created. In the network, each node is a source of activity, such as Mom or entertainment. Since humans need all four types of support relationships, each activity is classified by its support role to the closest hikikomori: Emotional (red) refers to an activity which brings physical or emotional comfort. Esteem (yellow) means an activity which reminds one of their strengths. Informational (blue) refers to informative activities which suggest the next steps. Tangible (green) relates to offering resources for someone to solve a problem (Scott, 2023).
+
+Each edge represents an exchange of information between two entities, with direction representing where information flows. A weighted edge represents an offline interaction while an unweighted edge represents purely online interactions. 
+
+The affected hikikomori (Mr. A) has a degree of 4: An in-degree of 4 and an out-degree of 1. He consumes entertainment sources, social media and hikikomori forums as well as gets tangible support from Mom. However, he only communicates in online forums. The surrounding network is not robust with only one source of each kind. For example, if the node 'online forum' is removed, the hikikomori will have trouble finding esteem support and may further avoid in-person communication.
+In the case of a recovering hikikomori (Kenta), degree centrality increases–The degree of the node is 8: 8 in-degrees and 4 out-degrees. The number of weighted edges increases. The surrounding network becomes more robust as more sources of emotional, tangible and esteem are present. However, parents are still offering monodirectional financial support.
+
+For a recovered hikikomori (Yuto), the degree of the node is 9: 9 in-degrees and 8 out-degrees. The degree is even higher compared to the recovering individual. A key difference is parents became informative support nodes with bidirectional communication. Secondly, there are even more sources for each type of support. 
+
+In general, as a hikikomori recovers, the degree centrality, weighted edges and surrounding robustness for multiple sources increase. The network exhibits a small world effect: Hikikomori all receive information from online sources. Parents can use social media to contact support programs with a geodesic distance of 2 to reach any hikikomori. Aside from Newstart, corrective solutions include virtual AI companions like character.ai, and physical robots like “OriHime” while affirmative solutions include free schools and metaverse social events (Montgomery, 2021).  Shut-in behaviour is also occurring outside Japan; In South Korea, 660 000 people between the ages of 20 and 39 live the equivalent life. Having given up on exams, work, raising children and N number of things, they are labelled as the “N-po generation” (Liu, 2023). In China, the Lying Flat movement which gained popularity within the last 5 years is a close analogy, featuring youths figuring out how to live the lowest stress life at the lowest cost. The collective isolation behaviour been reported in other countries such as India, Brazil, the United States, Iran, Australia and more.
+
+Hikikomori is a problem which is difficult to understand linearly. Rather than a singular cause, a complex causality lens suggested that most factors across levels of analysis are salient and identified feedback loops that solutions can target. Similarly, the system dynamics lens highlighted plausible solutions that shift the regime into adjacent basins. Finally, network analysis showed relationship trends for recovering hikikomori. These insights from a complex systems perspective can act as important constraints to guide future solutions to a global problem.
+
+AI statement: Grammarly was used for sentence-level editing.
+
+### References
+- BBC News. (2019). Rent-a-sister: Coaxing Japan’s hikikomori men out of their bedrooms. YouTube. https://www.youtube.com/watch?v=q9IRmUEsz6g
+- Berlatsky, N. (2013, November 22). Japan's Cutthroat School System: A Cautionary Tale for the U.S. The Atlantic. https://www.theatlantic.com/education/archive/2013/11/japans-cutthroat-school-system-a-cautionary-tale-for-the-us/281612/
+- Cerantola, A. (2019, December 23). Why so many Japanese children refuse to go to school. BBC. https://www.bbc.com/news/world-asia-50693777
+- Dwyer, J. (2009, January 25). Japan’s ‘employment for life’ myth. The Institution of Engineering and Techology. https://web.archive.org/web/20100506074824/http://kn.theiet.org/comment/management/Dwyer-comment-69.cfm
+- Ismail R. New starts at New Start: Recovery and the work of hikikomori. Transcultural Psychiatry. 2020;57(5):698-709. doi:10.1177/1363461520958337 
+- Kato, T.A., Kanba, S. and Teo, A.R. (2019), Hikikomori : Multidimensional understanding, assessment, and future international perspectives. Psychiatry Clin. Neurosci., 73: 427-440. 
+- Liu, Z. (2023, June 30). Hikikomori, N-po and lying flat - Snapping in East Asia. Erasmus Universiteit Rotterdam. https://www.eur.nl/en/news/hikikomori-n-po-and-lying-flat-snapping-east-asia
+- Ma, K. (2016). Why are there gender differences in hikikomori? Quora. Retrieved October 26, 2023, from https://www.quora.com/Why-are-there-gender-differences-in-hikikomori
+- Montgomery, H. (2021, November 29). Japan Has an 'Alter Ego' Robot So You Can Go Out Without Going Out. VICE. https://www.vice.com/en/article/93bbaz/japan-robot-hikikomori
+- 1.5 million people in Japan living as social recluses, many as a result of the pandemic. (2023, April 1). The Japan Times. https://www.japantimes.co.jp/news/2023/04/01/national/hikikomori-numbers-pandemic/
+- Scott, E. (2023, September 18). Types of Support: How Does Social Support Work? Verywell Mind. Retrieved October 26, 2023, from https://www.verywellmind.com/types-of-social-support-3144960
+- Suwa, M., & Suzuki, K. (2013). The phenomenon of “hikikomori” (social withdrawal) and the socio-cultural situation in Japan today. Official Journal of the Italian Society of Psychopathology, 19, 191-198.
+Zhou, J. (2017). How Yutori Kyoiku Affected Japanese Students’ Learning Abilities [Panel Presentation]. https://mds.marshall.edu/colaconf/2017/day1/8/
+
+`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

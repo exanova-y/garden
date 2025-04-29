@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Senior loneliness in North America and companion robots
+image: /assets/images/seniors.jpg
+date: 2023-04-14
+author: Colyi Chen, Elena Mishina, Yoyo Yuan
+tags:
+    - world problems
+    - loneliness
+    - focused
+    - natural language understanding
+    - companion robots
+    - project ideas
+show_on_home: true
+---
+a/n: I looked into senior loneliness, conducted in-person interviews in Waterloo, Canada and pitched the research at a Chinese conference informally, mentioned on technologist Yuquan Wang's podcast. 
+
+2023 fall: I wasn't very satisfied with breaking down the problem by personal vs environmental causes. Later I realized social problems often have feedback loops that makes MECE analyses insufficient.
+
+# Introduction
+Loneliness hits the senior population the hardest, in terms of mental health--increasing the risk of depression and physical health--dementia as well as cardiovascular diseases. In North American, more than 43% of adults over the age of 65 frequently experience loneliness, with seniors accounting for one-tenth of the world’s population.
+
+This also means, if senior loneliness is "perfectly solved", we'd reduce people suffering fromdementia by up to 7 people globally and heart disease by 3.36 million in the US.
+
+
+## Subproblem spotlight - inmobility
+(Yoyo)
+In North America, 4.76 million of community-dwelling seniors are unable to independently leave the house at least once a week, significantly raising the risks of loneliness.
+
+Another way to think about this is that the Individual functional capacity does not meet the demands of the life-space—bedroom, home, outside home, neighborhood, town and distant locations.
+
+This can roughly bebroken down into environmental and personal causes.
+
+### Personal causes of inmobility
+
+Fears, walking barriers and driver's license suspension.
+
+**Fear of moving outdoors**
+
+Nearly 600,000 older people leave the house once a week or less.
+
+This is fueled by fear of social rejection and falling.
+
+**Fear of social rejection**
+
+A Canadian survey found 63% of seniors felt they had been treated unfairly based on their age, beliefs, fears and identities. Seniors have an attention bias to aging-reminder words like “senile” or “old” ([source](https://www.tandfonline.com/doi/full/10.1080/13607863.2019.1636202)). “From the way I have been represented, I don’t want to show my face in public”—John Roberts. Older adults reported greater increases in hurt feelings following rejection than younger adults, contributing to future fears. This is caused by low self-esteem. Psychology says this can be boiled down to an external locus of control, such as learned helplessness ([source](https://journals.sagepub.com/doi/epdf/10.2190/BGVM-2X68-PPFQ-EYV8)): ”my grandpa who is 89 just lies on bed and only eat or drink when it’s time, but only a small portion. But he does post poems on Facebook”—Quora user. However, many don’t have a healthy outlet, feeling physically, mentally and emotionally confined to deal with lack of control. Sometimes, seniors who require care experience angry outbursts because they don’t have the freedom to control where they go ([source](https://www.tandfonline.com/doi/full/10.1080/13607863.2019.1636202)).
+
+**Fear of falling**
+
+About 20–60 % of community-dwelling older adults have fear of falling, and 20–55 % report limited daily activities due to fear of falling. Falls result in deterioration of physical functioning. and quality of life. studies have found that senior citizens with a fall history have a FOF prevalence of 40–73%. One-third of people over 65 will fall at least once a year. Among Canadian seniors, falls remain the leading cause of injury-related hospitalizations, and absolute numbers are on the rise ([source](https://www.phac-aspc.gc.ca/seniors-aines/publications/public/injury-blessure/seniors_falls-chutes_aines/assets/pdf/seniors_falls-chutes_aines-eng.pdf\)))
+
+Even if 7/12 million community-dwelling seniors adopt anti-fall devices, they can turn into fall-encouragement devices without adequate repair. For example, cane tips can become worn, wheels on walkers and wheelchairs can become loose, or equipment can be too heavy or the wrong height. Attitudes about devices aren’t well-known, but in the seniors without devices, some claim to have no need, some avoid it due to stigma, and some due to fear of dependence and lack of training([source](https://pubmed.ncbi.nlm.nih.gov/27573318/)).
+
+**Walking barrier**
+
+30% of seniors report that walking three city blocks or climbing one flight of stairs are major physical challenges([source](https://assistinghands.com/34/florida/palmbeach/blog/walking-problems-in-older-adults/#:~:text=Walking%20difficulties%20are%20not%20unique,about%2020%20percent%20of%20seniors.)). 28% reported difficulty and 17% inability to walk 1/4 mile at baseline. The main physical risk factors disabling seniors from walking are neuromuscular and sensory system deterioration.
+
+Aging affects muscle mass and strength, bone density, and can make joints stiffer due to reduction of cartilage thickness. 5 - 10% of seniors suffer from vision impairment and 27% suffer from moderate hearing loss. Additionally people with both vision and hearing impairments had over four-fold risk, and people with co-existing impairments in vision, hearing and balance almost 30-fold risk for falls during walking. The ability to walk is an underutilized predictor for mental and physical health, mortality and hospitalization. 
+
+**Drivers’ license suspension**
+
+Seniors’ driving license can be suspended by physicians or the police, while a study found that only 10% of suspended drivers are unfit to drive (source), which causes significant frustration. Research suggests that reductions in the time spent driving are not balanced with an increase in the time spent as a passenger in an automobile or walking([source](https://www.sciencedirect.com/science/article/pii/S0966692319307732#s0010)).
+
+Automobile was the only reliable method of transportation for the 35% of seniors living in small towns and rural areas in Canada. Thus, driving cessation is linked to a decline in out-of-home activity levels and feelings of isolation. 
+
+> I lost my drivers license—I thought to myself, I can’t live another winter like this”—Senior once living in rural Ontario, Canada.
+
+> Never thought of not having a car, never crossed my mind. When you can't go out and get in your car and go where you want to go, it's like having your arm cut off.”—Senior in Ontario, Canada
+
+> It's been demonstrated and said many times, that receiving the news that you will be losing your driver's licence has the same weight as being diagnosed with cancer”—Sylvain Gagnon, researcher at CANDRIVE.
+
+### Environmental causes of inmobility
+
+**Lack of public transport**
+
+Among the 35% of seniors (Canada) living in rural areas, there are rarely any public transportation, causing a greater risk of isolation from their friends, local community activities and health and social services. 
+
+**Dangers**
+
+Even if there is public transport, the environment’s unsafe design—from uneven side-walks, curbs, noise, heavy traffic, inadequate lighting, lack of resting places, sloping terrain, long distances to services and weather conditions presents risks for seniors to travel outside ([source](https://bmcpublichealth.biomedcentral.com/articles/10.1186/1471-2458-12-1018)).
+
+The government is slow to react to aging population to establish changes, therefore change must start from within.
+
+[Root cause analysis](https://www.figma.com/board/uElaAgQ1HrNqiCywkzHOg7/Main-causes-of-senior-social-isolation-in-North-America?node-id=0-1&p=f&t=C1WgaYeOnug8Wfnw-0)
+
+
+# Solutions
+The main buckets we looked into are mobility hardware, mobility software and combinations.
+
+## Software for mobility.
+(Elena)
+a. **BrioCare** is a new, voice-assistant technology solution.
+- Similar to Alexa and Siri in operation
+- Engages the mind and body of seniors throughout the day; beginning with a greeting in the morning, to asking what they would like to do during the day, and finally ending with their nightly routine
+    
+b. **CaringWire** is a digital platform that makes healthcare more accessible and manageable for individuals and families.
+    
+c. **Birdie** is a holistic care platform providing tailored preventive care for older adults so they can live independently in their own homes. 
+- Uses apps and home connected devices to track elderly well-being in real-time.
+- It has also developed healthcare analytics using data from carers’ reports and connected sensors to deliver better preventative care
+    
+Main limitations:
+
+a. **BrioCare**
+- Its services are limited for only voice-based help
+- Cannot help elderlies with mobility issues outside of their houses
+
+b. **CaringWire**
+
+- Although it provides the medical assistance, it doesn't help in moving in and out of the house - the service that seniors with lack of mobility really need
+
+c. **Birdie**
+- Act as a virtual assistants but lack physical help in managing household chores, etc.
+
+### Mobility hardware.
+(Elena)
+a. **Best Mobility Aids** sells mobility aids available, including mobility scooters, rollators, walking frames, and other assistive technologies.
+
+b. **Sedimentum** is a company of save-living apps that warns families of any casualties of seniors when they're alone in their homes
+- In in the SAFE-living app the emergency contacts (e.g., neighbours or relatives) are defined.
+- The app also offers other features, such as a digital SOS emergency button with GPS for on the go.
+
+c. **NavChair** is a navigation and autopilot system which enables them to avoid obstacles along their route.
+- Can find a step-free route to make sure user's needs are met
+
+Main limitations:   
+
+a. **Best Mobility Aids**
+- Have a pretty complex operations systems that would be hard to wear by themselves for seniors
+- Cost devices and technologies that not all family with elderlies can afford
+
+b. **Sedimentum**
+- Do not provide necessary help for seniors for going shopping or going to parks
+
+c. **NavChair**
+- Not really good for people who live in closed off areas or areas with bad roads infrastructure
+
+## Companion robots.
+These companies offer a combination of software and hardware solutions for senior mobility.
+
+1. Top companies:
+    1. **Intuition Robotics - The main product is ElliQ.**
+    2. **AIST - PARO** 
+    3. **SoftBank Robotics - Pepper**
+2. Main limitations:
+    1. ElliQ
+        - unable to move
+        - applies a singular proactive solution to seniors with varying needs of companionship
+        - some have problem adopting the humanizing form and think it’s patronizing ([source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8297987/))
+        - mashing together a large number of underdeveloped features: (1) Despite highlighting the ability to initiate conversations, most last 2 sentences or less, even less than existing digital chatbots. (2) It could play videos and songs from a database, but lacks flexible integrations with youtube, spotify etc. (3) It has no established system of contacting emergency services. There are also implementation limitations like video call lagging, speaker glitches and delays. It’s one time payment and monthly costs higher than medical alert systems. Some users reported feeling dystopian vibes([source](https://www.youtube.com/watch?v=mwy6499ih-8))
+    2. PARO
+        - One survey found 1 in 10 refused to interact with PARO in front of others since they felt it was childlike or had previous negative experiences with animals
+        - PARO does not have any voice recognition for calling 911 or a method to report falls, which may cause anxiety in some seniors living at home.
+    3. Pepper 
+        - Appearing like humans prompts people to ask questions it can’t answer
+        - It was a master of none, failing at the first step of interaction: face, emotion and voice recognition. Leading to the subsequent lack of trust.
+    - Buddy
+        - mishears commands, repeats same phrase “I’m tired to talk”
+
+### The backdrop of companion robot startups
+(Yoyo)
+1. **Intuition Robotics, founded 2015**
+    ![elliq](/assets/images/elliq.webp)
+    1. Team: Founders: Dor Skuler, Itai Mendelsohn, Roy Amir. Has 50 - 100 employees.
+    2. Money raised: Raised a total of $58 million from over 5 rounds. Their latest funding was raised on Feb 13, 2020 in a Series B round.
+    3. Markets served: Launched in 2018. US and other English-speaking countries, plan to expand into Japan
+    4. Impact to date: According to the 2022 [impact report](https://2969058.fs1.hubspotusercontent-na1.net/hubfs/2969058/Loneliness%20White%20Paper-2.pdf), ElliQ both reduces loneliness for 80% of users and helps 82% stay mentally active. At least 800 seniors have been impacted in a partnership with New York State Office for the Aging, but the exact number is not known since it is a private company.
+    5. Solution: ElliQ includes a physical voice assistant and a tablet with software. The physical assistant is like Alexa; The main difference being it engages seniors without prompting. It includes a camera and it’s head can also move back and forth. Together with the software it supports four categories of use:
+        1. Companionship/Entertainment: Can initiate conversation and remember things about users, searches through existing database of resources of jokes, videos, etc.
+        2. Health and Wellbeing: Can show training videos in the database for mental and physical health
+        3. Connecting to acquaintances: video calling
+        4. Practical: Daily reminders, alarms etc can be spoken and displayed on the tablet.
+
+2.**Japan National Institute of Advanced Industrial Science and Technology (AIST) - 2004**
+    ![paro](/assets/images/paro.jpg)
+    1. Team: Created by Japanese engineer Takanori Shibata   
+    2. Money raised: subsidized by the Japanese government     
+    3. Markets served: More than 30 countries including Japan, Canada, US, and various countries in Europe serving in hospitals, nursing homes and private homes   
+    4. Impact to date: More than 10 000 PAROs are distributed worldwide. Studies found the main benefits are reducing negative behaviours—agitation and falling risks, improved social confidence and rates of seniors, and promoting positive mood.   
+    5. Solution: PARO is a smart stuffed animal—The Therapeutic Seal gathers data through five types of sensors: touch, light, motion, temperature and posture sensors. It detects patterns through its proprietary AI and machine learning algorithm to then reply using animal sounds and motion. 
+    
+3. SoftBank Robotics Holdings - Pepper
+![pepper](/assets/images/pepper.jpg)
+    1. Team: Founded by Masayoshi Son
+    2. Money raised: 236 Million, venture series unknown
+    3. Markets served: *list countries or regions for market*
+    4. Impact to date: *# of products sold, or people impacted*
+    5. Solution: Pepper is a mobile and adorable robot aiming to proactively start conversations. Users can interact with Pepper through face recognition, touch sensors, LED, speaking and tapping on the tablet. It’s presence allowed an opportunity for a social event, the interaction showed interest in older people’s lives and increased self-esteem, with exceptions of talking about their children. Flaws perceived as empathetic. The only negative comments were on the speech speed and the lack of pauses.
+
+## Studies on companion robots
+In the recent decade, studies showed that companion robots can help seniors reduce feelings of isolation. After accompaniment, seniors enjoyed the availability and non-judgemental attitude of these robots. They treated the robots as friends, became more facially expressive and felt generally more positive over the long term.
+- [A cross-sectional study](https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1106633/full#ref18) of the effects of COVID-19 on perception of and intention to purchase a social robot found that loneliness was positively associated with reported willingness to buy a robotic companion, indicating that people may perceive that a robotic companion could mitigate loneliness.
+
+- A [study](https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1106633/full#ref3) that predates the pandemic of non-AI robots, Paro and Giraff (telepresence), suggests a role for psychosocial functioning (depressive mood, loneliness, life satisfaction and social support) in robot acceptance among older adults.
+
+- [A small study](https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1106633/full#ref33) of robots use in dementia care found that participants were concerned that it could increase isolation for this group.
+
+Companion robots also benefit, not replace, human interaction: Accompanied seniors formed more new connections, and had more conversations with family and other human beings.
+
+While well-intentioned, current designs like ElliQ, ROBEAR and SAM heavily involve rubber and plastic. According to surveys, seniors view such materials as "too cold". It is also unfavourable for robots to resemble toys or humans; be too small; be too fast-moving; be noisy and be a hassle to maintain.
+
+Meanwhile, seniors felt close to robots which look like familiar animals with soft fur, facial expressions, voice and breathing movements.
+
+Companion robot market size estimated to be 
+$9.2 billion USD and expected to expand to $36.3 billion USD by [2028](https://www.digitaljournal.com/pr/news/companion-robots-market-2023-growth-trend-share-and-forecast-till-2030-123-pages-report#:~:text=The%20global%20Companion%20Robots%20market%20size%20was%20valued%20at%20USD,apparent%20companionship%20for%20human%20beings). Financially viable, but will likely be expensive to compensate for costs. Hence, market to middle-upper class in developed countries.
+
+## How companion robots work
+![pipeline](/assets/images/companion-pipeline.png)
+The **speech recognition** module generates several hypotheses of the uttered phrase ranked in terms of confidence in the N-best algorithm. Text from the first-best is passed into the Natural Language Understanding (NLU) system into **symbolic language**. e.g. \`\`a red cup = cup(x) ^ red(x)\`\`. While not every robot converts to symbolic language, social robots which rely on advanced logic would use both first-order predicate logic and temporal logic, e.g. grabApple = False and becomes \`\`True\`\` later to reflect the changes across time. 
+
+Using perceptions, the robot connects the world representation and the symbolic representation together. Decision-making uses the memory of the conversation and the user environment to decide the next physical or language action. Language action is converted back into the **natural language generation** module and finally uttered by the **text-to-speech** system. 
+
+NLU you say? What does that mean?
+
+**NLU overview: types of language models**
+Language models aim to create a probability distribution over the future/missing tokens.
+
+**Statistical language models (SLMs)**    
+This is based on the Markov assumption, which states that the probability of a word depends only on a limited number of preceding words (i.e., fixed-context). SLMs and uses a number of words before the last word to predict the most statistically likely next word. An n-gram language model is a type of SLM that models the probability of a word given the last n−1 words. A bigram model (n=2) considers only the previous word (hence two words in total), while a trigram model (n=3) considers the previous two words.
+
+However, SLMs suffer from the curse of dimensionality: As the number of features (e.g. vocab, punctuation, num words) in the input increases, the amount of possible n-grams required to accurately model the probability also increases exponentially. This leads to data sparsity, meaning that many word sequences are not observed in the training data, making probability estimation unreliable. Thus, performance degrades. 
+
+- training: many n-grams
+- prompt: a specific n-gram
+- output: probability distribution over next possible words
+
+**Neural Language Models.**    
+Data is passed into a neural network. Each word is assigned a vector of continuous values, with the dimensions of the vector representing different features of the word. The idea is that words with similar meanings will have similar vector representations, the vector for the word "king" might be located near the vector for "queen”. Approaches like Continuous Bag-of-Words or Skip-gram is used to represent the relation between words. **Continuous Bag-of-Words (CBOW):** In this approach, the neural network predicts the current word based on the context words surrounding it. The context words are represented as a bag of word embeddings, which are learned during training. The bag of embeddings is then averaged to create a fixed-size vector, which is passed into a neural network to predict the target word. **Skip-gram:** In this approach, the neural network predicts the context words based on the current word. The current word is represented as a word embedding, which is learned during training. The word embedding is then passed into a neural network to predict the context words. The set of vectors and their geometric relationships are passed into Neural Network to predict the probability. The network contains of an input, hidden and an output layer. word2vec is a relatively effective model.
+
+- training: millions ~ billions of words.
+- prompt: word sequence of arbitrary length
+- output: word sequence of arbitrary length
+
+Types of deep neural networks used: LSTMs, Transformers, Bidirectional transformers.
+
+**Large Language Models**
+As of 2023, most large language models can take in 4,000 words, with the largest taking in 32,000 words.
+
+**Word and sentence embeddings.** Embeddings can capture analogies well. Each word is assigned some properties that are placed on an axis. e.g. The word dog can be assigned the properties age and size, and is plotted as a point in nth dimensional space based on num properties. This can also be applied on the sentence level. These features are found by the computer and can sometimes be interpreted by a human.
+
+How similarity is measured:   
+- Dot product. The dot product between two items is calculated across each column. A large number signifies similarity. 
+- Cosine distance: Take the angle difference between the position vectors. Then take cosine. Similarity ranges from -1 to 1 (itself)
+Can evaluate similarity between queries and answers to discover the right answer.
+
+Some terminology:
+- Encoder-decoder models, i.e., sequence-to-sequence models areGood for generative tasks that require an input, such as translation or summarization.
+- Encoder-only models are good for tasks that require understanding of the input, such as sentence classification and named entity recognition.
+- Decoder-only models: Good for generative tasks such as text generation.
+
+[30 lines regarding attention mechanisms omitted since they're common knowledge anyway and poor formatting]
+
+## How to build companion robot?
+
+First you can code a digital prototype. Play around with convai, character.ai, replika and so on. The user could speak vocally about how their day is going, ask for social support, or muse about the philosophy of life. Then, the companion speaks back to them with animated expressions. The text response will be generated with some LLM and read aloud. Meanwhile, the tone of the text will be analyzed to display the right animations. This should take no longer than two weeks to implement.
+
+Next, build the physical prototype. Find a manufacturer that makes children's stuffed animals, go around in Shenzhen and you'll find a bunch. The previous program will be downloaded into a single-board computer inside the robot. Several new functions are needed: Firstly, generating facial expressions. Secondly, moving animal parts for realism. Thirdly, controlling breathing, by using a linear actuator to inflate or deflate a ball inside the robot - try Pikachu!
+
+A report by Tractica estimates that by 2025, there will be over 33 million social robots deployed worldwide, up from just 3.1 million in 2016. This growth is driven by advancements in artificial intelligence and natural language processing technologies.
+
+## Readings for companion robots
+last updated spring 2023   
+
+The Handbook on Socially Interactive Agents: 20 years of Research on Embodied Conversational Agents, Intelligent Virtual Agents, and Social Robotics Volume 1: Methods, Behavior, Cognition
+
+[A list of recommendations for social robots](https://www.sciencedirect.com/science/article/pii/S0921889022001117)
+
+[LLM and robotics content list](https://robohub.org/a-list-of-resources-articles-and-opinion-pieces-relating-to-large-language-models-robotics/)
+
+[Improving the logic of NLU](https://arxiv.org/abs/2203.10557)
+
+[Review on Multiple types of companion robot](https://publisher.uthm.edu.my/ojs/index.php/ijie/article/view/8566/5308)
+
+[Hobbit robot for seniors living independently](https://www.sciencedirect.com/science/article/pii/S0921889014002140)
+
+[Robots using language](https://www.annualreviews.org/doi/10.1146/annurev-control-101119-071628)
+
+[Emotional support for conversations](https://arxiv.org/abs/2202.13047)
+
+[Analyzing social robotics with NLP](https://www.researchgate.net/publication/348549537_Analyzing_Social_Robotics_Research_with_Natural_Language_Processing_Techniques)
+
+[NLG evaluation](https://medium.com/explorations-in-language-and-learning/metrics-for-nlg-evaluation-c89b6a781054)
+
+[Memory](https://medium.com/pat-inc/5-years-after-beating-facebooks-babi-8760d50c92fb)
+
+[ConvAI competition](http://convai.io/2018/)
+[ConvAI research](https://onlinelibrary.wiley.com/doi/full/10.1002/aaai.12030)
+[Hugging Face](https://huggingface.co/models)`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

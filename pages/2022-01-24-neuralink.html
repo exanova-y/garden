@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Neuralink's mechanisms and prospects
+date: 2022-01-04
+author: Yoyo Yuan
+tags:
+---
+a/n: First piece of my BCI series. [backlink](https://exanova-y.github.io/2022/06/20/bci.html) 
+
+A powerful AI is sending your family to Andromeda. You wail loudly, but even so, only at 130 words per minute. You type on a keyboard and even try handwriting in desperation. However, the AI thinks you’re too incompetent and continues regardless.
+The speed of communication will limit a species’ performance — the ability to learn, work, create, have empathy for each other and everything else we do.
+To tackle this barrier, a slighly controversial company **Neuralink** has emerged. The company develops implantable **Brain-Computer Interfaces (BCIs)** and was founded by Elon Musk and others in 2016. We’ll dive into how the device works and if neuroscientists think the company is legit.
+Then, we’ll paint how similar BCIs impact human learning, work, creativity, and health. Finally, a few steps to make related research fruitful.
+
+
+### Table of Contents**
+**Background**
+The fundamental unit of the brain
+What are Brain-Computer Interfaces?
+**Neuralink**
+Neuralink’s near term goal
+How the link reads & writes to the brain
+Pig demonstration
+Monkey demonstration
+Perspectives on Neuralink
+**Applications of BCIs**
+Redesigning learning & notetaking
+Smart workplaces
+Everyone can be an artist
+Quality sleep
+**Future**
+How to advance the field of BCIs
+Background
+Before we learn about Neuralink, let’s look very briefly at how the brain works.
+
+
+
+This is a single neuron, the fundamental unit of the brain.
+Essentially, a neuron receives inputs, computes and decides to pass on or abandon a message.
+The input comes in the form of neurotransmitters, e.g. Dopamine, serotonin, ****at the dendrites.
+Then enter the computation phase. The number being modified is called the resting membrane potential.
+As a neuron is in a soup of ions (charged atoms) and the interior of the neuron is more negatively charged than the outside. This causes a voltage difference or a resting membrane potential of -70 mV.
+A number of ions, such as K+, Cl-, Na+ flow in and out of the neuron membrane. Example ions include:
+As there is a negative charge inside the neuron, Na+ ions flow into the neuron. The membrane potential begins to increase from -70 mV.
+If it goes above -55 mV, then an electrical current is generated and sent down the axon. This is called the action potential, spike, impulse, or firing of the neuron. If the neuron doesn’t match the threshold, then nothing happens.
+
+As the neuron is now positively charged, K+ ions travel out of the membrane for the neuron to return to its resting potential.
+Meanwhile, the electrical message has travelled to the end of the axon (see diagram). A way to continue the message is to release neurotransmitters across the synapse into the dendrites of the next neuron. The next neuron then “computes, passes or abandons” accordingly.
+
+Our “input, compute, pass or abandon” is a vastly simplified model.
+In the real brain, neurons are more like tangled yarn. Large numbers of them are connected in series and parallel, the signals converge and diverge, as an example, a typical cortical neuron has 1000–5000 synapses.
+
+Rat cortical neurons
+Plus, neurons can fire 100 times per second.
+What is a Brain-Computer Interface
+To read the complicated organ, our device must be able to detect the location of the spikes, from a larger number of neurons and reflect neural changes quick enough.
+These requirements are known as, high spatial resolution, scale and temporal resolution.
+The device which reads the brain is a kind of a Brain-Computer Interface (BCI) or Brain-Machine Interface (BMI).
+
+An example of a BCI. It decodes mental writing
+BCIs could also be used to stimulate the brain.
+What is Neuralink
+Neuralink is making a BCI which is implanted in the scalp. Its near-term purpose is to solve brain and spine problems.
+Namely, the company mentioned depression, anxiety, insomnia, memory loss, hearing loss, blindness, kinds of paralysis, paraplegia, etc.
+Presently, patients with neurodegenerative diseases require risky surgeries:
+
+7 possible risks of neurosurgery
+The patient’s hair must be shaved prior
+Wide opening on the scalp, possibility of scar formations
+General anesthesia side effects
+Surgeon errors
+High cost
+The need for more surgery
+Scarring the brain
+Some BCIs are already used to replace neurosurgery, e.g. deep brain stimulation, where the device can send electrical impulses to stop an incoming seizure. However rigid metal probes can cause foreign body responses from the brain, causing scars that eventually deteriorate signals.
+
+The Utah Array
+Often, large boxes, which contain algorithms and batteries, come out of the head, meaning more risk of infection. The device also requires experts to follow around the patient to use.
+Meanwhile, Neuralink is about the size of a small coin (23mm diameter, 8mm tall). It aims to influence a large volume of neurons while being as easy and fast to install as LASIK. it is barely visible after the implant.
+
+The Neuralink chip, the Link, with extending electrodes
+How Neuralink works
+The chip has a total of 1024 electrodes, each able to record/stimulate between 1000 to 10000 neurons. This gives control over a total of 10 million neurons.
+Every 16 electrodes belong to one thread, with 64 threads in total and spaced out by 200 microns.
+As each electrode is below visible length and should be placed 60 microns near a neuron, a robot is employed for the surgery. An opening the size of Neuralink will be created in the skull, covered by the module and the process will only require partial anesthesia.
+
+
+The robot can sew electrodes while dodging veins, arteries at a maximum rate of 192 electrodes per min.
+
+The needle pincher cartridge of the robot implanting the electrode
+Here is the process of reading the brain:
+Neuron spikes → picked up by probes → signal processed on-chip → signal transmission → computer/phone responds
+When there is a voltage change in neurons, an electric field is produced. An electric current passes through the electrode. This is a flexible electrode made by a biocompatible material, polyimide, wrapped around gold.
+
+Each of the 1024 electrodes amplifies electrical activity, filters noise and digitizes the spikes.
+From this:
+
+To this:
+
+As all 1024 electrodes are simultaneously monitoring electrical activity, there is a huge volume of data to be processed.
+Sending them to a computer would delay the BCI. If a user wants to catch a ball, the BCI has to decode the intent in split seconds which then enables the user to do something else. The set of instant interactions is referred to as a closed-loop system.
+Thus, all 64 threads (each containing 16 electrodes) connect to the custom ASIC that contain algorithms, spike detection, battery, communication processes, etc. There are four 256-channel chips within the ASIC.
+On the ASIC, machine learning algorithms detect spikes and assign them to neurons.
+Spikes are detected in 25 ms windows, or bins with the spike count represented by a 4-bit number. In total, there is 40*4*1024 = 20 kB of information per second. Along with the number of spikes, there are extra bits of information about the width, height of the spike etc.
+Information is transmitted via Bluetooth to a smartphone app with controlling software.
+
+Writing
+Each electrode can release current to flow along the neuron, causing a chain of spikes. Current can be as low as 10 microamps as far as 4 mm away.
+Charging
+An implanted link can last around 12 hours and can be charged inductively.
+This means an electric current is sent through a copper coil in the charger, generating a magnetic field that generates another electric current in Neuralink.
+
+So here’s how you would control a cursor:
+First, calibrate the chip. For example, imagine moving your hand up. Neurons that are associated with both “up” and voluntary movement — in the motor cortex — fire. The electrical activity is digitized; spikes and their locations are detected. The chip associates specific activities of the motor cortex to “up”. After calibration, the chip will knock the computer via Bluetooth to move your cursor.
+There are no human trials up to date, but the link’s functionality has been demonstrated two times.
+Pig-Computer interface
+A Link is implanted in the brain region capable of detecting touch on the snout — a pig’s somatosensory cortex. When the Link senses a touch, a series of beeps is emitted from the speaker.
+
+The horizontal lines of the graph represent the activity in each channel, white showing a group of neurons being active; the bottom is a summation of spikes across all channels at any given time.
+More activity → Higher hill → Higher beeping pitch
+Meanwhile, an average pig, a pig with removed Neuralink implant and pigs with multiple implants are also presented, demonstrating the link’s reversibility and safety.
+Limb motion prediction in a strolling pig is showcased.
+
+Some are skeptical towards the accuracy, which we’ll discuss in a bit.
+However aside from that, not much can be extrapolated from this graph. The pig’s unique set of experiences relating to each straw can’t be decoded at the moment, as the storage site in the brain differs from pig-to-pig.
+Monkey Mindpong
+In April 2021, team Neuralink demonstrated a macaque monkey, Pager, playing pong directly from thought.
+There are two N1 links placed across the left and the right motor cortex.
+Again, calibration first. Pager used the joystick to guide a cursor to a targeted square while Link recorded neural activities. For example, activity in channel 8 might be correlated to intent for rightwards movement.
+
+Pager calibrating the Neuralink implant
+The number of spikes is sent to a computer with decoding software, which modelled the relationship between motor cortex activity to joystick movement.
+Later, Pager can play pong relying on his brain activity and the decoder alone.
+
+
+In the raster plot, the blue represents 100 channels with firing activity correlated to intended upwards movement. The red represents 100 channels with downwards movement. The firing intensity correlates to y velocity.
+Neuralink stances
+The majority of neuroscientists think that Neuralink is solid engineering but mediocre neuroscience.
+Many lab BCIs have low bandwidth, implying that a very specific portion of the neurons needs to be trained to fire, largely unlike the fluency of everyday actions.
+Neuralink made lab products easier to use. Namely, installment ease, operating ease, bandwidth, latency, # of channels, easily generalizing the controls and the user’s physical comfort. As the chip is trying to save power, the algorithm’s accuracy is sacrificed a bit. Most agree that the robot is innovative. The bold vision and publicity can spark the next generation’s interest in BCIs, AI and neuroscience.
+Neuralink is based on existing work. For example, wireless implants in monkeys have been demonstrated in 2014. The limb prediction in the pig demonstration was similar to an algorithm in a semi-invasive BCI in 2013.
+There are a few micro and macro challenges:
+As we move on to decoding higher-level thoughts, a greater number of areas become involved. How signals are relayed between brain areas is not well understood.
+There is no one-size-fits-all solution for brain or spine disorders. A blind person’s brain differs based on time elapsed. As time passes, the visual cortex rearranges into the role of responding to tactile and auditory tasks. The goal is to stimulate the right regions.
+On the other end, gaining control over small groups of neurons is difficult in stimulation.
+For these three reasons, “better engineering”, referring to (a) increasing the number of electrodes, (b) deeper electrodes and (c) better robots might only serve so much. It is still uncertain how long the electrodes can last.
+The Neuralink team can continue to explore the balance between battery and performance. A Ph.D. student commented that due to the small size of Neuralink, the motion prediction accuracy was worse than the Utah array, and it wouldn’t be useful for mind-controlled cursors. Similarly, a strolling pig’s motion is relatively easier to predict, compared to one that runs.
+A few scientists are concerned about skipping peer review, while a Twitter user countered, if Tesla has been peer-reviewed, we will still be waiting to this day.
+This raises the question, how effective is peer review? And other problems at the heart of the academic publishing scene. This will be covered later in the article.
+Overall, Neuralink at the moment focuses on implementation.
+Applications of BCIs
+Four main applications would be examined here.
+Redesigning learning and notetaking
+One word sums up our current education system: Approximations.
+
+The education system is divided into years to approximate the student’s ability to learn. Then approximating streams are created — applied, academic, AP, enrichment, etc. Tests then again approximate knowledge gained.
+BCIs, supplying much data, can shift us from approximation-based learning to massively individualized learning.
+As of now, teachers can give BCI headsets to students. Upon authorization, teachers can gain focus level, memory and perception data; they can thus alter the lesson schedule, length and order.
+Soon, AI algorithms would start to aid the teacher in measuring the length and structure of the lesson. Eventually, it would be fluent enough to design content on its own.
+Student confusion can be measured in place of tests. Another function of tests is acting as certificates. A replacement for this could be publishing a hands-on project, an explainer, mentoring a younger student, etc.
+A personalized system like this would be extraordinarily enjoyable for students. This is also time and resource-efficient.
+Learning involves taking notes, and BCIs again provide us with a shortcut.
+A functional BCI notetaker is being able to read words from the brain at ~130 wpm, read commands to search for images and commands on how to connect the concepts together. This is uploaded onto a computer, can be queried and can be viewed by eye.
+
+A genius BCI notetaker would involve reading words at a faster speed, autocompleting the mental scene, sketches and how the concepts are connected. A viewable version may not be necessary, as concepts could be directly beamed into the brain whenever the user wants. This is an example of Human-AI symbiosis.
+Superior learning speed
+If you learn a new language after 18, fluency would be troubling to maintain when immersion stops.
+This is thought to be related to declining neuroplasticity with age. Neuroplasticity refers to the brain reorganizing itself — the synapses being strengthened or weakened to fit new habits.
+A stronger synapse means more ions are allowed to enter the neuron’s membrane per time.
+
+The two types of tDCS are Anodal and Cathodal, differing by the direction of charge flow to either excite or inhibit neural activity.
+This shift can be sped up by using transcranial direct brain stimulation (tDCS), where a small current is applied externally to the scalp.
+
+How tDCS could look like
+Some study examples are accelerating the learning of social skills, math skills, motor skills and aiding a stronger memory.
+However as this is still a nascent technology, there are risks of scalp burns. The changes are reversible, depending on how you think after the tDCS session. And tradeoffs exist, for example between skill acquisition and fluency of the skill.
+Smart workplaces
+This has been implemented by a Toronto startup, “Muse” as a corporate wellness program.
+Giving employees BCI headsets could monitor their attention levels, and thus adjust the workplace’s heating, humidity, CO2 and lighting. An employee’s current attention could be gauged and compared to the one needed for a meeting.
+Focus monitoring could help people decide when to take a break or to stab laziness in its face.
+Everyone can be an artist
+A person hears a tune in their head, but there is a barrier: insufficient music theory knowledge. This prevents them from recording the melody and composing.
+YouTube lowered the entry barriers to content creation, Netflix for film watching, and Replit for programming.
+BCIs coupled with AI services could lower the entry barriers to almost all creative mediums.
+A BCI can one day be used to capture a phrase of the mental song and inputted into AI music generators e.g. FlowMachines, IBM Watson beat, etc. to complete the tune. The user wouldn’t need to study music theory or composing software.
+Similarly in this video, a working webpage is created from a prompt made in English.
+
+The MOMENT is a brain-controlled film made in 2018.
+
+The watcher wears a NeuroSky MindWave headset that tracks attention levels. It is sent wirelessly to a computer to recombine the scenes as well as the background music.
+The film contains 17 scenes, the user being able to choose from 6 shots per time. Thus, you could watch 16,926,659,444,736 unique versions of it.
+
+Unique journeys through 17 scenes of the film.
+Here’s another example in fashion.
+Instead of picking clothing and shoes from a variety of approximated sizes, they can automatically fit you. BCI then comes into play by enabling personal aura projection. As you stroll down the street, your clothes change in colours.
+This is the vision: We use BCIs to record neural activity, then integrate with AI to allow composing, writing, filmmaking, coding, drawing, fashion, metaverse homes, etc. The far future might even directly project emotions or senses to the audience in media.
+As there are thousands of possibilities for BCI applications, an app store will almost certainly be built in the near future.
+However, as there are few entry barriers and many producers, it becomes difficult to differentiate. Policies for allowed software should also be decided.
+Everyone can become an artist, whether you are creating the rules, like the film director, or creating from the rules, like the audience.
+Health
+Only 35% of adults in the US report sleeping on average more than 7 hours per night. This includes multiple wakes, poor quality and others. It is taxing on productivity and is correlated with obesity, type 2 diabetes, etc.
+Sleep is composed of four stages: stages 1–4, which are non-rapid eye movement (NREM) sleep as well as REM sleep. There is a distinct brainwave associated with each stage of sleep, as shown below.
+
+A non-invasive headset with tDCS could be used to influence our brainwaves.
+During NREM sleep, anodal stimulation is used to excite neuronal activity. In REM sleep, cathodal stimulation would be applied.
+This is one of the aims of Neuralink. Sleeping efficiently could free up time in the coming decades. A 2016 study showed that sleep time could be reduced by 25 minutes.
+Other popular use cases of BCIs involve patients controlling prosthetics and wheelchairs with their minds. This article won’t go into details as there are many writings on this.
+Overall, BCIs shorten the bridge between ourselves and goals — learning, work, entertainment and health — allowing everyone to run across the bridge with higher efficiency.
+Obviously, risks do exist, e.g.
+Is the decision made by the algorithm, or by the human?
+Who can access brain data?
+People worry that BCIs make us less human. A similar question would be: Is the 10 or the 20 y.o. you more you?
+Human values are constantly evolving. Imagine if we didn’t have computers, as some guy argued that it makes us less human. As a result, Google, Youtube, Facetime may not have been developed to boost our work efficiency. There are tradeoffs and risks with every innovation, but the trend is that ideas breed more ideas to shadow misuses.
+How to accelerate BCI development
+Advancing research in BCIs requires research in AI and neuroscience, as well as intersections with fields.
+However, many researchers said the field looks more like:
+
+Paper factory at work!
+To get funding, positions and fame, researchers are pressured to continuously publish papers, with the number of citations as an indicator of success.
+This leads to exaggerating the paper’s importance, cramming in intellectual nonsense and sacrificing the overall quality.
+A large volume of papers and no incentives cause peer reviewers to slack off — publishing papers that only align with contemporary views, allowing poor quality papers to appear, and occasionally harassing authors by telling them to make unnecessary edits.
+Worse, journals and papers are ever-increasing in price. This limits the number of quality research in-game.
+Here are a few remedies:
+1. Set up funds that require research done with the funding to have open access.
+This is being implemented by the Bill & Melinda Gates Foundation. The model could also be used to set up BCI-specific funds, requiring software to be open source to spur collaboration. This accumulates free-to-read papers and code.
+2. Make research readable
+a) Fermat’s library is a software that allows crowd annotation of papers. The founders also suggested publishing research in threads like on Twitter.
+b) Researchers could be given an exposition quota, where they must give a certain number of expository talks and nontechnical introductions to their research. Here’s an example of Tai-Danae Bradley’s Ph.D. thesis:
+
+c) Expositions on existing research. A number of videos, games, blogs, etc. were created for the Summer of Math Exposition contest in 2021. At the present, there is a lack of tutorials in the field of BCIs. A “Summer of Neuro Exposition” could be similarly organized, as well as hackathons e.g. BR4IN.IO.
+That said, it is speculated that BCIs will grow spectacularly in 10 years.
+In conclusion, Neuralink’s chip could read and write to the brain and aims to tackle disorders recently. It could be a key player in hyping up the BCI industry and accelerating the coming of sci-fi technology.
+Further reading
+Similar limb prediction mechanism to Neuralink
+How is machine learning used to analyze brain signals?
+How BCIs can be used for human creativity`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

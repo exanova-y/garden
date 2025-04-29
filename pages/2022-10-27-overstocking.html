@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `--- 
+layout: post
+title: Food waste - The overstocking problem (memo)
+authors: Mansi Katarey, Serjan Kaur, Surya Sure, Yoyo Yuan
+image: /assets/images/overstocking.webp
+date: 2022-10-27
+show_on_home: true
+tags:
+- world problems
+- food waste
+- focused
+---
+
+> 💡 Problem Statement: *$50 billion dollars are lost each year in the US due to the overstocking problem. The surplus of goods without corresponding demand results in food wastage.*
+
+
+## **Executive Summary**
+
+1. **Overstocking is caused by misjudged consumer demand**
+    
+    Due to inability to accurately predict consumer demand, retailers in the food produce industry constantly overstock to prevent “selling out”. This method results in constant food wastage.
+    
+2. **Existing demand forecasting models are not scalable and inaccurate**
+    
+    Innovative forecasting algorithms have only been tested in Russian regions, supports large businesses and doesn’t yet support automation. Meanwhile conventional forecasting software have only been tested in a few states. 
+    
+3. **Integrating a conventional and experimental model could reduce US food waste by over 30%**
+    
+    Afresh technologies provides a baseline forecasting model based on Machine Learning with over 600 parameters affecting demand within US. The core algorithm can be enhanced with more accurate machine learning techniques from DSLab, based in Russia.
+    
+
+## The Problem: Overstocking
+
+Overstocking is a $50 billion problem in today’s world. It is a common belief amongst the grocery produce industry that over-stocking will be more beneficial to the company rather than under stocking. This is because retailers can't afford to risk losing sales because they ran out of stock. Within this, fresh products accounting for up to 40 percent of grocers’ revenue and shelf life of 1 to 7 days.
+
+Only large grocery stores have forecasting methods despite way more small grocery stores: There are only 21000 large businesses within the US while 32.5 million small businesses exist. However, fresh products are more difficult to predict than stock items.
+
+## The Root Causes: Supply and Demand, Supply Chain and Farmers
+
+**Fear of going out of stock**
+
+Out-of-stocks cost retailers $1 trillion yearly. The consequences of out-of-stocks are severe, from losing profits to losing customers and inevitably market share. The direct and indirect damages of lost sales are so great that retailers prefer to markdown unsold inventory, or even get rid of it at cost. 
+
+**Poor inventory management**
+
+New inventory can be acquired without accurate data showing your profit margins and cost of goods sold. This information is key to beginning proper inventory management and avoiding overstocking.
+
+**Sudden change in consumer patterns**
+
+With the demand of certain produce changing on a regular basis, it becomes difficult to judge the consumer demand. This change can be due to latest food trends, economic change, weather, etc. 
+
+During COVID, there was an increase in the number of people who couldn't afford groceries and a surplus of food where it wasn't needed. Some of the most popular destinations, such as chain restaurants, schools, and workplace cafeterias are struggling to adapt.
+
+## Current solutions: Additional training, partnerships, consumer education and forecasting models
+
+[Walmart Canada](https://www.retailcouncil.org/community/supply-chain/where-retailers-stand-in-the-food-waste-crisis/)
+
+Walmart has been undertaking waste-reduction initiatives since 2005. Between 2015 and 2017 alone, Walmart Canada reduced food waste in its operations by 25%. 
+
+- Discounting repackaged bruised or peak-freshness products through a $1/$2 Bag Program and reducing prices on fresh meat, bakery, dairy and produce approaching best before dates.
+- Reducing over-production in bakery operations. Providing additional processes, training and resources to help support associates.
+- Implementing organic recycling programs in stores and distribution centres that take unsaleable and unsold food for conversion into animal feed, compost and energy.
+- Partnering with local food banks to assist in maximizing surplus food donations.
+- Working with suppliers to improve packaging and food handling processes to maintain quality and freshness.
+
+[Harvard Business Review](https://www.retailcouncil.org/community/supply-chain/where-retailers-stand-in-the-food-waste-crisis/)
+
+A December 2017 Harvard Business Review article, How Large Food Retailers Can Help Solve the Food Waste Crisis, presents a four-pronged strategy to help retailers reduce food waste throughout the supply chain, from farming and production to stores and end use.
+
+- Upgrade inventory systems with the latest technology. Examples include software that helps retailers streamline deliveries from the warehouse to the store; or programs that reduce excess inventory and handling.
+- Partner with farmers in the supply chain. Retailers are encouraged to share forecast data for specific food items to prevent overplanting.
+- Modify or eliminate store practices that increase waste. For example, discounting “imperfect-looking” produce or donating surplus edible food to charities.
+- Educating consumers to cut household waste. Content shared with customers can go a long way toward helping them understand the issues around food waste and the ways the industry is working to alleviate the problem.
+
+[Afresh Technologies](https://www.bloomberg.com/news/articles/2022-08-04/food-waste-tech-company-afresh-raises-115-million-in-funding?leadSource=uverify%20wall)
+
+- Afresh offers an operating system that helps grocers reduce the amount of fresh food that is thrown away. Retailers can view their inventory within Afresh’s system and use its technology to more accurately forecast what foods consumers are looking to buy. The predictive system’s reliance on data means stores will produce less waste.
+- Its algorithms also factor in the intangibles like weather and peak freshness of produce to help predict demand and manage inventory.
+- Afresh says it helps customers reduce waste by 25% or more. These efforts can also improve profitability
+- The company has announced partnerships with grocers in more than 3,000 stores across 40 states
+- Company’s total funding has reached $148 million.
+
+## Gaps: Lack of Integrated and Accurate Forecasting Models.
+
+**Operational Limitations**
+
+There is not yet an accurate forecasting model spanning all states. Afresh only has expanded to 17 states. Meanwhile, accurate forecasting software has only been tested locally such as in Russian retail stores and in canteens. The software are not yet automated into the demand forecasting. Similarly, the top influencing factors need to be identified to provide consumers with ease of insight. Data should be generated at the store level.
+
+**Technological Limitations**
+
+Existing forecasting algorithms require massive volume of training data to yield accurate results, rendering the model unusable for small grocery stores. Existing forecasting algorithms for fresh food usually deliver a median forecast i.e. How many items will be sold in the future? A single number doesn’t allow grocers to adjust to the shifting market values. 
+
+## Solution: Combining optimized forecasting algorithms with existing models
+
+**Hypothesis**
+
+If we combine the forecasting technology used at Afresh with novel algorithms developed by DSLab based in Russia, food waste will decrease by over 30% in grocery stores across the US.
+
+**Solution overview:** 
+
+- Our solution uses efficient machine learning to identify the relationship between more than 600 variables and the demand of products. Sample internal factors include: weekly data of purchasing, variability of demand with promotions and shelf life of product. External factors include: weather, large football games or concerts.
+- Machine-learning algorithms that stem from gradient boosting over decision trees are used to obtain highly accurate predictions,
+- Rather than a single future amount, the Bayesian method is used to output ranges of future demand e.g. 90% confidence that 300 broccolis will be sold on Tuesday at Costco. 10% confidence that 100 broccolis will be sold.
+
+**Why is it better than status quo?**
+
+- This forecasting model takes into account promotions. With 60% of goods being on offer, this is a huge factor in changing demand.
+- This model allows prediction of fresh food with shelf life of 1 - 7 days
+- Machine learning models using Bayesian methods require less training data, meaning this model could also be adapted for small grocery stores, as well as retail which expands regularly.
+
+**Feasibility**
+
+- This forecasting method has previously been tested in one of the largest retail chain in Russia—Lenta. The result was 13% higher accuracy compared to existing forecasting.
+- The novel method is developed by an expert team with 10+ years of experience in data analysis, ML and AI in world-leading IT companies
+- There are many studies testing the Bayesian method on the food predictions of canteens. Canteen food are comparable to perishable food in grocery stores.
+
+**Unknowns:**
+
+- The policies surrounding demand forecasting may be subject to change within the US.
+
+## Outcome: Save over 300 pounds of food every week
+
+Understanding consumer demand is crucial to the reduction of food wastage. Predicting better consumer patterns will enable grocery retailers to make better inventory choices, and determining the amount of produce to order each week. If implemented just within one Walmart store, this could save up to 300 pounds of food every week. 
+
+Holistically, this means reducing more than 88.5 Gigatons of CO2 between 2020-2050 which ranks first out of any factor.
+
+## Next steps: Determining the generalizability of the forecasting model
+
+Since Afresh technologies is based in the US, the next step would be to expand partnerships to other North American countries. 
+
+Each country has patterns of food waste in each supply chain, which need to be determined before replicating Afresh technology’s model to the region. 
+
+## Sources
+
+- Root causes: https://www.npr.org/sections/thesalt/2020/04/03/826006362/food-shortages-nope-too-much-food-in-the-wrong-places
+- Current solutions: https://www.relexsolutions.com/resources/machine-learning-in-retail-demand-forecasting/
+- Russian retail Case study using novel ML algorithm: [https://medium.com/@dslab/fresh-food-forecasting-challenges-of-demand-forecasting-for-fresh-and-ultra-fresh-food-ef733e8107f7,](https://medium.com/@dslab/fresh-food-forecasting-challenges-of-demand-forecasting-for-fresh-and-ultra-fresh-food-ef733e8107f7) https://www.dslab.ai/lenta-automates-demand-forecasting-dslab-technology
+- CO2 data: https://www.drawdown.org/solutions/table-of-solutions`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

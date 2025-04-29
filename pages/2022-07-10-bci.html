@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: (Linkpost) Introduction to brain-computer interface series
+date: 2022-07-10
+author: Yoyo Yuan
+tags:
+    - BCI
+    - projects
+image: /assets/images/femg.png
+---
+
+a/n: Completed during high school while under $1000 budget. There were rarely any guided tutorials back then. So, I needed to dig through documentation, numerous forums, debug software and hardware. This led to me assisting the Multisensory Brain and Cognition lab at UWaterloo.
+
+### Technical Article: [How Neuralink Works and Where It's Going](https://yoyoyuan.medium.com/how-neuralink-empowers-our-intelligence-e7cc93a19525#5590)
+
+
+![](/assets/images/neuralink.jpg)
+
+**Summary:**
+Neuralink’s chip can read and write to the brain. 
+
+In the near term, it plans to tackle brain and spine disorders. The Link, with the size of a coin, aims to replace the dangers of a surgery. It has decoded imagined movement in a monkey, and is capable of detecting touch on a pig. 
+
+Neuralink is mediocre neuroscience but solid engineering. Demos are based on existing research. It has made lab products easy to to use, but the 3 approaches of “better engineering” will eventually hit a neuroscience wall, due to a lack of control at microscale, lack of understanding at macro scale and variation in patient’s nervous systems.
+
+In the long term, Neuralink can provide personalized workplaces, education and help improve learning speed. It lowers the technical knowledge required for creative output as well as helps people sleep. 
+
+There is rarely any information about BCIs online. The best solutions to this are expositions on existing research and funds that require new research to be open access.
+
+### Project: [Playing the chrome dino game by blinking](https://youtu.be/v1_EIlfJDdc)
+
+![](/assets/images/dino.png)
+
+**Summary:** I detected my blinking using the OpenBCI biosensing kit and wrote a python program to convert it into pressing the space bar.
+
+**How this works:** Implemented electrooculography (EOG)! So, the eyeball is positively charged near the front (cornea) and negatively charged near the back. Blinks are vertical movements that cause significant spikes and valleys in the amplitudes of recorded brainwaves. A threshold is set in python script. 
+
+### Project: [Use fEMG to detect valence while viewing ads!](https://yoyoyuan.medium.com/how-facial-electromyography-femg-can-lead-to-game-changer-ads-ca32cbcfa244)
+
+![](/assets/images/femg.png)
+
+[My revolutionary video! XD](https://www.youtube.com/watch?v=-6DrgKgwDxE&feature=youtu.be&ab_channel=YoyoYuan)
+
+**Summary**:
+How do your users feel about the ad? Getting non-sugarcoated feedback seems impossible--but wait: Smiling and frowning each correspond to activating of a muscle group. We can detect changes in voltage of these groups and connect the results to lighting up LEDs.
+
+Unless the user is under muscle relaxants, this method always picks up the accurate responses, one-up surveys and computer vision analyses. This method can be combined to also output gaze direction and emotional response intensity, which has strong applications in marketing.
+
+### Project: [Composing music with EEG data and MuseNet](https://yoyoyuan.medium.com/on-the-origin-of-musical-bacteria-eb0f5257f062)
+
+![Untitled](/assets/images/musenet.webp)
+
+**Summary:**
+
+First, a 20 sec musical sample is generated. The amplitudes of brainwaves are mapped into a good-sounding musical scale (C Locrian). 
+
+Then we iterate: The sample is repeatedly passed into MuseNet for 7+ times, which is an AI model for extending music. 
+
+### Bonus Article: [The application of BCIs in ADHD](https://yoyoyuan.medium.com/how-brain-computer-interfaces-can-help-children-with-adhd-e758b03952f4)
+
+![](/assets/images/adhder.webp)
+
+**Summary:**
+
+The current diagnosis for ADHD is subjective and slow. Some BCIs are approved to improve the accuracy of a specific subtype of ADHD. 
+
+The current medical treatment involves guess and checking the right drug, while CBT is an indirect solution and depend on willpower. 
+
+Some BCIs can directly alter biology by stimulating the brain. Some can provide fast feedback on focus while offering engaging games`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

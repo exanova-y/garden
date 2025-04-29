@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: rationalist letter exchange
+author: anonymous rationalist
+image: 
+show_on_home: false
+date: 2024-06-23
+tags:
+  - writing
+  - letters
+  - saved
+  - rationality
+---
+
+Dear [name redacted],
+
+For each person I care about, there is a timer ticking before I say something to scare them off, and that timer has elapsed for you.
+
+Circa December, I brought up the humanitarian crisis in North Korea, specifically how starving parents had to eat their children during famine. This caused you to laugh in the unearthly way which all members of the Elvish race do [1]. That sound obliterated my peripheral vision and attacked the schema central to my attention processing code, causing the lens which directs the light of my thought to narrow down its beam to the width of a cat whisker and point directly at you. It has remained in that direction since then.
+
+Psychologists call such continual attention processes “special interest”, and they are a landmark symptom of being on the spectrum. I apologize for how often I bring up autism, but it affects nearly every moment of my life, nearly to the point of being so all consuming that I forget it exists. The fact that it might affect yours is more than possibly part of this.
+
+While the experience described above is normally called “crushing on someone”, such experiences do not cause normal people to write several thousand word long letters, and to do that repeatedly on a nearly daily basis, and to do that instead of their school work. Though the letter frequency has petered out recently, the thought subroutine in my brain with your name on it has not taken up any less memory or processor time.
+
+This cannot go on any longer. That brain space has to be repurposed into pursuits that concern personal survival and my goals for the species at large, namely extinction prevention. I do not know how to terminate such processes (or more accurately, how to redirect them), so I will do what other people do when they seem to have such a problem, and that is to say: Would you like to go to the library with me, but without an agenda?
+
+Regardless of your answer to the question, I will continue to cherish your existence and fulfill any requests for ebooks delivered over email with the title and the file format in the subject within several business weeks.
+
+Sincerely,
+
+[redacted]
+
+[1]: This Tolkienian classification is from Neal Stephenson’s Cryptonomicon:
+
+> In front of the building’s main entrance a lot of people are jammed into the smallest possible space screaming at each other. They are surrounded by ring after concentric ring of cops, media, and law-firm minions—collectively, what Tolkien would call Men—and a few non- or post-human creatures imbued with peculiar physiognomies and vaguely magical powers: Dwarves (steady, productive, surly) and Elves (brilliant in a more ethereal way). Randy, a Dwarf, has begun to realize that his grandfather may have been an Elf. Avi is a Man with a strong Elvish glow about him. Somewhere in the center of this whole thing, presumably, is Gollum.
+> 
+
+---
+
+Dear [name redacted],
+
+Thank you for your elegant response. Yes, I am a fan of Lord of the Rings. You?
+
+I.
+
+I sent the above email after requesting you not share what I've written to you, and I see how that might look on the surface. I thought openness was the best way to prevent social life from becoming a World War II-style information chess game, which is not a good use of our limited compute power. But people keep secrets because it makes the secret recipients feel valued, so I decided to play along. This caused the above email, rather than the reverse.
+
+You seem to be a social person, in the sense of you know what's going on. How did you figure this out? And what is going on?
+
+II.
+
+> I increasingly find myself in a perpetual oscillation between different objectives and moods in my life (one could say this is a defining characteristic of adolescence).
+
+What process do you use to decide what to work on? What are you working on right now? What are your objectives? Have you been up to something truly interesting as of late? What’s your end goal in life? What kind of life do you want to live? Do you have any definite plans for the future? What are you trying to do with your remaining 23 thousand days on the planet?
+
+I've been pretty disconnected from reality ever since I realized that everything is signaling and nothing is real. We lie to ourselves more than we lie to others, and when I realized that everything was a lie, and it was me who was the liar, this tore everything apart. What's something that's not a lie?
+
+III.
+
+> Getting to exchange letters and emails with you has been a refreshing break from the ingenuity of so many around me.
+
+Certainly a strange way to put it.
+
+([redacted]’s note 2 years later: she mis-used the word “ingenuity”, but I didn’t realize this and was offended.)
+
+Sincerely,
+
+[redacted]
+
+---
+
+Dear [name redacted],
+
+**I.**
+
+In AI alignment literature, a mesa-optimizer has a drive, and figures out how to fulfill it, as compared to simpler AIs that execute mechanistic behaviors. Insects are machines that have only one purpose: to mate. If an insect sees a mate, it executes some neural code probably encoded by its genes that will likely lead to more insects down the road. Human minds are more complicated. Instead of running simplistic programs like “look for mate -> see mate -> mate”, they come up with plans like “think about places where food is -> go to those places -> think about ways to get food there” to fulfill drives like hunger.
+
+[1]
+
+Some drives are selfish, and we don’t like to talk about them very much. But we still have to fulfill them, or else we don’t reproduce, and someone who's better at fulfilling them will take over the gene pool. In order to fulfill those drives, we use self-deception. We lie to ourselves so that we can better lie to other people to stay a part of the community, and still satiate our drives. Artists can make art to gain status and better mating opportunities, but if it’s known that they’re doing things solely to gain status and better mating opportunities, people won’t like them, so they use the excuse “l’art pour l’art”.
+
+[5]
+
+**II.**
+
+My primary drive is to communicate with other nerds, and I’ve found a new way to fulfill that. The trick is to find the people who read the same blogs as you do, not to force the people around you into reading them. This works well. The ratio of my thoughts about you to my thoughts about Neal Stephenson novels has plummeted to nearly zero.
+
+[4]
+
+In computer systems, sometimes ostensible garbage can cause memory overflows and give a malevolent agent root access. Humans are no different than computer systems, and when it looks like we’re spewing nonsense, we’re really executing complex plans. What my drives and plans were/are, I have no idea. That thing I said about communicating with other nerds might have been no more than an attempt to fulfill some *other* drive I have, so the actions I took to do so may not have been aligned with my inclination to find the truth. Evolution did not design us to see or spread truth. It designed us to see things in a way that would maximize the chance of reproduction (which involves many drives). None of what I’ve said above, or what I’ve ever said has anything to do with the truth, but rather with the execution of a plan to fulfill drives, and I am privy to neither the contents of that plan nor the drives. I apologize for anything wrong that I said, I really do, but manners are just a layer over game theory, and have no true meaning except that of their role in fulfilling drives. Emotions are no different. Maybe you like seeing the world through a different lens, and this all tastes like bitter medicine. If so, I’m sorry, but let’s be honest (which is impossible) with each other for a second and appreciate the fact that those words can’t *possibly* mean anything.
+
+[3]
+
+**III.**
+
+The core teachings of the Buddha reveal that all experiences are transient, so none of them can truly satisfy you, nor can they *be* you. You have no “self” that does things, and there exists no true divide between all causal phenomena (but perception and awareness differ from each other). If you meditate really hard, the illusion of self falls away. To know this truth requires more focus for an individual than anything else, but realizing its veracity for others does not. I hope you can see that there is no “I” which did any of what I did, just a torrent of attempts to sate seperate drives. The apology means nothing on more levels than one.
+
+(Author's note: the Buddhism stuff had unnecessary jargon, but is correct. the difference between perception and awareness is perception is an individual frame of a movie, and awareness is the “statelessness” that a TV screen experiences over all frames. like it doesn’t change. it’s kinda like Turing completeness, like your experience can be arbitrarily defined and any specific definition is “perception” and the property of all definitions being there is “awareness”. however, I think words still have meaning, and apologies mean things. definitely not all apologies though, status component is very real.)
+
+This is all to say that everything is a lie, and I still haven’t figured out how to completely terminate whatever internal thought threads bear your name. However, the “whole event” probably caused more suffering for you than me, and you are probably sentient. According to the core teachings of the Buddha, such a relationship is “unskillful”. In the interest of increasing skillfulness in the world, I’ll say that you absolutely do not need to reply to this, and that while I lack about all the self-awareness one could lack, I do recognize that I am a certified crazy person (just ask anyone on the boys cross country team about eugenics).
+
+Instead of asking girls out to the library to end suffering, I’m going to target the problem at its source. The Buddha laid out an eight step plan for the task (ending suffering—not asking girls out), and following it looks more fruitful than trying to fit everything into Dan Harmon’s eight step story circle. So if you need me, that’s where I’ll be.
+
+[2]
+
+After enlightenment, I plan on building an army of John von Neuman clones, so, um, if you need me then, uh, you could just email me instead.
+
+Sincerely,
+
+[redacted]
+
+[notes, two years later]
+
+[1] that was a misuse of the concept of mesa optimization.
+
+[2] I sent her an earlier letter comparing our mutual history to a writing device used in tv shows. this was stupid because life is not a tv show and was probably extremely unnerving. human memory is mapped onto stories, but that’s arbitrary cause our brains are idiots.
+
+[3] much of that is wrong, but in a way that’s hard to say.
+
+[4] it was not nearly zero
+
+[5] this is wrong and a mis-interpretation of Robin Hanson’s views`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

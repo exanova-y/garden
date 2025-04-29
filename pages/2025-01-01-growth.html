@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+author: Yoyo Yuan
+title: Growing neurons for computation 
+date: 2025-01-01
+tags:
+- focused
+- neuroscience
+- neural and evolutionary computing
+- BCIs
+image: /assets/images/painting-neurons.jpg
+show_on_home: true
+---
+Contents:
+- Inspiration
+- Advantages of neurons
+- Scrappy protocol
+- Elaborated protocol: Obtaining stem cells, differentiation into neurons, training with MEAs
+- Next steps
+
+### Inspiration
+In the 1960s, Alan Turing’s work on machine intelligence and von Neumann’s discussion of computer architecture laid the fundamental idea that computation can be universal. If Turing-complete machines can emulate each other’s algorithms, this indirectly raises the question of whether brains could be used as computers.
+
+In the 2000s, researchers started developing bio-engineered tissue models replicating aspects of human organ function. In early studies, Shahaf and Marom reported that cultured neurons could adapt to stimuli: Rat primary cortical neurons could learn as they adapted to show a desired predefined response to low-frequency focal stimuli after a learning curve.
+
+Neurons in closed-loop systems responded to stimulation adaptively and showed signs of learning when separating multiple signal sources. Then, the Potter group trained rat primary cultures to control a small moving device.
+
+The concept of organoid intelligence gradually took shape in 2016 - 2018 as researchers started to recognize the potential of brain organoids to perform basic cognitive functions and name the field.
+
+In 2022, Kagan et al. from Cortical Labs elegantly demonstrated aspects of learning by training human neuronal cultures (iPSCs) to play the simple computer game Pong. There is a feedback loop where the culture was penalized with white noise (uninterpretable input) whenever the controlled paddle missed the ball. They also used electrophysiological measurements to show that learning has occurred in the neurons due to changes in functional plasticity and information entropy. However a bunch of people told me this study hasn't replicated and achieved performance similar to chance.
+
+*is this a BCI?*: BCIs usually interface with whole brains in living organisms, but brain organoids refer to neural tissues in vitro.
+
+### Why neurons?
+Think quantum computers: They *won't replace* conventional computers but solve specific problems better. These neural organoids could enable companies testing clinical trials faster.
+
+Continue to think of conventional computers in their early days without any abstracted programming languages. Right now we know neurons do offer theoretical advantages.
+- Parallel processing: Neurons learn in parallel compared to serial tasks which traditional computers excel at.
+- Energy efficiency: The human brain processes information with immense efficiency, estimated at 20 watts, compared to supercomputers' megawatt-range consumption.
+- Data efficiency: Humans learn tasks with far fewer samples (e.g., humans need around 10 samples to learn a simple task, while machines can require millions).
+
+Smirnova, Lena et al. “Organoid intelligence (OI): the new frontier in biocomputing and intelligence-in-a-dish.” Frontiers in Science (2023).
+
+### Scrappy approach
+With just $2000, [Viraj and his team](https://generalcybernetics.substack.com/p/how-to-culture-neurons-for-beginners) have grown neurons on an MEA and communicated with them. Full disclosure: They pivoted. Sam, Minjune and I thought it may be due to the unsanitary conditions. And applying some topology *may* be helpful?
+
+### Grow your own neurons
+After running the scrappy approach with purchased rat neurons, we could also grow our own neurons: stem cells → neural tissue → plating.
+
+1) stem cells
+
+To reduce ethical controversy, researchers often take cells from the human skin/blood and reprogram them into stem cells (iPSCs), which can go on to differentiate into a variety of cell types including neurons.
+
+Using viral and plasmid methods
+
+Obtain human somatic cells
+Producing Yamanaka factors—which are proteins which reset adult cells into stem cells. We can genetically engineer E. coli bacteria to produce these proteins. First, we insert Yamanaka factor genes into a plasmid which then enters the E. coli. The bacteria can grow in a flask or a bioreactor. After a certain period of growth, we break open E. coli cells to extract factors.
+Transduce these somatic cells with Yamanaka factors. To deliver genetic materials into cells, we could use lentiviral vectors or protein transduction mechanisms.
+Now we have stem cells!
+Although having multiple error-prone steps this is extremely cheap. For more details, refer to: Open source brain organoids
+
+Questions we have:
+How long can we keep these stem cells alive?
+
+**Using mRNA transfection**   
+This protocol has reasonable costs under $3000 and high efficiency. It produces around 160 colonies per chip (27 mm²) in 15 days.
+![microfluidic chip](/assets/images/microfluidics.jpg) 
+We first get a microfluidics chip, which is a container for the stem cells
+Microfluidic Polymer Chips - microfluidic ChipShop
+We also start with somatic cells obtainable through a biopsy. In this case, the choice is fibroblasts—connective tissue cells.
+From days 1 - 8, we add mRNA carrying the reprogramming factors to the chambers on the chip, as well as materials that prevent cell stress and toxicity
+From days 9 - 15, we stop adding mRNA and instead add a medium that supports the transition from somatic cells to stem cells
+Finally, we extract hiPSC colonies from the chip using chemical processes or mechanically, using a scalpel under a microscope.
+Source: Microfluidic reprogramming to pluripotency of human somatic cells
+
+2) neuron differentiation
+![plates](/assets/images/plates.png)
+Example well plates, where the stem cells start differentiating.
+Create a 2d sheet of neurons with the help of Neurogenin-2, taking 2 - 3 weeks
+Placing the hiPSCs on well plates coated with poly-L-ornithine (PLO) and laminin, which provide a supportive environment for cell growth
+Use lentiviral vectors to engineer the cells to express neurogenin-2 (Ngn2), a gene that induces neuronal differentiation
+Activate the Ngn2 gene using doxycycline to start differentiation with the help of biological switch rtTA
+Use antibiotics to ensure only successfully transduced cells survive
+Plate the neurons on MEAs
+[Materials list](https://app.jove.com/pdf-materials/54900/rapid-neuronal-differentiation-of-induced-pluripotent-stem-cells-for-measuring-network-activity-on-microelectrode-arrays), cost estimation: ~$6000
+
+Source: [Rapid Neuronal Differentiation of Induced Pluripotent Stem Cells for Measuring Network Activity on Micro-electrode Arrays](https://pubmed.ncbi.nlm.nih.gov/28117798/)
+
+Note here this protocol gives rise to 2d neuronal cultures. “Organoid intelligence” often refers to 3d with more similarity to the in-vivo brain: It has comparable density, higher myelination and support for synaptogenesis.
+
+While it’s possible to clump a 3d culture together from a well plate, researchers use specialized bioreactors or shaker cultures to grow at scale.
+
+![bioreactor](/assets/images/pioreactor.jpg)
+![shaker culture](/assets/images/shaker-culture.jpg)
+During neuron cultivation, common obstacles include cultures suffocating and needing to restart the process, so presumably that's why the shaker cultuers are used to increase nutrient reach. Researchers add systems to provide consistent nutrient and oxygen delivery and are an artificial vascular system. Bioreactors enable the mass production of organoids up to 1 million neurons. These organoids typically grow over of 1 – 9 months and can develop architectures including glia as well as basic features like synaptic connections.
+
+Johns Hopkins University is one of the institutes that produced standardized, scalable organoids. These objects are typically < 0.5 mm in diameter, one 3-millionth the size of the human brain (theoretically equating to 800 MB of memory storage).
+
+We’re working on more formalization of neuron culture architecture with topology frameworks.
+
+3) training 
+
+The paper [Learning without (artificial) neurons in physical systems](https://arxiv.org/abs/2206.05831), describes learning as solving an inverse problem. Physical materials change their degrees of freedom to exhibit desired behaviours. In [Training biological neural cultures: Towards Hebbian learning](https://www.sciencedirect.com/science/article/abs/pii/S0925231212008016), authors evaluate learning by checking for three values. If a convergence criteria is reached (e.g. demonstrating the error function is converging), connectivity changes and controlled firing rather than random firing occurs. Some learning categories are unsupervised learning, supervised learning and contrastive learning. Stimulation: We can apply electrical, chemical and optical methods of stimulation to the neuron culture.
+
+Neurons have advantages including parallel processing. One task it can perform is [image processing](https://exanova-y.github.io/2025/01/14/images.html). We can think of neurons representing pixels from the digital image. Then, through a supervised learning process where the filter is presented as electrical stimuli, the network could learn such as an L shape. Unlike conventional machine learning, there is no cost function, training is shown by changes in the physical material and feedback is via stimulation rather than error correction explicitly comparing to the desired output.
+
+Microelectrode arrays (MEAs) can stimulate and measure electrical activity in neurons. The manufacturing is inspired by CMOS technology to increase the resolution. These MEAs take on many shapes:
+![mea](/assets/images/meas.jpg)
+
+Realistically, the electrode number on a MEA limits the image resolution. Relatedly neuromorphic computing emulates neurons via hardware, and the Spikemark set provides a list of good problems to solve like classifying MNIST digits, finding the shortest path with wavefront propagation which can be represented in the network, LASSO problems, Sudoku, map colouring constraint satisfaction problems and more complex problems like SLAM using Bayesian learning.
+
+### Next steps
+- Learn about basic cell culture methods
+- Set up clean room
+- Publish results in a blog post or article
+- Implement image processing as one of the initial experiments when the materials arrive`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

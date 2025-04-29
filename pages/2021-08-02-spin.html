@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+title: Note on spin
+layout: post
+date: 2021-08-02
+author: Yoyo Yuan
+image: /assets/images/q-sim/stern.png
+tags:
+    - physics
+    - notes
+    - focused
+---
+
+Particles have intrinsic properties such as mass and charge. Spin is another fundamental property of particles, distinct from mass and charge.
+
+The concept of spin was first discovered through the Stern-Gerlach experiment:
+
+![image](/assets/images/q-sim/stern.png)
+
+**Setup**.   
+Electrically neutral silver atoms (with 1 valence electron) were shot through a non-uniform magnetic field.
+
+**Expectation**   
+ Since silver atoms had zero orbital angular momentum, they were not expected to interact with the magnetic field and were predicted to pass through undeflected.
+
+**Observation**    
+The beam split into two distinct paths, indicating that electrons possess intrinsic angular momentum (spin), which is quantized.
+
+### Properties of spin
+1. Quantization:
+Spin is quantized, meaning it can only take specific discrete values.
+For electrons, the spin value is ½.
+
+2. Directionality:
+The magnitude of spin is fixed for a given particle.
+The direction of spin can point in any orientation, but it can only be measured along one axis at a time.
+Measuring spin along one axis destroys information about its orientation along other axes.
+
+3. Wavefunction Rotation:
+The spin value determines the angle of rotation required for the particle's wavefunction to return to its original state.
+
+![img](/assets/images/q-sim/spin.webp)
+
+For spin-½ particles (e.g., electrons, protons, neutrons, neutrinos, quarks), the wavefunction returns to itself only after two full rotations (720°).
+
+### Spin and Magnetic Behavior
+Particles with spin behave like tiny magnets. In a magnetic field, particles with spin experience a force, causing them to follow specific trajectories. The Stern-Gerlach experiment demonstrated this by splitting the beam into two distinct paths, corresponding to the two possible spin states (spin-up and spin-down).
+
+**Angular Momentum and Spin**   
+Spin is a form of intrinsic angular momentum, independent of orbital motion. Faster "spinning" corresponds to greater angular momentum, represented by a larger vector.
+
+**Spin and the Pauli Exclusion Principle**   
+Particles with half-integer spin (e.g., electrons) obey the Pauli Exclusion Principle, which states that no two identical fermions can occupy the same quantum state simultaneously.
+This principle is fundamental to the structure of atoms and the behavior of matter.`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

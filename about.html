@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Yoyo</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+    </header>
+
+    <main>
+        <section class="about">
+            <div id="about-content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading about information...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutContent = document.getElementById('about-content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `# About 
+Good meowning! I'm Yoyo, travelling as a data packet to you! I'm a sci-fi worldbuilder, trandisciplinary researcher and cognitive science enthusiast.
+
+### My current quests
+- ArXiv Wars. Triaging high quality academic papers through bots that argue on discord!
+- Scent context protocol. Store and retrieve scent memories with language models. 
+
+I subscribe to Erdős's [itinerant, social philosophy](https://www.wikiwand.com/en/articles/Paul_Erd%C5%91s). Self-sculpted polymathic people like [Heaviside](https://www.allaboutcircuits.com/news/oliver-heaviside-self-taught-pioneer-electromagnetism-vector-calculus/), Tesla and Faraday influence me. Scientific progress is dwelling in the unknown and autodidacts alter the trajectory significantly. See also [Alec Radford](https://www.reddit.com/r/singularity/comments/1hi3tth/alec_radford_the_lead_author_of_openais_original/), [Dr. Kitty Yeung](https://artbyphysicistkittyyeung.com/) for modern examples of polymaths. I'm obsessed with the symbiosis of humans and machines. 
+
+Formal affiliation: Student at Minerva University (class of 2028)
+
+### Favourite communities!!!
+- Cyborgism and transhumanism
+- [Prototypesf](https://prototypesf.org)
+- ies
+- temple of inanna
+- [Ekkolapto](https://ekkolapto.org)
+- [cimc.ai](https://cimc.ai)
+- [noisebridge](https://www.noisebridge.net/wiki/Noisebridge)   
+
+### Cool mutuals in no particular order :D
+- [Nicky Case](https://ncase.me)
+- [prototypesf friends](https://prototypesf.org)
+- [Alif is Swag](https://www.alifjakir.com/)
+- [Dunya Baradari](https://dunya-baradari.com/)
+- [Aman Bhargava](https://aman-bhargava.com/)
+- [Lio Wong](https://web.mit.edu/zyzzyva/www/academic.html)
+- [Alex K Chen](https://www.quora.com/profile/Alex-K-Chen)
+- [Naia](https://threadsradio.com/post/introducing-currents-fm)
+- [Tetraslam](https://www.tetraslam.world/)
+- [alegator](https://x.com/alegator_cs)
+- [Pi](https://www.lesswrong.com/posts/kcoqwHscvQTx4xgwa/here-s-the-exit)
+- [Ampdot](https://x.com/amplifiedamp)
+- [Luxia](https://x.com/slLuxia)
+- [Vie](https://metanomicon.ink/)
+- [Eigenlucy](https://eigenlucy.github.io/)
+- [lamellae](https://alicefern.straw.page/)
+- [Ekkolapto](https://ekkolapto.substack.com/)
+- [Paul Han](https://pauljunsukhan.com/)
+- [Sichu Lu](https://x.com/lu_sichu)
+- [Dashel myers](https://community.wolfram.com/web/25djmyers)
+- [Graphfei](https://graphfei.substack.com/)
+- [Svitlana Midianko](https://svitlanaing.substack.com/)
+- [Yuxi on the wired](https://yuxi-liu-wired.github.io/)
+- [Esther is a confused human being](https://learnlearnlearn.substack.com/)
+ahhh the list is getting too long... I'm going to stop maintaining it!!
+
+### My personality is as such
+- Openness: 95%
+- Conscientiousness: 60%
+- Extroversion: 65%
+- Agreeableness: 87%
+- Neuroticism: 43%
+
+Category: ILE intuitive subtype, chaotic good.
+
+Vibes: "Warm and tweety vibes" "contagious enthusiasm" "strange speech patterns that remind them of the grad student species" "mysterious entity in a midnight forest"
+Feedback form: tell it to my face! 
+
+### Work preferences
+- Work style: Pioneer/Integrator  
+- Nonlinear thought process: I tend to generate a ton of new ideas or notice patterns and converge onto one thing. I oscillate between the two. 
+- Keep team meetings as efficient and concise as possible
+- Long focus periods   
+- Context: Small team (< 7), ambient noise with no music, in-person preferred (but 6 years of experience with online school), makerspaces/dry labs with equipment. Flexible work schedule. 
+
+### Interaction modality
+**Preferred:** In-person meetups, followed by any types of voice calling, voice-coworking. I might not text consistently.
+
+Fastest responses are at (within minutes to hours):
+- Signal
+- Telegram
+- Discord
+- [X](https://x.com/indiraschka)
+
+Slower:
+- Email: yoyo at mesh.host
+
+**Feedback:** Be honest without being brutal. It's easy for me to update my priors during conversations, as long as you present evidence!.
+
+### 99th percentile
+- Transdisciplinary idea generation
+- Hyperfantasiac worldbuilding
+- Pattern recognition. I'm highly perceptive, and could break down a complex problem into concrete pieces, creating flowcharts for complex systems.
+- Self-awareness and metacognition
+
+### Strong
+- Resourceful. Figuring out how to solve fuzzy problems with few constraints in 72 hours.
+- Running research teams 
+- Writing: technical or academic or creative.
+- Shaping communities and movements
+
+### Some topics
+- astrophysics and cosmology
+- quantum computing
+- swarm algorithms, alife
+- homomorphic encryption
+- non-invasive BCIs
+- software engineering
+- hardware integration
+
+### Bad at
+- Saying no
+- Delegating. I sometimes don't ask for help.
+- Consistency. 
+- Non-communicating. I'm not very aware of this when it happens. Again, most of time I might have gotten distracted, 20% of the time I overthink. If I don't reply in a long time, try texting again, sorry! If I still don't reply after many tries, I might've gotten uncomfortable by something you did.
+- Too many projects at once
+
+### Improving on:
+- Execution skills
+
+### Good collaborations look like
+- **Good execution.** Can think long term, short term and act with urgency. Can be reliable during stressful situations.
+- **Accountable.** If you make promises, you're expected to do it. If something comes up, and you can't make a meeting or complete a task, communicating asap is preferred.
+- **Gives honest feedback**
+- **Reasonably optimistic**
+- **Willing to learn**
+
+### Potential conflicts
+Things I unintentionally do which may be annoying:
+- I get very loud when excited and be mistaken for anger
+- talking way too much
+- texting you information without giving complete context (I'm not aware when this happens)
+- last minute changes (mostly because of health issue flare-ups)
+
+**What may annoy me if done repeatedly:**
+- spilling people's secrets to everyone
+- excessive chaos and taking way too long to complete a thing 😅
+- low curiosity, excessive complaining (particularly learned helplessness), malicious intentions, contempt
+- overuse of professionalism in a personal context, stereotyping (ethnicity and gender)
+- being forced to do inefficient stuff when there is a clearly better option
+- repeatedly visiting my place at 2 am
+
+If you really annoy me, I'm usually not confrontational and will distance you.
+
+### How to become friends
+If you're reading this far, say hi!
+
+I tend to be very perceptive, I could easily pick up on changes in tones or body language. However, I couldn't always verbalize this.
+- covibing/working (come to my place!)
+- coliving (no spots open right now)
+- reverse engineering things
+- noisebridge
+- join cool events
+- build scraps
+- applied chemistry/food
+- snake
+- dance! running around without an aim
+- collecting obscure knowledge, docs, lost media
+- generative art and ascii art
+- break into place (e.g. treehacks)
+- listening to joscha bach and have a heated debate on consciousness ending in jokes about epistemic uncertainty
+- making 1000 signal group chats
+- send cool links, and do it over weeks or months or possibly years. (paper spam is welcome!)
+- urban sketching
+- moon gazing
+- bio-art
+- lie on grass
+- blasting techno music loudly
+- hackathons, me watching people code
+- just, call me on discord or signal when I'm online and texting.
+Some wonderful memories with friends included optimizing Pelmeni per dollar, hacking on the uss hornet, trying to save friend's life at 12 am, or running through an empty coworking space at midnight.
+
+### (Do not) date
+Have you seen the noisebridge [do not hack sign](https://www.redbubble.com/i/sticker/Please-Do-Not-Hack-by-Makutu/100210332.EJUG5)!!!
+The same principle applies. 
+
+### Stats
+- average typer with 90 wpm
+- have friends from 55+ countries
+
+### All time favourite music
+[Spotify playlist](https://open.spotify.com/playlist/1YamczASU5jmtMl5EHKY72?si=920da22b3b1f48e5)
+
+^^ which includes:
+- Lenka: Everything at Once
+- Enya: Caribbean blue
+- Portal 2: Still Alive
+- John Lennon: Imagine
+- Yerushalayim Shel Zahav
+- The Epic of Gilgamesh in Sumerian
+- Ishtar's descent
+- Etot mir
+- Sis puella magica
+- Oscillian: In the company of robots
+- Spaze: Believe
+
+Currently listening to, Apr 27:
+- Deep space travels (stellaris) 
+- Run to the Edge! (cyberpunk)
+- Kingpin Fight (spiderman)
+
+I hope I'm broadly kind.
+`;
+            
+            // Render the markdown to HTML using marked.js
+            aboutContent.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

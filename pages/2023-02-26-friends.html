@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Sarcastic interactions
+image: 
+date: 2023-02-26
+tags:
+  - writing
+  - personal
+author: Yoyo Yuan
+---
+a/n: from my high school journal, nearing the end of grade 12.
+
+“Yoyo!” Teja screamed into my face as his voice broke.
+
+“I was wondering if this was you!” I exclaimed, jumping up from my chair. “But my facial recognition system is broken!”
+
+“You should get a neural network.” Teja said, his voice breaking at every 2 syllables. This child couldn’t contain his excitement as he squawked at me. He must’ve played too much geometry dash without sleep and drank 10 cans of redbull.
+
+“Great idea!” I yelled across the classroom with the same intensity, “I need a biocomputer as well! You can actually store computer data in the nitrogenous bases of DNA.” I went on a tangent about biocomputing, “yeah, biomaterials could be unstable, but it is the densest medium of data storage known to humankind, such that if all the world’s data were to be stored into DNA it would fit into just several pickup trucks!”
+
+“That’s very cool.” Teja commented. Moving down the classroom he pressed on, “what is “carboxyl” and “punnett square” and “codon”?
+
+I circled a =O and -OH on the whiteboard. Teja was enthralled: “My brother can’t stop talking about those. I told him if he finishes a unit of biology on Khan Academy, he can play an hour of roblox. He listened.”
+
+“Great method! He is so advanced!” I cheered, “He should consider joining iGEM, and a few international olympiads. He’s got lots of time. A bright future lies ahead!”
+
+“There is iCho, iPhysO, IMO, Putnam… but he doesn’t want to do any.” Teja continued, appearing heartbroken. Hot tears streamed from his eyes and he pointed at the source of sorrow on the whiteboard: “The chemistry class erased my Riemann Zeta function!”
+
+At this traumatic moment, I offered reassuring words as a friend. “Don’t worry. If your brother scores perfect on the intl biology olympiad, he gets to play roblox!”
+
+Teja laughed and squeezed his eyes like Sean. A random girl eating a sandwich in the classroom stared at us like an alien encounter.
+
+Ignoring the distraction, I continued: “Then, he can start a research project under a UWaterloo professor.”
+
+“How does one do that?” Teja asked with genuine interest.
+
+To be honest, I didn't know myself, and gave a goofball answer: “step 1. Have a parent with last name ‘Reza Nezhad.’ ”
+   
+❇︎
+
+
+Teja started interviewing my friend, Victor. Jim was there to take notes.
+
+“First question, what do you do for a living?” Teja glanced up from the laptop, his voice kept breaking with excitement.
+
+Victor looked at Teja suspiciously; Victor was fidgeting and appeared very out of place. “are you going to ask my SIN then?” Victor inquired.
+
+Teja snatched the chance and continued without remorse: “And your bank account!”
+
+Victor shook his head with an absurd grin and chugged some yogurt from a small cup. This interview was sucking the energy out of him.
+
+I pushed on. “Victor, tell us about a time where you worked in a team.”
+
+“Oh no— not this!” Victor yelped and laughed. He suggested for Teja to kidnap Hooman. Then out of nowhere, Victor turned his head and chanted:
+
+“Teja was a chemist’s son but Teja was no more!
+
+What he thought was H2O was H2SO4!”
+
+The entire table group roared and gasped.
+
+Teja was exasperated. “Victor, this is the worst interview I’ve ever had in my life.” He stated.
+
+“Being concise, no?” I teased.
+
+“There is no information whatsoever.” Teja denied it all, beginning to stand up. Then his discord screen timer went off and everyone stared at it. He tapped his phone a few times but the timer kept ringing. The sheer stress was making the young fellow’s hair turn white.
+
+Teja complained: “I ask for an interview, and I get ‘Teja is a chemists’ son’.”
+
+Relaxing himself, he shifted back into the script and asked: “As we near the end of the conversation, do you have any candidates which I may interview next?”
+
+“Evan Nadon, he’s a very productive man!” Victor nominated. He was enthusiastic. Jim took intent notes and sincerely thanked Victor.
+
+Jim went on his mission to hunt down Evan in the tech hallway.
+
+In the hallway, there was nothingness.
+
+Just as Jim was about to give up, something brushed at his knee—A scrawny guy with glasses was holding a slice of pizza. He claimed to be Evan. The creature bounced up and down like a gnome before Jim finally captured him.
+
+They sat down at a table as Jim started taking notes.
+
+“I wing everything!” Evan declared and gesturing his hands. “I wrote 8 pages of bs and got 96 in English! The teacher—” He got up, yelling excitedly. He bounced around before continuing announcing at the top of his lungs: “He hated me! I’m so loud, but I get such good grades!” He sat down and turned in the chair, then standing up and started doing multiple backflips. Jim stared with confusion, uncertain of what his life had come to.`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

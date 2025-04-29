@@ -17,8 +17,8 @@ const siteConfig = {
     // Navigation structure (for future use)
     navigation: [
         { name: "home", url: "/" },
-        { name: "about", url: "/pages/about.html" },
-        { name: "link stash", url: "/pages/links.html" },
-        { name: "chronological", url: "/pages/chronological.html" }
+        { name: "about", url: "/about.html" },
+        { name: "link stash", url: "/links.html" },
+        { name: "chronological", url: "/chronological.html" }
     ]
 };

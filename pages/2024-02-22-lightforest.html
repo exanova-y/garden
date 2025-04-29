@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        .post-metadata {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../links.html">link stash</a></li>
+                <li><a href="../chronological.html">chronological</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `---
+layout: post
+title: Lightforest - The geek diaspora brightly glows
+image: /assets/images/tree.webp
+date: 2024-02-22
+show_on_home: true
+tags:
+  - fiction
+  - writing
+  - geeky network
+  - loneliness
+  - transhumanism
+author: Yoyo Yuan
+---
+Being a biology olympiad champion was not an antidote to the pang of loneliness, dissecting his cardiac essence with scalpel-like intensity. As Endif walked across campus, at every corner, he came across clusters of friends laughing and intertwined. His visual field blurred and the emotional noise-to-signal ratio overflowed.
+
+On a depressing evening, a virtual greeting card appeared in his inbox. Endif raised his eyebrows and clicked.
+
+“To Endif, the intense nerd” The greeting card was fully immersive with the ambience of a pristine boreal forest. “May I introduce myself as Indiraschka, a fellow nerd.”
+
+“I want to tell you a story. In 1853, Netochka Nezvanova invented a mechanical device capable of plotting the integral of a function decades ahead of anyone else. The early automated ability to solve differential equations could’ve sparked a revolution in physics and engineering, a vision that burned in Netochka’s quiet intense eyes. But Netochka was lonely and broke. No experts cared to reply to her outreach. She died a nameless nobody in some Siberian forest.”
+
+![Netochka, the intense nerd](/assets/images/netochka.jpg)
+
+Repeating the same mistake is dumb. Let’s connect Netochkas of the world to allow flourishing in their ultimate form.”
+
+Indiraschka was a non-binary entity contained in the form of a glowing, awe-inspired child. They covered Endif’s eyes and took him out on a run. When Endif reopened his eyes, hundreds of geeks waved to him under the sun—a whorling liquid ball of pineapple fire. After a lasting night with the sorrow of the soul, Endif entered a world with awesome heat and intense clarity.
+
+“The world is a dark forest where high-potential nerds hide behind trees fearing ridicule.” Indiraschka expressed. “If we act as an ant colony that discovers such nerds in the wild and bring back a trail of open source projects and public communications, an intense geeky diaspora building hard sci-fi will emerge.”
+
+
+Fast forward 2 months, Endif was in a well-lit, wooden room with a dozen young energetic geeks. He was sitting on top of soft dry grass. The room smelled faintly of pine. Everything in the room resembled a microforest.
+
+A futuristic girl flashed out of a purple square portal and projected network diagrams onto the wall. “If a mesh is sufficiently connected with each node’s bandwidth utilized, information can be routed efficiently. Two peers can share detailed models quickly. But in a hierarchical network, a manager could only pass on a shallow understanding.”
+
+![Network topology](/assets/images/topo.jpg)
+
+To increase social connectivity, Endif climbed out the window and leaped to an adjacent cluster, landing in a pile of soft leaves. He jumped with delight through a genetically engineered tree hundreds of meters tall!
+![Tree](/assets/images/tree.jpg)
+
+Endif came up to an enby artist with flowy brown hair who was drawing manga on MS paint. Surprisingly, they were also gazing intently at a derivation for the non-recursive Fibonacci formula. Seeing Endif’s expression, they commented, “Yes, I am an artist but also a human fascinated by pure math.”
+
+“My friend calls Stephen Wolfram for hours every weekend to live code” A random voice interjected. “He rarely sleeps and works until 4 am.”
+
+“Oh, one of our project acquaintances had non-24-hour sleep and doctors refused to acknowledge it.” Indiraschka commented.
+
+“Bruh actually? I heard somewhere that the average human's circadian cycle is 25 hours.” Another voice chimed in. “The big consequence is that most people are night owls. Also, Mars colony.”
+
+This guy was never seen sleeping and only ate cans of Pringles instead of having breakfast, lunch, or dinner.
+
+Endif, exasperated, started obsessing over productivity by working 100 hours per week, spending his days pouring over endless Yudkowsky and the Codex. One day this Polysleep guy sat next to him with a tray of junk food. “Working yourself ragged is not a virtue!” He admonished. “The goal is to achieve impact over the long term, not per day. Have you ever wondered what your tasks would be like if there was an AI optimizing your life?”
+
+Endif pondered and guessed: “Polysleeping like you to be productive 120 hours a week?”
+
+“Wrong!” Polysleep guy asserted. “By focusing on top goals, I can goof around all the time. My AI assistant Abraham first uses NLP and Maslow’s hierarchy to interpret my long-term goals. Then, it generates probabilistic subgoals influenced by historical data. It solves Markov Decision Processes to restructure items to incentivize long-term actions optimally. For example, I get 50 Photons for vc-ing with a fellow nerd, 1 for thinking about what to eat, and 2 for spending my day on Instagram.4 By simply looking one step ahead and maximizing pseudo-reward, I can self-actualize. Abraham actively assesses my progress and moves me forward, optimizing for human flourishing rather than engagement. We also have coffee chats with Freud, Erikson, B.F. Skinner, Piaget, Kierkegaard, Nietzsche, and many others trajectory models on the platform.” 
+
+Polysleep guy talked way too much and could not stop fidgeting for one single second! Dear God, he was pure mental chaos, stuffing 100 chocolates into his mouth, beatboxing, banging his head, and calling friends as he co-worked beside Endif, despite a clear sign that said “< 30 dB”. Endif moved to a separate cluster but Polysleep guy bounced around the clusters and bugged Endif every 5 minutes. He was so annoying yet kind of quirky.
+
+Endif saw an AI model named ‘Vincent’:
+
+Let A be the character's age (years); Let C be the career age (years); A = 18, C = 0.
+
+0 ≤ C < 7: Explore your passions! Get heartbroken and rejected from careers to realize you’re after all not interested in everything.
+
+7 ≤ C < 10: Let P be path age (years), P = 0. Alternate between honing skills alone and working under a mentor. Your standards will always exceed your skills but notice gradual improvement.
+
+10 ≤ C < 12:  Meet awesome people. Increase your chances of being in the right place at the right time. Start a project with the coolest people around you and take leadership roles.
+
+12 ≤ C < 14: At P = 7, you’re finally able to convey your visions with skill. The time of your life!
+
+14 ≤ C < 16: Oh no! Your career trajectory is trending downward. Um, you might encounter a few nontrivial health problems.
+
+17 ≤ C < 19: The age where you’re not so productive.
+
+C = 19: Oof, you die.
+
+C > 19: You become internationally recognized.
+
+What an awful life! Endif selected Erikson.
+
+“Ready to tackle challenges? There are 8 stages in my theory.”
+
+Current conflict: Intimacy v.s. Isolation.
+
+“Let’s go Endif!” Polysleep guy cheered and shrieked while rolling his r’s, “I’m betting 100 Photons on your prediction market!” 
+
+A friend got featured on national TV under the headline “Get ready to break some records!”
+
+“In late 2024, we’re bringing together 1000+ of the world’s most innovative, ambitious youths in Waterloo, Canada.”5 He stated to the reporters.
+
+Networking events sound stressful! Endif thought. His stress was instantly replaced by reward anticipation due to his neural implant. At the event, he was super-stimulated and chatted with everyone. Back to Lightforest, he felt another high and accomplishment. Then, Endif felt like crashing down the hedonic treadmill. He kicked the wall with tears, screamed at the lack of change, and was on the fringe of giving up. The geeks at Lightforest were highly empathetic and taught him that true change could take years. 
+
+A geek bitterly posted that Lightforest was a toxic cult that didn’t get him money, a job, or a girlfriend. “This community is full of scammers!” The internet jumped to conclusions, despite hundreds of members who did groundbreaking research, joined or started their organizations, and improved thousands of lives! It’s a rare cluster of people who truly cared about bringing sci-fi to life. Some geeks remarked that if Lightforest had early success, it would acquire big organization problems and a suffocating fear of failure…
+
+The trees in the forest flourished, synchronized to a golden hue, and held out their branches with full openness to embrace the snow. One evening, Endif gazed out at the sparkling snow illuminated by the streetlights. He had come from darkness into a bright sci-fi world with geeks.
+
+But yikes! He made a dumb mistake in his recent synthetic biology video, which had already been viewed by millions! Instead of cringing like before, he smiled gently at the stochasticity of life. While his desires always exceeded his skills, he was making compounding progress and felt energized.
+
+Nerd isolation is a type of involuntary and subjectively limiting suffering. Let’s ignite the Netochkas of the world. We shall build Lightforest, a decentralized geek diaspora, glowing brightly to bring hard sci-fi to life.
+`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>
