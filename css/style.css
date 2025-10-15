@@ -1,4 +1,41 @@
 /* Minimalist website CSS */
+
+/* Fira Code Font */
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +43,7 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Fira Code', monospace;
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f2;

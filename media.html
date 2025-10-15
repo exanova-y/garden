@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Media recs</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Markdown content styling */
+        .markdown-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            line-height: 1.7;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.4em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .markdown-content p {
+            margin-bottom: 20px;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 8px;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            margin-left: 0;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .markdown-content code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .markdown-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .markdown-content em, .markdown-content i {
+            font-style: italic;
+        }
+
+        .markdown-content strong, .markdown-content b {
+            font-weight: bold;
+        }
+
+        .post-navigation {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+    </header>
+
+    <main>
+        <section class="links">
+            <div id="links-content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading links information...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yoyo cat!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const linksContent = document.getElementById('links-content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `
+### Favourite comics
+- xkcd
+- commitstrip
+- Nicky Case
+
+### Creative websites
+- https://jackjay.io/
+- https://projects.priyavkaneria.com/
+
+### Papers for fellow scholars
+- [Paper2Video](https://github.com/showlab/Paper2Video)
+- [Fred Cohen's computer virus](https://www.cnsr.ictas.vt.edu/QEpaper/cohen.pdf)
+
+### Blog/website roll??
+
+### Fav stories
+- Optimalverse heaven is terrifying
+- [going infinite review by zvi](https://thezvi.substack.com/p/book-review-going-infinite)
+- [idol words](https://www.astralcodexten.com/p/idol-words)
+
+## 2025
+- 给你一个亿，你能干什么
+- 江城子：密州出猎，苏轼
+- 丑奴儿·书博山道中壁，辛弃疾
+- Medea, Euripides
+- [All the Better to See You With](https://www.kernelmag.io/2/all-the-better-to-see-you) Patterns and patterns of relationship behaviours.
+- [Trans by default](https://adellama75.github.io/trans-by-default/)
+- [Don't build a platform... unless?](https://lcamtuf.substack.com/p/dont-build-a-platform-unless)
+- [Marginalia](https://www.marginalia.nu/?)
+
+## 2024
+- [An astonishing regularity in student learning rate](https://www.pnas.org/doi/abs/10.1073/pnas.2221311120) 'Students do need extensive practice, about seven opportunities per component of knowledge.'
+- [Things Read | Sept/Oct 2024, Kipply's blog](https://kipp.ly/sep-oct-24/)
+- [The Real-Life Consequences of Silicon Valley’s AI Obsession](https://www.bloomberg.com/news/features/2023-03-07/effective-altruism-s-problems-go-beyond-sam-bankman-fried?utm_source=chatgpt.com&embedded-checkout=true) I just realized how relevant this is.
+- [Is scientific genius a Thing of The Past, Joscha Bach](http://bach.ai/is-scientific-genius-a-thing-of-the-past/?curius=3782) 'Garret Lisi might spend most of his days surfing, Grigori Perelman prefers to stay with his mom, Steven Kosslyn tends to Bay Area startups, Noam Chomsky is busy being hated for his liberal views, Ben Goertzel dithers in Hong Kong, Cristiano Castelfranchi might be caught in the debris of what was formerly known as Italy’s academic system, Jerry Feldman and Marvin Minsky have effectively retired.'
+- [Advice for the Young Scientist](https://math.ucr.edu/home/baez/advice.html) Desperately valuable advice on keeping your soul and giving good talks.
+- [Richard Hamming 'You and Your Research'](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html)
+- [Don't Call Yourself A Programmer, And Other Career Advice](https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/)
+- [How to handle stressful social encounters? Esther is a Confused Human Being](https://learnlearnlearn.substack.com/p/how-to-handle-stressful-social-encounter)
+- [Nate Soares communication culture](https://docs.google.com/document/d/1o1JaH2nxbpfHgpx25dwJnQ3dQAPikmlqrn6c9gNP9gE/edit?curius=3782&tab=t.0#heading=h.6o6m4x2z3grc)
+- [lifehacks, Alexey Guzey](https://guzey.com/lifehacks/)
+- [Penguins Sleep and Wake Thousands of Times a Day](https://asknature.org/strategy/penguins-sleep-and-wake-constantly-2/)
+- [I had a dream, Shtetl Optimized](https://scottaaronson.blog/)'A coda: I woke a bit after 7AM Central and started to write this down. But then—this is now real life (!)—I saw an email saying that a dozen people were waiting for me in a conference room in Europe for an important Zoom meeting. We’d gotten the time zones wrong; I’d thought that it wasn’t until 8AM my time. If not for this dream causing me to wake up, I would’ve missed the meeting entirely.'
+- [The Cartesian Cafe](https://cartesiancafe.podbean.com/). skimmed.
+- [NIST Digital Library of Mathematical Functions](https://dlmf.nist.gov/) skimmed.
+- [Principia Discordia](https://principiadiscordia.com/book/9.php). read selective chapters
+- [Map of online communities, xkcd](https://explainxkcd.com/wiki/index.php/802:_Online_Communities_2)
+- [Take your Time](https://blog.ncase.me/take-your-time/) 'My tears are falling at 0.02% speed'
+- [The Effects on Cognition of Sleeping 4 Hours per Night for 12-14 Days: a Pre-Registered Self-Experiment](https://guzey.com/science/sleep/14-day-sleep-deprivation-self-experiment/)
+- [Signs and Symbols](https://mrirwin.pbworks.com/f/Nabokov,+Vladimir+-+Signs+and+Symbols.pdf)
+- [American Prometheus](https://en.wikipedia.org/wiki/American_Prometheus)
+- [flavourings on discrimination, Kipply's blog](https://kipp.ly/flavourings-on-discrimination/)
+- [Notes on work, Weike Wang](https://web.archive.org/web/20220201231213/https://www.newyorker.com/culture/personal-history/notes-on-work) Masochistic overworking
+- [Notifications Received in 30 Minutes of Class](https://www.lesswrong.com/posts/AZCpu3BrCFWuAENEd/notifications-received-in-30-minutes-of-class)
+- [Safari, Jennifer Egan](https://www.newyorker.com/magazine/2010/01/11/safari-3)
+- [Projects, Priyav Kaneria](https://projects.priyavkaneria.com/)
+- [Physical principles for scalable neural recording](https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2013.00137/full?curius=3782)
+- [Shifting the impossible to the inevitable
+A Private ARPA user manual](https://blog.benjaminreinhardt.com/parpa)
+- [A Functional Model for Unifying Brain Computer Interface Terminology](https://pmc.ncbi.nlm.nih.gov/articles/PMC8901026/)
+- [The origin of extracellular fields and currents — EEG, ECoG, LFP and spikes](https://www.nature.com/articles/nrn3241)
+- [Quasi-experimental causality in neuroscience and behavioural research](https://pubmed.ncbi.nlm.nih.gov/30988445/)
+- [A High-Level Technical Overview of Fully Homomorphic Encryption](https://www.jeremykun.com/2024/05/04/fhe-overview/)
+- [The Goals of Neurotechnology, Milan Cvitkovic](https://milan.cvitkovic.net/writing/the_goals_of_neurotechnology/)
+
+## 2023:
+- [Reversible and Irreversible Decisions](https://fs.blog/reversible-irreversible-decisions/?curius=3782)
+- [Lust For Life by Irving Stone](https://www.amazon.com/Lust-Life-Irving-Stone/dp/0452262496) Highlyyy recommended.
+- [Gandalf Lakera challenges](https://gandalf.lakera.ai/)
+- [Please don't throw your mind away, LessWrong](https://www.lesswrong.com/posts/RryyWNmJNnLowbhfC/please-don-t-throw-your-mind-away)
+- [dynamicland: hypercard in the world](https://dynamicland.org/2016/Hypercard_in_the_World/)
+- [nobody here](https://nobodyhere.com/justme/)
+- [Autism as a disorder of dimensionality](https://opentheory.net/2023/05/autism-as-a-disorder-of-dimensionality/)
+
+- [The Map is not the Territory, Farnam St](https://fs.blog/map-and-territory/)
+- [Scope Insensitivity, Eliezer Yudkowsky](https://www.lesswrong.com/posts/2ftJ38y9SRBCBsCzy/scope-insensitivity)
+- [How to organize family 👫 relationships are challenging + a lot of work - @visakanv's blog](https://www.visakanv.com/blog/relationships/)
+- [10 Things I don't want to see on the Internet. 10. Hating on girls with male friends, Slate Star Codex](https://slatestarcodex.com/2014/01/15/ten-things-i-want-to-stop-seeing-on-the-internet-in-2014/)
+- [Two Prosocial Rejection Norms, LessWrong](https://www.lesswrong.com/posts/tajtA5nTnmmMupa7z/two-prosocial-rejection-norms)
+- [Dealing with a Major Personal Crisis/Parting, LessWrong](https://wiki.lesswrong.com/wiki/Dealing_with_a_Major_Personal_Crisis/Parting)
+- [A story of a mouse, random trivial problems on Art of Problem Solving]https://artofproblemsolving.com/community/c1352h1018733
+- [Trivial: AoPS reader by vqbc](https://github.com/vqbc/trivial)
+- Map of Rationality + Map of AI safety
+- [Iran, 1 and 2 on Geocities](https://www.geocities.ws/entrixo/iran1.html). A Canada-raised kid visits Iran, and is inspired to study law.
+- [The state of IQ testing in Iran](https://www.pbs.org/wgbh/pages/frontline/tehranbureau/2010/12/the-official-iri-iq-test-for-foreigners.html)
+- Manoj Bhargava interviews
+- Tom Bilyeu interviews
+- Adam Grant psychology talks
+- Paul Graham essays
+- Patrick Collison essays
+- [A list of existential questions to ask your friends by Mishaal Lakhani + Madhav Malhotra](https://madhav-malhotra.notion.site/Existential-Questions-Courtesy-of-Mishaal-Lakhani-adf8a45ef00942c1a732c698c75b7fa6#b1be6a2fb10940f497ec8a4d6d4f4916)
+- Our current list of especially pressing problems, Will MacAskill
+- [Idol words, Astral Codex Ten](https://www.astralcodexten.com/p/idol-words)
+- [A sheltered woman, Yiyun Li](https://www.newyorker.com/magazine/2014/03/10/a-sheltered-woman)
+- [Good people, David Foster Wallace (Read by Akhil Sharma)](https://www.newyorker.com/magazine/2007/02/05/good-people)
+- The Work of Art in the Age of Mechanical Reproduction
+- [No Place for You, My Love](https://www.newyorker.com/magazine/1952/09/20/no-place-for-you-my-love)
+- [Quaestio de Centauris, Primo Levi](https://www.newyorker.com/magazine/2015/06/08/quaestio-de-centauris)
+- “The Falls,” by George Saunders
+- The Years of My Birth by Louise Erdrich
+- [Who will Greet You At Home](https://www.newyorker.com/magazine/2015/10/26/who-will-greet-you-at-home)
+- [Bravado, by William Trevor](https://www.newyorker.com/magazine/2007/01/15/bravado)
+- [Loneliness, Bruno Shultz](https://www.newyorker.com/magazine/1977/11/14/loneliness-2)
+- Brain Facts by Society for Neuroscience (https://www.brainfacts.org/)
+- [Berkeley Team Producing Energy from Ocean Waves](https://youtu.be/INEGcJ7AGGQ?si=8bjmrFN_088wbSdn) Shoutout to Reza Alam.
+
+## 2021
+- MathNEWS, University of Waterloo
+- [The untold story of silk road, Wired magazine](https://www.wired.com/2015/04/silk-road-1/)
+- [Mathematics: Beauty vs Utility - Numberphile, featuring Cedric Villani](https://youtu.be/xopM9BFjcNo?si=ktrylNXjzgMu_9YZ)
+- [Jordan Harbinger interview](https://darknetdiaries.com/transcript/56/)
+- [Alex Kontorovich: Improving math](https://open.spotify.com/episode/1Y6OUdMO6oKNbOBpIqULQZ?si=2abf9252b03f4a8d)
+- [Steven Strogatz: In and out of love with math](https://open.spotify.com/episode/02ehybSYC1OJc4PMkKGbAh?si=fb5cf085d8f844ea)
+- [Living Proof: Stories of Resilience Along the Mathematical Journey](https://maa.org/wp-content/uploads/2024/11/LivingProof_WEB.pdf)
+- [Ben, Ben and Blue podcast Ep. 2, Lecturing=Bloodletting, so why are we still doing it](https://youtu.be/vPhodhajoJg)
+
+## 2013 - 2020:
+- [The AI revolution part 1](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html)[ part 2](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-2.html)
+- Coming out simulator, Nicky Case
+- Parallel worlds, Michio Kaku
+- What if? XKCD
+- Linus Pauling and the chemistry of life
+- Shape of a Life
+- Surely You're Joking, Mr. Feynman!
+- The Man Who knew Infinity
+- The Genie in the Bottle: 67 All-New Commentaries on the Fascinating Chemistry of Everyday Life
+- The End of Eternity
+- Deep undercover
+- The Faithful Spy: Dietrich Bonhoeffer and the plot to kill Hitler
+- The Book Thief
+- His dark materials trilogy
+- The World Without Us, Alan Weisman`;
+            
+            // Render the markdown to HTML using marked.js
+            linksContent.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>
