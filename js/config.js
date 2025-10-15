@@ -2,7 +2,7 @@
 const siteConfig = {
     // Basic site information
     siteName: "Yoyo cat!",
-    siteTagline: "Spin, moonbeam sky",
+    siteTagline: "L-glutamic acid's homepage!",
     copyright: "2025 Yoyo cat!",
     
     // Author information
@@ -11,14 +11,15 @@ const siteConfig = {
     // Social links
     socialLinks: {
         github: "https://github.com/exanova-y",
-        twitter: "https://twitter.com/indiraschka"
+        twitter: "https://twitter.com/c5h9no4_o"
     },
     
     // Navigation structure (for future use)
     navigation: [
         { name: "home", url: "/" },
         { name: "about", url: "/about.html" },
-        { name: "link stash", url: "/links.html" },
-        { name: "chronological", url: "/chronological.html" }
+        { name: "media", url: "/media.html" },
+        { name: "chronological", url: "/writing.html" },
+        { name: "logs", url: "/logs.html"}
     ]
 };
