@@ -2,3 +2,4 @@
 .flox
 .vercel
 assets/fonts
+node_modules

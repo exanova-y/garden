@@ -3,7 +3,7 @@ const siteConfig = {
     // Basic site information
     siteName: "Yoyo cat!",
     siteTagline: "L-glutamic acid's homepage!",
-    copyright: "2025 Yoyo cat!",
+    copyright: "2025 Yoyo!",
     
     // Author information
     author: "Yoyo",
@@ -18,8 +18,9 @@ const siteConfig = {
     navigation: [
         { name: "home", url: "/" },
         { name: "about", url: "/about.html" },
-        { name: "media", url: "/media.html" },
-        { name: "chronological", url: "/writing.html" },
+        { name: "readlog", url: "/readlog.html" },
+        { name: "writing", url: "/writing.html" },
         { name: "logs", url: "/logs.html"}
+        { name: "vibes", url: "https://yoyo.cat"}
     ]
 };

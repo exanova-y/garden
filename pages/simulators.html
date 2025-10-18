@@ -4,221 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
-    <style>
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            margin-bottom: 40px;
-            text-align: right;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            margin-bottom: 40px;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        /* Markdown content styling */
-        .markdown-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px 0;
-            line-height: 1.7;
-        }
-
-        .markdown-content h1 {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            font-weight: normal;
-        }
-
-        .markdown-content h2 {
-            font-size: 1.4em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        .markdown-content h3 {
-            font-size: 1.2em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
-
-        .markdown-content p {
-            margin-bottom: 20px;
-        }
-
-        .markdown-content ul, .markdown-content ol {
-            margin-bottom: 20px;
-            padding-left: 30px;
-        }
-
-        .markdown-content li {
-            margin-bottom: 8px;
-        }
-
-        .markdown-content blockquote {
-            border-left: 3px solid #ccc;
-            padding-left: 20px;
-            margin-left: 0;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-
-        .markdown-content code {
-            font-family: monospace;
-            background-color: #f5f5f5;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        .markdown-content pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 3px;
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-
-        .markdown-content em, .markdown-content i {
-            font-style: italic;
-        }
-
-        .markdown-content strong, .markdown-content b {
-            font-weight: bold;
-        }
-
-        .post-navigation {
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .back-link {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .footnotes {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-        }
-
-        .post-metadata {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 0.9em;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../js/config.js"></script>
     <script src="../js/navigation.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">home</a></li>
-                <li><a href="../about.html">about</a></li>
-                <li><a href="../links.html">link stash</a></li>
-                <li><a href="../chronological.html">chronological</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="post">
+    <section class="post">
             <div id="content" class="markdown-content">
                 <!-- Content will be loaded here -->
                 <p>Loading content...</p>
             </div>
             <div class="post-navigation">
-                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
+                <div class="back-link-container"><a href="../writing.html" class="back-link">← Back to all posts</a></div>
             </div>
         </section>
-    </main>
 
     <footer>
         <p>&copy; 2025 Yoyo cat!</p>
     </footer>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('content');
             
             // The markdown content embedded directly in the page
             const markdown = `---
-layout: post
-author: Zheng Li, Chenxi Shi, Yoyo Yuan, Shuzhi Zhu
-title: Quantum simulation platforms review - Ultracold atoms and photonics
+title: Reviewing ultracold atoms and integrated photonics simulators!
+by: Zheng Li, Chenxi Shi, Yoyo Yuan, Shuzhi Zhu
 date: 2021-09-01
-tags:
-    - physics
-    - writing
-    - bose-einstein condensate
-show_on_home: true
-image: /assets/images/q-sim/8.png
 ---
-
-a/n:
-My team wrote this review on quantum simulation as part of a seminar on quantum physics during summer 2021. While I've been a physics enthusiast since 8 years old, then I'd only taken a [quantum computing class](https://www.ibm.com/quantum/blog/year-three-quantum-coding-school) and didn't have a strong background. I tried my best to learning 5+ hours a day reading resources online and, also attending additional lectures/workshops at 1 am my time zone. Aside from this review, our deliverables also included a final presentation on finite potential wells and weekly technical presentations.
 
 ### Abstract
 With the development of quantum physics, quantum simulation technology has become more mature and has many applications in real life. This paper introduces two methods of quantum simulation: ultracold atom simulation and integrated photonic simulation. First, ultracold simulation is easy to observe and highly manageable, and its experimental results often agree with the theory. Besides these, it also has limitations. Thus, how to surpass the general theoretical simulation is essential in the future. Then for integrated quantum photonics, it is easy to manufacture, available at room temperature and allows long simulations with a high degree of experimental control. With a few components optimized, large-scale quantum photonic circuits with many photons can likely become a reality in the coming decade.
@@ -249,19 +65,19 @@ Preparation of ultracold atom gases needs the combination of many sets of techno
 
 Consequently, atoms can be trapped by the magneto-optical trap, and a further step of Doppler cooling makes the temperature of atoms down to approximately 100 μK. However, there is a lower temperature limit for the laser cooling technique, as the spontaneous radiation can warm up the atoms. In the second step, the evaporation cooling technique enables the atoms with relatively high energy to escape the system, lower the average energy level of atoms left, and therefore degeneracy temperature is reached, and BEC forms [8].
 
-![image](/assets/images//q-sim/3.png)
+![image](/assets/images/q-sim/3.png)
 Figure 3. A typical experiment to cool and trap atoms.
 
 The timeline in figure 4 shows the time point when some important ultracold quantum degenerate gases are realized, meaning that after decades of development, the technique to prepare ultracold atom gases is quite mature.
 
-![image](/assets/images//q-sim/4.png)
+![image](/assets/images/q-sim/4.png)
 Figure 4. The timeline of the realization of important ultracold atom degenerate gases [9].
 
 *2.2 Bose-Einstein condensates and Feshbach resonance*
 
 The BEC is a gaseous, superfluid matter of a boson atom whose temperature is close to absolute zero. Almost all atoms are concentrated in the quantum state with the lowest energy, forming a macroscopic quantum state [10]. BEC has volatility and coherence like lasers, so interference between two laser beams can also occur between two condensates, observed by W. Ketterle [11]. Figure 5 shows the interference between two condensates, with a slit clearly shown. The properties of the wave and the unique state of matter explain why BEC is a good media for quantum simulation [5].
 
-![image](/assets/images//q-sim/5.png)
+![image](/assets/images/q-sim/5.png)
 Figure 5. The interference observed by Professor Kettlerle between to BECs.
 
 BEC has a high optical density difference. Lasers can change the state of atoms in the condensates so that there is a sudden increase in the refractive index of condensates, and the speed of light drops immediately, even to several meters per second. That is why BEC can be made a model for a black hole, as light is "frozen" in the condensate [12].

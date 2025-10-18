@@ -1,4 +1,11 @@
-// Markdown support for the minimalist website
+// Configuration for marked.min.js
+// https://marked.js.org/using_advanced
+
+// marked.setOptions({
+//     // pedantic: true,
+//     gfm: true      // GitHub Flavored Markdown
+// });
+
 document.addEventListener('DOMContentLoaded', async function() {
     // Check if we're on a post page
     const postContent = document.getElementById('post-content');
@@ -44,4 +51,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Error loading markdown:', error);
         postContent.innerHTML = `<p>Error loading post: ${error.message}</p>`;
     }
+    
+});
 });
