@@ -17,10 +17,9 @@ const siteConfig = {
     // Navigation structure (for future use)
     navigation: [
         { name: "home", url: "/" },
-        { name: "about", url: "/about.html" },
         { name: "readlog", url: "/readlog.html" },
         { name: "writing", url: "/writing.html" },
-        { name: "logs", url: "/logs.html"}
+        { name: "logs", url: "/logs.html"},
         { name: "vibes", url: "https://yoyo.cat"}
     ]
 };

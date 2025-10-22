@@ -70,8 +70,20 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #3c00c9af;
+    font-style: normal;
+    color: #FFFFFF;
 }
+/* 
+a {
+    transition: all 0.2s ease;
+} */
+
+section a:hover {
+    background-color: #3c00c9af;
+    color: white;
+}
+
 
 main {
     margin-bottom: 40px;
@@ -93,6 +105,38 @@ main {
 .art-caption {
     font-size: 0.9em;
     color: #555;
+}
+
+.make-purple {
+  /* color:#3c00c9; */
+  background: linear-gradient(90deg, #4e00ea, #8f14ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  
+}
+
+.make-purple:hover {
+  /* color:#3c00c9; */
+  background: linear-gradient(90deg, #0ce7a9, #4d00d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.particle-toggle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.particle-toggle label {
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.particle-toggle input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
 }
 
 .intro {

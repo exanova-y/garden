@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
+    <title>Quantum simulators review</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- KaTeX for LaTeX rendering -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js" integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <script defer src="../js/latex-config.js"></script>
     <script src="../js/config.js"></script>
     <script src="../js/navigation.js"></script>
 </head>
@@ -30,11 +42,9 @@
             const content = document.getElementById('content');
             
             // The markdown content embedded directly in the page
-            const markdown = `---
-title: Reviewing ultracold atoms and integrated photonics simulators!
-by: Zheng Li, Chenxi Shi, Yoyo Yuan, Shuzhi Zhu
-date: 2021-09-01
----
+            const markdown = `
+### Reviewing ultracold atoms and integrated photonics simulators!
+*by: Zheng Li, Chenxi Shi, Yoyo Yuan, Shuzhi Zhu • 2021-09-01*
 
 ### Abstract
 With the development of quantum physics, quantum simulation technology has become more mature and has many applications in real life. This paper introduces two methods of quantum simulation: ultracold atom simulation and integrated photonic simulation. First, ultracold simulation is easy to observe and highly manageable, and its experimental results often agree with the theory. Besides these, it also has limitations. Thus, how to surpass the general theoretical simulation is essential in the future. Then for integrated quantum photonics, it is easy to manufacture, available at room temperature and allows long simulations with a high degree of experimental control. With a few components optimized, large-scale quantum photonic circuits with many photons can likely become a reality in the coming decade.
@@ -50,7 +60,7 @@ Quantum simulation is a concept created by Feynman in 1982. To solve the problem
 Figure 1. The mind map of this section.
 
 
-The speed of atoms at room temperature is about 300 m/s [3]. However, there is a downward trend in the momentum of atoms with a decrease in temperature, and therefore an increase in de Broglie wavelengths of particles, according to the momentum equation and de Broglie relation in quantum physics $p=\frac{3}{2} kt$ and $λ=h/p$ when de Broglie wavelengths of atoms are the same as the distance between atoms, Bose-Einstein Condensates (BEC) forms, as shown in Figure 2 [4].
+The speed of atoms at room temperature is about 300 m/s [3]. However, there is a downward trend in the momentum of atoms with a decrease in temperature, and therefore an increase in de Broglie wavelengths of particles, according to the momentum equation and de Broglie relation in quantum physics $p=\\frac{3}{2} kt$ and $λ=h/p$ when de Broglie wavelengths of atoms are the same as the distance between atoms, Bose-Einstein Condensates (BEC) forms, as shown in Figure 2 [4].
 
 ![image](/assets/images//q-sim/2.png)
 Figure 2. The formation mechanism of BEC [5]. Particles move like billiard balls at high temperatures. De Broglie wavelength and volatility of particles increase while temperature decreases, and therefore it moves like wave packets. At the critical temperature, or degeneracy temperature, de Broglie wavelength of atoms is the same as the distance between atoms, atoms interfere with each other, and BEC forms, with quantum effects like tunneling effects clearly shown in the behavior of atoms [6].

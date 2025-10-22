@@ -3,173 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
-    <style>
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            margin-bottom: 40px;
-            text-align: right;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            margin-bottom: 40px;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        /* Markdown content styling */
-        .markdown-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px 0;
-            line-height: 1.7;
-        }
-
-        .markdown-content h1 {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            font-weight: normal;
-        }
-
-        .markdown-content h2 {
-            font-size: 1.4em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        .markdown-content h3 {
-            font-size: 1.2em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
-
-        .markdown-content p {
-            margin-bottom: 20px;
-        }
-
-        .markdown-content ul, .markdown-content ol {
-            margin-bottom: 20px;
-            padding-left: 30px;
-        }
-
-        .markdown-content li {
-            margin-bottom: 8px;
-        }
-
-        .markdown-content blockquote {
-            border-left: 3px solid #ccc;
-            padding-left: 20px;
-            margin-left: 0;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-
-        .markdown-content code {
-            font-family: monospace;
-            background-color: #f5f5f5;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        .markdown-content pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 3px;
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-
-        .markdown-content em, .markdown-content i {
-            font-style: italic;
-        }
-
-        .markdown-content strong, .markdown-content b {
-            font-weight: bold;
-        }
-
-        .post-navigation {
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .back-link {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .footnotes {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-        }
-
-        .post-metadata {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 0.9em;
-        }
-    </style>
+    <title>Notes on four common swarm intelligence algorithms </title>
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../js/config.js"></script>
     <script src="../js/navigation.js"></script>
+
+    <!--  latex stuff -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js" integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
@@ -197,22 +46,15 @@
             const content = document.getElementById('content');
             
             // The markdown content embedded directly in the page
-            const markdown = `---
-layout: post
-title: Note on swarm intelligence algorithms 
-date: 2024-05-14
-author: Yoyo Yuan
-image: /assets/images/firefly.webp
-tags:
-    - neural and evolutionary computing
-    - swarm
-show_on_home: true
----
-a/n: A friend @0xredJ has found this helpful and I decided to share my notes. 
+            const markdown = `
+
+### Notes on Swarm intelligence algorithms   
+*by Yoyo • 2024-05-14*   
+*A friend @0xredJ has found this helpful and I decided to share my notes!*
 
 A time ago, [Feynman noticed the ants in his kitchen would form trails to food sources](https://gwern.net/doc/psychology/animal/maze/1985-feynman-surelyyourejokingmrfeynman-theamateurscientist-ants.pdf). So, he enticed the ants with a sugar cube and disrupted them by drawing coloured trails on the ground. The ants didn't care. Then he folded a paper bridge and waited for ants to step on them. Then he ferried the ants from one place to another. At the new location, the ants would initially be lost but over time form a nearly shortest path again.
 
-This foreshadowed the development of Ant Colony Optimization and many more that describe the social behaviour of insects and in nature toward a target.
+This... indirectly foreshadowed the development of Ant Colony Optimization and many more that describe the social behaviour of insects and in nature toward a target.
 Particle Swarm Optimization is a famous one, let's see a [video](https://youtu.be/3-mBamKZUWg) (plugging my code demo!). 
 
 
@@ -225,7 +67,7 @@ What do these algorithms have in common?
 
 ![flowchart](/assets/images/flow-swarm.png)
 
-- Start. Initialize the population including the positions and velocities of particles. Define objective function $f(x, t)$ which could represent metrics like pollen density, or pest density within a particular sensing radius. The goal is to maximize $f(x^*)$ where $x^*$ is the global optimal solution.
+- Start. Initialize the population including the positions and velocities of particles. Define objective function $f(x, t)$ which could represent metrics like pollen density, or pest density within a particular sensing radius. The goal is to maximize $f(x^\\*)$ where $x^\\*$ is the global optimal solution.
 - Evaluate objective function. For every particle, calculate personal best $f(x_i, t)$ at time $t$. Compare the current $f(x_i, t)$ with global best $f(x^*, best)$.
 - Update. Changes in the velocity and position of individual members when there is a new best:
     1. New personal best. If $f(x_i, t) ≥ f(x_i, best)$: then $f(x_i, best) = f(x_i, t)$ and $p = x_i, t$
@@ -248,7 +90,7 @@ Swarm intelligence uses a population of agents, with stochastic components. It's
 ![pso](/assets/images/pso.gif)   
 Update rules - just take it and implement it in your own code:
 
-Velocity updates: $v_i^{t+1} = v_i^t +r_1 \cdot c_1 \cdot(g-x_i^t)+r_2 \cdot c_2 \cdot(p-x_i^t)$
+Velocity updates: $v_i^{t+1} = v_i^t +r_1 \\cdot c_1 \\cdot(g-x_i^t)+r_2 \\cdot c_2 \\cdot(p-x_i^t)$
 
 Position updates: $x_i^{t+1} = x_i^t + v_i^{t+1}$
 
@@ -269,21 +111,21 @@ $r_1, r_2$ = randomization weights for velocity updates, ranging from 0 - 1
 **Brightness**   
 Let $I_i$ be the brightness of firefly $i$, which is proportional to the objective function value $f(x_i)$.
 
-The attractiveness $\beta$ between firefly $i$ and firefly $j$ is modelled by the exponential decay function $\beta(r_{ij}) = \beta_0 \cdot e^{-\gamma \cdot r_{ij}^2}$. This should make sense if a firefly descends into another in circles.
+The attractiveness $\\beta$ between firefly $i$ and firefly $j$ is modelled by the exponential decay function $\\beta(r_{ij}) = \\beta_0 \\cdot e^{-\\gamma \\cdot r_{ij}^2}$. This should make sense if a firefly descends into another in circles.
 
 Where:   
-$\beta_0$: The maximum attractiveness experienced when the distance is 0 (this being a constant is really funny, interpretively)   
-$\gamma$: A light absorption coefficient that determines the decay rate of the attraction.
+$\\beta_0$: The maximum attractiveness experienced when the distance is 0 (this being a constant is really funny, interpretively)   
+$\\gamma$: A light absorption coefficient that determines the decay rate of the attraction.
 $r_{ij}$: the Euclidean distance between firefly $i$ and firefly $j$ i.e. $r_{ij} = ||(x_i-x_j)||$.
 
 **Movement**   
 Basically we can take the PSO update rule and replace the 'updating part' with attractiveness and randomization terms.
 
-$x_i^{t+1} = x_i^t + \beta(r_{ij}) \cdot (x_j^t - x_i^t) + \alpha \cdot \epsilon_i^t$
+$x_i^{t+1} = x_i^t + \\beta(r_{ij}) \\cdot (x_j^t - x_i^t) + \\alpha \\cdot \\epsilon_i^t$
 
 Where:   
-$\beta(r_{ij}) \cdot (x_j^t - x_i^t)$ is the attractiveness term pulling firefly $i$ towards $j$   
-$\alpha \cdot \epsilon_i^t$ is the randomization term, which is a random vector drawn from Gaussian distribution.
+$\\beta(r_{ij}) \\cdot (x_j^t - x_i^t)$ is the attractiveness term pulling firefly $i$ towards $j$   
+$\\alpha \\cdot \\epsilon_i^t$ is the randomization term, which is a random vector drawn from Gaussian distribution.
 
 ### Flower pollination algorithm.
 ![flower](/assets/images/flower.png)
@@ -311,11 +153,11 @@ The main loop of the algorithm is still, like PSO, with a pollinator quirk in th
 For each flower $i$, 'flip a coin' with value r between 0 and 1.
 
 If r < p, perform global/cross pollination.    
-$x_i^{t+1} = x_i^t+ L \cdot (g - x_i^t)$   
+$x_i^{t+1} = x_i^t+ L \\cdot (g - x_i^t)$   
 where $g$ is the current global best solution and $L$ is the key difference--a step size from a **Levy distribution**.
 
 Otherwise, perform self-pollination.   
-$x_i^{t+1} = x_i^t + u \cdot (x_j^t - x_i^t)$
+$x_i^{t+1} = x_i^t + u \\cdot (x_j^t - x_i^t)$
 where $x_j^t$ and $x_k^t$ are two randomly selected flowers, and u is a step size from a **uniform distribution**.
 
 ### The parasitic cuckoo
@@ -369,6 +211,15 @@ I made a 3D simulation in Unity during 2 weeks at Founders Inc AI x hardware res
             
             // Render the markdown to HTML using marked.js
             content.innerHTML = marked.parse(markdown);
+            
+            // Render LaTeX after markdown is inserted
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
         });
     </script>
 </body>
