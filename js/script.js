@@ -1,4 +1,4 @@
-// Minimalist website JavaScript
+// deleuzian vector fields brrrrr
 // Shared state for interactions
 const sharedState = {
     vectorFieldActive: false,
@@ -128,7 +128,7 @@ function initParticleSystem() {
             this.vx = Math.cos(angle) * speed;
             this.vy = Math.sin(angle) * speed;
             
-            this.radius = Math.random() * 3 + 2;
+            this.radius = Math.random() * 2 + 1.5;
             const alpha = Math.random() * 0.2 + 0.4; // transparency between 0.3 to 0.8
             this.color = `hsla(${Math.random() * 60 + 200}, 100%, ${Math.random() * 30 + 50}%, ${alpha})`;
         }
@@ -210,7 +210,8 @@ function initVectorField() {
     const ctx = canvas.getContext('2d');
     let animationId;
     let isActive = false;
-    const gridSize = 30;
+    // 1. Increased Density: Smaller grid size means more arrows
+    const gridSize = 25; 
     const attractors = [];
     
     function resizeCanvas() {
@@ -225,10 +226,12 @@ function initVectorField() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
             this.strength = (Math.random() - 0.5) * 2;
-            this.color = this.strength > 0 ? '#4e00ea' : '#0ce7a9';
+            // 2. Updated Colors: Purple base with Green accents handled in drawing
+            this.color = this.strength > 0 ? '#8b5cf6' : '#10b981'; // Purple or Green
             
             const angle = Math.random() * Math.PI * 2;
-            const speed = Math.random() * 0.5 + 0.2;
+            // 3. Smoother Motion: Slower, drifting attractors
+            const speed = Math.random() * 0.3 + 0.1;
             this.vx = Math.cos(angle) * speed;
             this.vy = Math.sin(angle) * speed;
         }
@@ -255,45 +258,79 @@ function initVectorField() {
         attractors.forEach(attractor => {
             const dx = attractor.x - x;
             const dy = attractor.y - y;
-            const dist = Math.sqrt(dx * dx + dy * dy) + 1;
-            const force = attractor.strength / (dist * 0.01);
+            // Add a small epsilon to prevent division by zero
+            const dist = Math.sqrt(dx * dx + dy * dy) + 10; 
+            
+            // Inverse square law for more natural field drop-off
+            const force = (attractor.strength * 500) / (dist);
             
             vx += (dx / dist) * force;
             vy += (dy / dist) * force;
         });
         
         const mag = Math.sqrt(vx * vx + vy * vy);
+        // Limit maximum vector length for visual consistency
         if (mag > 0) {
-            vx = (vx / mag) * Math.min(mag, 15);
-            vy = (vy / mag) * Math.min(mag, 15);
+            const limit = 15;
+            const scale = Math.min(mag, limit) / mag;
+            vx *= scale;
+            vy *= scale;
         }
         
         return { vx, vy, mag };
     }
     
     function drawVector(x, y, vx, vy, mag) {
-        const arrowLen = 10;
-        const alpha = Math.min(mag / 20, 0.5);
+        // 3. Flow Lines: Draw curved paths instead of straight lines
+        // Use the vector to determine control point for a quadratic curve
         
-        ctx.strokeStyle = `hsla(250, 100%, 60%, ${alpha})`;
-        ctx.lineWidth = 1;
+        const arrowLen = Math.min(mag * 1.5, 20); // Variable length based on strength
+        if (arrowLen < 2) return; // Don't draw tiny noise
+
+        const angle = Math.atan2(vy, vx);
+        
+        // 2. Color Scheme:
+        // 15% chance for green accent, otherwise purple gradient
+        // Use a deterministic "random" based on position so it doesn't flicker
+        const isGreen = (Math.sin(x * y) > 0.7); 
+        
+        let color;
+        if (isGreen) {
+             // Subtle Green (#10b981)
+            color = `hsla(160, 84%, 39%, ${Math.min(mag / 10 + 0.15, 0.4)})`;
+        } else {
+            // Purple Gradient (#b794f6 to #8b5cf6) - Hue 260 to 270
+            const hue = 260 + (mag * 2); 
+            const opacity = Math.min(mag / 15 + 0.15, 0.4); // Vary opacity for depth
+            color = `hsla(${hue}, 80%, 70%, ${opacity})`;
+        }
+        
+        ctx.strokeStyle = color;
+        ctx.lineWidth = isGreen ? 1.5 : 1; // Slight emphasis on green arrows
         
         ctx.beginPath();
+        
+        // Curved body of the arrow
+        const endX = x + vx * 1.2;
+        const endY = y + vy * 1.2;
+        
+        // Simple curve approximation
         ctx.moveTo(x, y);
-        ctx.lineTo(x + vx, y + vy);
+        ctx.quadraticCurveTo(x + vx * 0.5 + vy * 0.2, y + vy * 0.5 - vx * 0.2, endX, endY);
         ctx.stroke();
         
-        const angle = Math.atan2(vy, vx);
+        // Arrowhead
+        const headLen = arrowLen * 0.25;
         ctx.beginPath();
-        ctx.moveTo(x + vx, y + vy);
+        ctx.moveTo(endX, endY);
         ctx.lineTo(
-            x + vx - arrowLen * Math.cos(angle - Math.PI / 6),
-            y + vy - arrowLen * Math.sin(angle - Math.PI / 6)
+            endX - headLen * Math.cos(angle - Math.PI / 6),
+            endY - headLen * Math.sin(angle - Math.PI / 6)
         );
-        ctx.moveTo(x + vx, y + vy);
+        ctx.moveTo(endX, endY);
         ctx.lineTo(
-            x + vx - arrowLen * Math.cos(angle + Math.PI / 6),
-            y + vy - arrowLen * Math.sin(angle + Math.PI / 6)
+            endX - headLen * Math.cos(angle + Math.PI / 6),
+            endY - headLen * Math.sin(angle + Math.PI / 6)
         );
         ctx.stroke();
     }
@@ -301,9 +338,13 @@ function initVectorField() {
     function drawAttractors() {
         attractors.forEach(attractor => {
             ctx.beginPath();
-            ctx.arc(attractor.x, attractor.y, 5, 0, Math.PI * 2);
+            // 2. Green/Purple dots with glow
+            ctx.arc(attractor.x, attractor.y, Math.abs(attractor.strength) * 3 + 2, 0, Math.PI * 2);
             ctx.fillStyle = attractor.color;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = attractor.color;
             ctx.fill();
+            ctx.shadowBlur = 0; // Reset shadow
         });
     }
     
@@ -312,10 +353,16 @@ function initVectorField() {
         
         attractors.forEach(attractor => attractor.update());
         
-        for (let x = gridSize; x < canvas.width; x += gridSize) {
-            for (let y = gridSize; y < canvas.height; y += gridSize) {
-                const { vx, vy, mag } = getVectorAt(x, y);
-                drawVector(x, y, vx, vy, mag);
+        // Use a seeded random or noise for "jitter" if desired, 
+        // but here we stick to the grid for clean flow
+        for (let x = gridSize / 2; x < canvas.width; x += gridSize) {
+            for (let y = gridSize / 2; y < canvas.height; y += gridSize) {
+                // Add slight position jitter for organic feel
+                const jitterX = (Math.sin(y) * 5);
+                const jitterY = (Math.cos(x) * 5);
+                
+                const { vx, vy, mag } = getVectorAt(x + jitterX, y + jitterY);
+                drawVector(x + jitterX, y + jitterY, vx, vy, mag);
             }
         }
         
@@ -327,21 +374,40 @@ function initVectorField() {
     }
     
     const toggle = document.getElementById('vectorToggle');
-    if (toggle) {
-        toggle.addEventListener('change', function() {
-            isActive = this.checked;
-            
-            if (isActive) {
-                attractors.length = 0;
-                const numAttractors = Math.floor(Math.random() * 3) + 3;
+    
+    function updateState() {
+        isActive = toggle.checked;
+        
+        if (isActive) {
+            // Only re-initialize attractors if we're starting fresh
+            if (attractors.length === 0) {
+                const numAttractors = Math.floor(Math.random() * 4) + 4;
                 for (let i = 0; i < numAttractors; i++) {
                     attractors.push(new Attractor());
                 }
-                animate();
-            } else {
-                cancelAnimationFrame(animationId);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
-        });
+            // Avoid stacking animation frames
+            if (!animationId) {
+                animate();
+            }
+        } else {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            attractors.length = 0; // Optional: clear attractors on stop
+        }
+    }
+
+    if (toggle) {
+        // 1. Listen for changes
+        toggle.addEventListener('change', updateState);
+        
+        // 2. Check immediately on load
+        // This ensures if the box is checked by default (or browser cache), it runs.
+        if (toggle.checked) {
+            updateState();
+        }
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inverse Compton effect notes</title>
+    <title>What is spin?</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -49,30 +49,50 @@
             const content = document.getElementById('content');
             
             // The markdown content embedded directly in the page
-            const markdown = `
-### Inverse Compton effect notes   
-*by: Yoyo • 2021-07-20*
- 
-![img](/assets/images/scattering.png)   
-The Inverse Compton effect happens when a photon interacts with a relativistic/"hot" electron. The kinetic energy is transferred from the electron to the photon, which emerges with a higher frequency (e.g. X-rays in the image). The electron cools off.
+            const markdown = `### Properties of spin
+*by: Yoyo Yuan • 2021-08-02*
 
-### Imaging astrophysical phenomena   
-Photons travelling across the universe interacting with electrons produces higher-frequency radiation, enabling the observation of otherwise hidden objects. 
-- By increasing the energy of scattered photons, previously undetectable objects or phenomena can become observable.
-- Different frequencies can reveal distinct properties of objects. For example, radio imaging provides insights into magnetic fields and free electrons.
-- The effect can be used to estimate the thermal energy density of cosmic environments.
-- A key application is the ability to generate ultra short electromagnetic pulses.
-- In laboratory settings, electrons can be accelerated to high energies and scattered against photons, creating observable signals such as  X-rays and gamma rays. This occurs when electrons are in motion and interact with photon fields.
+Particles have intrinsic properties such as mass and charge. Spin is another fundamental property of particles, distinct from mass and charge.
 
-**Cosmic Microwave Background (CMB).**   
-The Inverse Compton effect often occurs between cosmic ray electrons and CMB photons. As electrons interact with CMB photons, they lose energy and slow down. This explains why most cosmic ray electrons detected on Earth originate from within our galaxy. Meanwhile, the photons gain energy, leading to slight changes in CMB temperature. This phenomenon is linked to redshifting, allowing scientists to measure the average temperature of gas at various redshifts throughout the universe's history. For instance, observations show that the gas was cooler around half the age of the universe.
+The concept of spin was first discovered through the Stern-Gerlach experiment:
 
-**Crab Nebula.** The Inverse Compton effect is observed around the Crab Nebula, where it contributes to X-ray emissions.   
+![image](/assets/images/q-sim/stern.png)
 
-**Radio Lobes.** Low-energy interactions produce detectable X-rays in radio lobes.
+**Setup**.   
+Electrically neutral silver atoms (with 1 valence electron) were shot through a non-uniform magnetic field.
 
-**Pulsar winds.** The effect plays a role in the dynamics of pulsar winds
-`;
+**Expectation**   
+ Since silver atoms had zero orbital angular momentum, they were not expected to interact with the magnetic field and were predicted to pass through undeflected.
+
+**Observation**    
+The beam split into two distinct paths, indicating that electrons possess intrinsic angular momentum (spin), which is quantized.
+
+### Properties of spin
+1. Quantization:
+Spin is quantized, meaning it can only take specific discrete values.
+For electrons, the spin value is ½.
+
+2. Directionality:
+The magnitude of spin is fixed for a given particle.
+The direction of spin can point in any orientation, but it can only be measured along one axis at a time.
+Measuring spin along one axis destroys information about its orientation along other axes.
+
+3. Wavefunction Rotation:
+The spin value determines the angle of rotation required for the particle's wavefunction to return to its original state.
+
+![img](/assets/images/q-sim/spin.webp)
+
+For spin-½ particles (e.g., electrons, protons, neutrons, neutrinos, quarks), the wavefunction returns to itself only after two full rotations (720°).
+
+### Spin and Magnetic Behavior
+Particles with spin behave like tiny magnets. In a magnetic field, particles with spin experience a force, causing them to follow specific trajectories. The Stern-Gerlach experiment demonstrated this by splitting the beam into two distinct paths, corresponding to the two possible spin states (spin-up and spin-down).
+
+**Angular Momentum and Spin**   
+Spin is a form of intrinsic angular momentum, independent of orbital motion. Faster "spinning" corresponds to greater angular momentum, represented by a larger vector.
+
+**Spin and the Pauli Exclusion Principle**   
+Particles with half-integer spin (e.g., electrons) obey the Pauli Exclusion Principle, which states that no two identical fermions can occupy the same quantum state simultaneously.
+This principle is fundamental to the structure of atoms and the behavior of matter.`;
             
             // Render the markdown to HTML using marked.js
             content.innerHTML = marked.parse(markdown);

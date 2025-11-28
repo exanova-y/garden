@@ -1,238 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
-    <style>
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            margin-bottom: 40px;
-            text-align: right;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            margin-bottom: 40px;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        /* Markdown content styling */
-        .markdown-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px 0;
-            line-height: 1.7;
-        }
-
-        .markdown-content h1 {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            font-weight: normal;
-        }
-
-        .markdown-content h2 {
-            font-size: 1.4em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        .markdown-content h3 {
-            font-size: 1.2em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
-
-        .markdown-content p {
-            margin-bottom: 20px;
-        }
-
-        .markdown-content ul, .markdown-content ol {
-            margin-bottom: 20px;
-            padding-left: 30px;
-        }
-
-        .markdown-content li {
-            margin-bottom: 8px;
-        }
-
-        .markdown-content blockquote {
-            border-left: 3px solid #ccc;
-            padding-left: 20px;
-            margin-left: 0;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-
-        .markdown-content code {
-            font-family: monospace;
-            background-color: #f5f5f5;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        .markdown-content pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 3px;
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-
-        .markdown-content em, .markdown-content i {
-            font-style: italic;
-        }
-
-        .markdown-content strong, .markdown-content b {
-            font-weight: bold;
-        }
-
-        .post-navigation {
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .back-link {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .footnotes {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-        }
-
-        .post-metadata {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 0.9em;
-        }
-    </style>
+    <title>Lightforest</title>
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../js/config.js"></script>
     <script src="../js/navigation.js"></script>
+    <script src="../js/markdown.js"></script>
+
+    <!--  latex stuff -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js" integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">home</a></li>
-                <li><a href="../about.html">about</a></li>
-                <li><a href="../links.html">link stash</a></li>
-                <li><a href="../chronological.html">chronological</a></li>
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <header>
+            <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+        </header>
 
-    <main>
-        <section class="post">
-            <div id="content" class="markdown-content">
-                <!-- Content will be loaded here -->
-                <p>Loading content...</p>
-            </div>
-            <div class="post-navigation">
-                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
-            </div>
-        </section>
-    </main>
+        <main>
+            <section class="post">
+                <div id="content" class="markdown-content">
+                    <!-- Content will be loaded here -->
+                    <p>Loading content...</p>
+                </div>
+                <div class="post-navigation">
+                    <div class="back-link-container"><a href="../writing.html" class="back-link">← Back to all posts</a></div>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Yoyo cat!</p>
-    </footer>
+        <footer>
+            <p>&copy; <span data-config="copyright"></span></p>
+        </footer>
+    </body>
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('content');
             
             // The markdown content embedded directly in the page
-            const markdown = `---
-layout: post
-title: Lightforest - The geek diaspora brightly glows
-image: /assets/images/tree.webp
-date: 2024-02-22
-show_on_home: true
-tags:
-  - fiction
-  - writing
-  - geeky network
-  - loneliness
-  - transhumanism
-author: Yoyo Yuan
----
+            const markdown = `
+### Lightforest: The geek diaspora brightly glows
+by: Yoyo Yuan • 2024-02-22
+
 Being a biology olympiad champion was not an antidote to the pang of loneliness, dissecting his cardiac essence with scalpel-like intensity. As Endif walked across campus, at every corner, he came across clusters of friends laughing and intertwined. His visual field blurred and the emotional noise-to-signal ratio overflowed.
 
 On a depressing evening, a virtual greeting card appeared in his inbox. Endif raised his eyebrows and clicked.
 
-“To Endif, the intense nerd” The greeting card was fully immersive with the ambience of a pristine boreal forest. “May I introduce myself as Indiraschka, a fellow nerd.”
+“To Endif, the intense nerd” The greeting card was fully immersive with the ambience of a pristine boreal forest. “May I introduce myself as c5h9no4, a fellow nerd.”
 
 “I want to tell you a story. In 1853, Netochka Nezvanova invented a mechanical device capable of plotting the integral of a function decades ahead of anyone else. The early automated ability to solve differential equations could’ve sparked a revolution in physics and engineering, a vision that burned in Netochka’s quiet intense eyes. But Netochka was lonely and broke. No experts cared to reply to her outreach. She died a nameless nobody in some Siberian forest.”
 
-![Netochka, the intense nerd](/assets/images/netochka.jpg)
+![Netochka, the intense nerd](../assets/images/netochka.jpg)
 
-Repeating the same mistake is dumb. Let’s connect Netochkas of the world to allow flourishing in their ultimate form.”
+Repeating the same mistake is dumb. Let’s connect Netochkas of the world to allow flourishing in their ultimate form
 
-Indiraschka was a non-binary entity contained in the form of a glowing, awe-inspired child. They covered Endif’s eyes and took him out on a run. When Endif reopened his eyes, hundreds of geeks waved to him under the sun—a whorling liquid ball of pineapple fire. After a lasting night with the sorrow of the soul, Endif entered a world with awesome heat and intense clarity.
+c5h9no4 was a glowing molecule floating in the air. They covered Endif’s eyes and took him out on a run. When Endif reopened his eyes, hundreds of geeks waved to him under the sun—a whorling liquid ball of pineapple fire. After a lasting night with the sorrow of the soul, Endif entered a world with awesome heat and intense clarity.
 
-“The world is a dark forest where high-potential nerds hide behind trees fearing ridicule.” Indiraschka expressed. “If we act as an ant colony that discovers such nerds in the wild and bring back a trail of open source projects and public communications, an intense geeky diaspora building hard sci-fi will emerge.”
+“The world is a dark forest where high-potential nerds hide behind trees fearing ridicule.” c5h9no4 expressed. “If we act as an ant colony that discovers such nerds in the wild and bring back a trail of open source projects and public communications, an intense geeky diaspora building hard sci-fi will emerge.”
 
 
 Fast forward 2 months, Endif was in a well-lit, wooden room with a dozen young energetic geeks. He was sitting on top of soft dry grass. The room smelled faintly of pine. Everything in the room resembled a microforest.
@@ -248,7 +83,7 @@ Endif came up to an enby artist with flowy brown hair who was drawing manga on M
 
 “My friend calls Stephen Wolfram for hours every weekend to live code” A random voice interjected. “He rarely sleeps and works until 4 am.”
 
-“Oh, one of our project acquaintances had non-24-hour sleep and doctors refused to acknowledge it.” Indiraschka commented.
+“Oh, one of our project acquaintances had non-24-hour sleep and doctors refused to acknowledge it.” c5h9no4 commented.
 
 “Bruh actually? I heard somewhere that the average human's circadian cycle is 25 hours.” Another voice chimed in. “The big consequence is that most people are night owls. Also, Mars colony.”
 
@@ -309,5 +144,4 @@ Nerd isolation is a type of involuntary and subjectively limiting suffering. Let
             content.innerHTML = marked.parse(markdown);
         });
     </script>
-</body>
 </html>

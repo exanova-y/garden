@@ -1,224 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post</title>
-    <style>
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            margin-bottom: 40px;
-            text-align: right;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            margin-bottom: 40px;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        /* Markdown content styling */
-        .markdown-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px 0;
-            line-height: 1.7;
-        }
-
-        .markdown-content h1 {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            font-weight: normal;
-        }
-
-        .markdown-content h2 {
-            font-size: 1.4em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        .markdown-content h3 {
-            font-size: 1.2em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
-
-        .markdown-content p {
-            margin-bottom: 20px;
-        }
-
-        .markdown-content ul, .markdown-content ol {
-            margin-bottom: 20px;
-            padding-left: 30px;
-        }
-
-        .markdown-content li {
-            margin-bottom: 8px;
-        }
-
-        .markdown-content blockquote {
-            border-left: 3px solid #ccc;
-            padding-left: 20px;
-            margin-left: 0;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-
-        .markdown-content code {
-            font-family: monospace;
-            background-color: #f5f5f5;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        .markdown-content pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 3px;
-            overflow-x: auto;
-            margin-bottom: 20px;
-        }
-
-        .markdown-content pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-
-        .markdown-content em, .markdown-content i {
-            font-style: italic;
-        }
-
-        .markdown-content strong, .markdown-content b {
-            font-weight: bold;
-        }
-
-        .post-navigation {
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .back-link {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .footnotes {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-        }
-
-        .post-metadata {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 0.9em;
-        }
-    </style>
+    <title>The hikikomori problem</title>
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../js/config.js"></script>
     <script src="../js/navigation.js"></script>
+    <script src="../js/markdown.js"></script>
+
+    <!--  latex stuff -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js" integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">home</a></li>
-                <li><a href="../about.html">about</a></li>
-                <li><a href="../links.html">link stash</a></li>
-                <li><a href="../chronological.html">chronological</a></li>
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <header>
+            <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+        </header>
 
-    <main>
-        <section class="post">
-            <div id="content" class="markdown-content">
-                <!-- Content will be loaded here -->
-                <p>Loading content...</p>
-            </div>
-            <div class="post-navigation">
-                <div class="back-link-container"><a href="../chronological.html" class="back-link">← Back to all posts</a></div>
-            </div>
-        </section>
-    </main>
+        <main>
+            <section class="post">
+                <div id="content" class="markdown-content">
+                    <!-- Content will be loaded here -->
+                    <p>Loading content...</p>
+                </div>
+                <div class="post-navigation">
+                    <div class="back-link-container"><a href="../writing.html" class="back-link">← Back to all posts</a></div>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Yoyo cat!</p>
-    </footer>
+        <footer>
+            <p>&copy; <span data-config="copyright"></span></p>
+        </footer>
+    </body>
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('content');
             
             // The markdown content embedded directly in the page
-            const markdown = `---
-layout: post
-title: Explaining Hikikomori in Japan
-Author: Yoyo Yuan
-image: /assets/images/hikikomori.jpg
-date: 2023-10-23
-tags:
-    - writing
-    - world problems
-    - loneliness
-    - geeky network
-    - psychology
-    - focused
----
-a/n: During high school, I personally connected with 100 of geeks from 25+ countries online to help them fight loneliness. Extending my notes on senior loneliness problem in East Asia, I wrote about the complex causality of hikikomori for complex systems class at Minerva.
+            const markdown = `
+### Explaining Hikikomori in Japan
+*by Yoyo Yuan • 2023-10-23*
+
+*In grade 11, I befriended some of the coolest rationalists in the world, and also some of the most isolated. Here is my essay for complex systems class at Minerva*
 
 A young man shut his door and didn’t come out for years. Mr. A was just a typical university student: He led a casual life and socialized with friends, holding part-time jobs on the side. However, he found himself in the same unstable job and aging past 30. Determined to find a permanent position, he quit his current job. However, after repeatedly unsuccessful attempts he withdrew completely, playing video games until midnight at home. After a quarrel, he cut off his brother and was financially supported by his mother. Mr. A also avoided any face-to-face contact (Kato et al., 2019).
 
@@ -299,5 +134,4 @@ Zhou, J. (2017). How Yutori Kyoiku Affected Japanese Students’ Learning Abilit
             content.innerHTML = marked.parse(markdown);
         });
     </script>
-</body>
 </html>
