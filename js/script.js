@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize vector field
     initVectorField();
     
+    // Initialize time and weather
+    initTimeAndWeather();
+    
+    // Initialize Discord status
+    initDiscordStatus();
+    
     // Simple hover effect for navigation links
     const navLinks = document.querySelectorAll('nav a');
     
@@ -411,3 +417,94 @@ function initVectorField() {
         }
     }
 }
+
+// Time and Weather
+function initTimeAndWeather() {
+    const location = "Tokyo, Japan";
+    const timeDisplay = document.getElementById('local-time');
+    const weatherDisplay = document.getElementById('local-weather');
+    
+    // Update Time
+    function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString([], { 
+            hour: '2-digit', 
+            minute: '2-digit',
+            timeZone: 'Asia/Tokyo'
+        });
+        timeDisplay.textContent = `Time in Tokyo: ${timeString}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Fetch Weather
+    async function fetchWeather() {
+            const lat = 35.681429433319224;
+            const lon = 139.7645703515916;
+            
+            try {
+                // Open-Meteo API: Free, no key required
+                const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+                const data = await response.json();
+                
+                if (data.current_weather) {
+                    const temp = data.current_weather.temperature;
+                    const code = data.current_weather.weathercode;
+                    // Simple wmo code mapping (optional, or just show temp)
+                    // 0: Clear, 1-3: Cloudy, 61+: Rain, etc.
+                    let condition = "Clear";
+                    if (code > 0 && code <= 3) condition = "Cloudy";
+                    else if (code >= 45 && code <= 48) condition = "Fog";
+                    else if (code >= 51 && code <= 67) condition = "Rain";
+                    else if (code >= 71 && code <= 77) condition = "Snow";
+                    else if (code >= 95) condition = "Thunderstorm";
+
+                    weatherDisplay.textContent = `${temp}°C ${condition}`;
+                }
+        } catch (e) {
+            weatherDisplay.textContent = "Weather unavailable";
+            console.error("Weather fetch error:", e);
+        }
+    }
+    
+    fetchWeather();
+    // Update weather every 30 minutes
+    setInterval(fetchWeather, 30 * 60 * 1000);
+}
+
+// Discord Status
+async function getDiscordStatus() {
+    const userId = siteConfig.discordId; // Replace with your actual ID
+    try {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+        const data = await response.json();
+
+        if (data.success) {
+            const status = data.data.discord_status;
+            updateStatusUI(status);
+        }
+    } catch (error) {
+        console.error("Error fetching status:", error);
+    }
+}
+
+function updateStatusUI(status) {
+    const statusElement = document.getElementById("discord-status");
+    
+    // Mapping internal status to readable text
+    const statusMap = {
+        online: "Online",
+        idle: "AFK/Idle",
+        dnd: "Busy",
+        offline: "Offline"
+    };
+
+    statusElement.innerText = statusMap[status] || "Unknown";
+    
+    // Optional: Add CSS classes for coloring
+    statusElement.className = `status-${status}`;
+}
+
+// Update every 30 seconds
+getDiscordStatus();
+setInterval(getDiscordStatus, 30000);

@@ -14,6 +14,9 @@ const siteConfig = {
         twitter: "https://twitter.com/c5h9no4_o"
     },
     
+    // Discord ID for status (find yours at https://www.google.com/search?q=how+to+find+discord+id)
+    discordId: "745697417441312818",
+
     // Navigation structure (for future use)
     navigation: [
         { name: "home", url: "/" },

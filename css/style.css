@@ -12,6 +12,33 @@
 @font-face { font-family: 'Fira Code'; src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; }
 @font-face { font-family: 'Fira Code'; src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
 
+/* atkinson hyperlegible */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+.atkinson-hyperlegible-regular {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .atkinson-hyperlegible-bold {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .atkinson-hyperlegible-regular-italic {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .atkinson-hyperlegible-bold-italic {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+
 /* --- Base Styles --- */
 * {
     margin: 0;
@@ -19,11 +46,16 @@
     box-sizing: border-box;
 }
 
+
+.user-status {
+    color: #5c5f77;
+}
+
 body {
     font-family: 'Crimson Pro', serif; /* CHANGED: Main body font */
-    line-height: 1.6;
-    color: #2d1b4e;          
-    background-color: #f8f5ff; 
+    line-height: 1.5;
+    color: #4c4f69;          
+    background-color: #eff1f5; 
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -33,7 +65,7 @@ body {
 /* --- Typography & Links --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bitter', serif; /* CHANGED: Header font */
-    color: #5b21b6;
+    color: #8839ef;
     font-weight: 600; /* Bitter looks great with a bit of weight */
 }
 
@@ -43,13 +75,13 @@ h2 {
 }
 
 a {
-    color: #7c3aed;
+    color: #8839ef;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
 a:hover, nav a:hover, section a:hover {
-    color: #059669;
+    color: #40a02b;
     background-color: transparent;
     text-decoration: underline;
 }
@@ -102,7 +134,7 @@ main { margin-bottom: 40px; }
 }
 
 .make-purple {
-    background: linear-gradient(90deg, #7c3aed, #5b21b6);
+    background: linear-gradient(90deg, #8839ef, #40a02b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -110,11 +142,12 @@ main { margin-bottom: 40px; }
 }
 
 .make-purple:hover {
-    background: linear-gradient(90deg, #059669, #7c3aed);
+    background: linear-gradient(90deg, #40a02b, #40a02b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
 
 .particle-toggle {
     text-align: left;
@@ -128,15 +161,6 @@ main { margin-bottom: 40px; }
 .image-container { margin: 20px 0; text-align: center; }
 .image-container img { max-width: 100%; height: auto; }
 
-.intro-moon {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 2px;
-}
 
 /* --- Markdown Content --- */
 .markdown-content {
