@@ -4,7 +4,10 @@ Packages used:
 
 How to run this website:
 `npm start`
-To deploy to production (spin.yoyo.cat +1), run `vercel --prod`
+To deploy to production (adiabatic.garden), run `vercel --prod`
 
 Notes:
 press option + 8 for dot.
+
+To write a new post, create a file in markdown.
+Afterwards, run ./generator.sh [filename.md]

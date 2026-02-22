@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize time and weather
     initTimeAndWeather();
     
-    // Initialize Discord status
-    initDiscordStatus();
+    // Initialize random query display
+    initRandomQuery();
     
     // Simple hover effect for navigation links
     const navLinks = document.querySelectorAll('nav a');
@@ -420,7 +420,7 @@ function initVectorField() {
 
 // Time and Weather
 function initTimeAndWeather() {
-    const location = "Tokyo, Japan";
+    // const location = "Tokyo, Japan";
     const timeDisplay = document.getElementById('local-time');
     const weatherDisplay = document.getElementById('local-weather');
     
@@ -430,17 +430,20 @@ function initTimeAndWeather() {
         const timeString = now.toLocaleTimeString([], { 
             hour: '2-digit', 
             minute: '2-digit',
-            timeZone: 'Asia/Tokyo'
+            timeZone: 'America/Los_Angeles'
         });
-        timeDisplay.textContent = `Time in Tokyo: ${timeString}`;
+        timeDisplay.textContent = `${timeString}`;
     }
     setInterval(updateTime, 1000);
     updateTime();
 
     // Fetch Weather
     async function fetchWeather() {
-            const lat = 35.681429433319224;
-            const lon = 139.7645703515916;
+            // const lat = 35.681429433319224;
+            // const lon = 139.7645703515916;
+            // shanghai
+            const lat = 31.16442302696994;
+            const lon = 121.80796930982098;
             
             try {
                 // Open-Meteo API: Free, no key required
@@ -489,7 +492,7 @@ async function getDiscordStatus() {
 }
 
 function updateStatusUI(status) {
-    const statusElement = document.getElementById("discord-status");
+    const statusElement = document.getElementById("turquoise-txt");
     
     // Mapping internal status to readable text
     const statusMap = {

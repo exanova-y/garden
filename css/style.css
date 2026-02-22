@@ -3,7 +3,7 @@
 /* --- Font Imports --- */
 /* Google Fonts: Bitter (Headers), Source serif 4 (Body), Crimson Pro (Body) */
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..144,200..900;1,8..144,200..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..144,200..900;1,8..144,200..900&display=swap'); */
 
 /* Local Font: Fira Code (kept for code blocks) */
 @font-face { font-family: 'Fira Code'; src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; }
@@ -12,32 +12,16 @@
 @font-face { font-family: 'Fira Code'; src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; }
 @font-face { font-family: 'Fira Code'; src: url('../assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; }
 
-/* atkinson hyperlegible */
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-.atkinson-hyperlegible-regular {
-    font-family: "Atkinson Hyperlegible", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .atkinson-hyperlegible-bold {
-    font-family: "Atkinson Hyperlegible", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .atkinson-hyperlegible-regular-italic {
-    font-family: "Atkinson Hyperlegible", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .atkinson-hyperlegible-bold-italic {
-    font-family: "Atkinson Hyperlegible", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
+/* JetBrains Mono for enhanced readability */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Work sans */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Roboto Mono */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;1,300&display=swap');
 
 /* --- Base Styles --- */
 * {
@@ -46,20 +30,44 @@
     box-sizing: border-box;
 }
 
+#green-txt {
+    color: #40a02b;
+}
 
-.user-status {
-    color: #5c5f77;
+#lavender-txt {
+    color: #7287fd;
+}
+
+#teal-txt {
+    color: #179299;
+}
+
+#sapphire-txt {
+    color: #209fb5;
+}
+
+#purple-txt {
+    color: #8839ef;
+}
+
+#turquoise-txt {
+    color: #00fcb5;
+}
+
+#turquoise-not-discord-txt {
+    color: #00fcb5;
 }
 
 body {
-    font-family: 'Crimson Pro', serif; /* CHANGED: Main body font */
+    font-family: 'Roboto Mono', monospace; /* CHANGED: Main body font */
+    font-weight: 300; /* 300 Light */
     line-height: 1.5;
-    color: #4c4f69;          
-    background-color: #eff1f5; 
-    max-width: 800px;
+    color: #c6d0f5;          
+    background-color: #232634; 
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
-    font-size: 18px; /* Serif fonts often need a slight size bump for readability */
+    font-size: 14px; /* Serif fonts often need a slight size bump for readability */
 }
 
 /* --- Typography & Links --- */
@@ -78,10 +86,11 @@ a {
     color: #8839ef;
     text-decoration: none;
     transition: all 0.2s ease;
+    text-decoration: underline;
 }
 
 a:hover, nav a:hover, section a:hover {
-    color: #40a02b;
+    color: #00fcb5;
     background-color: transparent;
     text-decoration: underline;
 }
@@ -134,7 +143,7 @@ main { margin-bottom: 40px; }
 }
 
 .make-purple {
-    background: linear-gradient(90deg, #8839ef, #40a02b);
+    background: linear-gradient(100deg, #8839ef, #7287fd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -142,7 +151,7 @@ main { margin-bottom: 40px; }
 }
 
 .make-purple:hover {
-    background: linear-gradient(90deg, #40a02b, #40a02b);
+    background: linear-gradient(90deg, #00fcb5, #7287fd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -161,13 +170,92 @@ main { margin-bottom: 40px; }
 .image-container { margin: 20px 0; text-align: center; }
 .image-container img { max-width: 100%; height: auto; }
 
+/* --- Writing Page Link Colors --- */
+/* Target links inside paragraphs in the 'favorites' section of writing.html */
+/* Cycle through 4 colors: Pink, Teal, Green, Purple */
+
+/* .writings p:nth-of-type(3n+1) a {
+    color: #7287fd; /* lavender */
+/* } */
+
+/* .writings p:nth-of-type(3n+2) a { */
+    /* color: #209fb5; Teal */
+/* } */
+
+.writings a {
+    color: #c6d0f5; 
+    /* no underline */
+    text-decoration: none;
+}
+/* 
+.writings p:nth-of-type(3n+3) a {
+    color: #04a5e5; /* Green */
+/* } */ 
+
+/* Ensure hover state overrides the cycle colors */
+.writings p a:hover {
+    color: #eff1f5;
+}
+
+
+/* --- Box Grid --- */
+.box-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center items */
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap; /* responsive wrap */
+}
+
+
+.box {
+    border: 1px solid #00fcb5; /* Thin line border matching text color */
+    padding: 20px;
+    width: 31%; /* Adjustable width */
+    height: 200px; /* Adjustable height */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    transition: all 0.3s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.box:hover {
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.long-box {
+    border: 1px solid #00fc50; /* Thin line border matching text color */
+    padding: 10px;
+    width: 100%; 
+    height: 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    transition: all 0.3s ease;
+    overflow-wrap: break-word;
+    /* word-wrap: break-word; */
+}
+
+.long-box:hover {
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
 
 /* --- Markdown Content --- */
 .markdown-content {
     max-width: 700px;
     margin: 0 auto;
+    font-size: 16px;
     padding: 20px 0;
     line-height: 1.8; /* Slightly more breathing room for serif body */
+    font-family: 'Inter', sans-serif;
 }
 
 .markdown-content h1 { font-size: 2.0em; margin-bottom: 30px; }
@@ -183,14 +271,14 @@ main { margin-bottom: 40px; }
     margin-left: 0;
     color: #5b21b6;
     font-style: italic;
-    font-family: 'Bitter', serif; /* Use Bitter for quotes */
+    font-family: 'JetBrains Mono', monospace; /* Use Bitter for quotes */
     margin-bottom: 20px;
 }
 
 .markdown-content img { max-width: 100%; height: auto; margin: 20px 0; }
 
 .markdown-content code {
-    font-family: 'Fira Code', monospace; /* Keep Fira Code for inline code */
+    font-family: 'JetBrains Mono', monospace; /* Keep Fira Code for inline code */
     background-color: #ede9fe;
     padding: 2px 4px;
     border-radius: 3px;

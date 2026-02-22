@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[title] </title>
+    <title>Topics of interest </title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -39,23 +39,40 @@
                 </div>
             </section>
         </main>
+
+        <footer>
+            <p>&copy; 2025 Yoyo cat!</p>
+        </footer>
     </body>
 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('content');
-            const markdownHeader = `
-### [title]
-*by Yoyo • [date]*
-            `;
+            
             // The markdown content embedded directly in the page
             const markdown = `
-__MD_CONTENT__
-            `;
+### Topics of interest
+*by Yoyo Yuan • 2026-02-20*   
+           
+until 2023:
+quantum computing, quantum mechanics, astrophysics, cosmology, philosophy, psychology, writing
+
+after 2025:
+theoretical neuroscience, pcb design, 3d modelling (cad), programming, psychology, philosophy, literature of deterioration
+
+surrounding topics:
+urban infrastructure, startups, free pizza
+
+random facts:
+Once a competitive flag guesser!
+Countries I'd consider moving to: Germany, Japan, Switzerland, China, Canada, Finland, Singapore
+
+
+`;
             
             // Render the markdown to HTML using marked.js
-            content.innerHTML = marked.parse(markdownHeader + markdown);
+            content.innerHTML = marked.parse(markdown);
         });
     </script>
 </html>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[title] </title>
+    <title>Music list</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- Include the marked.js library for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -39,23 +39,41 @@
                 </div>
             </section>
         </main>
+
+        <footer>
+            <p>&copy; 2025 Yoyo cat!</p>
+        </footer>
     </body>
 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('content');
-            const markdownHeader = `
-### [title]
-*by Yoyo • [date]*
-            `;
+            
             // The markdown content embedded directly in the page
             const markdown = `
-__MD_CONTENT__
-            `;
+### Music
+
+I love music! Please listen to these internet classics! Thank you!!!
+
+[Stellaris - Deep space travels](https://youtu.be/eH3Hct6coWQ?si=pUpSckVxr_Ss5B33) 
+[Kalafina - 光の旋律](https://youtu.be/-wILF0YwvNM?si=JWCWKQcKYUAT5rE0)  
+[Non-Fiction 【hololive English -Myth- Original Song】](https://youtu.be/zbgWUK_tidI)   
+[【洛天依原创曲】《不老不死》](https://www.bilibili.com/video/BV1w4411G7nv/)   
+[I ship it!, an AO3 fandom song](https://youtu.be/LCDgJiPBxfI)    
+[Infinity Chasers (Fractal Dreamers)](https://youtu.be/-WQOQigMV5A?si=M2wqZm2IZbatWUUy)     
+[Spaze - Revolution (DEMO)](https://youtu.be/OeKvEnfrfAs)   
+[Noizinski - Stasis](https://soundcloud.com/noizinski/stasis-single?in=stfuandbb/sets/noizinski)   
+[Aphex Twin - T69 collapse](https://youtu.be/SqayDnQ2wmw?si=tl7tQoDvFVELVIRP)   
+[SugarCrash! 2](https://youtu.be/5RWesxKj_24) and [SugarCrash! 4](https://www.youtube.com/watch?v=OZaD68o8ydk)   
+[TVAM - Psychic data](https://youtu.be/1g06-CP9vmA)   
+[Suffocation - crystal castle (nightcore)](https://youtu.be/hUk6_LD2LI4)   
+[my spotify playlist](https://open.spotify.com/playlist/2b3jFAyQFXRbgeCb6ZqdyB?si=fa55cfdd2a984b28)   
+Followed artists include 洛天依, Cavetown, Miracle Musical, 100 gecs, femtanyl, Metaroom, Aphex Twin, Max Cooper, LOONA, etc etc.
+`;
             
             // Render the markdown to HTML using marked.js
-            content.innerHTML = marked.parse(markdownHeader + markdown);
+            content.innerHTML = marked.parse(markdown);
         });
     </script>
 </html>
