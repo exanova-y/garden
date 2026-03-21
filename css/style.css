@@ -47,7 +47,7 @@
 }
 
 #purple-txt {
-    color: #8839ef;
+    color: #9058f8;
 }
 
 #turquoise-txt {
@@ -56,6 +56,11 @@
 
 #turquoise-not-discord-txt {
     color: #00fcb5;
+}
+
+#quote-txt {
+    color: #8c8fa1;
+
 }
 
 body {
@@ -73,7 +78,7 @@ body {
 /* --- Typography & Links --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bitter', serif; /* CHANGED: Header font */
-    color: #8839ef;
+    color: #9058f8;
     font-weight: 600; /* Bitter looks great with a bit of weight */
 }
 
@@ -83,7 +88,7 @@ h2 {
 }
 
 a {
-    color: #8839ef;
+    color: #9058f8;
     text-decoration: none;
     transition: all 0.2s ease;
     text-decoration: underline;
@@ -266,10 +271,10 @@ main { margin-bottom: 40px; }
 .markdown-content li { margin-bottom: 8px; }
 
 .markdown-content blockquote {
-    border-left: 3px solid #7c3aed;
+    border-left: 3px solid #9a60ff;
     padding-left: 20px;
     margin-left: 0;
-    color: #5b21b6;
+    color: #8d4bf7;
     font-style: italic;
     font-family: 'JetBrains Mono', monospace; /* Use Bitter for quotes */
     margin-bottom: 20px;

@@ -5,144 +5,485 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adiabatic.garden</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/config.js"></script> <!-- for the site menu and name-->
-    <!-- <script src="js/navigation.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- this is a markdown parser-->
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+    <style>
+        body {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            background: #0a0a0f;
+        }
+
+        nav a {
+            color: #00fcb5;
+            text-shadow: 0 0 8px rgba(0, 252, 181, 0.4);
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 14px rgba(0, 252, 181, 0.7);
+            background: transparent;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            overflow: hidden;
+
+        }
+
+    
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .landing-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 80px 20px 40px;
+        }
+
+        .terminal {
+            background: rgba(5, 5, 12, 0.88);
+            border: 0.75px solid #00fcb5;
+            box-shadow:
+                0 0 20px rgba(0, 252, 181, 0.1),
+                0 0 60px rgba(0, 252, 181, 0.05),
+                inset 0 0 40px rgba(0, 0, 0, 0.4);
+            max-width: 700px;
+            width: 100%;
+            font-family: 'Fira Code', 'JetBrains Mono', 'Roboto Mono', monospace;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .terminal-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-bottom: 1px solid rgba(0, 252, 181, 0.2);
+            background: rgba(0, 252, 181, 0.03);
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid;
+        }
+
+        .terminal-title {
+            /* align at centre of the terminal-bar */
+            display: flex;
+            margin-left: auto;
+            color: #00fcb5;
+            font-size: 1em;
+
+        }
+
+        .terminal-dot:nth-child(1) { border-color: #ff5f57; background: rgba(255, 95, 87, 0.25); }
+        .terminal-dot:nth-child(2) { border-color: #febc2e; background: rgba(254, 188, 46, 0.25); }
+        .terminal-dot:nth-child(3) { border-color: #28c840; background: rgba(40, 200, 64, 0.25); }
+
+        .terminal-body {
+            padding: 28px 32px;
+        }
+
+        /* h1 → neon title */
+        .terminal-body h1 {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #00fcb5;
+
+            margin: 0 0 2px;
+        }
+
+        /* h3 → neon purple section labels */
+        .terminal-body h3 {
+            color: #9058f8;
+            text-shadow: 0 0 8px rgba(144, 88, 248, 0.35);
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            font-size: 0.88em;
+            margin: 18px 0 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* blockquote → green prompt line */
+        .terminal-body blockquote {
+            border-left: none;
+            padding: 0;
+            margin: 0 0 5px;
+            color: #00fc50;
+            text-shadow: 0 0 6px rgba(0, 252, 80, 0.35);
+            font-style: normal;
+            font-size: 0.8em;
+            line-height: 1.65;
+        }
+
+        .terminal-body blockquote p { color: inherit; }
+
+        /* em → muted comment */
+        /* overlay 1 from catppuccin - frappe */
+        .terminal-body em {
+            color: #838ba7;
+            font-style: italic;
+        }
+
+        /* strong → neon green highlight */
+        .terminal-body strong {
+            color: #00fc50;
+            text-shadow: 0 0 6px rgba(0, 252, 80, 0.35);
+            font-weight: 600;
+        }
+
+        /* inline code → neon cyan highlight */
+        .terminal-body code {
+            color: #00fcb5;
+            text-shadow: 0 0 6px rgba(0, 252, 181, 0.35);
+            background: none;
+            padding: 0;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .terminal-body p {
+            margin-bottom: 5px;
+            font-size: 0.8em;
+            line-height: 1.65;
+            color: #c6d0f5;
+        }
+
+        .terminal-body a {
+            color: #838ba7;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .terminal-body a:hover {
+            color: #00fcb5;
+            text-shadow: 0 0 8px rgba(0, 252, 181, 0.5);
+            text-decoration: underline;
+            background: transparent;
+        }
+
+        .terminal-body hr {
+            border: none;
+            border-top: 1px solid rgba(0, 252, 181, 0.12);
+            margin: 14px 0;
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: #00fcb5;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 4px;
+            /* box-shadow: 0 0 6px rgba(0, 252, 181, 0.5); */
+        }
+
+        .spinner::after {
+            content: '|';
+            display: inline-block;
+            color: #585b70;
+            font-family: 'Fira Code', monospace;
+            animation: spin 0.6s steps(4, end) infinite;
+        }
+
+        @keyframes spin {
+            0%   { content: '|'; }
+            25%  { content: '/'; }
+            50%  { content: '—'; }
+            75%  { content: '\\'; }
+            100% { content: '|'; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .nav-row a {
+            color: #00fcb5;
+            font-size: 0.78em;
+            text-decoration: none;
+            border: 1px solid rgba(0, 252, 181, 0.25);
+            padding: 4px 14px;
+            transition: all 0.25s;
+        }
+
+        .nav-row a:hover {
+            background: rgba(0, 252, 181, 0.08);
+            border-color: #00fcb5;
+            /* box-shadow: 0 0 10px rgba(0, 252, 181, 0.25); */
+            /* no text underline */
+            text-decoration: none;
+            /* color: #fff; */
+        }
+
+        .terminal-body .syntax {
+            color: #949cbb;
+            opacity: 0.4;
+            font-style: normal;
+            font-weight: 300;
+            text-shadow: none;
+        }
+
+        .terminal-body .syntax-url {
+            word-break: break-all;
+        }
+
+        .terminal-body .md-hr {
+            margin: 14px 0;
+            /* font-size: 0.8em; */
+            line-height: 1.65;
+        }
+
+        .terminal-body .contact {
+            color: #585b70;
+        }
+
+        .terminal-body .contact a {
+            color: #838ba7;
+        }
+
+        .terminal-body .contact a:hover {
+            color: #00fcb5;
+        }
+
+        /* .terminal-input {
+            display: flex;
+            align-items: center;
+            margin-top: 14px;
+            font-size: 0.8em;
+            line-height: 1.65;
+            color: #c6d0f5;
+            border-top: 1px solid rgba(0, 252, 181, 0.12);
+            padding-top: 12px;
+        }
+
+        .input-prompt {
+            color: #00fc50;
+            text-shadow: 0 0 6px rgba(0, 252, 80, 0.35);
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
+        .input-field {
+            flex: 1;
+            outline: none;
+            color: #c6d0f5;
+            caret-color: #00fcb5;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            min-width: 0;
+        }
+
+        .input-field:empty::before {
+            content: 'type here...';
+            color: #585b70;
+            opacity: 0.4;
+        }
+
+        .input-echo {
+            font-size: 0.8em !important;
+            line-height: 1.65;
+            color: #585b70 !important;
+            margin-bottom: 2px !important;
+        } */
+
+        @media (max-width: 600px) {
+            .terminal-body { padding: 20px 16px; }
+            .terminal-body h1 { font-size: 1.15em; }
+            header { padding: 12px 16px; }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+        <nav><ul></ul></nav>
     </header>
 
-    <main>    
-        <br>
-        <div class="long-box" style="border: 1px solid #bcc0cc;">
-            <p>φ adiabatic.garden ≈</p>
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="ascii-loop.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="scanlines"></div>
+
+    <div class="landing-content">
+        <div class="terminal">
+            <div class="terminal-bar">
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-title">moss.cafe</span>
+            </div>
+            <div class="terminal-body" id="terminal-content"></div>
         </div>
-        <div class="box-grid">
-            <div class="box" style="height: 120px; width: 10%; position: relative;overflow: hidden; object-fit: cover;">
-                <img src="assets/images/plant.jpg" alt="fish" style="width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; top: 0; left: 0;">
-            </div>
+    </div>
 
-            <div class="box" style="height: 120px; width: 55%; overflow: hidden;">
-                <section class="body">
-                    <p><span id="lavender-txt">Yoyo</span>. With <span id="lavender-txt">rwx</span> permissions. Exploring neural engineering.</p>
-                    <br>
-                </section>        
-            </div>
-            
+    <script>
+        function renderBlock(md) {
+            return md.trim().split(/\n\n+/).map(function(block) {
+                block = block.trim();
+                if (!block) return '';
 
+                if (block === '---')
+                    return '<p class="md-hr"><span class="syntax">---</span></p>';
 
-            <div class="box" style="height: 120px; width: 30%; overflow: hidden; position: relative;">
-                <img src="assets/images/flowers.jpg" alt="fish" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.3; position: absolute; top: 0; left: 0; z-index: 0;">
-                <div class="user-status" style="position: relative; z-index: 1;">
-                    <span id="local-time"></span><span id="turquoise-not-discord-txt"> Mountain view, CA</span>
-                    <p id="local-weather"></p>
-                    <span>User status: </span><span id="turquoise-txt"></span>
-                    <!-- <span>User status: </span><span id="lavender-txt">Off social media for winter break.</span> -->
-                </div>
-                <br>
-            </div>
-            
-            
-            <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-                <div class="box" style="width: 45%; height: 360px; overflow: hidden; border: 1px solid #00fc50;">
-                    <section>
-                        <p class="make-purple">Bookmarks</p>
-                        <p>Reading: The Count of Monte Cristo</p>
-                        <p>Reading: Savage Thought</p>
-                        <p>Have not read: On the Mode of Existence of Technical Objects</p>
-                        <p>Temporary Autonomous Zones</p>
-                        <p>Journal of My Other Self</p>
-                        <p>Post-Crystallization from Hormone Hunters, the Discovery of Adrenaline</p>
-                        <p>Prolegomena to Omnipotence from Summa Technologiae</p>
-                        <p>More is different</p>
-                        <p>Friendship is Optimal from Heaven is Terrifying</p>
-                        <p>The origin of extracellular fields and currents — EEG, ECoG, LFP and spikes</p>
-                        <p>Find me on <a href="https://www.are.na/yoyo-y">are.na</a> Older readlogs <a href="readlog.html">here</a></p>
-                    </section>
-                </div>
+                var hm = block.match(/^(#{1,6})\s+([\s\S]*)/);
+                if (hm) {
+                    var lvl = hm[1].length;
+                    return '<h' + lvl + '><span class="syntax">' + hm[1] + '</span> ' + renderInline(hm[2]) + '</h' + lvl + '>';
+                }
 
-                <div class="box" style="height: 360px; width: 50%; overflow-y: auto; border: 1px solid #7287fd;">
-                    <section>
-                        <p class="make-purple">Selected quests</p>
-                        <p>Ongoing: OS programming</p>
-                        <p>Ongoing: Reverse engineering microelectrode arrays and biosensing boards with Eigenlucy <a href="https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays">notes</a></p>
-                        <!-- <p>Ongoing: Model tin oxides with Hartree Fock (soon you will get to read about the antisocial electrons)</p> -->
-                        <p>Comparing olfaction in humans and custom metal oxide sensor also with Eigenlucy <a href="https://github.com/exanova-y/synthesis">search & visualization</a> <a href="https://youtu.be/jGN_bRmlDQo">talk at Ekkolapto</a> <a href="https://github.com/eigenlucy/nonhumanscent">metal oxide sensor pcb by lucy</a></p>
-                        <p>NFC key changer contributor at <a href="https://a.currents.fm">currents.fm</a></p>
-                        <p>Multiplayer <a href="https://youtu.be/ZpNXGqU6-Ro">arxiv wars</a></p>
-                        <p>Assembling a laser cutter with Paul Han <a href="pages/laser-cutter.html">image</a></p>
-                        <!-- <p>A kardashev scale of the universe <a href="https://koftheuniverse.vercel.app">web explorer</a></p> -->
-                        <br>
-                        <p class="make-purple">Selected notes</p>
-                        <p><a href="https://adiabaticgarden.substack.com/p/4-days-in-shanghainese-anime-ecology">4 days in shanghainese anime ecology!</a></p>
-                        <p><a href="https://adiabaticgarden.substack.com/p/yoyo-2027">Huaqiangbei vignette</a></p>
-                        <p><a href="https://adiabaticgarden.substack.com/p/october-readlog">Science across ja/en/cn</a></p>
-                        <p><a href="/writing.html">see writing</a></p>
-                    </section>
-                </div>
+                if (block.startsWith('>')) {
+                    var text = block.replace(/^>\s?/, '');
+                    return '<blockquote><span class="syntax">&gt;</span> ' + renderInline(text) + '</blockquote>';
+                }
 
-            </div>
-        </div>
+                if (block.startsWith('<')) return renderInline(block);
 
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-            <div class="box" style="height: 170px; width: 40%; padding: 0; overflow: hidden;">
-                <!--can use object-fit cover to make the image cover the entire box-->
-                <!-- overflow: hidden, so no things spill out-->
-                <img src="/assets/images/how-can-i-help.jpg" alt="suspended q" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            </div>
-            
+                return '<p>' + renderInline(block) + '</p>';
+            }).join('\n');
+        }
 
-            <div style="display: flex; flex-direction: column; width: 70%; gap: 20px;">
-                <div class="long-box" style="height: 80px; overflow: hidden;">
-                    <span>Willing to support fellow researchers and builders outside of traditional institutions through writing, collaboration and offering practical resources. Reach me harvest@adiabatic.garden or <a href="https://x.com/adiabaticgarden">X</a>. Find me inactive on <a href="https://adiabaticgarden.substack.com/">substack</a>.</span>
-                </div>
+        function renderInline(t) {
+            // bold **text** — use &#42; entities so italic pass won't re-match
+            t = t.replace(/\*\*(.+?)\*\*/g,
+                '<span class="syntax">&#42;&#42;</span><strong>$1</strong><span class="syntax">&#42;&#42;</span>');
+            // italic *text* — require non-space adjacent to delimiters
+            t = t.replace(/\*([^\s*](?:[^*]*[^\s*])?)\*/g,
+                '<span class="syntax">&#42;</span><em>$1</em><span class="syntax">&#42;</span>');
+            // inline code `text`
+            t = t.replace(/`(.+?)`/g,
+                '<span class="syntax">&#96;</span><code>$1</code><span class="syntax">&#96;</span>');
+            // links [text](url)
+            t = t.replace(/\[(.+?)\]\((.+?)\)/g,
+                '<span class="syntax">[</span><a href="$2">$1</a><span class="syntax">](<span class="syntax-url">$2</span>)</span>');
+            return t;
+        }
 
-                <div class="long-box" style="height: 70px; overflow: hidden; flex-direction: row;  border: 1px solid #00fcb5;">
-                    <img src="assets/88x31s/welcome-cn.gif
-                    " alt="cn" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-                    <img src="assets/88x31s/yay.gif" alt="yay" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-                    <!-- <img src="assets/88x31s/cn-en.gif" alt="heart" style="width: 88px; height: 31px; object-fit: cover; display: block;"> -->
-                    <img src="assets/88x31s/trans-rights.gif" alt="trans-rights" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-                    <!-- <img src="assets/88x31s/windows98.gif" alt="windows98" style="width: 88px; height: 31px; object-fit: cover; display: block;"> -->
-                    <div><p>recommended: <a href="https://eigenlucy.com/">eigenlucy</a>, <a href="https://adaptivegood.substack.com/">ada</a>, <a href="https://yuxi.ml">yuxi</a>, <a href="https://www.alexkchen.com/">alexkchen</a>, <a href="https://a.nyc/">naia</a>, <a href="https://nchrein.github.io/">∞-modal noah</a>, <a href="https://graphfei.substack.com/">graphfei</a>, <a href="https://svitlanamm.substack.com/">svitlana</a>, <a href="https://lydianottingham.substack.com/">lydia</a>, <a href="https://aryl.org/">aryl</a>, <a href="https://guillefix.me/">guillefix</a></p>
-                    </div>
-                </div>
-            </div>        
-        <section>
-        </div>
-        <br>
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-            <div class="box" style="height: 240px; width: 55%; overflow: hidden;">
-                <p><span id="turquoise-not-discord-txt">Places lived:</span> Shenzhen, Waterloo, SF, Tokyo, etc.</p>
-                <p><span id="lavender-txt">Institutions:</span> Minerva University class of 2028, 1517 Medici grantees.</p>
-                <p><span id="lavender-txt">Care a lot about: </span>Seeing whole systems/complex causality, information compression, field observation and validation first, cultural fluency, deep friendship</p>
-                <p><span id="lavender-txt">Do not interact: </span></p>Credentialist discussions, ethical debates, noisy projects, bad-faith arguments. If you see systems as a buzzword, we are going to have a fairly short conversation.</p>
-                <p><span id="lavender-txt">Major influences:</span> Nicky Case, Audrey Tang (唐鳳)</p>
-                </p>
-            </div>
-            <div class="box" style="height: 240px; width: 45%; overflow: hidden; border: 1px solid #7287fd">
-                <p>Spending thousands of waking hours deteriorating to hyperpop, edm, vocaloid, rave and instrumental music :D Representative songs: <a href="https://youtu.be/eH3Hct6coWQ?si=pUpSckVxr_Ss5B33">Stellaris - Deep space travels</a>, <a href="https://www.bilibili.com/video/BV1w4411G7nv/">【洛天依原创曲】《不老不死》</a>, <a href="https://youtu.be/M2rnEZ9JRN0">UneXpect - Chromatic Chimera</a>, <a href="https://youtu.be/OeKvEnfrfAs">Spaze - Revolution (DEMO)</a></p>
-                <p>Also enjoy: Urban infrastructure, Shanghai Maglev, inverted monorail, solarpunk, ancient civilizations, mythology, Chinese history, Russian golden - silver age, modernist literature, cybernetics, structuralism, semiotics, deconstruction, beyond humanism.</p>    
-            </div>
-        </div>
-        
-        </div>
-        <div class="particle-toggle">
-            <label>
-                <input type="checkbox" id="vectorToggle" checked> 
-                See vector fields
-            </label>
-        </div>    
-        <p>→ unhinged <a href="http://exanova.mmm.page">chronically online memes</a></p>
-    </main>
+        document.addEventListener('DOMContentLoaded', function() {
+            var content = document.getElementById('terminal-content');
 
-    <footer>
-        <p>&copy; <span data-config="copyright"></span></p>
-    </footer>
+            var markdown = ''
++ '# adiabatic.garden φ\n\n'
++ 'Hello, I am Yoyo!\n\n'
++ '*physics · neuroscience · cs ∘ agender language · chaos and playfulness* <span class="spinner"></span>\n\n'
++ "I can be hired to work on neurotech software, run quantum mechanical simulations, write documentation or host events." + '\n\n'
++ "I'm a Minerva student physically present on the Stanford campus, reach out for walks, coreading, event hosting and so on at yoyoyuan1729 at gmail dot com" + '\n\n'
++ '---\n\n'
++ '### bookmarks\n\n'
++ '`Nicky Case` as primary influence \n\n'
++ 'Highly rated: `Ben Barres Autobiography`\n\n'
++ "Stanislaw Lem's `Prolegomena to Omnipotence` from Summa Technologiae" + '\n\n'
++ 'Temporary Autonomous Zones\n\n'
++ 'Recently read: Tackling the subsampling problem to infer collective properties from limited data \n\n'
++ "Forgot to read: Shape of a Life"+'\n\n'
++ 'Post-Crystallization from Hormone Hunters\n\n'
++ 'Find me on [curius](https://curius.app/yoyo-yuan) · Older readlogs [here](readlog.html)\n\n'
++ '### quests \n\n'
++ 'Ongoing: Building low-cost microelectrode arrays w/ Eigenlucy [notes](https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays)\n\n'
++ 'Olfaction with metal oxide sensors [search](https://github.com/exanova-y/synthesis) · [talk](https://youtu.be/jGN_bRmlDQo)\n\n'
++ 'NFC key changer with [currents.fm](https://a.currents.fm)\n\n'
++ 'Multiplayer [arXiv wars](https://youtu.be/ZpNXGqU6-Ro)\n\n'
++ '### notebooks \n\n'
++ '[`4 days in Shanghainese anime ecology!`](https://adiabaticgarden.substack.com/p/4-days-in-shanghainese-anime-ecology)\n\n'
++ '[Huaqiangbei vignette](https://adiabaticgarden.substack.com/p/yoyo-2027)\n\n'
++ '[Science across ja/en/cn](https://adiabaticgarden.substack.com/p/october-readlog)\n\n'
++ '[all writing](writing.html)\n\n'
++ '---\n\n'
++ '<span class="contact">Find me elsewhere on [X](https://x.com/adiabaticgarden) · [substack](https://adiabaticgarden.substack.com/) · <span id="snow-toggle" style="cursor:pointer">❄ brrr, stop Arctic weather</span></span>\n\n'
++ '<div class="nav-row"><a href="writing.html">writing</a><a href="readlog.html">readlog</a><a href="https://exanova.mmm.page">vibes</a></div>';
 
-    <script src="js/queries.js"></script>
-    <script src="js/script.js"></script>
+            content.innerHTML = renderBlock(markdown);
+
+            var snowPaused = false;
+
+            function spawnFlake() {
+                if (snowPaused) return;
+                var el = document.createElement('span');
+                el.textContent = '❄';
+                el.style.cssText = 'position:fixed;top:-1em;z-index:3;pointer-events:none;'
+                    + 'font-size:' + (8 + Math.random() * 10) + 'px;'
+                    + 'left:' + (Math.random() * 100) + 'vw;'
+                    + 'opacity:' + (0.15 + Math.random() * 0.2) + ';'
+                    + 'color:#c6d0f5;';
+                document.body.appendChild(el);
+
+                var y = -20;
+                var x = parseFloat(el.style.left);
+                var speed = 0.3 + Math.random() * 0.5;
+                var drift = (Math.random() - 0.5) * 0.3;
+                var limit = window.innerHeight * 0.8;
+
+                function fall() {
+                    y += speed;
+                    x += drift;
+                    el.style.top = y + 'px';
+                    el.style.left = x + 'vw';
+                    if (y < limit) {
+                        requestAnimationFrame(fall);
+                    } else {
+                        el.style.transition = 'opacity 0.6s';
+                        el.style.opacity = '0';
+                        setTimeout(function() { el.remove(); }, 600);
+                    }
+                }
+                requestAnimationFrame(fall);
+            }
+
+            setInterval(spawnFlake, 400);
+
+            document.getElementById('snow-toggle').addEventListener('click', function() {
+                snowPaused = !snowPaused;
+                this.textContent = snowPaused ? '❄ introduce Arctic weather' : '❄ brrr, stop Arctic weather';
+            });
+        });
+    </script>
 </body>
 </html>

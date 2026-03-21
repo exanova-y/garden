@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Collaborate with me!</title>
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+</head>
+<body>
+    <header>
+        <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="content" class="markdown-content">
+                <!-- Content will be loaded here -->
+                <p>Loading content...</p>
+            </div>
+            <div class="post-navigation">
+                <div class="back-link-container"><a href="../writing.html" class="back-link">← Back to all posts</a></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `
+
+### People have said:
+> "How did I get my colleague's conference rave link from you before anyone else, I'm at the conference! Mad skills!" 
+
+— Yuliya, lab manager at Stanford.
+
+> "Yoyo developed an android app in a few days. They like to generate scatter points which coalesce into a vision, inspect it from different angles, grow possible branches and eliminate them in parallel. They work well under stress." (paraphrased as accurately as possible)
+
+— Naia from currents.fm
+
+My name's Yoyo. I can be hired to work on neurotech software, run quantum mechanical simulations, write, trade stocks, host events or to "make things happen". You can email me at yoyoyuan1729@gmail.com
+
+
+<span id="purple-txt">**Coordinated action and forecasting trends**</span> As a kid, I started underground zines (100 readers) calling out how the education system failed. In late teenage, I stumbled into a conference and gave an impromptu talk where I brainstormed on AI swarms on the spot as the modality of interaction. This got anonymously shouted out on the podcast of Wang Yuquan, a Chinese deep tech investor (in 2023). After that, other Chinese teens started mobilizing at Yuquan's conferences. If you have numerous ideas, I may be able to coordinate a group to implement them.
+
+Another time after numerous cold emails, a serendipitous forwarding notified the Canadian Prime Minister. He recorded a video for our [TEDx youth event](https://www.tedxcolumbialakeyouth.com/) attended by 100+ people.
+
+
+<span id="purple-txt">**Crawling social graphs**</span> "The grant list is very good, just like what my grant scraping engine had turned up with" - Twitter user. I found a free hackathon venues for Vivarium, as well as got a macbook, AI edge server, 2 monitors and keyboards at no cost from mutuals. I also fetched interesting academic partiful links for Bayesian cocosci conference raves to comedy PhD defenses. I may be able to plug people into most techno-optimist social circles quickly, finding venues, coworking spaces, grant lists, tech gear and potential people to hire.
+
+<span id="purple-txt">**Computational physics, ML, neuroscience**</span> Intrigued by physics since 8. Took online courses including intro to quantum computing, quantum physics, computational neuroscience, neurobio and biosensing.
+
+<span id="purple-txt">Example work</span>
+- A neural network to map haptic hand gestures onto swarm robots with Prof. Gennaro Notomista at UWaterloo
+- Microdrone and swarm algorithm implementation at f.inc AI hardware residency
+- Quantum chemistry methods to predict molecular properties with Cristina
+- Full waveform inversion
+
+<span id="purple-txt">**Write academic papers, textbooks, docs**</span> For scientists or startups with too much data on their hands, I can write papers to free up thinking time. Anywhere from [papers](https://adiabatic.garden/pages/simulators.html), [technical articles](https://adiabaticgarden.substack.com/p/4-days-in-shanghainese-anime-ecology), documentation, slide decks, short form content, I can help with. 
+
+"Their writing style is a very rare mix of art and science" Raven Gray, Minerva graduate. 
+
+<span id="purple-txt">**Conference paper reviews**</span> I offer to review extra conference papers relating to physics, cs or neuroscience with kind, constructive feedback. For a while I took over ArXiv daily, a Twitter feed with 49.4K followers that posts papers in cs.ai, I had to parse through the ArXiv every day, which is a lot of papers! Then I made an [arXiv wars](https://youtu.be/ZpNXGqU6-Ro?si=4000SoCP4xZPMWQk) setup with fake Yann LeCun, fake Joscha Bach, etc, so I can comfortably parse new papers without leaving Discord.
+
+<span id="purple-txt">**Trading**</span> Can be hired to maintain portfolios and invest. In 2020, I generated $40k from stocks over 4 months. This is mostly by predicting zoom's massive relevance and fetching covid-related biotech company stocks that had spiked. I found them from paid Yuquan newsletters by spending a few dozen dollars. I also ranked on the juniour honour rolls in [UWaterloo's financial literacy contest (2019)](https://uwaterloo.ca/school-of-accounting-and-finance/teachers-and-guidance-counsellors/financial-literacy-competition-flc/past-flc-results). Something fruitful came out of playing endless Chinese monopoly since I was a kid.
+
+<span id="purple-txt">**Any idea you wish to implement**</span> Have any creative suggestion that you didn't see in the list? Come talk to me at yoyoyuan1729@gmail.com or discord: adiabaticgarden. You can give me a time-bound ambiguous task before commitment. 
+Personal:
+Once, I brought 10 friends into Treehacks without registration by accident. The mmm.page creator liked my site so they sent premium verison to put more blocks, and 10 other of my friends started using mmm.page followingly.
+
+### Other things people have said:
+
+> "Yoyo read the code 3 times and then just began typing in it. "
+
+— Chester Zelaya at f.inc AI hardware Residency
+
+> "that you outright befrieded 2 people @ santa clara was crazyyyy I could never"
+
+— friend, commenting on MAA golden section.
+
+### Timeline
+
+
+2005:
+Deployed to production in Shenzhen, China, pulling numerous nerd pranks.
+            `// Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

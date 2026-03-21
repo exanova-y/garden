@@ -45,17 +45,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const content = document.getElementById('content');
-            const markdownHeader = `
-### [title]
-*by Yoyo • [date]*
-            `;
             // The markdown content embedded directly in the page
             const markdown = `
-__MD_CONTENT__
+### [title]
+*by Yoyo • [date]*
+[content]
             `;
             
             // Render the markdown to HTML using marked.js
-            content.innerHTML = marked.parse(markdownHeader + markdown);
+            content.innerHTML = marked.parse(markdown);
         });
     </script>
 </html>
