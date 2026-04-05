@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[title] </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/markdown.js"></script>
+
+    <!--  latex stuff -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js" integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+
+    <body>
+        <header>
+            <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
+        </header>
+
+        <main>
+            <section class="post">
+                <div id="content" class="markdown-content">
+                    <!-- Content will be loaded here -->
+                    <p>Loading content...</p>
+                </div>
+                <div class="post-navigation">
+                    <div class="back-link-container"><a href="../writing.html" class="back-link">← Back to all posts</a></div>
+                </div>
+            </section>
+        </main>
+    </body>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            // The markdown content embedded directly in the page
+            const markdown = `
+### streams
+*by Yoyo • present day, present time*
+
+coworking with zaira.blog and tol.sh at old chemistry building
+free e-waste has manifested on the 8th floor of berkeley way west! unfortunately, I was kicked out of soda hall after approaching people for e-waste. why are people so lame.
+reconstructed sagittal plane MRI animation of friend's data, can not tell what they're thinking...
+tried out transcranial ultrasound stimulation at lucas center with MR-ARFI imaging. my visual field has cleared up.
+we thank lynde from stanford psychology for lending me their copy of ben barres' biography 🏳️‍⚧️ imagine this: if psychology students were to defend a castle, it would be instantly compromised as they are all too friendly.
+acquired pie at varian physics building with @LydNot
+phosra and I visited MAA golden section where I happily served as free labour
+met Eugene Izhikevich at MBCT, I asked how many employees are in his startup. he said it's just him and cursor.
+free lunch at Google HQ
+I asked during the periodic labs physics colloquium if Ekin intends to build Lee Cronin's chemputer and what happened to his scanning electron microscope... He didn't answer the question.
+feb 2026: acquired 1 petaFLOP computer for free
+jan 2026: returned from extended relaxation centre i.e. Tokyo to south bay
+jul 2025: received 1517 Medici, merge grant and left san francisco
+lived in vivarium
+infiltrated treehacks accidentally with 10 friends
+jan 2025: awesome gap semester has started
+jun 2024: why did I quit my two internships? instead, I moved to a chaotic basement in boston
+jul 2023: I was on-stage in front of 200 people and needed to improvise, so I just talked about agent swarms are going to take over!
+may 2022: "mom, we have neuralink at home!" reality: I have acquired EOG and EMG samples using ganglion
+2021: made two semester's of tuition from stocks
+
+            `;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</html>

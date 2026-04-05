@@ -17,7 +17,7 @@
         }
 
         nav a {
-            color: #00fcb5;
+            color: #9058f8;
             text-shadow: 0 0 8px rgba(0, 252, 181, 0.4);
             font-family: 'Fira Code', monospace;
             font-size: 12px;
@@ -37,10 +37,8 @@
             height: 100vh;
             z-index: 0;
             overflow: hidden;
-
         }
 
-    
         .video-bg video {
             width: 100%;
             height: 100%;
@@ -67,103 +65,57 @@
             padding: 80px 20px 40px;
         }
 
-        .terminal {
-            background: rgba(5, 5, 12, 0.88);
-            border: 0.75px solid #00fcb5;
-            box-shadow:
-                0 0 20px rgba(0, 252, 181, 0.1),
-                0 0 60px rgba(0, 252, 181, 0.05),
-                inset 0 0 40px rgba(0, 0, 0, 0.4);
-            max-width: 700px;
+        .pane {
+            background: rgba(10, 10, 18, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            max-width: 900px;
             width: 100%;
+            padding: 36px 40px;
             font-family: 'Fira Code', 'JetBrains Mono', 'Roboto Mono', monospace;
             animation: fadeIn 1.2s ease-out;
         }
 
-        .terminal-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            border-bottom: 1px solid rgba(0, 252, 181, 0.2);
-            background: rgba(0, 252, 181, 0.03);
-        }
-
-        .terminal-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 1px solid;
-        }
-
-        .terminal-title {
-            /* align at centre of the terminal-bar */
-            display: flex;
-            margin-left: auto;
-            color: #00fcb5;
-            font-size: 1em;
-
-        }
-
-        .terminal-dot:nth-child(1) { border-color: #ff5f57; background: rgba(255, 95, 87, 0.25); }
-        .terminal-dot:nth-child(2) { border-color: #febc2e; background: rgba(254, 188, 46, 0.25); }
-        .terminal-dot:nth-child(3) { border-color: #28c840; background: rgba(40, 200, 64, 0.25); }
-
-        .terminal-body {
-            padding: 28px 32px;
-        }
-
-        /* h1 → neon title */
-        .terminal-body h1 {
+        .pane h1 {
             font-family: 'Fira Code', monospace;
             font-size: 1.5em;
-            font-weight: 700;
-            color: #00fcb5;
-
-            margin: 0 0 2px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0 0 4px;
         }
 
-        /* h3 → neon purple section labels */
-        .terminal-body h3 {
+        .pane h3 {
             color: #9058f8;
             text-shadow: 0 0 8px rgba(144, 88, 248, 0.35);
             font-family: 'Fira Code', monospace;
             font-weight: 600;
             font-size: 0.88em;
             margin: 18px 0 8px;
-            letter-spacing: 0.5px;
         }
 
-        /* blockquote → green prompt line */
-        .terminal-body blockquote {
-            border-left: none;
-            padding: 0;
-            margin: 0 0 5px;
-            color: #00fc50;
-            text-shadow: 0 0 6px rgba(0, 252, 80, 0.35);
-            font-style: normal;
-            font-size: 0.8em;
-            line-height: 1.65;
+        .pane p {
+            margin-bottom: 5px;
+            font-size: 1em;
+            line-height: 1.5;
+            color: #c6d0f5;
         }
 
-        .terminal-body blockquote p { color: inherit; }
-
-        /* em → muted comment */
-        /* overlay 1 from catppuccin - frappe */
-        .terminal-body em {
+        .pane em {
             color: #838ba7;
+            font-size: 1em;
             font-style: italic;
         }
 
-        /* strong → neon green highlight */
-        .terminal-body strong {
+        .pane strong {
             color: #00fc50;
             text-shadow: 0 0 6px rgba(0, 252, 80, 0.35);
             font-weight: 600;
         }
 
-        /* inline code → neon cyan highlight */
-        .terminal-body code {
+        .pane code {
             color: #00fcb5;
             text-shadow: 0 0 6px rgba(0, 252, 181, 0.35);
             background: none;
@@ -172,30 +124,35 @@
             font-size: inherit;
         }
 
-        .terminal-body p {
-            margin-bottom: 5px;
-            font-size: 0.8em;
-            line-height: 1.65;
-            color: #c6d0f5;
-        }
-
-        .terminal-body a {
+        .pane a {
             color: #838ba7;
             text-decoration: none;
             transition: all 0.2s;
         }
 
-        .terminal-body a:hover {
+        .pane a:hover {
             color: #00fcb5;
             text-shadow: 0 0 8px rgba(0, 252, 181, 0.5);
             text-decoration: underline;
             background: transparent;
         }
 
-        .terminal-body hr {
+        .pane hr {
             border: none;
-            border-top: 1px solid rgba(0, 252, 181, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             margin: 14px 0;
+        }
+
+        .pane .contact {
+            color: #585b70;
+        }
+
+        .pane .contact a {
+            color: #838ba7;
+        }
+
+        .pane .contact a:hover {
+            color: #00fcb5;
         }
 
         .cursor-blink {
@@ -206,7 +163,6 @@
             animation: blink 1s step-end infinite;
             vertical-align: middle;
             margin-left: 4px;
-            /* box-shadow: 0 0 6px rgba(0, 252, 181, 0.5); */
         }
 
         .spinner::after {
@@ -235,6 +191,91 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .purple-txt {
+            color: #5044d8;
+            text-shadow: 0 0 2px #110a5f;
+            font-weight: 300;
+        }
+        .gray-txt {
+            color: #838ba7;
+            font-weight: 300;
+        }
+
+        .trans-gradient {
+            background: linear-gradient(90deg, #5bcefa, #f5a9b8, #fff, #f5a9b8, #5bcefa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .greetings {
+            /* make this text a rainbow gradient */
+            /* tighten the linear gradient */
+            background: linear-gradient(90deg, #ebfc00, #9058f8);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        .agender-gradient {
+            background: linear-gradient(90deg, #000, #bababa, #fff, #b8f483, #fff, #bababa, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .rainbow-gradient {
+            background: linear-gradient(90deg, #ff0000, #ff8a00, #ffe600, #4cff00, #00c3ff, #7b00ff, #ff00ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight {
+            background: linear-gradient(90deg,
+                rgba(0,0,0,0.5),
+                rgba(186,186,186,0.5),
+                rgba(255,255,255,0.5),
+                rgba(255,255,255,0.5),
+                rgba(186,186,186,0.5),
+                rgba(0,0,0,0.5));
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+        }
+
+        .intro-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .pfp {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+        }
+
+        .text-arbor {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #c6d0f5;
+            background: none;
+            border: none;
+            padding: 8px 0;
+            margin: 8px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
         .nav-row {
             display: flex;
             gap: 10px;
@@ -243,7 +284,7 @@
         }
 
         .nav-row a {
-            color: #00fcb5;
+            color: #9058f8;
             font-size: 0.78em;
             text-decoration: none;
             border: 1px solid rgba(0, 252, 181, 0.25);
@@ -254,89 +295,16 @@
         .nav-row a:hover {
             background: rgba(0, 252, 181, 0.08);
             border-color: #00fcb5;
-            /* box-shadow: 0 0 10px rgba(0, 252, 181, 0.25); */
-            /* no text underline */
             text-decoration: none;
-            /* color: #fff; */
         }
-
-        .terminal-body .syntax {
-            color: #949cbb;
-            opacity: 0.4;
-            font-style: normal;
-            font-weight: 300;
-            text-shadow: none;
-        }
-
-        .terminal-body .syntax-url {
-            word-break: break-all;
-        }
-
-        .terminal-body .md-hr {
-            margin: 14px 0;
-            /* font-size: 0.8em; */
-            line-height: 1.65;
-        }
-
-        .terminal-body .contact {
-            color: #585b70;
-        }
-
-        .terminal-body .contact a {
-            color: #838ba7;
-        }
-
-        .terminal-body .contact a:hover {
-            color: #00fcb5;
-        }
-
-        /* .terminal-input {
-            display: flex;
-            align-items: center;
-            margin-top: 14px;
-            font-size: 0.8em;
-            line-height: 1.65;
-            color: #c6d0f5;
-            border-top: 1px solid rgba(0, 252, 181, 0.12);
-            padding-top: 12px;
-        }
-
-        .input-prompt {
-            color: #00fc50;
-            text-shadow: 0 0 6px rgba(0, 252, 80, 0.35);
-            margin-right: 6px;
-            flex-shrink: 0;
-        }
-
-        .input-field {
-            flex: 1;
-            outline: none;
-            color: #c6d0f5;
-            caret-color: #00fcb5;
-            font-family: inherit;
-            font-size: inherit;
-            line-height: inherit;
-            min-width: 0;
-        }
-
-        .input-field:empty::before {
-            content: 'type here...';
-            color: #585b70;
-            opacity: 0.4;
-        }
-
-        .input-echo {
-            font-size: 0.8em !important;
-            line-height: 1.65;
-            color: #585b70 !important;
-            margin-bottom: 2px !important;
-        } */
 
         @media (max-width: 600px) {
-            .terminal-body { padding: 20px 16px; }
-            .terminal-body h1 { font-size: 1.15em; }
+            .pane { padding: 24px 20px; }
+            .pane h1 { font-size: 1.15em; }
             header { padding: 12px 16px; }
         }
+
+
     </style>
 </head>
 <body>
@@ -351,97 +319,148 @@
     </div>
 
     <div class="overlay"></div>
-    <div class="scanlines"></div>
 
     <div class="landing-content">
-        <div class="terminal">
-            <div class="terminal-bar">
-                <span class="terminal-dot"></span>
-                <span class="terminal-dot"></span>
-                <span class="terminal-dot"></span>
-                <span class="terminal-title">moss.cafe</span>
+        <div class="pane">
+            <div class="intro-row">
+                <img src="otulissa_exile.webp" alt="pfp" class="pfp">
+                <div>
+                    <h1>adiabatic.garden φ</h1>
+                    <span><span class="greetings">Greetings</span>, I am Yoyo!</span>
+                </div>
             </div>
-            <div class="terminal-body" id="terminal-content"></div>
+            <p>Neurotech/comp neuro, systems-thinking, physics, cs ∘ <span class="highlight">gender-neutral language</span> ∘ large lyapunov exponents</p>
+
+<pre class="text-arbor">
+<span class="purple-txt">[ Bookmarks ]</span>
+               o
+               |
+               +---------- o [ PRIMARY INFLUENCE ]
+               |           Nicky Case 
+               |
+  Highly rated o--------+
+               |         o  <span class="trans-gradient">The Autobiography of Ben Barres 🦋</span>
+               |         o  Stanislaw Lem: Prolegomena to Omnipotence
+               |              from Summa Technologiae
+               |
+               +------- o [ Thinking about ]
+               |        o -- <a href="https://arxiv.org/abs/2209.05548">Tackling the subsampling problem to infer collective 
+               |             properties from limited data</a>
+               |        o -- <a href="https://www.sciencedirect.com/science/article/pii/S0896627319304283">Accurate estimation of neural population
+               |             dynamics without spike sorting</a> 
+               |                 
+               +-- &gt;&gt; [ Skimmed ] -- Player Piano wikipedia page 
+               |
+    Finished reading o --- At the Mountains of Madness illustrated by Gou Tanabe
+               |     o --- Post-Crystallization from Hormone Hunters      
+               |                  
+               |
+               +-- [~ To read ~]
+               |    o  Girls Last Tour
+               |
+    Lost attention and stopped reading o-----+
+               |
+               +-- o Project Hail Mary 
+               |
+               +-- Live bookmarking on <a href="https://curius.app/yoyo-yuan">curius</a>, older readlogs <a href="readlog.html">here</a> 🖇️  
+            </pre>
+
+        <p><span class="purple-txt">[ About ]</span></p>
+            <p>I'm a Minerva student physically located in Palo Alto. DMs open for joyous conversations, walks, coreading, hosting events, etc. <a href="mailto:yoyoyuan1729@gmail.com">Email me!</a> I can be hired to work on neurotech software, run quantum mechanical simulations, write research code, papers or host salons <span class="spinner"></span></p>
+            <br>
+
+            <p><span class="purple-txt">[ Quests ]</span></p>
+            <p>Ongoing: Reading papers on physics/math of neuroscience, statistical mechanics, neuro seminars</p>
+            <p>Building low-cost scalable electrode arrays with Eigenlucy <a href="https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays">notes</a></p>
+            <p>Olfaction visualization with metal oxide sensors <a href="https://github.com/exanova-y/synthesis">search</a> · <a href="https://youtu.be/jGN_bRmlDQo">talk</a></p>
+            <p>quantum chemistry calculations at Chimia</p>
+            <p>NFC programming with <a href="https://a.currents.fm">currents.fm</a></p>
+            <p><a href="https://github.com/exanova-y/arxiv-rag">arXiv RAG</a>, <a href="https://youtu.be/ZpNXGqU6-Ro">arXiv wars</a></p>
+            <br>
+            
+            <p><span class="purple-txt">[ Events I hosted ]</span></p>
+            <p><a href="https://partiful.com/e/ROLXlBr1bxgz3MzTDtgz">something beautiful hackathon (Apr 2025)</a></p>
+            <p><a href="https://www.tedxcolumbialakeyouth.com/">TEDx Youth (Sept 2023)</a></p>
+            <br>
+
+            <span class="purple-txt">[ My Mutuals ]</span>
+            <pre class="text-arbor">
+            
+     +- <span class="gray-txt">[ People ]</span> ------------------ o [ @eigenlucy ]
+     |                                                |
+     | o [ bmorphism ]                                |
+     | o [ @schlynthesis ]                            |
+     | o [ @InquilineKea ] -----------+-------------- o [ @a_naia_ ]
+     +                                |                         
+     |                                +--- o [ @layer07_yuxi ]
+     |                                +--- o [ yudhister ]
+     |   +--------------------------- +--- o [ zaira.blog ] 
+     |   o [ @LydNot ]                  
+     |-- o [ adaptivegood (ada)]
+     |        
+     +-------{ trinity dysis   }
+             { svitlana midianko  }
+             { @euxinianathema }
+            </pre>
+            <br>
+            <p><span class="purple-txt">[ Notebooks ]</span></p>
+            <p><a href="https://adiabaticgarden.substack.com/p/4-days-in-shanghainese-anime-ecology"><span class="purple-txt">4 days in Shanghainese anime ecology!</span></a></p>
+            <p><a href="https://adiabaticgarden.substack.com/p/yoyo-2027">Huaqiangbei vignette</a></p>
+            <p><a href="https://adiabaticgarden.substack.com/p/october-readlog">Science across ja/en/cn</a></p>
+            <p><a href="writing.html">all writing</a></p>
+            <br>
+
+            <span class="purple-txt">[ Streams ]</span>
+            <pre class="text-arbor">
+               o
+               |
+   _habitations o----------+
+               |          [o] Shenzhen (I spawned!)
+               |          [o] Waterloo
+               |          [o] San Francisco
+               |          [o] Tokyo, the extended relaxation center 
+               |          [o] Palo Alto, return
+               |
+  _grateful for support from mutuals o------+
+    +-- [ Acquired 1 petaFLOP computer and MacBook for free ] 
+               |          [o] 1517 Medici Fund
+               |          [o] Merge Grant
+               |          [o] Free Labor @ MAA Golden Section
+               |
+               +---------- o [ Activities ]
+               |           o-- Asked Surya Ganguli about bypassing spike sorting paper
+               |           o-- [ Old Chem Bldg ] >> Coworking with zaira.blog & tol.sh
+               |           o-- Free e-waste on the 8th floor of berkeley way west!
+               |           I headed to soda hall to seek more e-waste, where I was kicked out ]
+               |           o-- Asked Ekin from Periodic Labs about his plans to construct
+               |             The Chemputer + SEM optimization, he was dumbfounded
+               |           o-- Eugene Izhikevich was building a startup, I asked him how many 
+               |                employees he has. He said it's just him and cursor.
+               |           o-- [ Lucas Center ] >> Received MR-ARFI + 
+               |                transcranial ultrasound stimulation more than reading it 
+               |                in the literature, this is epic!!
+               |           o-- Acquired Pie w/ @LydNot at Varian Physics building
+               |           
+               |           o-- Free Lunch at Google HQ 
+               |           o-- Attempted to study Earthquakes
+               |                encountered an actual Earthquake in Kamaishi, Japan
+               |           o-- jun 2025: Lived in Vivarium, a trans warehouse in SF
+               |           o-- Infiltrated TreeHacks accidentally with 10 friends
+               |
+               +-- ~ other activities ~
+                  [o] Reconstructed sagittal MRI of @InquilineKea 🦜
+            </pre>
+
+            <a href="https://x.com/adiabaticgarden">[ X ]</a>
+            <a href="writing.html">[ writing ]</a>
+            <a href="https://curius.app/yoyo-yuan">[ curius ]</a>
+            <a href="https://adiabaticgarden.substack.com">[ substack ]</a>
+            <span id="snow-toggle" style="cursor:pointer">❄ brrr, stop Arctic weather</span>
         </div>
     </div>
 
     <script>
-        function renderBlock(md) {
-            return md.trim().split(/\n\n+/).map(function(block) {
-                block = block.trim();
-                if (!block) return '';
-
-                if (block === '---')
-                    return '<p class="md-hr"><span class="syntax">---</span></p>';
-
-                var hm = block.match(/^(#{1,6})\s+([\s\S]*)/);
-                if (hm) {
-                    var lvl = hm[1].length;
-                    return '<h' + lvl + '><span class="syntax">' + hm[1] + '</span> ' + renderInline(hm[2]) + '</h' + lvl + '>';
-                }
-
-                if (block.startsWith('>')) {
-                    var text = block.replace(/^>\s?/, '');
-                    return '<blockquote><span class="syntax">&gt;</span> ' + renderInline(text) + '</blockquote>';
-                }
-
-                if (block.startsWith('<')) return renderInline(block);
-
-                return '<p>' + renderInline(block) + '</p>';
-            }).join('\n');
-        }
-
-        function renderInline(t) {
-            // bold **text** — use &#42; entities so italic pass won't re-match
-            t = t.replace(/\*\*(.+?)\*\*/g,
-                '<span class="syntax">&#42;&#42;</span><strong>$1</strong><span class="syntax">&#42;&#42;</span>');
-            // italic *text* — require non-space adjacent to delimiters
-            t = t.replace(/\*([^\s*](?:[^*]*[^\s*])?)\*/g,
-                '<span class="syntax">&#42;</span><em>$1</em><span class="syntax">&#42;</span>');
-            // inline code `text`
-            t = t.replace(/`(.+?)`/g,
-                '<span class="syntax">&#96;</span><code>$1</code><span class="syntax">&#96;</span>');
-            // links [text](url)
-            t = t.replace(/\[(.+?)\]\((.+?)\)/g,
-                '<span class="syntax">[</span><a href="$2">$1</a><span class="syntax">](<span class="syntax-url">$2</span>)</span>');
-            return t;
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
-            var content = document.getElementById('terminal-content');
-
-            var markdown = ''
-+ '# adiabatic.garden φ\n\n'
-+ 'Hello, I am Yoyo!\n\n'
-+ '*physics · neuroscience · cs ∘ agender language · chaos and playfulness* <span class="spinner"></span>\n\n'
-+ "I can be hired to work on neurotech software, run quantum mechanical simulations, write documentation or host events." + '\n\n'
-+ "I'm a Minerva student physically present on the Stanford campus, reach out for walks, coreading, event hosting and so on at yoyoyuan1729 at gmail dot com" + '\n\n'
-+ '---\n\n'
-+ '### bookmarks\n\n'
-+ '`Nicky Case` as primary influence \n\n'
-+ 'Highly rated: `Ben Barres Autobiography`\n\n'
-+ "Stanislaw Lem's `Prolegomena to Omnipotence` from Summa Technologiae" + '\n\n'
-+ 'Temporary Autonomous Zones\n\n'
-+ 'Recently read: Tackling the subsampling problem to infer collective properties from limited data \n\n'
-+ "Forgot to read: Shape of a Life"+'\n\n'
-+ 'Post-Crystallization from Hormone Hunters\n\n'
-+ 'Find me on [curius](https://curius.app/yoyo-yuan) · Older readlogs [here](readlog.html)\n\n'
-+ '### quests \n\n'
-+ 'Ongoing: Building low-cost microelectrode arrays w/ Eigenlucy [notes](https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays)\n\n'
-+ 'Olfaction with metal oxide sensors [search](https://github.com/exanova-y/synthesis) · [talk](https://youtu.be/jGN_bRmlDQo)\n\n'
-+ 'NFC key changer with [currents.fm](https://a.currents.fm)\n\n'
-+ 'Multiplayer [arXiv wars](https://youtu.be/ZpNXGqU6-Ro)\n\n'
-+ '### notebooks \n\n'
-+ '[`4 days in Shanghainese anime ecology!`](https://adiabaticgarden.substack.com/p/4-days-in-shanghainese-anime-ecology)\n\n'
-+ '[Huaqiangbei vignette](https://adiabaticgarden.substack.com/p/yoyo-2027)\n\n'
-+ '[Science across ja/en/cn](https://adiabaticgarden.substack.com/p/october-readlog)\n\n'
-+ '[all writing](writing.html)\n\n'
-+ '---\n\n'
-+ '<span class="contact">Find me elsewhere on [X](https://x.com/adiabaticgarden) · [substack](https://adiabaticgarden.substack.com/) · <span id="snow-toggle" style="cursor:pointer">❄ brrr, stop Arctic weather</span></span>\n\n'
-+ '<div class="nav-row"><a href="writing.html">writing</a><a href="readlog.html">readlog</a><a href="https://exanova.mmm.page">vibes</a></div>';
-
-            content.innerHTML = renderBlock(markdown);
-
             var snowPaused = false;
 
             function spawnFlake() {
