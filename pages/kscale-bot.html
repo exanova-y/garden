@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting the K-scale humanoid robot to T-pose</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+</head>
+    <body class="dark-page writing">
+        <script src="../js/layout.js"></script>
+
+        <div class="landing-content">
+            <div class="pane">
+                <script src="../js/tab-bar.js"></script>
+                <div id="content" class="markdown-content">
+                    <p>Loading content...</p>
+                </div>
+                <div class="post-navigation">
+                    <a href="../quests.html" class="back-link">← Back to quests</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/snow.js"></script>
+    </body>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `### Getting K-scale's zeroth bot to T-pose
+*by: Fred, Homero, Stanley, Yoyo • 2025-01-19*
+
+I briefly visited K-scale labs with Verda, and then, two-day hackathon! 🎉 Wow, humanoids are difficult to handle with joint and actuators issues.
+We wanted to tackle the dance pose challenge, planning trajectories from one pose to another. But, too many bugs! So we threw a hail Mary and just recorded the transitions from one pose (e.g. A-Pose) to another (e.g. T-Pose). Connect to robot, program fixed points, figure out centre of mass and bounds while playing back pose trajectories.
+
+We used tensorflow js + corresponded the transition with robotic arm movement with the help of flask and other python scripts.
+[Repo](https://github.com/HomeroRR/khacks_dancing_robot
+[Demo](https://youtu.be/nen0Na_uitc?si=3nQLfMDK63MiQjNe)
+)
+`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(content, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$',  right: '$',  display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+    </script>
+</html>

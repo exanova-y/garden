@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is spin?</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+</head>
+    <body class="dark-page writing">
+        <script src="../js/layout.js"></script>
+
+        <div class="landing-content">
+            <div class="pane">
+                <script src="../js/tab-bar.js"></script>
+                <div id="content" class="markdown-content">
+                    <p>Loading content...</p>
+                </div>
+                <div class="post-navigation">
+                    <a href="../quests.html" class="back-link">← Back to quests</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/snow.js"></script>
+    </body>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `### Properties of spin
+*by: Yoyo Yuan • 2021-08-02*
+
+Particles have intrinsic properties such as mass and charge. Spin is another fundamental property of particles, distinct from mass and charge.
+
+The concept of spin was first discovered through the Stern-Gerlach experiment:
+
+![image](/assets/images/q-sim/stern.png)
+
+**Setup**.   
+Electrically neutral silver atoms (with 1 valence electron) were shot through a non-uniform magnetic field.
+
+**Expectation**   
+ Since silver atoms had zero orbital angular momentum, they were not expected to interact with the magnetic field and were predicted to pass through undeflected.
+
+**Observation**    
+The beam split into two distinct paths, indicating that electrons possess intrinsic angular momentum (spin), which is quantized.
+
+### Properties of spin
+1. Quantization:
+Spin is quantized, meaning it can only take specific discrete values.
+For electrons, the spin value is ½.
+
+2. Directionality:
+The magnitude of spin is fixed for a given particle.
+The direction of spin can point in any orientation, but it can only be measured along one axis at a time.
+Measuring spin along one axis destroys information about its orientation along other axes.
+
+3. Wavefunction Rotation:
+The spin value determines the angle of rotation required for the particle's wavefunction to return to its original state.
+
+![img](/assets/images/q-sim/spin.webp)
+
+For spin-½ particles (e.g., electrons, protons, neutrons, neutrinos, quarks), the wavefunction returns to itself only after two full rotations (720°).
+
+### Spin and Magnetic Behavior
+Particles with spin behave like tiny magnets. In a magnetic field, particles with spin experience a force, causing them to follow specific trajectories. The Stern-Gerlach experiment demonstrated this by splitting the beam into two distinct paths, corresponding to the two possible spin states (spin-up and spin-down).
+
+**Angular Momentum and Spin**   
+Spin is a form of intrinsic angular momentum, independent of orbital motion. Faster "spinning" corresponds to greater angular momentum, represented by a larger vector.
+
+**Spin and the Pauli Exclusion Principle**   
+Particles with half-integer spin (e.g., electrons) obey the Pauli Exclusion Principle, which states that no two identical fermions can occupy the same quantum state simultaneously.
+This principle is fundamental to the structure of atoms and the behavior of matter.`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(content, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$',  right: '$',  display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+    </script>
+</html>

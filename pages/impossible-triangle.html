@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impossible Triangle</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Include the marked.js library for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+</head>
+    <body class="dark-page writing">
+        <script src="../js/layout.js"></script>
+
+        <div class="landing-content">
+            <div class="pane">
+                <script src="../js/tab-bar.js"></script>
+                <div id="content" class="markdown-content">
+                    <p>Loading content...</p>
+                </div>
+                <div class="post-navigation">
+                    <a href="../quests.html" class="back-link">← Back to quests</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/snow.js"></script>
+    </body>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            
+            // The markdown content embedded directly in the page
+            const markdown = `
+### Impossible triangle
+by Yoyo Yuan • 2022-11-19
+
+According to a popular meme, university students must choose between sleep, studying, and socializing. I adapted it into a moving graph consisting of sleep, studying, and extracurriculars coded in processing java. The code combines geometry with behavioral research. As part of the assignment to practice coding techniques, I coded the graph without using any libraries. This project is collected into the best grade 12 OOP design projects of all time out of a few hundred projects.
+
+[repo](https://github.com/exanova-y/impossibleTriangle)
+[demo video](https://youtu.be/KKV9icU2Rvs)
+`;
+            
+            // Render the markdown to HTML using marked.js
+            content.innerHTML = marked.parse(markdown);
+
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(content, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$',  right: '$',  display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+    </script>
+</html>

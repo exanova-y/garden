@@ -5,17 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adiabatic.garden</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/config.js"></script> <!-- for the site menu and name-->
-    <!-- <script src="js/navigation.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- this is a markdown parser-->
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+    <style>
+        .landing-content { align-items: center; }
+
+        .pane h3 {
+            color: #9058f8;
+            text-shadow: 0 0 8px rgba(144, 88, 248, 0.35);
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            font-size: 0.88em;
+            margin: 18px 0 8px;
+        }
+
+        .pane em { color: #838ba7; font-size: 1em; font-style: italic; }
+
+        .pane strong {
+            color: #00fc50;
+            text-shadow: 0 0 2px rgba(0, 252, 80, 0.35);
+            font-weight: 600;
+        }
+
+        .pane code {
+            color: #00fcb5;
+            text-shadow: 0 0 2px rgba(0, 252, 181, 0.35);
+            background: none;
+            padding: 0;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .pane .trans-hover { -webkit-background-clip: text; background-clip: text; }
+
+        .pane .contact { color: #585b70; }
+        .pane .contact a { color: #838ba7; }
+        .pane .contact a:hover { color: #00fcb5; }
+
+        .spinner::after {
+            content: '|';
+            display: inline-block;
+            color: #585b70;
+            font-family: 'Fira Code', monospace;
+            animation: spin 0.6s steps(4, end) infinite;
+        }
+
+        @keyframes spin {
+            0%   { content: '|'; }
+            25%  { content: '/'; }
+            50%  { content: '—'; }
+            75%  { content: '\\'; }
+            100% { content: '|'; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .purple-txt { color: #5044d8; text-shadow: 0 0 2px #110a5f; font-weight: 300; }
+
+        .intro-row { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+
+        .pfp {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav><ul><!-- Navigation items will be populated by JavaScript --></ul></nav>
-    </header>
-    <main>
-        <div class="long-box" style="border: 1px solid #bcc0cc;">
-            <p>site is sleeping! come back later on may 7th.</p>
+<body class="dark-page">
+    <script src="js/layout.js"></script>
+
+    <div class="landing-content">
+        <div class="pane">
+            <script src="js/tab-bar.js"></script>
+
+            <div class="tab-panel">
+                <div class="intro-row">
+                    <img src="otulissa_exile.webp" alt="pfp" class="pfp">
+                    <div>
+                        <h1 class="make-white">adiabatic.garden φ</h1>
+                        <span><span class="make-purple">Greetings, I am Yoyo (they/them)</span></span>
+                    </div>
+                </div>
+
+                <br>
+                <p><span class="make-purple">[ Intro ]</span></p>
+                <p>Neurotech/comp neuro, science automation, physics, systems-thinking. Minerva student in San Francisco bay area. Highly receptive to joyous conversations and collaborations</p>
+                <br>
+
+                <p><span class="make-purple">[ Quests ]</span></p>
+                <p>Statistical mechanics</p>
+                <p>Science automation. The first messy prototype was <a href="https://youtu.be/ZpNXGqU6-Ro">arXiv wars</a>. In the second iteration, I built <a href="https://github.com/exanova-y/arxiv-rag">arXiv RAG</a>. Third iteration is underway.</p>
+                <p>Building low-cost DIY electrode arrays with Eigenlucy (2025) <a href="https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays">notes</a></p>
+                <p>ML-assisted olfaction visualization with metal oxide sensors with Eigenlucy (2025) <a href="https://github.com/exanova-y/synthesis">search</a> · <a href="https://youtu.be/jGN_bRmlDQo">talk</a></p>
+                <p>Physis and chemistry simulations at Chimia DAO (2025 - present)</p>
+                <p>NFC special project at <a href="https://a.currents.fm">currents.fm</a> (2025)</p>
+                <br>
+
+
+                <br>
+                <span><a href="https://x.com/adiabaticgarden">X</a>, telegram @adiabaticgarden, <a href="mailto:yoyoyuan1729@gmail.com">email</a>, <a href="https://pawsitivefeedback.substack.com">substack</a>, <a href="https://soundcloud.com/otulissa/">soundcloud</a></span>
+                <span id="snow-toggle" style="cursor:pointer">[ It's too cold. Stop Arctic weather ]</span>
+            </div>
         </div>
-    </main>
+    </div>
+
+    <script src="js/snow.js"></script>
 </body>
+</html>

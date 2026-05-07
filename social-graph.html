@@ -8,368 +8,63 @@
     <script src="js/config.js"></script>
     <script src="js/navigation.js"></script>
     <style>
-        body {
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
-            overflow-x: hidden;
-            background: #0a0a0f;
-        }
-
-        nav a {
-            color: #9058f8;
-            text-shadow: 0 0 8px rgba(0, 252, 181, 0.4);
-            font-family: 'Fira Code', monospace;
-            font-size: 12px;
-        }
-
-        nav a:hover {
-            color: #fff;
-            text-shadow: 0 0 14px rgba(0, 252, 181, 0.7);
-            background: transparent;
-        }
-
-        .video-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .video-bg video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .landing-content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            min-width: 0;
-            padding: 80px 20px 40px;
-        }
-
-        .pane {
-            background: rgb(23, 23, 23);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 3px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            max-width: 1000px;
-            width: 100%;
-            min-width: 0;
-            padding: 36px 40px;
-            overflow-x: wrap;
-            font-family: 'Fira Code', 'JetBrains Mono', 'Roboto Mono', monospace;
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        .pane h1 {
-            font-family: 'Fira Code', monospace;
-            font-size: 1.5em;
-            font-weight: 400;
-            color: #ffffff;
-            margin: 0 0 4px;
-        }
-
-        .pane h2 {
-            color: #9058f8;
-            text-shadow: 0 0 8px rgba(144, 88, 248, 0.35);
-            font-family: 'Fira Code', monospace;
-            font-weight: 600;
-            font-size: 0.95em;
-            margin: 18px 0 8px;
-        }
-
-        .pane p {
-            margin-bottom: 5px;
-            font-size: 1em;
-            line-height: 1.5;
-            color: #c6d0f5;
-        }
-
-        .pane a {
-            color: #838ba7;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .pane a:hover {
-            background: linear-gradient(90deg,
-                rgba(0,0,0,0.3),
-                rgba(186,186,186,0.3),
-                rgba(255,255,255,0.3),
-                rgba(255,255,255,0.3),
-                rgba(186,186,186,0.3),
-                rgba(0,0,0,0.3));
-            background-size: 100% 50%;
-            background-repeat: no-repeat;
-            background-position: 0 100%;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .purple-gradient {
-            background: linear-gradient(90deg, #ebfc00, #9058f8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 300;
-            text-align: left;
-        }
-
-        .trans-gradient {
-            background: linear-gradient(90deg, #5bcefa, #f5a9b8, #fff, #f5a9b8, #5bcefa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .gray-txt {
-            color: #838ba7;
-            font-weight: 300;
-        }
-
-        .text-arbor {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9em;
-            line-height: 1.5;
-            color: #c6d0f5;
-            background: none;
-            border: none;
-            padding: 8px 0;
-            margin: 8px 0;
-            overflow-x: wrap;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break: break-word;
-        }
-
-        .make-purple {
-            background: linear-gradient(90deg, #9058f8 10%, #5bcefa 30%, #7287fd 50%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            font-weight: 350;
-            text-align: left;
-        }
-
-        @media (max-width: 600px) {
-            .pane { padding: 24px 20px; }
-            .pane h1 { font-size: 1.15em; }
-            header { padding: 12px 16px; }
-        }
-
-        .tab-bar {
-            display: flex;
-            gap: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            margin-bottom: 16px;
-            padding-bottom: 0;
-        }
-
-        .tab-link {
-            background: none;
-            border: none;
-            border-bottom: 2px solid transparent;
-            color: #585b70;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85em;
-            padding: 8px 16px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-        }
-
-        .tab-link:hover {
-            color: #c6d0f5;
-        }
-
         .tab-link.active {
-            color: #00fcb5;
-            border-bottom: 2px solid #00fcb5;
-            text-shadow: 0 0 6px rgba(0, 252, 181, 0.35);
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            text-shadow: 0 0 2px rgba(0, 252, 181, 0.35);
         }
     </style>
 </head>
-<body>
-    <header>
-        <nav><ul></ul></nav>
-    </header>
-
-    <div class="video-bg">
-        <video autoplay muted loop playsinline>
-            <source src="ascii-loop.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="overlay"></div>
+<body class="dark-page">
+    <script src="js/layout.js"></script>
 
     <div class="landing-content">
         <div class="pane">
-            <div class="tab-bar">
-                <a href="index.html" class="tab-link">[ Main ]</a>
-                <a href="quests.html" class="tab-link">[ Quests ]</a>
-                <a href="readlogs.html" class="tab-link">[ Feral scholar readlogs ]</a>
-                <a href="me.html" class="tab-link">[ Me ]</a>
-                <a href="wiki.html" class="tab-link">[ Wiki ]</a>
-                <a href="social-graph.html" class="tab-link active">[ Social graph ]</a>
-            </div>
+            <script src="js/tab-bar.js"></script>
 
             <div class="tab-panel">
-                <h1 class="make-purple">Social graph</h1>
                 <br>
 <pre class="text-arbor">
- +- <span class="gray-txt">[ who I recently talked to ]</span> ------------------ o [ @eigenlucy ]
+ +- <span class="make-purple">[ people ]</span> ------------------ o [ @eigenlucy ]
  |                                                |
  | o [ bmorphism ]                                |
  | o [ @schlynthesis ]                            |
  | o [ @InquilineKea ] -----------+-------------- o [ @a_naia_ ]
- +                                |                         
- |                                +--- o [ @layer07_yuxi ]
- |                                +--- o [ yudhister ]
- |                                +--- o [ cactusblue.dev ]  
- |   +--------------------------- +--- o [ zaira.blog ] 
- |   o [ @LydNot ]                  
- |-- o [ adaptivegood (ada)]
- |        
- +-------{ proud member of no circadian rhythm #2 }
-         { svitlana midianko  }
-         { @euxinianathema }
+ +   |                            |                         
+ |   [ niplav.site ]              +--- o [ @layer07_yuxi ]
+ |---[ @lu_sichu ]                +--- o [ yudhister ]
+ |   |                            +--- o [ cactusblue.dev ]----o
+ |   +--------------------------- +--- o [ zaira.blog ]        |      
+ |-- o [ adaptivegood.substack.com ]                           |
+ |-- o [ @LydNot ]                                             |
+ |-- o [ @tetraslam ]                                          |      
+        |                                                      |
+        [ @playerpiano05 ]---------------------------------o [ github.com/starcoil ]                
+         [ svitlana midianko ]                             
+         [ @euxinianathema ]                                           
 </pre>
-                <br>
 
-                <h2 class="make-purple">Streams</h2>
 <pre class="text-arbor">
-               o
-               |
-   _habitations o----------+
-               |          [o] Shenzhen, spawned and existed online as a spotted owl by name of Otulissa
-               |          [o] Waterloo
-               |          [o] San Francisco, going to owl school (Minerva)
-               |          [o] Tokyo, the extended relaxation center 
-               |          [o] Palo Alto, return
-               |
-  _grateful for support from mutuals o------+
-    +-- [ 1 petaFLOP computer and MacBook donation ] 
-               |          [o] 1517 Medici Fund
-               |          [o] Merge Grant
-               |          [o] MAA
-               |
-               +---------- o [ Activities ]
-               |           o-- Received a free ticket to MC0001, see y'all there!
-               |           o-- Dimensionality reduction of San Francisco group houses: play it <a href="https://github.com/exanova-y/hackerhouse-sorting-hat">here</a>
-               |           o-- The Physics of MRI and ultrasound <a href="https://adiabatic.garden/pages/ultrasound-mri.html">notes</a>
-               |           o-- Reconstructed sagittal MRI of my fellow winged creature, @InquilineKea           
-               |           o-- Coworking with yudhister
-               |           o-- Visited Neurotech hackathon at Frontier Tower and talked to Sharena Rice
-               |           o-- Asked Surya Ganguli about bypassing spike sorting paper
-               |           o-- [ Old Chem Bldg ] >> Coworking with zaira.blog & tol.sh
-               |           o-- Free e-waste on the 8th floor of berkeley way west!
-               |           I headed to soda hall to seek more e-waste, where I was kicked out ]
-               |           o-- Asked Ekin from Periodic Labs about his plans to construct
-               |             The Chemputer + SEM optimization, he was dumbfounded
-               |           o-- Eugene Izhikevich was building a startup, I asked him how many 
-               |                employees he has. He said it's just him and cursor.
-               |           o-- [ Lucas Center ] >> Received MR-ARFI + 
-               |                transcranial ultrasound stimulation more than reading it 
-               |                in the literature, this is epic!!
-               |           o-- 03/14: Acquired Pie with Lydia at Varian Physics building
-               |           o-- Stumbled into PhD defense re: the great ungulates of CS by Dr. Xavier Gonzalez 
-               |           o-- Free Lunch at Google HQ 
-               |           o-- Attempted to study Earthquakes, greeted by an 
-               |            actual magnitude 6.0 Earthquake in Kamaishi, Japan pfffff
-               |           o-- jun 2025: Lived in Vivarium, a trans warehouse in SF
-               |           o-- Infiltrated TreeHacks accidentally with 10 friends
-</pre>
-                <br>
+    <span class="make-purple">[ Fantastic blogs and where to find them? ]</span>    
+    <a href="http://aryl.org/">arylation</a>
+    <a href="https://readbyvaish.substack.com/">while i procrastinate</a>
+    <a href="https://www.gwern.net/">gwern.net</a>
+    <a href="https://streams.place/daytura">daytura's streams</a>
+    <a href="https://substack.com/@serialsevens">conq</a>
 
-                <h2 class="make-purple">Events I hosted</h2>
-                <p><a href="https://partiful.com/e/ROLXlBr1bxgz3MzTDtgz">something beautiful hackathon (Apr 2025)</a></p>
-                <p><a href="https://www.tedxcolumbialakeyouth.com/">TEDx Youth (Sept 2023)</a></p>
-                <br>
+                            <span class="make-purple">[ Event hosting extravaganza ]</span>
+                            <a href="https://www.tedxcolumbialakeyouth.com/">TEDx Columbia Lake Youth (09-2023)</a>
+                            <a href="https://partiful.com/e/ROLXlBr1bxgz3MzTDtgz">Something beautiful hackathon (04-2025)</a>
 
-                <h2 class="make-purple">Connect</h2>
-                <p><a href="https://x.com/adiabaticgarden">[ X / Twitter ]</a></p>
-                <p><a href="https://adiabaticgarden.substack.com">[ Substack ]</a></p>
-                <p><a href="https://soundcloud.com/otulissa/">[ SoundCloud ]</a></p>
-                <p><a href="https://curius.app/yoyo-yuan">[ Curius ]</a></p>
-                <br>
-
-                <h2 class="make-purple">Contact</h2>
-                <p><a href="mailto:yoyoyuan1729@gmail.com">Email</a></p>
-                <p>DMs open for joyous conversations and collaborations</p>
+                <span class="make-purple">[ Public contact ]</span>
+                <span><a href="https://x.com/adiabaticgarden">X (Twitter)</a>, Telegram: @adiabaticgarden, <a href="mailto:yoyoyuan1729@gmail.com">Email</a></span>
+                <span><a href="https://adiabaticgarden.substack.com">Substack</a>, <a href="https://soundcloud.com/otulissa/">SoundCloud</a>, <a href="https://curius.app/yoyo-yuan">Curius</a>, <a href="https://github.com/exanova-y">GitHub</a></span>
+                </pre>
+                
             </div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var snowPaused = false;
-
-            function spawnFlake() {
-                if (snowPaused) return;
-                var el = document.createElement('span');
-                el.textContent = '❄';
-                el.style.cssText = 'position:fixed;top:-1em;z-index:3;pointer-events:none;'
-                    + 'font-size:' + (8 + Math.random() * 10) + 'px;'
-                    + 'left:' + (Math.random() * 100) + 'vw;'
-                    + 'opacity:' + (0.15 + Math.random() * 0.2) + ';'
-                    + 'color:#c6d0f5;';
-                document.body.appendChild(el);
-
-                var y = -20;
-                var x = parseFloat(el.style.left);
-                var speed = 0.3 + Math.random() * 0.5;
-                var drift = (Math.random() - 0.5) * 0.3;
-                var limit = window.innerHeight * 0.8;
-
-                function fall() {
-                    y += speed;
-                    x += drift;
-                    el.style.top = y + 'px';
-                    el.style.left = x + 'vw';
-                    if (y < limit) {
-                        requestAnimationFrame(fall);
-                    } else {
-                        el.style.transition = 'opacity 0.6s';
-                        el.style.opacity = '0';
-                        setTimeout(function() { el.remove(); }, 600);
-                    }
-                }
-                requestAnimationFrame(fall);
-            }
-
-            setInterval(spawnFlake, 400);
-
-            var toggle = document.getElementById('snow-toggle');
-            if (toggle) {
-                toggle.addEventListener('click', function() {
-                    snowPaused = !snowPaused;
-                    this.textContent = snowPaused ? '❄ introduce Arctic weather' : '❄ brrr, stop Arctic weather';
-                });
-            }
-        });
-    </script>
+    <script src="js/snow.js"></script>
 </body>
 </html>

@@ -7,11 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Clear existing navigation items completely
         navElement.innerHTML = '';
         
-        // Calculate relative path prefix if in the pages directory
-        let pathPrefix = '';
-        if (window.location.pathname.includes('/pages/')) {
-            pathPrefix = '../';
-        }
+        // Calculate relative path prefix based on directory depth
+        const _depth = window.location.pathname.split('/').filter(Boolean).length - 1;
+        let pathPrefix = _depth > 0 ? '../'.repeat(_depth) : '';
         
         // Add navigation items from config
         siteConfig.navigation.forEach(item => {
@@ -45,10 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Find chronological page URL from config
         const chronologicalItem = siteConfig.navigation.find(item => item.name === "chronological");
         if (chronologicalItem) {
-            let pathPrefix = '';
-            if (window.location.pathname.includes('/pages/')) {
-                pathPrefix = '../';
-            }
+            const _d2 = window.location.pathname.split('/').filter(Boolean).length - 1;
+            let pathPrefix = _d2 > 0 ? '../'.repeat(_d2) : '';
             
             // Update href with the config URL
             let url = chronologicalItem.url;
