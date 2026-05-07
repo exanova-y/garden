@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me | adiabatic.garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+    <style>
+        body {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            background: #0a0a0f;
+        }
+
+        nav a {
+            color: #9058f8;
+            text-shadow: 0 0 8px rgba(0, 252, 181, 0.4);
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 14px rgba(0, 252, 181, 0.7);
+            background: transparent;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .landing-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            min-width: 0;
+            padding: 80px 20px 40px;
+        }
+
+        .pane {
+            background: rgb(23, 23, 23);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            max-width: 1000px;
+            width: 100%;
+            min-width: 0;
+            padding: 36px 40px;
+            overflow-x: wrap;
+            font-family: 'Fira Code', 'JetBrains Mono', 'Roboto Mono', monospace;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .pane h1 {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0 0 4px;
+        }
+
+        .pane p {
+            margin-bottom: 5px;
+            font-size: 1em;
+            line-height: 1.5;
+            color: #c6d0f5;
+        }
+
+        .pane a {
+            color: #838ba7;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .pane a:hover {
+            background: linear-gradient(90deg,
+                rgba(0,0,0,0.3),
+                rgba(186,186,186,0.3),
+                rgba(255,255,255,0.3),
+                rgba(255,255,255,0.3),
+                rgba(186,186,186,0.3),
+                rgba(0,0,0,0.3));
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .purple-gradient {
+            background: linear-gradient(90deg, #ebfc00, #9058f8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        .make-purple {
+            background: linear-gradient(90deg, #9058f8 10%, #5bcefa 30%, #7287fd 50%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            font-weight: 350;
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            .pane { padding: 24px 20px; }
+            .pane h1 { font-size: 1.15em; }
+            header { padding: 12px 16px; }
+        }
+
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 16px;
+            padding-bottom: 0;
+        }
+
+        .tab-link {
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #585b70;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85em;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .tab-link:hover {
+            color: #c6d0f5;
+        }
+
+        .tab-link.active {
+            color: #00fcb5;
+            border-bottom: 2px solid #00fcb5;
+            text-shadow: 0 0 6px rgba(0, 252, 181, 0.35);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav><ul></ul></nav>
+    </header>
+
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="ascii-loop.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="landing-content">
+        <div class="pane">
+            <div class="tab-bar">
+                <a href="index.html" class="tab-link">[ Main ]</a>
+                <a href="quests.html" class="tab-link">[ Quests ]</a>
+                <a href="readlogs.html" class="tab-link">[ Feral scholar readlogs ]</a>
+                <a href="me.html" class="tab-link active">[ Me ]</a>
+                <a href="wiki.html" class="tab-link">[ Wiki ]</a>
+                <a href="social-graph.html" class="tab-link">[ Social graph ]</a>
+            </div>
+
+            <div class="tab-panel">
+                <h1 class="make-purple">Me</h1>
+                <br>
+                <p>This is Yoyo's site</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var snowPaused = false;
+
+            function spawnFlake() {
+                if (snowPaused) return;
+                var el = document.createElement('span');
+                el.textContent = '❄';
+                el.style.cssText = 'position:fixed;top:-1em;z-index:3;pointer-events:none;'
+                    + 'font-size:' + (8 + Math.random() * 10) + 'px;'
+                    + 'left:' + (Math.random() * 100) + 'vw;'
+                    + 'opacity:' + (0.15 + Math.random() * 0.2) + ';'
+                    + 'color:#c6d0f5;';
+                document.body.appendChild(el);
+
+                var y = -20;
+                var x = parseFloat(el.style.left);
+                var speed = 0.3 + Math.random() * 0.5;
+                var drift = (Math.random() - 0.5) * 0.3;
+                var limit = window.innerHeight * 0.8;
+
+                function fall() {
+                    y += speed;
+                    x += drift;
+                    el.style.top = y + 'px';
+                    el.style.left = x + 'vw';
+                    if (y < limit) {
+                        requestAnimationFrame(fall);
+                    } else {
+                        el.style.transition = 'opacity 0.6s';
+                        el.style.opacity = '0';
+                        setTimeout(function() { el.remove(); }, 600);
+                    }
+                }
+                requestAnimationFrame(fall);
+            }
+
+            setInterval(spawnFlake, 400);
+
+            var toggle = document.getElementById('snow-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', function() {
+                    snowPaused = !snowPaused;
+                    this.textContent = snowPaused ? '❄ introduce Arctic weather' : '❄ brrr, stop Arctic weather';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

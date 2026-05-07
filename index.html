@@ -62,19 +62,20 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            min-width: 0;
             padding: 80px 20px 40px;
         }
 
         .pane {
-            background: rgba(10, 10, 18, 0.65);
+            background: rgb(23, 23, 23);
             border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 3px;
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
+            min-width: 0;
             padding: 36px 40px;
+            overflow-x: wrap;
             font-family: 'Fira Code', 'JetBrains Mono', 'Roboto Mono', monospace;
             animation: fadeIn 1.2s ease-out;
         }
@@ -131,10 +132,21 @@
         }
 
         .pane a:hover {
-            color: #00fcb5;
-            text-shadow: 0 0 8px rgba(0, 252, 181, 0.5);
-            text-decoration: underline;
-            background: transparent;
+            background: linear-gradient(90deg,
+                rgba(0,0,0,0.3),
+                rgba(186,186,186,0.3),
+                rgba(255,255,255,0.3),
+                rgba(255,255,255,0.3),
+                rgba(186,186,186,0.3),
+                rgba(0,0,0,0.3));
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+        }
+            
+        .pane .trans-hover {
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
         .pane hr {
@@ -153,16 +165,6 @@
 
         .pane .contact a:hover {
             color: #00fcb5;
-        }
-
-        .cursor-blink {
-            display: inline-block;
-            width: 8px;
-            height: 14px;
-            background: #00fcb5;
-            animation: blink 1s step-end infinite;
-            vertical-align: middle;
-            margin-left: 4px;
         }
 
         .spinner::after {
@@ -208,11 +210,8 @@
             background-clip: text;
         }
 
-        .greetings {
-            /* make this text a rainbow gradient */
-            /* tighten the linear gradient */
+        .purple-gradient {
             background: linear-gradient(90deg, #ebfc00, #9058f8);
-
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -236,12 +235,12 @@
 
         .highlight {
             background: linear-gradient(90deg,
-                rgba(0,0,0,0.5),
-                rgba(186,186,186,0.5),
-                rgba(255,255,255,0.5),
-                rgba(255,255,255,0.5),
-                rgba(186,186,186,0.5),
-                rgba(0,0,0,0.5));
+                rgba(0,0,0,0.3),
+                rgba(186,186,186,0.3),
+                rgba(255,255,255,0.3),
+                rgba(255,255,255,0.3),
+                rgba(186,186,186,0.3),
+                rgba(0,0,0,0.3));
             background-size: 100% 50%;
             background-repeat: no-repeat;
             background-position: 0 100%;
@@ -255,8 +254,8 @@
         }
 
         .pfp {
-            width: 64px;
-            height: 64px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -272,36 +271,74 @@
             border: none;
             padding: 8px 0;
             margin: 8px 0;
-            overflow-x: auto;
-            white-space: pre;
+            overflow-x: wrap;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-word;
         }
 
-        .nav-row {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 18px;
+        .make-white {
+            color: #c6d0f5;
+            -webkit-text-fill-color: #c6d0f5;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
         }
 
-        .nav-row a {
-            color: #9058f8;
-            font-size: 0.78em;
-            text-decoration: none;
-            border: 1px solid rgba(0, 252, 181, 0.25);
-            padding: 4px 14px;
-            transition: all 0.25s;
-        }
-
-        .nav-row a:hover {
-            background: rgba(0, 252, 181, 0.08);
-            border-color: #00fcb5;
-            text-decoration: none;
+        .make-purple {
+            background: linear-gradient(90deg, #9058f8 10%, #5bcefa 30%, #7287fd 50%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            font-weight: 350;
+            text-align: left;
         }
 
         @media (max-width: 600px) {
             .pane { padding: 24px 20px; }
             .pane h1 { font-size: 1.15em; }
             header { padding: 12px 16px; }
+        }
+
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 16px;
+            padding-bottom: 0;
+        }
+
+        .tab-link {
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #585b70;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85em;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .tab-link:hover {
+            color: #c6d0f5;
+        }
+
+        .tab-link.active {
+            color: #00fcb5;
+            border-bottom: 2px solid #00fcb5;
+            text-shadow: 0 0 6px rgba(0, 252, 181, 0.35);
+        }
+
+        .tab-panel h2 {
+            color: #9058f8;
+            text-shadow: 0 0 8px rgba(144, 88, 248, 0.35);
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin: 18px 0 8px;
         }
 
 
@@ -322,140 +359,47 @@
 
     <div class="landing-content">
         <div class="pane">
-            <div class="intro-row">
-                <img src="otulissa_exile.webp" alt="pfp" class="pfp">
-                <div>
-                    <h1>adiabatic.garden φ</h1>
-                    <span><span class="greetings">Greetings</span>, I am Yoyo!</span>
-                </div>
+            <div class="tab-bar">
+                <a href="index.html" class="tab-link active">[ Main ]</a>
+                <a href="quests.html" class="tab-link">[ Quests ]</a>
+                <a href="readlogs.html" class="tab-link">[ Feral scholar readlogs ]</a>
+                <a href="me.html" class="tab-link">[ Me ]</a>
+                <a href="wiki.html" class="tab-link">[ Wiki ]</a>
+                <a href="social-graph.html" class="tab-link">[ Social graph ]</a>
             </div>
-            <p>Neurotech/comp neuro, systems-thinking, physics, cs ∘ <span class="highlight">gender-neutral language</span> ∘ large lyapunov exponents</p>
 
-<pre class="text-arbor">
-<span class="purple-txt">[ Bookmarks ]</span>
-               o
-               |
-               +---------- o [ PRIMARY INFLUENCE ]
-               |           Nicky Case 
-               |
-  Highly rated o--------+
-               |         o  <span class="trans-gradient">The Autobiography of Ben Barres 🦋</span>
-               |         o  Stanislaw Lem: Prolegomena to Omnipotence
-               |              from Summa Technologiae
-               |
-               +------- o [ Thinking about ]
-               |        o -- <a href="https://arxiv.org/abs/2209.05548">Tackling the subsampling problem to infer collective 
-               |             properties from limited data</a>
-               |        o -- <a href="https://www.sciencedirect.com/science/article/pii/S0896627319304283">Accurate estimation of neural population
-               |             dynamics without spike sorting</a> 
-               |                 
-               +-- &gt;&gt; [ Skimmed ] -- Player Piano wikipedia page 
-               |
-    Finished reading o --- At the Mountains of Madness illustrated by Gou Tanabe
-               |     o --- Post-Crystallization from Hormone Hunters      
-               |                  
-               |
-               +-- [~ To read ~]
-               |    o  Girls Last Tour
-               |
-    Lost attention and stopped reading o-----+
-               |
-               +-- o Project Hail Mary 
-               |
-               +-- Live bookmarking on <a href="https://curius.app/yoyo-yuan">curius</a>, older readlogs <a href="readlog.html">here</a> 🖇️  
-            </pre>
+            <div class="tab-panel">
+                <div class="intro-row">
+                    <img src="otulissa_exile.webp" alt="pfp" class="pfp">
+                    <div>
+                        <h1 class="make-white">adiabatic.garden φ</h1>
+                        <span><span class="purple-gradient">Greetings, I am Yoyo (they/them)</span></span>
+                    </div>
+                </div>
 
-        <p><span class="purple-txt">[ About ]</span></p>
-            <p>I'm a Minerva student physically located in Palo Alto. DMs open for joyous conversations, walks, coreading, hosting events, etc. <a href="mailto:yoyoyuan1729@gmail.com">Email me!</a> I can be hired to work on neurotech software, run quantum mechanical simulations, write research code, papers or host salons <span class="spinner"></span></p>
-            <br>
+                <br>
+                <p><span class="purple-gradient">[ Intro ]</span></p>
+                <p>Neurotech/comp neuro, science automation, physics, systems-thinking. Minerva student in San Francisco bay area. DMs open for joyous conversations and collaborations. <a href="mailto:yoyoyuan1729@gmail.com">Email</a></p>
+                <br>
 
-            <p><span class="purple-txt">[ Quests ]</span></p>
-            <p>Ongoing: Reading papers on physics/math of neuroscience, statistical mechanics, neuro seminars</p>
-            <p>Building low-cost scalable electrode arrays with Eigenlucy <a href="https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays">notes</a></p>
-            <p>Olfaction visualization with metal oxide sensors <a href="https://github.com/exanova-y/synthesis">search</a> · <a href="https://youtu.be/jGN_bRmlDQo">talk</a></p>
-            <p>quantum chemistry calculations at Chimia</p>
-            <p>NFC programming with <a href="https://a.currents.fm">currents.fm</a></p>
-            <p><a href="https://github.com/exanova-y/arxiv-rag">arXiv RAG</a>, <a href="https://youtu.be/ZpNXGqU6-Ro">arXiv wars</a></p>
-            <br>
-            
-            <p><span class="purple-txt">[ Events I hosted ]</span></p>
-            <p><a href="https://partiful.com/e/ROLXlBr1bxgz3MzTDtgz">something beautiful hackathon (Apr 2025)</a></p>
-            <p><a href="https://www.tedxcolumbialakeyouth.com/">TEDx Youth (Sept 2023)</a></p>
-            <br>
+                <p><span class="purple-gradient">[ Quests ]</span></p>
+                <p>Statistical mechanics</p>
+                <p>Science automation. The first messy prototype was <a href="https://youtu.be/ZpNXGqU6-Ro">arXiv wars</a>. In the second iteration, I built <a href="https://github.com/exanova-y/arxiv-rag">arXiv RAG</a>. Third iteration is underway at <a href="https://github.com/bernoulli-collective/bernoulli">bernoulli</a> with writing currently totalling 20k words <a href="https://bernoullicollective.org">here</a></p>
+                <p>Building low-cost DIY electrode arrays with Eigenlucy (2025) <a href="https://adiabaticgarden.substack.com/p/making-low-cost-microelectrode-arrays">notes</a></p>
+                <p>ML-assisted olfaction visualization with metal oxide sensors with Eigenlucy (2025) <a href="https://github.com/exanova-y/synthesis">search</a> · <a href="https://youtu.be/jGN_bRmlDQo">talk</a></p>
+                <p>Physis and chemistry simulations at Chimia DAO (2025 - present)</p>
+                <p>NFC special project at <a href="https://a.currents.fm">currents.fm</a> (2025)</p>
+                <br>
 
-            <span class="purple-txt">[ My Mutuals ]</span>
-            <pre class="text-arbor">
-            
-     +- <span class="gray-txt">[ People ]</span> ------------------ o [ @eigenlucy ]
-     |                                                |
-     | o [ bmorphism ]                                |
-     | o [ @schlynthesis ]                            |
-     | o [ @InquilineKea ] -----------+-------------- o [ @a_naia_ ]
-     +                                |                         
-     |                                +--- o [ @layer07_yuxi ]
-     |                                +--- o [ yudhister ]
-     |   +--------------------------- +--- o [ zaira.blog ] 
-     |   o [ @LydNot ]                  
-     |-- o [ adaptivegood (ada)]
-     |        
-     +-------{ trinity dysis   }
-             { svitlana midianko  }
-             { @euxinianathema }
-            </pre>
-            <br>
-            <p><span class="purple-txt">[ Notebooks ]</span></p>
-            <p><a href="https://adiabaticgarden.substack.com/p/4-days-in-shanghainese-anime-ecology"><span class="purple-txt">4 days in Shanghainese anime ecology!</span></a></p>
-            <p><a href="https://adiabaticgarden.substack.com/p/yoyo-2027">Huaqiangbei vignette</a></p>
-            <p><a href="https://adiabaticgarden.substack.com/p/october-readlog">Science across ja/en/cn</a></p>
-            <p><a href="writing.html">all writing</a></p>
-            <br>
 
-            <span class="purple-txt">[ Streams ]</span>
-            <pre class="text-arbor">
-               o
-               |
-   _habitations o----------+
-               |          [o] Shenzhen (I spawned!)
-               |          [o] Waterloo
-               |          [o] San Francisco
-               |          [o] Tokyo, the extended relaxation center 
-               |          [o] Palo Alto, return
-               |
-  _grateful for support from mutuals o------+
-    +-- [ Acquired 1 petaFLOP computer and MacBook for free ] 
-               |          [o] 1517 Medici Fund
-               |          [o] Merge Grant
-               |          [o] Free Labor @ MAA Golden Section
-               |
-               +---------- o [ Activities ]
-               |           o-- Asked Surya Ganguli about bypassing spike sorting paper
-               |           o-- [ Old Chem Bldg ] >> Coworking with zaira.blog & tol.sh
-               |           o-- Free e-waste on the 8th floor of berkeley way west!
-               |           I headed to soda hall to seek more e-waste, where I was kicked out ]
-               |           o-- Asked Ekin from Periodic Labs about his plans to construct
-               |             The Chemputer + SEM optimization, he was dumbfounded
-               |           o-- Eugene Izhikevich was building a startup, I asked him how many 
-               |                employees he has. He said it's just him and cursor.
-               |           o-- [ Lucas Center ] >> Received MR-ARFI + 
-               |                transcranial ultrasound stimulation more than reading it 
-               |                in the literature, this is epic!!
-               |           o-- Acquired Pie w/ @LydNot at Varian Physics building
-               |           
-               |           o-- Free Lunch at Google HQ 
-               |           o-- Attempted to study Earthquakes
-               |                encountered an actual Earthquake in Kamaishi, Japan
-               |           o-- jun 2025: Lived in Vivarium, a trans warehouse in SF
-               |           o-- Infiltrated TreeHacks accidentally with 10 friends
-               |
-               +-- ~ other activities ~
-                  [o] Reconstructed sagittal MRI of @InquilineKea 🦜
-            </pre>
-
-            <a href="https://x.com/adiabaticgarden">[ X ]</a>
-            <a href="writing.html">[ writing ]</a>
-            <a href="https://curius.app/yoyo-yuan">[ curius ]</a>
-            <a href="https://adiabaticgarden.substack.com">[ substack ]</a>
-            <span id="snow-toggle" style="cursor:pointer">❄ brrr, stop Arctic weather</span>
+                <br>
+                <a href="https://x.com/adiabaticgarden">[ X ]</a>
+                <a href="writing.html">[ blog ]</a>
+                <a href="https://curius.app/yoyo-yuan">[ curius ]</a>
+                <a href="https://adiabaticgarden.substack.com">[ substack ]</a>
+                <a href="https://soundcloud.com/otulissa/">[ soundcloud ]</a>
+                <span id="snow-toggle" style="cursor:pointer">❄ brrr, stop Arctic weather</span>
+            </div>
         </div>
     </div>
 
