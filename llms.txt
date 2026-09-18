@@ -1,6 +1,6 @@
 # adiabatic.garden
 
-Yoyo's site.
+Noesis's site.
 
 I've a self-taught individual growing up around hackerspaces in shenzhen, programming forums, mathNEWS stashes at uwaterloo, open sauce, math/physics/open source YouTube and bay area startup/rat internet. when I was 8, I found myself on a programming forum with trans presence. I picked up english syntax. my fondest memories were scrapping monitors and e-waste in MIT tunnels. when a friend gave me a macbook and desktop GPU in 2025, I practically began doing my own research, running full waveform inversion and making microelectrode arrays.
 

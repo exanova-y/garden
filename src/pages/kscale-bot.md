@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "T-posing on humanoid robots"
 date: 2025-01-19
-author: Fred, Homero, Stanley, Yoyo
+author: Fred, Homero, Stanley, noesis
 category: lab
 tags: ["theorists-attempting-to-touch-ground", "robotics"]
 ---

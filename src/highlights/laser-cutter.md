@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Assembling a laser cutter"
 date: 2025-07-05
-author: "Yoyo Yuan, with guidance from Paul Han"
+author: "noesis, with guidance from Paul Han"
 category: favs
 tags: ["experimentalist-confetti"]
 ---

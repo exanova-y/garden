@@ -2,9 +2,9 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://adiabatic.garden/#person",
-  "name": "Yoyo",
+  "name": "noesis",
   "pronouns": "they/she",
-  "description": "Yoyo is a philosopher builder working on strong autoresearch and neurotechnology hardware.",
+  "description": "Noesis is a philosopher builder working on strong autoresearch and neurotechnology hardware.",
   "url": "https://adiabatic.garden/",
   "sameAs": [
     "https://github.com/exanova-y",

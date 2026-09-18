@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Explaining Hikikomori in Japan"
 date: 2023-10-23
-author: "Yoyo Yuan"
+author: "noesis"
 category: favs
 tags: ["complex-systems"]
 ---

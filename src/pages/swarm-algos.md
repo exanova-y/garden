@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Reading particle swarm optimization and implementing it in Unity"
 date: 2024-05-14
-author: "Yoyo Yuan"
+author: "noesis"
 category: lab
 tags: ["swarm-algorithms", "robotics", "simulation"]
 ---

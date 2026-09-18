@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Magnifying glass burning ants thermal simulation"
 date: 2023-02-01
-author: Feng Zhang, Yoyo Yuan and classmate
+author: Feng Zhang, noesis and classmate
 category: lab
 tags: ["thermal-physics", "simulation"]
 ---

@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Making low-cost microelectrode arrays"
 date: 2025-01-01
-author: "Yoyo and Eigenlucy"
+author: "noesis and Eigenlucy"
 category: favs
 tags: ["lab equipment", "neuroscience", "experimentalist-confetti"]
 ---
@@ -116,7 +116,7 @@ Then, the plasma engine could increase the surface energy of glass.
 
 ### Next steps.
 
-It would be really good to replicate the entire neuronal headstage from Mind-in-Vitro to broaden the accessibility. Please get in touch yoyoyuan1729@gmail.com if you want to support this project such as by offering ephys lab spaces.
+It would be really good to replicate the entire neuronal headstage from Mind-in-Vitro to broaden the accessibility. Please get in touch corpus.logica@gmail.com if you want to support this project such as by offering ephys lab spaces.
 
 ### Credits: 
 

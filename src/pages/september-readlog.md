@@ -2,14 +2,14 @@
 layout: layouts/post.njk
 title: "September readlog!"
 date: 2025-10-01
-author: "Yoyo Yuan"
+author: "noesis"
 category: lab
 tags: ["readlogs"]
 ---
 
 ### Moving to Tokyo. Flowers for Algernon. Medea. Chinese history. Epic exiles. Quantum chemistry.
 
-*Source: [feralscholars.substack.com/p/september-readlog](https://feralscholars.substack.com/p/september-readlog) — Yoyo is defocusing ultrasound*
+*Source: [feralscholars.substack.com/p/september-readlog](https://feralscholars.substack.com/p/september-readlog) — noesis*
 
 ---
 

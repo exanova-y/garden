@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adiabatic.garden</title>
     <script type="application/ld+json">{{ person | jsonify | safe }}</script>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ '/css/style.css' | assetUrl }}">
+    <link rel="preload" as="image" href="/assets/wallpapers/home.webp" fetchpriority="high">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
     <script>
@@ -65,11 +66,7 @@
 
     </header>
 
-    <main>
-        <br>
-        <div class="long-box" style="border: 1px solid #bcc0cc;">
-            <p>adiabatic.garden</p>
-        </div>
+    <main class="home">
         <div class="music-control" id="musicControl">
             <span> ♪ </span>
             <button
@@ -81,169 +78,80 @@
             >▶</button>
         </div>
         <audio id="backgroundMusic" data-src="/03.%20Deep%20Space%20Travels.mp3" preload="none"></audio>
-        <div class="box-grid">
-            <div class="box" style="height: 150px; width: 10%; position: relative;overflow: hidden; object-fit: cover;">
-                <img src="/assets/images/plant.jpg" alt="fish" style="width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; top: 0; left: 0;">
+
+        {#- The entrance: the image, the card, and the weather. The card is the
+            map of the site; everything below it is what is happening now. -#}
+        <section class="home-row entrance">
+            <div class="box card">
+                <p class="card-intro">Noesis site</p>
+                <ul class="map">
+                    <li><a href="/about/">about</a></li>
+                    <li><a href="/pages/bookshelf/">bookshelf</a> <span class="map-note"><a href="https://curius.app/yoyo-yuan">curius</a></span></li>
+                    <li><a href="/pages/priors/">priors</a></li>
+                    <li><a href="/pages/maps/">maps</a> <span class="map-note"><a href="/pages/rwx/">rwx</a></span></li>
+                    <li><a href="/pages/quotes/">quotes</a></li>
+                    <li><a href="/writing/">writing</a> <span class="map-note">length: {{ collections.notes.length }}</span></li>
+                    <li><a href="/archive/">archive</a></li>
+                </ul>
             </div>
 
-            <div class="box" style="height: 150px; width: 60%; overflow: hidden;">
-                <section class="body">
-                    <p>Yoyo. Presently working on focused ultrasound and autoresearch problems. I like: deep friendship, authentic interactions, adventure, fascination, books, rhythm games, hyperpop. I hate: poor infrastructure. Largely self-taught and a natural sciences student at Minerva. <a href="about">About</a> <a href="writing">writing</a></p>
-                    <br>
-                </section>
-            </div>
-
-
-
-            <div class="box" style="height: 150px; width: 20%; overflow: hidden; position: relative;">
-                <div aria-hidden="true" style="width: 100%; height: 100%; background-color: #9058f8; background-image: url('/assets/images/analog-parts.jpeg'); background-blend-mode: luminosity; background-position: center; background-size: cover; opacity: 0.3; position: absolute; top: 0; left: 0; z-index: 0;"></div>
-                <div class="user-status" style="position: relative; z-index: 1;">
+            <div class="box status-box">
+                <div aria-hidden="true" class="status-backdrop"></div>
+                <div class="user-status">
                     <span id="local-time"></span><span id="turquoise-not-discord-txt"> San Francisco, CA</span>
                     <p id="local-weather"></p>
                     <span>User status: </span><span id="turquoise-txt"></span>
-                    <!-- <span>User status: </span><span id="lavender-txt">Off social media for winter break.</span> -->
-
                 </div>
-                <br>
+            </div>
+        </section>
+
+        <section class="home-row now" aria-label="Now">
+            <div class="box">
+                <p><span class="make-purple">[ media ]</span></p>
+                <p>https://cnkgraph.com/</p>
+                <p>https://www.emergentmind.com/</p>
+                <p>Lawrence of Arabia</p>
+                <p>Accelerando</p>
+                <p>Terror in resonance</p>
+                <p>Permutation City ✓</p>
+                <p><a href="/pages/bookshelf/" class="site-link">◌ bookshelf</a> & <a href="https://curius.app/yoyo-yuan">curius</a></p>
             </div>
 
-
-            <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-                <div class="box" style="width: 45%; height: 290px; overflow: hidden; border: 1px solid #00fc50;">
-                    <section>
-                        <p><span class="make-purple">[ bookmarks ]</span></p>
-                        <p>Accelerando ○</p>
-                        <p>Permutation City ✓</p>
-                        <!--<p>The City and the Stars Arthur C. Clarke(paused) </a></p>-->
-                        <p><a href="https://www.youtube.com/watch?v=cFwHAMf0kEc">Jack Gallant: Representations of the World in the Human Brain</a> ✓</p>
-                        <p><a href="/pages/bookshelf" class="site-link">◌ bookshelf</a> & <a href="https://curius.app/yoyo-yuan">curius</a></p>
-                    </section>
-                </div>
-
-                <div class="box" style="height: 290px; width: 50%; overflow-y: auto; border: 1px solid #7287fd;">
-                    <section>
-                        <p><span class="make-purple">[ projects/research ]</span></p>
-                        neurotech
-                        <p><a href="https://github.com/exanova-y/nyc-neuromodec-2026">⊹ Notes from NYC neuromodulation 2026</a></p>
-                        <p><a href="/highlights/diy-mea">⊹ low cost, DIY MEA collaboration with Eigenlucy</a></p>
-                        <p><a href="/pages/early-may-observelog">⊹ receiving focused ultrasound stimulation at Lucas Center/Observelog</a></p>
-                        <p>other things built</p>
-                        <p><a href="/highlights/laser-cutter">⟐ reassembling a laser cutter </a></p>
-                        <p><a href="/highlights/microdrones">⟐ microdrone assembly</a></p>
-                        <p><a href="/highlights/swarm-mapping">⟐ mapping haptic hand gestures for swarm robots at uwaterloo</a>
-                        <p>approach</p>
-                        <p><a href="/pages/rwx">⊹ The rwx methodology</a></p>
-                        <br>
-                    </section>
-                </div>
-
+            <div class="box">
+                <p><span class="make-purple">[ recent posts ]</span></p>
+                <p><a href="https://turingsbazaar.org">turing's bazaar</a></p>
+                <p><a href="/pages/early-may-observelog/">⊹ focused ultrasound at Lucas Center</a></p>
+                <p><a href="https://github.com/exanova-y/nyc-neuromodec-2026">⊹ notes from NYC neuromodulation 2026</a></p>
+                <p><a href="/highlights/diy-mea/">⊹ DIY MEA with Eigenlucy</a></p>
+                <p><a href="/writing/highlights/" class="site-link">◌ things built</a></p>
             </div>
-        </div>
 
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-            <div class="box" style="height: 170px; width: 45%; overflow: hidden; border: 1px solid #7287fd">
-                <p><span class="make-purple">[ status ]</span></p>
-                <p>turing's cathedral? I want to be in <a href="https://turingsbazaar.org">turing's bazaar</a></p>
+            <div class="box">
+                <p><span class="make-purple">[ changelog ]</span></p>
+                <p>the site is not only a tree but now a graph. see <a href="/archive/">archive</a> ✓</p>
                 <p>this site can now play stellaris music ✓</p>
                 <p>1217 curius bookmarks have been added to this site ✓</p>
+                <p><a href="/pages/blog-roll/" class="site-link">◌ blog roll</a> & <a href="/vibes/" class="site-link">◌ vibes</a></p>
+            </div>
+        </section>
+
+        <section class="home-row" aria-label="Archive and funding">
+            <div class="box archive-box">
+                <p><span class="make-purple">[ archive ]</span> <a href="/archive/" class="site-link">writings</a></p>
+                <div class="archive-graph" data-graph="compact" role="img" aria-label="Graph of every page on adiabatic.garden"></div>
             </div>
 
-
-            <div style="display: flex; flex-direction: column; width: 70%; gap: 20px;">
-                <!-- <div class="long-box" style="height: 80px; overflow: hidden;">
-                </div> -->
-
-                <div class="long-box" style="height: 170px; overflow: hidden; flex-direction: row; justify-content: flex-start; align-items: flex-start; border: 1px solid #00fcb5;">
-                    <div>
-                        <p><span class="make-purple">[ friends ]</span></p>
-                        <a href="/pages/blog-roll">◌ blog roll</a>
-                    </div>
-                </div>
+            <div class="box funding-box">
+                <p><span class="make-purple">[ funding ]</span></p>
+                <p>adiabatic.garden is funded by computers, keyboards and GPUs scrapped from underground tunnels. consider donating on <a href="https://ko-fi.com/noetic">ko-fi!</a> supporters include: Plurigrid, 1517 Medici, Merge, @edchucation, @mkultra_gf and certain kind individuals.</p>
             </div>
-        </div>
-        <br>
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-            <div class="box" style="height: 150px; width: 100%; overflow: hidden;">
-                <p><span class="make-purple">historically inhabited: </span>Shenzhen, Waterloo, SF, Tokyo, etc.</p>
-                <p><span id="purple-txt">the <i>levity</i> of the subcultural society: </span>I'm often found at noisebridge, vivarium and sometimes foresight nodes</p>
-                <!--<p>need: cryptonomicon, diamond age, skulls, openlifu (have access), opennirscap, 40C3, physics of fus, hydrophone/oscilloscope, hugs</p>-->
-                <p><span id="purple-txt">want to see more of: </span>authenticity, maximizing fascination, good futures, playfulness, deep friendship, adversity, infovores, tinkering</p>
-                <p><span id="lavender-txt">music: </span>Black Dresses, Machine Girl and Mili are some fav artists. I'm into hyperpop, breakcore, hardcore, dnb and rhythm games. listen to <a href="https://x.com/adiabaticgarden/status/2088821244271698353">psychosis 2019</a>, see <a href="https://open.spotify.com/playlist/0tgJ9UVLvkbxoz3inBllja?si=49d17b0c3b524c2d">playlist</a></p>
-                <p><span id="purple-txt">major influences: </span>Nicky Case</p>
-            </div>
-        </div>
+        </section>
 
-        <br>
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-
-            <div class="box" style="height: 200px; width: 50%; overflow-y: auto; border: 1px solid #00fcb5;">
-                <section>
-                    <p><span class="make-purple">[ readlogs ]</span></p>
-                    <p><a href="/pages/september-readlog">⊹ september readlog</a></p>
-                    <p><a href="/pages/october-readlog">⊹ october readlog</a></p>
-                    <p><a href="/pages/november-readlogs">⊹ november readlogs</a></p>
-                </section>
-            </div>
-
-            <div class="box" style="height: 200px; width: 50%; overflow-y: auto; border: 1px solid #7287fd;">
-                <section>
-                    <p><span class="make-purple">[ funding ]</span></p>
-                    <p><a href="/writing" class="site-link"></a></p>
-                    <p>adiabatic.garden is funded by computers, keyboards and GPUs scrapped from underground tunnels. consider donating on <a href="https://ko-fi.com/yoyo_yuan">ko-fi!</a> supporters include: Plurigrid, 1517 Medici, Merge, @edchucation, @mkultra_gf and certain kind individuals.</p>
-                </section>
-            </div>
-
-
-        </div>
-        <br>
-
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-            <div class="box" style="height: 150px; width: 33%; overflow: hidden; border: 1px solid #7287fd;">
-                <section>
-                    <p><span class="make-purple">[ jokes ]</span></p>
-                        <p><a href="/pages/hacking-backrooms">⟐ hacking the backrooms</a></p>
-                        <p><a href="/pages/clustering-coefficient/">⟐ all about cluster coefficient, a signal power user</a></p>
-                </section>
-            </div>
-
-            <div class="box" style="height: 150px; width: 33%; overflow: hidden; border: 1px solid #7287fd;">
-                <section>
-                    <section>
-                        <p><span class="make-purple">[ fiction ]</span></p>
-                        <!-- <p><a href="/pages/linear-algebra-for-nobody">⊹ Linear algebra for nobody</a></p> -->
-                        <p><a href="/pages/insomnia">⊹ graphics rendering under chronic insomniac conditions</a></p>
-                    </section>
-                </section>
-            </div>
-
-            <div class="box" style="height: 150px; width: 33%; overflow: hidden; border: 1px solid #00fcb5;">
-                <section>
-                    <p><span class="make-purple">[ archives ]</span></p>
-                    <p><a href="/favs/hikikomori">⟐ explaining hikikomori in Japan</a></p>
-                    <p><a href="/favs/simulators">⟐ ultracold atoms and quantum photonics simulators review</a></p>
-                    <p><a href="favs/neuralink-exposition">⟐ neuralink science and engineering</a></p>
-                    <p><a href="/gallery" class="site-link">⟡ gallery</a></p>
-                    <p><a href="/writing" class="site-link">◌ writing</a></p>
-                </section>
-            </div>
-        </div>
-        <br>
-
-        <!-- <div style="display: flex; flex-direction: row; height: 150px; width: 100%; gap: 20px;">
-
-        </div> -->
-        <br>
-        <div style="display: flex; flex-direction: row; width: 100%; gap: 20px;">
-
-            <div class="long-box" style="height: 33px; overflow: hidden; flex-direction: row; gap: 4px; border: none;">
-                <img src="/assets/88x31s/welcome-cn.gif
-                " alt="cn" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-                <img src="/assets/88x31s/windows98.gif" alt="windows98" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-                <img src="/assets/88x31s/yay.gif" alt="yay" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-                <img src="/assets/88x31s/trans-rights.gif" alt="trans-rights" style="width: 88px; height: 31px; object-fit: cover; display: block;">
-            </div>
-        </div>
-
+        <div class="home-row badges">
+            <img src="/assets/88x31s/welcome-cn.gif" alt="cn" width="88" height="31">
+            <img src="/assets/88x31s/windows98.gif" alt="windows98" width="88" height="31">
+            <img src="/assets/88x31s/yay.gif" alt="yay" width="88" height="31">
+            <img src="/assets/88x31s/trans-rights.gif" alt="trans-rights" width="88" height="31">
         </div>
     </main>
 
@@ -254,6 +162,7 @@
     <script defer src="https://cdn.jsdelivr.net/gh/iamashruu/cursorly.js@1.0.5/dist/cursorly.min.js" integrity="sha384-+xdcv2OodHpk2Lbw6kjFeRTqCgks0GlSj8ujuhuturp21BqxUV19TR/quSLXVHHy" crossorigin="anonymous"></script>
     <script defer src="/js/cursor.js"></script>
     <script src="js/queries.js"></script>
+    <script defer src="{{ '/js/archive-graph.js' | assetUrl }}"></script>
     <script defer src="js/script.js"></script>
 </body>
 </html>

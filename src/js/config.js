@@ -1,12 +1,12 @@
 // Site-wide configuration variables
 const siteConfig = {
     // Basic site information
-    siteName: "Yoyo",
+    siteName: "Noesis",
     siteTagline: "adiabatic.garden",
-    copyright: "Yoyo",
+    copyright: "Noesis",
     
     // Author information
-    author: "Yoyo",
+    author: "noesis",
     
     // Social links
     socialLinks: {
@@ -20,7 +20,8 @@ const siteConfig = {
     // Navigation structure (for future use)
     navigation: [
         { name: "home", url: "/" },
-        { name: "readlog", url: "/readlog" },
-        { name: "writing", url: "/writing" },
+        { name: "writing", url: "/writing/" },
+        { name: "archive", url: "/archive/" },
+        { name: "about", url: "/about/" },
     ]
 };

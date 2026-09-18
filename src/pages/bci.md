@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Brain-Computer Interfaces articles, electromyography and electrooculography"
 date: 2022-07-10
-author: "Yoyo"
+author: "noesis"
 category: lab
 tags: ["eeg"]
 ---

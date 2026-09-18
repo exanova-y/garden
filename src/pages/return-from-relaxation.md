@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Jan: return from relaxation"
 date: 2025-02-20
-author: "Yoyo"
+author: "noesis"
 category: lab
 ---
 

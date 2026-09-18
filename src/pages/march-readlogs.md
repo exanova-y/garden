@@ -2,7 +2,7 @@
 
 ### Ben Barres autobiography, trying focused ultrasound, floating in sf peninsula, slightly deadish
 
-*Source: [feralscholars.substack.com/p/march-readlogs](https://feralscholars.substack.com/p/march-readlogs) — Yoyo is defocusing ultrasound*
+*Source: [feralscholars.substack.com/p/march-readlogs](https://feralscholars.substack.com/p/march-readlogs) — noesis*
 
 ---
 

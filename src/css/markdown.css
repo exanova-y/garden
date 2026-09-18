@@ -41,11 +41,13 @@
 
 .markdown-content blockquote {
     border-left: 3px solid #ccc;
-    padding-left: 20px;
-    margin-left: 0;
+    padding: 0.25em 0 0.25em 1.25em;
+    margin: 1.5em 0 1.5em clamp(1rem, 4vw, 3rem);
     color: #555;
     font-style: italic;
-    margin-bottom: 20px;
+    font-family: inherit;
+    font-size: 1.05em;
+    line-height: 1.6;
 }
 
 .markdown-content img {

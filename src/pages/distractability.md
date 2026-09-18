@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Could we tell which personalities are more distractable from their working memory performance?"
 date: 2022-07-01
-author: "Yoyo"
+author: "noesis"
 category: lab
 tags: ["theorists-attempting-to-touch-ground", "computational-neuroscience"]
 ---

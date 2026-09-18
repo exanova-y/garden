@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Neuralink: neuroscience, engineering and prospects"
 date: 2022-01-04
-author: "Yoyo"
+author: "noesis"
 category: favs
 tags: ["neuroscience", "engineering", "invasive-BCIs"]
 ---

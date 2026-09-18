@@ -1,10 +1,47 @@
 const forest = require("./lib/forest");
+const { createHash } = require("node:crypto");
+const { readFileSync } = require("node:fs");
+const path = require("node:path");
 
 const bookmarkIndexCache = new WeakMap();
 
 // The categories that have a section of their own under `/writing/`. Anything
 // else lands in `unfiled`, which the writing index lists as "Everything else".
-const SECTION_CATEGORIES = new Set(["lab", "problems", "stories"]);
+const SECTION_CATEGORIES = new Set([
+  "lab",
+  "problems",
+  "stories",
+  "slice-of-life",
+  "commonplace"
+]);
+
+// The sections as the archive graph names them. `favs` is the old name of
+// `highlights`; notes still carry it.
+const SECTIONS = {
+  highlights:  { title: "Highlights",        url: "/writing/highlights/" },
+  lab:         { title: "Lab notebook",      url: "/writing/lab-notebook/" },
+  problems:    { title: "Big social problems!", url: "/writing/problems/" },
+  stories:     { title: "Stories",           url: "/writing/stories/" },
+  "slice-of-life": { title: "Slice of life", url: "/writing/slice-of-life/" },
+  commonplace: { title: "Commonplace",       url: "/writing/commonplace/" },
+  unfiled:     { title: "Everything else",   url: "/writing/other/" }
+};
+
+function sectionOf(item) {
+  const category = item.data.category;
+  if (category === "favs" || category === "highlights") return "highlights";
+  return SECTION_CATEGORIES.has(category) ? category : "unfiled";
+}
+
+// Internal links in a note's markdown, as site-absolute note URLs.
+const NOTE_LINK = /(?:https?:\/\/adiabatic\.garden)?(\/(?:pages|highlights|favs)\/[a-z0-9-]+)\/?(?=[\s)"'#>]|$)/g;
+function linkedNotes(raw) {
+  const found = new Set();
+  for (const match of String(raw || "").matchAll(NOTE_LINK)) {
+    found.add(match[1].replace(/^\/favs\//, "/highlights/") + "/");
+  }
+  return found;
+}
 
 const STOPWORDS = new Set([
   "the","and","for","are","but","not","you","all","can","had","her","was",
@@ -33,6 +70,13 @@ function tokenize(text, weight) {
 }
 
 module.exports = function(eleventyConfig) {
+  // A new asset URL prevents cached CSS/JS from mismatching newly built pages.
+  eleventyConfig.addFilter("assetUrl", function(assetPath) {
+    const content = readFileSync(path.join(__dirname, "src", assetPath));
+    const version = createHash("sha256").update(content).digest("hex").slice(0, 12);
+    return `${assetPath}?v=${version}`;
+  });
+
   // Pass-through copy of static folders
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -49,6 +93,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/*.webp");
   eleventyConfig.addPassthroughCopy("src/*.mp4");
   eleventyConfig.addPassthroughCopy("src/pages/*.md");
+  eleventyConfig.addPassthroughCopy({
+    "src/pages/sleep-deprivation.pdf": "pages/sleep-deprivation.pdf"
+  });
   eleventyConfig.addPassthroughCopy("src/highlights/*.md");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   eleventyConfig.addPassthroughCopy({"03. Deep Space Travels.mp3": "03. Deep Space Travels.mp3"});
@@ -214,6 +261,49 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/pages/*.md")
       .filter(item => item.data.category === "problems")
       .sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addCollection("commonplace", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/pages/*.md")
+      .filter(item => item.data.category === "commonplace")
+      .sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addCollection("slice-of-life", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/pages/*.md")
+      .filter(item => item.data.category === "slice-of-life")
+      .sort((a, b) => b.date - a.date);
+  });
+
+  // Every page on the site as one graph: home, the sections, every note, and
+  // the links between notes. `src/archive-graph.njk` serialises it and
+  // `js/archive-graph.js` draws it.
+  eleventyConfig.addCollection("graph", function(collectionApi) {
+    const notes = collectionApi.getFilteredByGlob(["src/pages/*.md", "src/highlights/*.md"]);
+    const nodes = [
+      { id: "/", title: "adiabatic.garden", group: "home" },
+      { id: "/about/", title: "About", group: "home" },
+      { id: "/writing/", title: "Writing", group: "home" },
+      { id: "/archive/", title: "Archive", group: "home" }
+    ];
+    const edges = [["/", "/about/"], ["/", "/writing/"], ["/", "/archive/"]];
+    for (const [key, section] of Object.entries(SECTIONS)) {
+      nodes.push({ id: section.url, title: section.title, group: key });
+      edges.push(["/writing/", section.url]);
+    }
+    const known = new Set(nodes.map(node => node.id));
+    for (const note of notes) {
+      const group = sectionOf(note);
+      nodes.push({ id: note.url, title: note.data.title || note.fileSlug, group, date: note.date });
+      known.add(note.url);
+      edges.push([SECTIONS[group].url, note.url]);
+    }
+    for (const note of notes) {
+      for (const target of linkedNotes(note.rawInput)) {
+        if (known.has(target) && target !== note.url) edges.push([note.url, target]);
+      }
+    }
+    return [{ nodes, edges }];
   });
 
   eleventyConfig.addCollection("stories", function(collectionApi) {

@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Underground dynamics"
 date: 2024-05-24
-author: "Yoyo Yuan"
+author: "noesis"
 category: stories
 ---
 

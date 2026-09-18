@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Chem-0"
 date: 2026-05-18
-author: "Yoyo"
+author: "noesis"
 category: lab
 tags: ["theorists-attempting-to-touch-ground", "chemical-identification", "autoresearch", "robotics"]
 ---

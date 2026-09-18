@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Focused Ultrasound and MRI Physics"
 date: 2026-04-09
-author: "Yoyo"
+author: "noesis"
 category: favs
 tags: ["ultrasound", "MRI"]
 ---

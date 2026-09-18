@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "Procrastinator simulator and misc text games"
 date: 2020-06-20
-author: "Yoyo"
+author: "noesis"
 category: lab
 ---
 
 
-**Procrastinator simulator:** A text game where you try to finish a task list but each time a dice determines the duration you take (cursed LOL) by Yoyo "a thousand projects" Yuan. Test it out [here](https://replit.com/@exanova/ProcrastinatorSimulator#main.py)!
+**Procrastinator simulator:** A text game where you try to finish a task list but each time a dice determines the duration you take (cursed LOL) by noesis. Test it out [here](https://replit.com/@exanova/ProcrastinatorSimulator#main.py)!
 
 **Mining Away:** [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) implemented as a [game](https://github.com/exanova-y/hs-projects/blob/master/procrastinator-simulator.py) of mining bitcoins while avoiding lava.   
 

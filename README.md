@@ -2,6 +2,9 @@
 
 A highly scalable, fast, and minimalist personal website built using **Eleventy (11ty)**, featuring Math/LaTeX support (KaTeX) and beautiful static rendering.
 
+`src/join.html` publishes `/join.html`, a standalone page with the Emergent Mind
+compute invitation and connection command with a copy button, using a standard system sans-serif font.
+
 ---
 
 ## 🚀 Quick Start
@@ -37,8 +40,8 @@ Writing and publishing is now fully automated. There are no compile scripts or m
 layout: layouts/post.njk
 title: "My New Article Title"
 date: 2026-06-21
-author: "Yoyo"
-category: "lab"       # Choose: "lab", "problems", or "stories" (or "favs" for favorites)
+author: "noesis"
+category: "lab"       # Choose: "lab", "problems", "stories", "slice-of-life", or "commonplace" (or "favs" for favorites)
 ---
 
 This is your post content written in **Markdown**.
@@ -67,9 +70,37 @@ permalink: "/neuroscience/mri-and-ultrasound/"   # Custom variable URL!
 Each post's source Markdown is also published beside its rendered page: for example,
 `/pages/hope/` is available as plain text at `/pages/hope.md`.
 The homepage and About page publish shared Person JSON-LD; each post references that
-identity in its Article JSON-LD author data.
+identity in its Article JSON-LD author data. Use only `noesis` for this author’s name
+in metadata and bylines; retain coauthor credits.
 
 ---
+
+## 🗺️ Map, commonplace, archive
+
+The homepage opens on one card that maps the site (greetings, bookshelf, priors,
+maps, quotes, writing, archive); the boxes under it are what is happening now.
+The homepage and reading layouts version shared CSS and graph JavaScript by content
+hash so cached assets stay in sync with each deployment. Graph canvases sit outside
+normal layout flow to keep resizing from expanding the page.
+
+The sleep page transcribes pages 2–10 of `src/pages/sleep-deprivation.pdf` as
+Markdown, omitting the PDF title page, and links to the original file at
+`/pages/sleep-deprivation.pdf`.
+Blockquotes inherit their surrounding prose font and use an italic, indented
+pull-quote treatment throughout the site.
+
+`commonplace` notes (`src/pages/quotes.md`, `priors.md`, `maps.md`) are
+evergreen: append a heading rather than writing a new post. They compose at
+`/writing/commonplace/`.
+
+`/archive/` draws every page as a graph. The `graph` collection in `.eleventy.js`
+builds nodes (home, sections, notes) and edges (section membership plus internal
+links found in each note's markdown); `src/archive-graph.njk` writes it to
+`/archive/graph.json` and `src/js/archive-graph.js` renders it, also in the
+homepage `[ archive ]` box.
+
+Each section has a wallpaper in `src/assets/wallpapers/`; a note inherits its
+section's image (`lib/note-data.js`) unless its front matter sets `wallpaper`.
 
 ## 🌲 Forester-style trees
 
@@ -155,6 +186,11 @@ To deploy manually to Cloudflare Pages, run:
 ```bash
 npm run deploy
 ```
+Production uses the `adiabatic-garden` project’s `main` branch. To publish a local
+build from another branch, pass `--project-name adiabatic-garden --branch main`
+to `wrangler pages deploy _site`.
+When a development watcher is running, build with `eleventy --output=<temporary-directory>`
+and deploy that directory so the published files cannot change during upload.
 ### Sync curius bookmarks
 Fetch all bookmarks from the Curius API into `src/_data/curius.json`:
 ```
@@ -162,7 +198,7 @@ npm run fetch:curius
 ```
 
 ### Related-links recommendations
-Each post shows "Related links from Yoyo's bookshelf" at the bottom. Two engines:
+Each post shows "Related links from Noesis's bookshelf" at the bottom. Two engines:
 
 1. **Build-time TF-IDF** (default, no setup): `.eleventy.js` `relatedBookmarks` filter scores
    bookmarks against each page by keyword cosine similarity. Always works.

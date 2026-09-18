@@ -2,39 +2,49 @@
 layout: layouts/post.njk
 title: "About"
 date: 2026-08-23
-author: "Yoyo"
+author: "noesis"
 category: personal
 personPage: true
 ---
 
-Welcome to the garden. I am Yoyo.
+Welcome to the garden. I am Noesis.
 
-I value interacting with others authentically, deep friendship and human flourishing. I find myself really getting along with those on the international superhighway between major cities and who have recalibrated social norms 5 - 6 times. Ping me `hi at adiabatic.garden` or  `adiabaticgarden` on x/telegram/discord.
+I value interacting with others authentically, deep friendship and human flourishing. I find myself really getting along with those on the international superhighway between major cities and who have recalibrated within 5 - 6 subcultures. Ping me `hi at adiabatic.garden` or  `adiabaticgarden` on x/discord.
 
-My early formative years were spent in hackerspaces in Shenzhen, programming forums, reading endless mathNEWS from UWaterloo, math/physics/open sauce YouTube and bay area internet. When I was 8, I downloaded English syntax into my brain from the programming forums. My fondest memories were scrapping monitors and e-waste in MIT tunnels (I hear of caltech tunnels yet have not been. Dear algorithm, take me there!). When a friend gave me a macbook and desktop GPU in 2025, I practically began doing my own research, running full waveform inversion and making microelectrode arrays.
+My early formative years were spent in hackerspaces in Shenzhen, programming forums, digging through mathNEWS archives at UWaterloo, math/physics YouTube and bay area internet. I scrapped monitors in MIT tunnels (I hear of caltech tunnels too. Dear algorithm, please take me there). When a friend gave me a macbook and desktop GPU in 2025, I took research a lot more seriously, starting with making DIY microelectrode arrays.
 
-These days, I'm figuring out more efficient ways to run focused ultrasound simulations and also representations in autoresearch. I shall build an ever-so-powerful infrastructure around around the Earth like Lain. 
+I'm currently working on focused ultrasound and autoresearch problems. I have an appreciation for the fundamental physics, mathematics and levity. 
 
-I hate poor infra! Towards universal prosperity mandate. At this moment I'm reading feynman acoustic notes.
+I hope to architect ever-so-powerful infrastructure around the Earth like Lain. Towards universal prosperity mandate.
 
 ### Things I'm thinking about
-- focused ultrasound and bandwidth
-- strong vs weak autoresearch, AI for science, closed loop research labs, lights out factories
+- focused ultrasound, acoustic physics
+- ancient civilizations, mythology, eschatology placed side by side with technology
+- good research, autoresearch, closed loop research labs, lights out factories
 - accelerando, permutation city, survival infrastructure for [chaotic eras](https://three-body-problem.fandom.com/wiki/Chaotic_Era)
-- resource gradients, limiting factors, reversibility and order, network effects, coordination, incentive structure, funds, coasean bargaining, nash deadlock
-- a world with more authenticity, less hostility, coercion and violence
+- resource gradients, coordination problems, incentive structure, limiting factors, reversibility and order, network effects,  coasean bargaining, nash deadlock
+- I practically hate debilitating architecture. so it warms my heart to see a world with strong infrastructure, care, authenticity, less hostility, coercion and violence
 
 ### I like
-- [bookmarking on the internet](https://adiabatic.garden/pages/bookshelf)
+- good systems, personal infrastructure, maps and levers
+- [books](https://adiabatic.garden/pages/bookshelf)
 - rhythm games, breakbeats, drum and bass, hyperpop [see my song psychosis 2019](https://x.com/adiabaticgarden/status/2088821244271698353?s=20)
 - [pharmacokinetics simulators](https://estrannai.se/) and hormone titration
-- systems, infrastructure, maps, trapdoors
 - hard problems
-- information overload
+- information density
   - "there's a high density of links on your blog." People often inform me. Indeed! You can consider me to be a computronium heat sink. Input papers, perform transforms and computational capacity becomes asymptotically online.
 - e-waste
-  - sometimes I go out to [scrap for e-waste](https://adiabatic.garden/pages/e-waste). I'm grateful to have found laptops, desktop GPUs and monitors for my research. The best e-waste is found in large quantities in MIT underground tunnels and I've yet to visit caltech tunnels.
-- [Fascination, people](https://adiabatic.garden/pages/blog-roll)
+  - sometimes I go out to [scrap for e-waste](https://adiabatic.garden/pages/e-waste)
+- [cool people](https://adiabatic.garden/pages/blog-roll)
+
+### Want to see more of
+authenticity, maximizing fascination, good futures, playfulness, deep friendship, adversity, infovores, tinkering
+
+### The levity of the subcultural society
+I'm often found at Noisebridge, Vivarium and sometimes Foresight nodes.
+
+### Major influences
+xkcd, Nicky Case
 
 ### Hopeful ruliads
 - Foresight institute
@@ -49,18 +59,20 @@ I hate poor infra! Towards universal prosperity mandate. At this moment I'm read
 - Daylight computer
 
 ### Personal infrastructure
-- Local compute, seeking 12TB HDD.
-- Openrouter for pi-autoresearch and opencode
+- Vivaldi browser, which supports gestures
+- Emergent mind for research updates
 - [Curius for bookmarking](https://curius.app/yoyo-yuan)
-- Discord/signal for communication
+- Openrouter, opencode
 - [Noisebridge bookshelf](https://x.com/adiabaticgarden/status/2087060661130215885?s=20)
+
+### Other names
+- Also known as Noesis among close friends
 
 ### Places I've lived in
 - Shenzhen
 - Waterloo
 - San Francisco
 - Japan
-
 
 ### Personality
 - Openness: Very high near ceiling

@@ -233,7 +233,7 @@ for md_file in md_files:
     </main>
 
     <footer>
-        <p>&copy; 2025 Yoyo cat!</p>
+        <p>&copy; 2025 Noesis cat!</p>
     </footer>
 
     <script>
