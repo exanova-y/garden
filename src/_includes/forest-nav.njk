@@ -1,0 +1,10 @@
+{#- The one header every reading page shares, so no page is a dead end. -#}
+<header class="forest-header">
+  <nav class="site-nav" aria-label="Site">
+    <a class="link local" href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>adiabatic.garden</a>
+    <a class="link local" href="/writing/"{% if page.url.startsWith("/writing/") or page.url.startsWith("/pages/") or page.url.startsWith("/highlights/") or page.url.startsWith("/tags/") %} aria-current="page"{% endif %}>writing</a>
+    <a class="link local" href="/writing/commonplace/"{% if page.url.startsWith("/writing/commonplace/") %} aria-current="page"{% endif %}>commonplace</a>
+    <a class="link local" href="/archive/"{% if page.url == "/archive/" %} aria-current="page"{% endif %}>archive</a>
+    <a class="link local" href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>about</a>
+  </nav>
+</header>

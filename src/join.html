@@ -1,0 +1,124 @@
+---
+permalink: /join.html
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>join · adiabatic.garden</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #faf9f6;
+        color: #252129;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        max-width: 52rem;
+        margin: 0 auto;
+        padding: clamp(3rem, 12vh, 8rem) 1.5rem;
+      }
+
+      h1 {
+        margin: 0 0 2.5rem;
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+        font-weight: 400;
+        line-height: 1.2;
+      }
+
+      h2 {
+        color: #6b3980;
+        font-size: 1.125rem;
+        font-weight: 400;
+      }
+
+      pre {
+        position: relative;
+        padding: 1rem 4rem 1rem 1rem;
+        border: 1px solid #ddd5e1;
+        border-radius: 0.25rem;
+        background: #f2edf4;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        line-height: 1.6;
+      }
+
+      code {
+        font-family: ui-monospace, monospace;
+        font-size: 0.875rem;
+      }
+
+      .copy-button {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        display: grid;
+        place-items: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0;
+        border: 0;
+        border-radius: 0.25rem;
+        background: transparent;
+        color: #6b3980;
+        cursor: pointer;
+      }
+
+      .copy-button:hover {
+        background: #e5dce9;
+      }
+
+      .copy-button:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      .copy-status {
+        min-height: 1.5em;
+        margin: 0;
+        color: #6b3980;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>Feynman's Prism</h2>
+      <p>Distributed autoresearch. Connect to peers through tailscale, orchestrate compute, assign open research problems (emergent mind)</p>
+      <pre><code id="install-command">curl -fsSL adiabatic.garden/join | sh -s</code><button class="copy-button" type="button" aria-label="Copy command" title="Copy command"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="13" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></svg></button></pre>
+      <p class="copy-status" role="status" aria-live="polite"></p>
+    </main>
+    <script>
+      const copyButton = document.querySelector(".copy-button");
+      const copyStatus = document.querySelector(".copy-status");
+      let statusTimeout;
+
+      copyButton.addEventListener("click", async () => {
+        clearTimeout(statusTimeout);
+        copyButton.disabled = true;
+        copyStatus.textContent = "";
+
+        try {
+          await navigator.clipboard.writeText(
+            document.getElementById("install-command").textContent,
+          );
+          copyStatus.textContent = "Copied!";
+          statusTimeout = setTimeout(() => {
+            copyStatus.textContent = "";
+          }, 2000);
+        } catch {
+          copyStatus.textContent = "Couldn’t copy. Select the command and copy it manually.";
+        } finally {
+          copyButton.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
