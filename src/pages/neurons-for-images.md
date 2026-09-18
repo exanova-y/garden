@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "Notes on processing images with in-vitro neurons paper"
 date: 2025-01-01
-author: "Yoyo"
+author: "noesis"
 category: lab
 tags: ["computational-neuroscience", "image-processing", "quantitative-biology-neurons-and-cognition"]
 ---
 
-by Yoyo Yuan • 2025-01-14
+by noesis • 2025-01-14
 
 This is an experiment ran in an *ancient* [image processing with living neurons paper](https://pubmed.ncbi.nlm.nih.gov/15759567/) in 2005, where the authors filtered a 10 x 6 MEA array corresponding to a 256-pixel image. With slight extensions you should be able to draw some minecraft items, which are also 16 x 16.
 

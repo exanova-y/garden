@@ -61,5 +61,8 @@ module.exports = {
   "tunneling": "note-0059",
   "ultrasound-mri": "note-0060",
   "underground": "note-0061",
-  "violence": "note-0062"
+  "violence": "note-0062",
+  "quotes": "note-0063",
+  "priors": "note-0064",
+  "maps": "note-0065"
 };

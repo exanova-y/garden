@@ -2,11 +2,11 @@
 layout: layouts/post.njk
 title: "Early may observelog!"
 date: 2026-05-15
-author: "Yoyo Yuan"
+author: "noesis"
 category: lab
 tags: ["readlogs"]
 ---
-*Source: [feralscholars.substack.com/p/early-may-observelog](https://feralscholars.substack.com/p/early-may-observelog) — Yoyo is defocusing ultrasound*
+*Source: [feralscholars.substack.com/p/early-may-observelog](https://feralscholars.substack.com/p/early-may-observelog) — noesis*
 
 ---
 

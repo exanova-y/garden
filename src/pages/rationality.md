@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Skateboarding rationality with fintech"
 date: 2024-12-15
-author: Yoyo and GPT-4o
+author: noesis and GPT-4o
 category: stories
 ---
 

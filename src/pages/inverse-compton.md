@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Inverse Compton effect notes"
 date: 2021-07-20
-author: "Yoyo"
+author: "noesis"
 category: lab
 tags: ["physics"]
 ---

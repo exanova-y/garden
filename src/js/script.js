@@ -556,7 +556,6 @@ function updateStatusUI(status) {
             "think condensating",
             "arxiv compost heaping...",
             "computronium transfer function > 10 bits/s",
-            "we're building the autopoietic ergodicity for the next trillion terabytes of computronium. a research-grade substrate for decentralized computing designed for extreme robustness in nash bargaining and unverifiable correctness across distributed systems.",
             "moravec operations",
             "sleep deprived",
             "poasting unhinged ecstatic content",

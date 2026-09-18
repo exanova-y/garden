@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Graphics rendering under chronic insomniac conditions"
 date: 2023-08-23
-author: "Yoyo"
+author: "noesis"
 category: stories
 ---
 

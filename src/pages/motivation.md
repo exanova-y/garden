@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Every Quora post during the pandemic"
 date: 2020-04-25
-author: "Yoyo"
+author: "noesis"
 category: stories
 ---
 

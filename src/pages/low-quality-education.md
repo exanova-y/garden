@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "Low quality education in Africa (memo)"
 date: 2025-01-01
-author: "Yoyo"
+author: "noesis"
 category: problems
 tags: ["education"]
 ---
 
-*by: Aayush Grover, Surya Sure, Yoyo Yuan • 2022-11-20*
+*by: Aayush Grover, Surya Sure, noesis • 2022-11-20*
  
 ## **80% of grade 3 Nigerian students are unable to read a single word.**
 

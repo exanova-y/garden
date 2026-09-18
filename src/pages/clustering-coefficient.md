@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "All about clustering coefficient, a Signal power user"
 date: 2025-02-28
-author: "Yoyo and the language model shenanigans"
+author: "noesis and the language model shenanigans"
 category: lab
 tags: ["social-networks"]
 ---
@@ -54,7 +54,7 @@ This second example brilliantly merges AI terminology ("iterated distillation an
 
 Neuroscience forms a central pillar of their intellectual framework, with particular emphasis on experimental approaches and cutting-edge technologies:
 
-> "yoyo and i talked to the g.tech people - they're willing to come to boston to give a demo (including their eeg) to all of us [they also know ninon!]. their unicorn tech is the most sophisticated of any"
+> "Noesis and i talked to the g.tech people - they're willing to come to boston to give a demo (including their eeg) to all of us [they also know ninon!]. their unicorn tech is the most sophisticated of any"
 
 > "this is FULL of lit neurotech ppl - https://brain.ieee.org/2024-ieee-brain-discovery-neurotechnology-workshop/#1693590879591-1f2fad7c-3e24"
 
@@ -201,7 +201,7 @@ Based on temporal proximity of messages (within 5 minutes on the same day):
 | karina | 183 |
 | Chris Hypernym / Shyft | 181 |
 | gwern | 175 |
-| Yoyo Yuan | 136 |
+| noesis | 136 |
 | ∞-Modal Noah | 118 |
 
 ## Knowledge Structure Map

@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "Food expiration date labels (memo)"
 date: 2025-01-01
-author: "Yoyo"
+author: "noesis"
 category: problems
 tags: ["food-waste"]
 ---
 
-*by: Saeed Tamboli, Juky Chen Wei Ling, Yoyo Yuan • 2022-10-23*
+*by: Saeed Tamboli, Juky Chen Wei Ling, noesis • 2022-10-23*
 
 
 > 💡 **Problem statement**:  Food labels are wildly inaccurate - The labels are meant to portray when the product is at its peak of freshness, not when it goes bad. Due to this misconception over 90% of Americans throw out food prematurely. 

@@ -7,7 +7,7 @@
     {% if page.url %}<link rel="canonical" href="https://adiabatic.garden{{ page.url }}">{% endif %}
     {% if personPage or noteId %}<script type="application/ld+json">{{ person | jsonify | safe }}</script>{% endif %}
     {% if noteId %}<script type="application/ld+json">{{ person | articleJsonLd(title, date, page.url) | jsonify | safe }}</script>{% endif %}
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ '/css/style.css' | assetUrl }}">
     {#- Not deferred: the theme has to be settled before the first paint. -#}
     <script src="/js/theme.js"></script>
     {% if content | containsMath %}
@@ -18,6 +18,7 @@
     {% endif %}
   </head>
   <body class="dark-page fullscreen {{ bodyClass if bodyClass }}">
+    <div id="paper-wallpaper" aria-hidden="true"{% if wallpaper %} style="--wallpaper: url('{{ wallpaper }}')"{% endif %}></div>
     <div class="landing-content">
       <div class="pane">
         {{ content | safe }}

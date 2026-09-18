@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Every kindness a category error"
 date: 2025-09-30
-author: "Yoyo"
+author: "noesis"
 category: stories
 ---
 

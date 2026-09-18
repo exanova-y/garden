@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "Notes on Senior loneliness in North America and companion robots"
 date: 2023-04-14
-author: "Yoyo"
+author: "noesis"
 category: problems
 tags: ["isolation", "china"]
 ---
 
-by Yoyo Yuan, contributors Colyi Chen and Elena Mishina • 2023-04-14
+by noesis, contributors Colyi Chen and Elena Mishina • 2023-04-14
 
 *I looked into senior loneliness, conducted in-person interviews in Waterloo, Canada and pitched the research at a Chinese conference informally, mentioned on technologist Yuquan Wang's podcast.*
 2023 fall: I wasn't very satisfied with breaking down the problem by personal vs environmental causes. Later I realized social problems often have feedback loops that makes MECE analyses insufficient.
@@ -20,7 +20,7 @@ This also means, if senior loneliness is "perfectly solved", we'd reduce people 
 
 
 ## Subproblem spotlight - inmobility
-(Yoyo)
+(noesis)
 In North America, 4.76 million of community-dwelling seniors are unable to independently leave the house at least once a week, significantly raising the risks of loneliness.
 
 Another way to think about this is that the Individual functional capacity does not meet the demands of the life-space—bedroom, home, outside home, neighborhood, town and distant locations.
@@ -154,7 +154,7 @@ These companies offer a combination of software and hardware solutions for senio
         - mishears commands, repeats same phrase “I’m tired to talk”
 
 ### The backdrop of companion robot startups
-(Yoyo)
+(noesis)
 1. **Intuition Robotics, founded 2015**
     ![elliq](/assets/images/elliq.webp)
     1. Team: Founders: Dor Skuler, Itai Mendelsohn, Roy Amir. Has 50 - 100 employees.

@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "A thousand meows"
 date: 2025-01-26
-author: "Yoyo"
+author: "noesis"
 category: stories
 ---
 

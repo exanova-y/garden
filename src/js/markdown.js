@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Set the page title based on the first h1 heading
         const firstHeading = postContent.querySelector('h1');
         if (firstHeading) {
-            document.title = firstHeading.textContent + ' - Yoyo is spinning';
+            document.title = firstHeading.textContent + ' - Noesis is spinning';
         }
 
         // Update the URL to remove the query parameter and make it cleaner

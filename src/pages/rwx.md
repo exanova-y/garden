@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "The rwx cycle"
 date: 2026-07-05
-author: "Yoyo"
+author: "noesis"
 category: lab
 tags: ["feral-scholars"]
 ---

@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "October readlogs!"
 date: 2025-11-01
-author: "Yoyo Yuan"
+author: "noesis"
 category: lab
 tags: ["readlogs"]
 ---
 
-*Source: [feralscholars.substack.com/p/october-readlog](https://feralscholars.substack.com/p/october-readlog) — Yoyo is defocusing ultrasound*
+*Source: [feralscholars.substack.com/p/october-readlog](https://feralscholars.substack.com/p/october-readlog) — noesis*
 
 *Note. My writing is compressed from irl observations! Some of you complained it is too dense. So, I mass-deleted some long words. It could be fun to experiment with different tones.*
 

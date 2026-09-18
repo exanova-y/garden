@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Food waste - The overstocking problem (memo)"
 date: 2022-10-27
-author: Mansi Katarey, Serjan Kaur, Surya Sure, Yoyo Yuan
+author: Mansi Katarey, Serjan Kaur, Surya Sure, noesis
 category: problems
 tags: ["food-waste"]
 ---

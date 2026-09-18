@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Quick review of growing neurons for computation"
 date: 2025-01-01
-author: "Yoyo"
+author: "noesis"
 category: lab
 ---
 

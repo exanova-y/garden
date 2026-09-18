@@ -2,11 +2,11 @@
 layout: layouts/post.njk
 title: "Quantum tunneling"
 date: 2025-01-01
-author: "Yoyo"
+author: "noesis"
 category: stories
 ---
 
-*by: Yoyo Yuan • 2021-07-25*
+*by: noesis • 2021-07-25*
 
 Quantum tunneling occurs when a particle encounters a potential barrier that it classically shouldn’t be able to overcome due to insufficient energy. However, because the particle’s wavefunction spreads out over the barrier, well, there is a small probability that the particle can "tunnel" through and appear on the other side.
 

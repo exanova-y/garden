@@ -1,6 +1,6 @@
 # Readlogs — local mirror
 
-Local mirror of five posts by *Yoyo is defocusing ultrasound*
+Local mirror of five posts by *noesis*
 (Substack: `feralscholars.substack.com`, formerly linked as `pawsitivefeedback.substack.com`).
 
 All images are downloaded locally under `images/` and referenced with relative

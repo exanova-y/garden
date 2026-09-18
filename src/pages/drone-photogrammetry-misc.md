@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Drone photogrammetry and miscellaneous features"
 date: 2024-11-01
-author: Yuxi Liu, Max Wilson, Yoyo Yuan, Atharva Patel, Suhas Palawala, Abhijith Varma Mudunuri
+author: Yuxi Liu, Max Wilson, noesis, Atharva Patel, Suhas Palawala, Abhijith Varma Mudunuri
 category: lab
 tags: ["theorists-attempting-to-touch-ground", "UAVs", "image-processing"]
 ---
