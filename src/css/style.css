@@ -1748,6 +1748,7 @@ main.home {
 }
 .home-row {
     display: flex;
+    align-items: flex-start; /* each box ends at its last line */
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -1830,12 +1831,8 @@ main.home {
 .map-note a {
     color: inherit;
 }
-.now .box {
-    min-height: 200px;
-}
 .archive-box {
     flex: 3 1 0;
-    min-height: 320px;
 }
 .archive-box .archive-graph {
     flex: 1 1 260px;
@@ -1856,6 +1853,7 @@ main.home {
 @media (max-width: 48rem) {
     .home-row {
         flex-direction: column;
+        align-items: stretch; /* stacked: full width, each as tall as its content */
     }
     /* Stacked, each box is as tall as its content: a zero flex basis in a
        column would let the card collapse under the status box. */

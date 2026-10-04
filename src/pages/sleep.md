@@ -1,12 +1,12 @@
 ---
 layout: layouts/post.njk
 title: "sleep deprivation"
-date: 2026-06-28
+date: 2025-12-19
 author: "noesis"
 category: slice-of-life
 ---
 
-A hypothetical grant application studying sleep deprived effective altruists in an imaginary AI safety hackathon. Note: this is written in a hurry in class.
+*A hypothetical grant application studying sleep-deprived effective altruists in an imaginary AI safety hackathon. This is written in a hurry in class.*
 
 ## Introduction to sleep deprivation resistance
 

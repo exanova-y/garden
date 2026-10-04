@@ -6,20 +6,32 @@ author: "noesis"
 category: lab
 tags: ["literature"]
 ---
+Books and texts
+- Emergent Mind Open Problems
 - Linus Pauling and the chemistry of life ⭐
 - Living Proof: Stories of Resilience in mathematics ⭐
-- Ben Barres Autobiography ⭐
-- Shape of a Life 
+- Jiabin Huang's Awesome Tips ⭐
+- Metamorphoses by Ovid
+- Gormenghast (reading)
+- Shape of a Life by Shing-Tung Yau
 - Permutation City ⭐
 - Accelerando (reading)
+- Lawrence of Arabia ⭐
+- Terror in Resonance ⭐
+- Eric S Raymond Cathedral and the Bazaar (paused)
+- Coasean Bargaining at Scale, Cosmos Institute
+- Coming out simulator, Nicky Case ⭐
 - Hormone Hunters, the Discovery of Adrenaline
+- Quaestio de Centauris by Primo Levi
+- Ben Barres Autobiography 
 - Ender's Game
-- Measurements of Decay 
-- The End of Eternity
-- Flowers for Algernon
+- Measurements of Decay by K. K. Edin
+- The End of Eternity by Isaac Asimov
+- Flowers for Algernon ⭐
 - At the Mountains of Madness illustrated by Gou Tanabe ⭐
 - Solutions and Other Problems
 - How to Lose the Time War
+- Meditations in an Emergency
 - Arc of a Scythe series
 - Surely You're Joking, Mr. Feynman ⭐
 - The City Coat of Arms
@@ -27,8 +39,8 @@ tags: ["literature"]
 - Summa Technologiae
 - Temporary Autonomous Zones
 - Cute accelerationism
-- Gormenghast Trilogy (paused)
 - Ontology of Childhood, Viktor Pelevin
+- Giovanni's Room
 - Journal of my other self ⭐
 - Signs and Symbols
 - The Picture of Dorian Gray
@@ -39,13 +51,12 @@ Shortform (Befriend me on Curius!)
 - [Audrey Tang - Lessons learned from Contributing to Open Source Communities](https://medium.com/@audrey.tang/lessons-i-ve-learned-32f5d8107e34) ⭐ - I really liked the neural patterns of Audrey but don't have more sources from them
 - Take Your Time, Nicky Case ⭐ - Nicky Case is awesome and has been my primary influence since teenage
 - Notes on Work, Weike Wang ⭐
-- Coming out simulator, Nicky Case ⭐
 - Falken Blog - Why Envy Dominates Greed
 - [Doctors Are Not Scientists](https://pmc.ncbi.nlm.nih.gov/articles/PMC428500/)
 - Going Infinite, Book Review by Zvi
 - Driven by Compression Progress
 - [Is scientic genius a thing of the past](http://bach.ai/is-scientific-genius-a-thing-of-the-past/)
-- Karen Uhlenbeck Abel Prize Interview
+- Karen Uhlenbeck Abel Prize Interview ⭐
 - In and Out of Love with Math, Alex Kontorovich
 - Review of Great And Desperate Cures
 - Why we don't have hobbies: A day in the life of a "time-poor" Filipino
@@ -62,13 +73,13 @@ Shortform (Befriend me on Curius!)
 - Ten Things You Don't Do in Dubai - BBC News
 - From Afghanistan with Love
 
-
 Other media:
 - Nadia the Secret of Blue Water
 - [Iran, 1 and 2 on Geocities](https://www.geocities.ws/entrixo/iran1.html)
-- Jiabin Huang Awesome Tips
+
 
 Want to read:
+- Textbooks on category theory, differential geometry
 - Cryptonomicon
 - 万历十五年
 - Left Hand of Darkness

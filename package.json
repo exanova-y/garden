@@ -17,7 +17,7 @@
     "forest:prepare": "node scripts/prepare-forest.mjs",
     "forest:build": "bash scripts/build-forest.sh",
     "forest:serve": "npx serve forest/output",
-    "deploy": "npm run build && npx wrangler pages deploy _site --skip-caching",
+    "deploy": "npm run build && wrangler pages deploy _site --project-name adiabatic-garden --branch main",
     "fetch:curius": "node scripts/fetch-curius.js",
     "embed:curius": "uv run scripts/embed-curius.py"
   }

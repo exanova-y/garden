@@ -7,15 +7,15 @@ category: personal
 personPage: true
 ---
 
-Welcome to the garden. I am Noesis.
+Welcome to the garden. I am Noesis Yuan (friends can call me Yoyo!)
 
 I value interacting with others authentically, deep friendship and human flourishing. I find myself really getting along with those on the international superhighway between major cities and who have recalibrated within 5 - 6 subcultures. Ping me `hi at adiabatic.garden` or  `adiabaticgarden` on x/discord.
 
 My early formative years were spent in hackerspaces in Shenzhen, programming forums, digging through mathNEWS archives at UWaterloo, math/physics YouTube and bay area internet. I scrapped monitors in MIT tunnels (I hear of caltech tunnels too. Dear algorithm, please take me there). When a friend gave me a macbook and desktop GPU in 2025, I took research a lot more seriously, starting with making DIY microelectrode arrays.
 
-I'm currently working on focused ultrasound and autoresearch problems. I have an appreciation for the fundamental physics, mathematics and levity. 
+I'm currently working on focused ultrasound and autoresearch coordination layer. I have an appreciation for the fundamental physics, mathematics and levity. 
 
-I hope to architect ever-so-powerful infrastructure around the Earth like Lain. Towards universal prosperity mandate.
+I hope to architect ever-so-powerful infrastructure around the Earth like Lain/Towards universal prosperity mandate.
 
 ### Things I'm thinking about
 - focused ultrasound, acoustic physics

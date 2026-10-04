@@ -79,6 +79,7 @@ in metadata and bylines; retain coauthor credits.
 
 The homepage opens on one card that maps the site (greetings, bookshelf, priors,
 maps, quotes, writing, archive); the boxes under it are what is happening now.
+Each box is as tall as its content, so a row ends where its last line does.
 The homepage and reading layouts version shared CSS and graph JavaScript by content
 hash so cached assets stay in sync with each deployment. Graph canvases sit outside
 normal layout flow to keep resizing from expanding the page.
@@ -186,9 +187,10 @@ To deploy manually to Cloudflare Pages, run:
 ```bash
 npm run deploy
 ```
-Production uses the `adiabatic-garden` project’s `main` branch. To publish a local
-build from another branch, pass `--project-name adiabatic-garden --branch main`
-to `wrangler pages deploy _site`.
+This publishes the current working tree to production (`adiabatic.garden`) using
+the `adiabatic-garden` project’s `main` branch target, regardless of your local Git
+branch. Wrangler reuses unchanged uploaded assets. To publish a branch preview,
+run `npm run build && npx wrangler pages deploy _site --branch YOUR_BRANCH`.
 When a development watcher is running, build with `eleventy --output=<temporary-directory>`
 and deploy that directory so the published files cannot change during upload.
 ### Sync curius bookmarks
