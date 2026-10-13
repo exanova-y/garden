@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>noesis — portfolio</title>
+<!--
+  One <section class="slide"> per page, 1280 x 720. Text is lifted from the posts it links to.
+  Images come from .cache/img, which build.sh fills from src/assets. Run ./build.sh to print the PDF.
+-->
+<style>
+@font-face { font-family: "Fira Code"; font-weight: 300; src: url("../src/assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Light.woff2") format("woff2"); }
+@font-face { font-family: "Fira Code"; font-weight: 400; src: url("../src/assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Fira Code"; font-weight: 500; src: url("../src/assets/fonts/Fira_Code_v6.2/woff2/FiraCode-Medium.woff2") format("woff2"); }
+
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+    font-family: "Fira Code", monospace;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #c6d0f5;
+    background: #0a0a0f;
+}
+
+/* ---- slide frame ---- */
+.slide {
+    width: 1280px;
+    height: 720px;
+    padding: 26px 40px 20px;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 16px;
+    overflow: hidden;
+    break-after: page;
+    counter-increment: slide;
+    background: #0a0a0f url(".cache/img/bg.jpg") center / cover;
+}
+.bar {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 9px 16px;
+    border: 1px solid #bcc0cc55;
+    background: rgba(8, 10, 24, 0.72);
+}
+.bar h1 { font-size: 19px; font-weight: 500; color: #e6e9fb; }
+.bar .meta { margin-left: auto; font-size: 12.5px; color: #838ba7; white-space: nowrap; }
+.foot { display: flex; justify-content: space-between; font-size: 12px; color: #838ba7; }
+.foot::after { content: "adiabatic.garden · " counter(slide) " / 19"; }
+
+/* ---- pieces ---- */
+.grid { display: grid; gap: 16px; min-height: 0; }
+.grid > * { min-height: 0; min-width: 0; }
+.stack { display: grid; gap: 16px; min-height: 0; align-content: start; }
+.box {
+    border: 1px solid rgba(127, 61, 232, 0.6);
+    background: rgba(8, 10, 24, 0.74);
+    padding: 16px 20px;
+    overflow: hidden;
+}
+.lav { border-color: #7287fd; }
+.teal { border-color: #00fcb5; }
+.green { border-color: #00fc50; }
+
+figure.box { padding: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+figure.box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+figure.fit img { object-fit: contain; background: #fff; }
+figure.fit.dark img { background: #0a0a0f; }
+figcaption { padding: 7px 12px; font-size: 12px; line-height: 1.4; color: #a5adce; border-top: 1px solid rgba(127, 61, 232, 0.35); }
+
+.label {
+    background: linear-gradient(90deg, #9058f8 10%, #4be83d 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+h2 { font-size: 17px; font-weight: 500; color: #e6e9fb; margin-bottom: 6px; }
+p + p, p + ul, ul + p { margin-top: 0.65em; }
+ul { list-style: none; }
+li { padding-left: 1.5em; text-indent: -1.5em; }
+li::before { content: "⊹ "; color: #9058f8; }
+li + li { margin-top: 0.3em; }
+a { color: #d4c896; text-decoration: underline; text-underline-offset: 3px; }
+b { font-weight: 500; color: #e6e9fb; }
+.dim { color: #838ba7; }
+.turq { color: #00fcb5; }
+.small { font-size: 14px; }
+.num { font-size: 25px; line-height: 1.2; font-weight: 500; color: #00fcb5; white-space: nowrap; }
+blockquote { border-left: 2px solid #00fcb5; padding-left: 14px; color: #e6e9fb; margin-top: 0.8em; }
+.math { font-weight: 400; color: #e6e9fb; white-space: nowrap; }
+sub, sup { font-size: 0.7em; line-height: 0; }
+
+/* ---- cover ---- */
+.cover .bar { justify-content: center; }
+.cover h1 { font-size: 76px; line-height: 1; font-weight: 500; color: #e6e9fb; letter-spacing: -2px; margin: 4px 0 18px; }
+.cover .lede { font-size: 18px; max-width: 34em; }
+.status { position: relative; }
+.status img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+.status.quiet img { opacity: 0.16; }
+
+/* image on top, words underneath */
+.card { padding: 0; display: grid; grid-template-rows: 250px minmax(0, 1fr); }
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0; }
+.card div { padding: 14px 18px; }
+.status div { position: relative; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide cover">
+    <div class="bar"><span>adiabatic.garden</span></div>
+    <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+        <div class="grid" style="grid-template-columns: 190px 1fr 330px;">
+            <figure class="box"><img src=".cache/img/plant.jpg" alt=""></figure>
+            <div class="box">
+                <span class="label">[ portfolio ]</span>
+                <h1>noesis</h1>
+                <p class="lede">working on science automation, focused ultrasound, hardware-software interfacing. largely self-taught and a natural sciences student at Minerva.</p>
+                <p style="margin-top: 1.2em;">contact. <a href="mailto:corpus.logica@gmail.com">corpus.logica@gmail.com</a> · adiabaticgarden on X/Discord · <a href="https://github.com/exanova-y">@exanova-y</a> on github</p>
+            </div>
+            <div class="box status">
+                <img src=".cache/img/flowers.jpg" alt="">
+                <div>
+                    <p class="small">October 2026<span class="turq"> San Francisco, CA</span></p>
+                    <p class="small">user status: <span class="turq">weaponizing links on curius</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+            <div class="box lav">
+                <span class="label">[ neurotech ]</span>
+                <ul>
+                    <li>low cost, DIY MEA collaboration with Eigenlucy</li>
+                    <li>receiving focused ultrasound stimulation at Lucas Center</li>
+                    <li>Notes from NYC neuromodulation 2026</li>
+                </ul>
+            </div>
+            <div class="box green">
+                <span class="label">[ autoresearch ]</span>
+                <ul>
+                    <li>The rwx methodology</li>
+                    <li>Roman streets for more tasteful autoresearch</li>
+                    <li>Arxiv wars · Chem-0</li>
+                </ul>
+            </div>
+            <div class="box teal">
+                <span class="label">[ other things built ]</span>
+                <ul>
+                    <li>mapping haptic hand gestures for swarm robots at uwaterloo</li>
+                    <li>microdrone assembly</li>
+                    <li>reassembling a laser cutter</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><span>it's important to be fascinated and do excellent work with self-honesty.</span></div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ about ]</span><h1>basic information</h1><span class="meta">adiabatic.garden/about</span></div>
+    <div class="grid" style="grid-template-columns: 1.35fr 1fr;">
+        <div class="box" style="font-size: 18.5px;">
+            <p>I grew up around hackerspaces in Shenzhen, programming forums, UWaterloo libraries and the bay area internet. Some of my fondest memories were scrapping monitors in MIT tunnels and making friends from over 50+ countries.</p>
+            <p>I'm working on focused ultrasound and autoresearch coordination layers. When I received a Macbook and a Desktop GPU in 2025, I became even more self-taught.</p>
+            <p>Bad infrastructure is evil; How we can architect strong infrastructure that creates abundance for my friends and I?</p>
+            <p>I enjoy hanging out with people on the international superhighway and who have recalibrated between 5 - 6 subcultures.</p>
+            <p class="dim" style="margin-top: 1.4em;">historically inhabited: <span style="color: #c6d0f5;">Shenzhen, Waterloo, San Francisco, Japan</span></p>
+            <p class="dim">the <i>levity</i> of the subcultural society: <span style="color: #c6d0f5;">I'm often found at Noisebridge, Vivarium and sometimes Foresight nodes.</span></p>
+        </div>
+        <div class="grid" style="grid-template-rows: auto minmax(0, 1fr);">
+            <div class="box lav">
+                <span class="label">[ research topics ]</span>
+                <ul>
+                    <li>autoresearch infrastructure (coordination, credit assignment, verification, distributed computing)</li>
+                    <li>focused ultrasound, acoustic physics, how neural circuits resemble control theory</li>
+                    <li>hardware-software interfaces</li>
+                </ul>
+            </div>
+            <figure class="box">
+                <img src=".cache/img/e-waste.jpg" alt="">
+                <figcaption>adiabatic.garden is funded by computers, keyboards and GPUs scrapped from underground tunnels.</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/about/">adiabatic.garden/about</a></div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ quests ]</span><h1>where the time went</h1><span class="meta">adiabatic.garden/about</span></div>
+    <div class="grid" style="grid-template-columns: 1.5fr 1fr;">
+        <div class="box" style="font-size: 18px;">
+            <span class="label">[ quests ]</span>
+            <ul>
+                <li>student at Minerva (present)</li>
+                <li>prototyping low-cost microelectrode array chip with Eigenlucy</li>
+                <li>trying multiple focused ultrasound studies at lucas center at stanford</li>
+                <li>implementing fourier series (failing...) and testing pulse sequences on openwater lifu firmware</li>
+                <li>built neural network for swarm robots at uwaterloo</li>
+                <li>NFC programming and deploying chips at a san francisco rave at currents.fm</li>
+                <li>assembling microdrones, trying swarm algorithms and simulating them with unity with chester from droneforge</li>
+                <li>evaluated the physical security of buildings and treehacks</li>
+            </ul>
+        </div>
+        <div class="stack" style="align-content: stretch; grid-template-rows: auto minmax(0, 1fr);">
+            <div class="box teal">
+                <span class="label">[ things I am good at ]</span>
+                <ul>
+                    <li>reading and ingesting dense technical texts and disentangling systems with high-levels of complexity</li>
+                    <li>propagating across social graphs and finding people</li>
+                    <li>being self-taught</li>
+                    <li>fiction world-building</li>
+                    <li>curating good aesthetics</li>
+                </ul>
+            </div>
+            <div class="box lav">
+                <span class="label">[ in this deck ]</span>
+                <p>neurotech <span class="dim">4 – 10</span><br>autoresearch <span class="dim">11 – 13</span><br>robots &amp; swarms <span class="dim">14 – 17</span><br>writing <span class="dim">18</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/about/">adiabatic.garden/about</a></div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>Making low-cost microelectrode arrays</h1><span class="meta">noesis and Eigenlucy · 2025</span></div>
+    <div class="grid" style="grid-template-columns: 400px 1fr;">
+        <figure class="box"><img src=".cache/img/beautiful-lig.jpg" alt=""><figcaption>laser-induced graphene on polyimide tape</figcaption></figure>
+        <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+            <div class="box" style="font-size: 18px;">
+                <h2 style="font-size: 19px; margin-bottom: 12px;">Motivation: Neuronal headstages bottlenecked researchers</h2>
+                <p>2025 was full of startup hype about neuron computers. At Frontier Tower's neurotech floor, friends were discussing biological neuronal responses to nootropics and neuropeptides. However, the neuronal headstages were hard to get. Student clubs e.g. UC Berkeley didn't rent them out, nor did neurotech startups e.g. Science.xyz.</p>
+                <p>Thus, we experimented with building a cheap MEA.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="box lav"><p class="num" style="color: #c6d0f5;">$300</p><p class="small">a single microelectrode array of 59 channels from multichannel systems</p></div>
+                <div class="box lav"><p class="num" style="color: #c6d0f5;">$10k – $50k</p><p class="small">integrated neuronal headstage setups from Axion biosystems</p></div>
+                <div class="box teal"><p class="num">&lt;$1 · 5.5 min</p><p class="small">per unit, so far, for the graphene version</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><span><a href="https://adiabatic.garden/highlights/diy-mea/">adiabatic.garden/highlights/diy-mea</a> · full write-up: diy-mea.pdf</span></div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>Designing an MEA</h1><span class="meta">three iterations</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 290px minmax(0, 1fr);">
+        <figure class="box fit"><img src=".cache/img/onshape.jpg" alt=""></figure>
+        <figure class="box fit dark"><img src=".cache/img/mea-routes.jpg" alt=""></figure>
+        <figure class="box fit"><img src=".cache/img/klayout.jpg" alt=""></figure>
+        <div class="box"><h2>Iteration 1: OnShape.</h2><p>Created at ~12 am from circles and linear patterns. I found out this shortcircuited, since I naively traced the well as a ring, so I created version 2!</p></div>
+        <div class="box"><h2>Iteration 2. KiCad.</h2><p>The improved MEA. This dotted grid directly come into contact with neurons, and extend out to the peripherals.</p></div>
+        <div class="box"><h2>Iteration 3. Klayout.</h2><p>Using existing MEA design files provided by <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202306826">Mind-in-Vitro</a>, openable in Klayout.</p></div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/highlights/diy-mea/">adiabatic.garden/highlights/diy-mea</a></div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>We tested 3 laser deposition techniques</h1><span class="meta">at atopile's machine shop</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="box card teal">
+            <img src=".cache/img/lig.jpg" alt="">
+            <div class="small">
+                <h2>1. Most promising: Laser-induced graphene</h2>
+                <p>We directed a laser beam at the polyimide tape, for graphene to become deposited on the surface.</p>
+                <p>CO2 laser at 10 600 nm, 5.5 W, 88 mm/s scanning rate, 100 lines/cm.</p>
+                <p>The triple-layered electrode version was consistently conductive. However, the graphene easily wears off, or encounters insulation at corners.</p>
+            </div>
+        </div>
+        <div class="box card lav">
+            <img src=".cache/img/aluminum.jpg" alt="">
+            <div class="small">
+                <h2>2. Accidental discovery: Aluminum vapour deposition</h2>
+                <p>While implementing laser-induced graphene, we noticed dense metallic stripes appeared on glass--This certainly didn't look like graphene.</p>
+                <p>This was in fact, the vapour from the underlying sheet of aluminum, in a DPSS laser of 1064 nm.</p>
+            </div>
+        </div>
+        <div class="box card">
+            <img src=".cache/img/copper-completed.jpg" alt="">
+            <div class="small">
+                <h2>3. Error-prone: Copper metalization</h2>
+                <p>A focused laser beam mimicks the voltage differential like a battery. As it is directed at the copper solution, it causes a thermal gradient. The heated area gains copper under the plate.</p>
+                <p>This method has been time-intensive and prone to error.</p>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><span><a href="https://adiabatic.garden/highlights/diy-mea/">adiabatic.garden/highlights/diy-mea</a> · also looked into, not tested: indium tin oxide ablation, PEDOT:PSS trails</span></div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>when the scale started tweaking</h1><span class="meta">preparing the electroplating solution</span></div>
+    <div class="grid" style="grid-template-columns: 250px 250px 1fr;">
+        <figure class="box"><img src=".cache/img/copper-waterbath.jpg" alt=""><figcaption>the bench</figcaption></figure>
+        <figure class="box"><img src=".cache/img/copper-heating.jpg" alt=""><figcaption>solvent on a hot plate, with a magnetic rod for stirring</figcaption></figure>
+        <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+            <div class="box">
+                <p>We became suspicious when the 100 mL of water weighed 125 grams. Consequentially, in our 2nd copper replication attempt, the copper solution instantly precipitated into copper hydroxide--a cloudy, turquoise colour, not what we want! The ideal solution should look transparent, dark blue.</p>
+                <p>We tried a series of quick troubleshooting e.g. switching power supplies, using different scales, but there weren't matching power supplies of 9V for any other scale in the lab.</p>
+                <p>Thus, I poured in some ethanol to see how much the scale was off by. From then on, we performed everything according to the scale's offset mass (1.25x).</p>
+            </div>
+            <div class="box teal small">
+                <span class="label">[ next steps ]</span>
+                <p>It would be really good to replicate the entire neuronal headstage from Mind-in-Vitro to broaden the accessibility.</p>
+                <p class="dim">Supporters: Morgan Hough, Paul Han, Elliot Roth, Lucas Mair, James Mavo at frontier tower, and Atopile. Funding: 1517 Medici project, merge grant, Lucas Chu and individual donors.</p>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/highlights/diy-mea/">adiabatic.garden/highlights/diy-mea</a></div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>receiving focused ultrasound stimulation at Lucas Center</h1><span class="meta">early may observelog · 2026</span></div>
+    <div class="grid" style="grid-template-columns: 720px 1fr;">
+        <figure class="box"><img src=".cache/img/early-may-01-header.jpg" alt=""></figure>
+        <div class="grid" style="grid-template-rows: auto minmax(0, 1fr);">
+            <div class="box lav">
+                <span class="label">[ study setup basics ]</span>
+                <ul class="small">
+                    <li>In most studies, the resting state data is first collected through fMRI and MRI.</li>
+                    <li>A high density EEG system was used in the 3rd study. Researchers used a 128 electrode cap and injected saline water into the electrodes with a pipette.</li>
+                    <li>Only one side of my brain was stimulated.</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>The subtle and region-sensitive subjective experiences of FUS</h2>
+                <p class="small">It felt like being lightly zapped on the forehead. Even though the transducer may be on for 40 mins, it is only operating at 10% duty cycle. The ultrasound was audible as it pulsed at designated frequencies: 5 Hz, 50 Hz and 500 Hz.</p>
+                <blockquote>My reaction time became noticeably &amp; marginally faster and working memory increased to my own peak performance point.</blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/pages/early-may-observelog/">adiabatic.garden/pages/early-may-observelog</a></div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>Surprises in focused ultrasound</h1><span class="meta">early may observelog · 2026</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 300px 1.05fr;">
+        <div class="grid" style="grid-template-rows: 1.25fr 1fr;">
+            <figure class="box fit"><img src=".cache/img/early-may-03-study2-setup.jpg" alt=""><figcaption>study #2's setup</figcaption></figure>
+            <figure class="box fit"><img src=".cache/img/early-may-05-errors-analysis.jpg" alt=""><figcaption>Mistakes are more information than correct results.</figcaption></figure>
+        </div>
+        <figure class="box fit"><img src=".cache/img/early-may-04-transducer-prep.jpg" alt=""><figcaption>study #2: preparing the hair and ultrasound transducer</figcaption></figure>
+        <div class="box">
+            <p><b>Manual transducer placement was the bottleneck</b> in this study, taking 15 mins on average. Robotic arms are developed for TMS coils e.g. Axilum robotics, but could not generalize to the coregisteration step.</p>
+            <p><b>Algernon-Gordon effects remain unstudied.</b> The postdocs weren't sure about <i>how</i> the focused ultrasound stimulation decays as a function of time, since they're focused on the what.</p>
+            <p><b>Institutional arbitrage.</b> <i>The publish-or-perish pressure had caused me, an outsider, physical pain.</i></p>
+            <p><b>Wiggling.</b> While I accidentally wiggled in my chair, I felt a phantom cold sensation in my throat. I suspect my vagus nerve was stimulated by accident through the incident beam.</p>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/pages/early-may-observelog/">adiabatic.garden/pages/early-may-observelog</a></div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ neurotech ]</span><h1>Brain-Computer Interfaces, electromyography and electrooculography</h1><span class="meta">2022</span></div>
+    <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+        <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+            <figure class="box fit"><img src=".cache/img/dino.jpg" alt=""><figcaption><b>Playing the chrome dino game by blinking.</b> I detected my blinking using the OpenBCI biosensing kit and wrote a python program to convert it into pressing the space bar.</figcaption></figure>
+            <figure class="box fit"><img src=".cache/img/femg.jpg" alt=""><figcaption><b>Use fEMG to detect valence while viewing ads!</b> Smiling and frowning each correspond to activating of a muscle group. We can detect changes in voltage of these groups.</figcaption></figure>
+            <figure class="box fit"><img src=".cache/img/musenet.jpg" alt=""><figcaption><b>Composing music with EEG data and MuseNet.</b> The amplitudes of brainwaves are mapped into a good-sounding musical scale (C Locrian).</figcaption></figure>
+        </div>
+        <div class="grid" style="grid-template-columns: 1fr 1.3fr;">
+            <div class="box"><p>Completed during high school while under $1000 budget. There were rarely any guided tutorials back then. So, I had to dig through documentation, numerous forums, debug software and hardware.</p></div>
+            <div class="box lav">
+                <span class="label">[ also ]</span>
+                <ul class="small">
+                    <li><a href="https://github.com/exanova-y/nyc-neuromodec-2026">Notes from NYC neuromodulation 2026</a></li>
+                    <li>implementing fourier series (failing...) and testing pulse sequences on openwater lifu firmware</li>
+                    <li><a href="https://adiabatic.garden/pages/notes-on-growing-neurons/">Quick review of growing neurons for computation</a> · <a href="https://adiabatic.garden/pages/neurons-for-images/">Notes on processing images with in-vitro neurons paper</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/pages/bci/">adiabatic.garden/pages/bci</a></div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ autoresearch ]</span><h1>The rwx cycle</h1><span class="meta">I research in cycles · 2026</span></div>
+    <div class="grid" style="grid-template-rows: auto minmax(0, 1fr);">
+        <div class="box" style="font-size: 16px;">Autoresearch weaponization to ingest hundreds of papers in hours, run in-silico experiments, and write up 5000 words in an afternoon when you're too broke to afford journal subscriptions. Tested and true.</div>
+        <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+            <div class="box lav">
+                <p class="num" style="color: #7287fd;">r</p>
+                <h2>Literature review</h2>
+                <ul>
+                    <li><i>Boiling the Ocean method:</i> Cluster these papers into categories to understand "why x hasn't been solved yet".</li>
+                    <li><i>Availability heuristic:</i> look online at your favourite theorists' websites, and see if there are any recent writings that haven't been implemented yet.</li>
+                    <li>Then, feed the context into your favourite research agent.</li>
+                </ul>
+            </div>
+            <div class="box green">
+                <p class="num" style="color: #4be83d;">x</p>
+                <h2>Scorched earth hypothesis testing</h2>
+                <ul>
+                    <li>start running experiments ideally on day 1 or 2 to leave time for adjustments.</li>
+                    <li>50% of the time should be spent on running experiments, logistics, or building.</li>
+                    <li>Code should be constantly running.</li>
+                    <li>Come up with a list of hypotheses (anywhere from 1 to even 40) ranked by upside risk and time taken to test.</li>
+                </ul>
+            </div>
+            <div class="box teal">
+                <p class="num">w</p>
+                <h2>drafting papers</h2>
+                <ul>
+                    <li>you should be accumulating data points in all sections of the paper in parallel, rather than starting from scratch.</li>
+                    <li>Figures drive the narrative.</li>
+                    <li>Write these first: Introduction, Related Work, Methods. Write these last: Key contributions (Abstract), Results.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/pages/rwx/">adiabatic.garden/pages/rwx</a></div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ autoresearch ]</span><h1>Roman streets · Arxiv wars</h1><span class="meta">2025 – 2026</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="box green">
+            <h2>Roman streets for more tasteful autoresearch</h2>
+            <p>One can use a parallel from Roman street networks since they are engineering spectacles. If some agent has already explored this topic space, streets with wider paths and directions should be constructed to avoid independent and identical exploration by a future agent.</p>
+            <p>When a connection is bad, roads can be demoted from viae publicae to viae vicinales, marked as dead-ends or topics could be tossed into the sewers. When needed, shortcuts between roads could be created.</p>
+            <p>Graphs contents are differentiable and trainable. If taking certain routes repeatedly leads to good research, gradient descent can teach the model to prefer these roads.</p>
+            <p class="small" style="margin-top: 1.2em;"><a href="https://adiabatic.garden/pages/roman-streets-autoresearch/">adiabatic.garden/pages/roman-streets-autoresearch</a></p>
+        </div>
+        <div class="grid" style="grid-template-rows: auto minmax(0, 1fr);">
+            <div class="box lav">
+                <h2>Arxiv wars</h2>
+                <p>Where simulated ML experts fight over the best real paper of the day! This takes place in an online forum, inspired by Hacker News with infinite backrooms aesthetics.</p>
+                <p class="small dim">noesis, Joe and Cassandra from Prototype · Python, React, Node.js, Express, MCP, ArXiv API, Discord · <a href="https://github.com/exanova-y/arxiv-rag">github.com/exanova-y/arxiv-rag</a></p>
+            </div>
+            <div class="grid" style="grid-template-columns: 1.25fr 1fr;">
+                <figure class="box fit dark"><img src=".cache/img/arxiv.jpg" alt=""><figcaption>the forum</figcaption></figure>
+                <figure class="box fit"><img src=".cache/img/arxiv-wars-selection.jpg" alt=""><figcaption>paper selection process</figcaption></figure>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/highlights/arxiv-wars/">adiabatic.garden/highlights/arxiv-wars</a></div>
+</section>
+
+<!-- 13 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ autoresearch ]</span><h1>Chem-0</h1><span class="meta">#theorists-attempting-to-touch-ground #chemical-identification #robotics · 2026</span></div>
+    <div class="grid" style="grid-template-columns: 330px 1fr 1fr; grid-template-rows: 1fr 1fr;">
+        <figure class="box" style="grid-row: span 2;"><img src=".cache/img/pouring.jpg" alt=""><figcaption>Robot lab bench setup, which did not work yet because calibration (to be updated)</figcaption></figure>
+        <figure class="box"><img src=".cache/img/multimeter.jpg" alt=""><figcaption>opencv</figcaption></figure>
+        <figure class="box"><img src=".cache/img/human.jpg" alt=""><figcaption>lab bench</figcaption></figure>
+        <figure class="box fit"><img src=".cache/img/sim.jpg" alt=""><figcaption>UI</figcaption></figure>
+        <figure class="box fit dark"><img src=".cache/img/ui1.jpg" alt=""><figcaption>old ui</figcaption></figure>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/pages/chem0/">adiabatic.garden/pages/chem0</a></div>
+</section>
+
+<!-- 14 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ robots &amp; swarms ]</span><h1>Mapping haptic gestures to swarm robots</h1><span class="meta">Sean Wang, noesis · UWaterloo ERABLab · 2023</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr) auto;">
+        <figure class="box"><img src=".cache/img/nn.jpg" alt=""><figcaption>Neural network</figcaption></figure>
+        <figure class="box"><img src=".cache/img/wsl.jpg" alt=""><figcaption>wsl</figcaption></figure>
+        <div class="box teal" style="grid-column: span 2; font-size: 16px;">
+            <p>At UWaterloo ERABLab, we built a neural network that recognizes gestures of the Senseglove haptic hand and controls the motion of brushbots with Professor Gennaro Notomista. This involved learning linear algebra, some multivariable calculus, neural networks, the PyTorch framework, Linux and ROS. There was a more-than-expected amount of troubleshooting.</p>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/highlights/swarm-mapping/">adiabatic.garden/highlights/swarm-mapping</a></div>
+</section>
+
+<!-- 15 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ robots &amp; swarms ]</span><h1>Assembling a microdrone</h1><span class="meta">Founders Inc AI x hardware residency · 2024</span></div>
+    <div class="grid" style="grid-template-columns: 300px 1fr 1fr;">
+        <figure class="box"><img src=".cache/img/microdrone.jpg" alt=""><figcaption>a microdrone &lt; 250g</figcaption></figure>
+        <figure class="box"><img src=".cache/img/microdrone2.jpg" alt=""></figure>
+        <div class="grid" style="grid-template-rows: auto minmax(0, 1fr);">
+            <div class="box">
+                <p>I met Chester at Founders Inc back then and then we worked on sourcing components and building 1 - 2 microdrones, as well as simulating them in Unity.</p>
+                <p>I made a 3D simulation in Unity during 2 weeks at Founders Inc AI x hardware residency with team Colony. My first time writing in C#.</p>
+            </div>
+            <figure class="box"><img src=".cache/img/pso-unity.jpg" alt=""><figcaption>particle swarm optimization in Unity · <a href="https://youtu.be/vmiEF5mzpEg">video</a></figcaption></figure>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/highlights/microdrones/">adiabatic.garden/highlights/microdrones</a></div>
+</section>
+
+<!-- 16 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ robots &amp; swarms ]</span><h1>Reading particle swarm optimization and implementing it in Unity</h1><span class="meta">2024</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 1.15fr;">
+        <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+            <figure class="box fit"><img src=".cache/img/swarm-history.jpg" alt=""><figcaption>You can see the development of these algorithms through time.</figcaption></figure>
+            <figure class="box fit" style="height: 190px;"><img src=".cache/img/topologies.jpg" alt=""><figcaption>Consider population topology.</figcaption></figure>
+        </div>
+        <div class="grid" style="grid-template-rows: auto auto minmax(0, 1fr);">
+            <div class="box">
+                <p>A time ago, Feynman noticed the ants in his kitchen would form trails to food sources. This... indirectly foreshadowed the development of Ant Colony Optimization and many more that describe the social behaviour of insects and in nature toward a target.</p>
+            </div>
+            <div class="box lav">
+                <span class="label">[ update rules ]</span> <span class="dim small">just take it and implement it in your own code</span>
+                <p class="math">v<sub>i</sub><sup>t+1</sup> = v<sub>i</sub><sup>t</sup> + r<sub>1</sub>·c<sub>1</sub>·(g − x<sub>i</sub><sup>t</sup>) + r<sub>2</sub>·c<sub>2</sub>·(p − x<sub>i</sub><sup>t</sup>)</p>
+                <p class="math">x<sub>i</sub><sup>t+1</sup> = x<sub>i</sub><sup>t</sup> + v<sub>i</sub><sup>t+1</sup></p>
+            </div>
+            <div class="box">
+                <p>Swarm intelligence uses a population of agents, with stochastic components. It's better at escaping local optima, can perform better at non-continuous, non-differentiable and noisy problems. However, swarm intelligence is more exploratory and may take a longer time to converge.</p>
+                <p class="small dim">also in the notes: firefly algorithm, flower pollination with Levy flights, the parasitic cuckoo, taxonomies.</p>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/pages/swarm-algos/">adiabatic.garden/pages/swarm-algos</a></div>
+</section>
+
+<!-- 17 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ other things built ]</span><h1>Assembling a laser cutter</h1><span class="meta">noesis, with guidance from Paul Han · 2025</span></div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        <figure class="box"><img src=".cache/img/laser-cutter.jpg" alt=""><figcaption>We accidentally spilled bleach on a CO2 laser cutter, so I got a chance to take it apart and reassemble it.</figcaption></figure>
+        <div class="stack" style="align-content: stretch;">
+            <div class="box lav">
+                <h2>T-posing on humanoid robots</h2>
+                <p class="small">It was really difficult to work with humanoid robots given numerous servo motor incongruences during calibration. So we threw a hail Mary and just told the robot to go to T-pose on demand, given webcam data.</p>
+                <p class="small dim">Fred, Homero, Stanley, noesis · <a href="https://github.com/HomeroRR/khacks_dancing_robot">repo</a></p>
+            </div>
+            <div class="box green">
+                <h2>Drone photogrammetry and miscellaneous features</h2>
+                <p class="small">A team project for the USS hornet defense hackathon. The drone can take 2D images and calculate the coordinates of these objects in 3D, recognize them and then put them on a map. There's also celestial navigation for GPS backup.</p>
+                <p class="small dim">Yuxi Liu, Max Wilson, noesis, Atharva Patel, Suhas Palawala, Abhijith Varma Mudunuri</p>
+            </div>
+            <div class="box teal">
+                <h2>Magnifying glass burning ants thermal simulation</h2>
+                <p class="small">It calculates the light energy converted into heat energy and simulates a fire if the temperature of the object exceeds its ignition temperature.</p>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/highlights/laser-cutter/">adiabatic.garden/highlights/laser-cutter</a></div>
+</section>
+
+<!-- 18 -->
+<section class="slide">
+    <div class="bar"><span class="label">[ writing ]</span><h1>68 notes</h1><span class="meta">adiabatic.garden/writing</span></div>
+    <div class="grid" style="grid-template-columns: 1.5fr 1fr 1fr;">
+        <div class="stack" style="align-content: stretch;">
+            <div class="box lav">
+                <h2>Explaining Hikikomori in Japan</h2>
+                <p class="small">my essay for complex systems class at Minerva: the occurrence of primary hikikomori with the help of complex causality, system dynamics and network analysis lenses. <span class="dim">2023</span></p>
+            </div>
+            <div class="box">
+                <h2>Neuralink: neuroscience, engineering and prospects</h2>
+                <p class="small">how the device works and if neuroscientists think the company is legit. <span class="dim">2022</span></p>
+            </div>
+            <div class="box">
+                <h2>Reviewing ultracold atoms and integrated photonics simulators!</h2>
+                <p class="small">two methods of quantum simulation. <span class="dim">Zheng Li, Chenxi Shi, noesis, Shuzhi Zhu · 2021</span></p>
+            </div>
+            <div class="box teal small">
+                <p>Highlights <span class="dim">8</span> · Lab notebook <span class="dim">26</span> · Big social problems! <span class="dim">6</span> · Stories existing purely in your imagination <span class="dim">13</span> · Slice of life <span class="dim">1</span> · Commonplace <span class="dim">2</span></p>
+            </div>
+        </div>
+        <figure class="box fit"><img src=".cache/img/hiki-causality.jpg" alt=""><figcaption>Fig. 1. Causal diagram for hikikomori.</figcaption></figure>
+        <figure class="box fit"><img src=".cache/img/hiki-network.jpg" alt=""><figcaption>Network diagram</figcaption></figure>
+    </div>
+    <div class="foot"><a href="https://adiabatic.garden/writing/">adiabatic.garden/writing</a></div>
+</section>
+
+<!-- 19 -->
+<section class="slide cover">
+    <div class="bar"><span>adiabatic.garden</span></div>
+    <div class="grid" style="grid-template-columns: 1.25fr 1fr;">
+        <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+            <div class="box status quiet">
+                <img src=".cache/img/flowers.jpg" alt="">
+                <div>
+                    <span class="label">[ reach out ]</span>
+                    <p style="font-size: 30px; line-height: 1.25; font-weight: 500; color: #e6e9fb; margin: 6px 0 22px;">If you have read this far, reach out!</p>
+                    <p style="font-size: 17px;"><a href="mailto:corpus.logica@gmail.com">corpus.logica@gmail.com</a><br>adiabaticgarden on X/Discord<br><a href="https://github.com/exanova-y">github.com/exanova-y</a><br><a href="https://feralscholars.substack.com/">feralscholars.substack.com</a><br><a href="https://adiabatic.garden/">adiabatic.garden</a></p>
+                </div>
+            </div>
+            <div class="box lav">
+                <span class="label">[ funding ]</span>
+                <p>adiabatic.garden is funded by computers, keyboards and GPUs scrapped from underground tunnels. consider donating on <a href="https://ko-fi.com/yoyo_yuan">ko-fi!</a> supporters include: Plurigrid, 1517 Medici, Merge, @edchucation, @mkultra_gf and certain kind individuals.</p>
+            </div>
+        </div>
+        <div class="grid" style="grid-template-rows: minmax(0, 1fr) auto;">
+            <div class="box teal">
+                <span class="label">[ good circles to be in ]</span>
+                <p style="line-height: 1.75;">Foresight institute<br>Roots of progress<br>Pebblebed<br>Openwater<br>Alex K Chen's friends<br>Cosmos institute<br>Wendi yan circle<br>Simons institute<br>Long now foundation<br>NixOS ecosystem<br>Daylight computer</p>
+            </div>
+            <div class="box green">
+                <span class="label">[ appreciations ]</span>
+                <p class="small">deep friendship, authentic interactions, adversity, adventure, ancient civilizations and mythology, tinkering, books, rhythm games, hyperpop.</p>
+            </div>
+        </div>
+    </div>
+    <div class="foot"><span>esr cathedral and the bazaar ftw ✓</span></div>
+</section>
+
+</body>
+</html>

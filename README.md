@@ -54,7 +54,7 @@ $$
 $$
 ```
 
-On the standalone homepage, wrap a formula in `<span class="math">...</span>`; its scoped KaTeX renderer avoids interpreting unrelated text as math.
+The standalone homepage is a single line of text with no navigation.
 
 If you ever want to decouple a file's physical name from its compiled web URL, you can define a permalink variable directly in the post's front matter:
 ---
@@ -69,7 +69,7 @@ permalink: "/neuroscience/mri-and-ultrasound/"   # Custom variable URL!
 
 Each post's source Markdown is also published beside its rendered page: for example,
 `/pages/hope/` is available as plain text at `/pages/hope.md`.
-The homepage and About page publish shared Person JSON-LD; each post references that
+The About page publishes Person JSON-LD; each post references that
 identity in its Article JSON-LD author data. Use only `noesis` for this author’s name
 in metadata and bylines; retain coauthor credits.
 
@@ -77,12 +77,11 @@ in metadata and bylines; retain coauthor credits.
 
 ## 🗺️ Map, commonplace, archive
 
-The homepage opens on one card that maps the site (greetings, bookshelf, priors,
-maps, quotes, writing, archive); the boxes under it are what is happening now.
-Each box is as tall as its content, so a row ends where its last line does.
-The homepage and reading layouts version shared CSS and graph JavaScript by content
-hash so cached assets stay in sync with each deployment. Graph canvases sit outside
-normal layout flow to keep resizing from expanding the page.
+The homepage displays “for I left the cruel world a peasant, and a god I shall return in the next”
+without links or controls. Other pages remain available at their direct URLs.
+Reading layouts version shared CSS and graph JavaScript by content hash so cached
+assets stay in sync with each deployment. Graph canvases sit outside normal layout
+flow to keep resizing from expanding the page.
 
 The sleep page transcribes pages 2–10 of `src/pages/sleep-deprivation.pdf` as
 Markdown, omitting the PDF title page, and links to the original file at
@@ -97,8 +96,7 @@ evergreen: append a heading rather than writing a new post. They compose at
 `/archive/` draws every page as a graph. The `graph` collection in `.eleventy.js`
 builds nodes (home, sections, notes) and edges (section membership plus internal
 links found in each note's markdown); `src/archive-graph.njk` writes it to
-`/archive/graph.json` and `src/js/archive-graph.js` renders it, also in the
-homepage `[ archive ]` box.
+`/archive/graph.json` and `src/js/archive-graph.js` renders it on `/archive/`.
 
 Each section has a wallpaper in `src/assets/wallpapers/`; a note inherits its
 section's image (`lib/note-data.js`) unless its front matter sets `wallpaper`.
@@ -143,6 +141,18 @@ links appear only on the note's own page, where it is the root.
 
 ---
 
+## 🖨️ Portfolio PDFs
+
+`portfolio/` sits outside `src/`, so Eleventy never publishes it. `./portfolio/build.sh`
+(needs imagemagick, tectonic and Google Chrome) prints two PDFs from the site's own images:
+
+- `noesis-portfolio.pdf` from `deck.html`, a 16:9 slideshow with one `<section class="slide">` per page.
+- `diy-mea.pdf` from `diy-mea.tex`, the DIY MEA post typeset as a paper.
+
+`examples/portfolio-deck.jpg` shows every slide.
+
+---
+
 ## 📂 Project Structure
 
 ```text
@@ -160,7 +170,7 @@ links appear only on the note's own page, where it is the root.
 │   ├── favs/                     # Favorite posts (.md)
 │   ├── pages/                    # Lab notebooks, problems, & story posts (.md)
 │   ├── writing/                  # One forest view per collection (see below)
-│   ├── index.html                # Main homepage grid
+│   ├── index.html                # Standalone homepage quote
 │   ├── psychosis.html            # Poem with preserved lines and vertically tiled halftone video
 │   ├── writing.html              # Dynamic post index at /writing/, links to each forest
 │   └── me.html, readlogs.html, etc. # Static pages inheriting from base layout
