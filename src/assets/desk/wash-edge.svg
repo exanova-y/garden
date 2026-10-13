@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1350" preserveAspectRatio="none">
+  <!-- Mask for the homepage wash: solid above, breaking into blotches below.
+       Noise is added to a vertical fade and the sum is steepened, so the edge
+       pools and frays like wet pigment instead of fading evenly. -->
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.6" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="bleed" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.006" numOctaves="5" seed="11"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.2 0 0 0 -0.1" result="noise"/>
+      <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k2="1" k3="1" k4="-0.5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="5" intercept="-2"/></feComponentTransfer>
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#fade)" filter="url(#bleed)"/>
+</svg>

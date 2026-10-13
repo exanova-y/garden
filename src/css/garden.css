@@ -143,7 +143,7 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 .places .engraving { position: absolute; float: none; right: 1.6em; top: 1.6em; width: 6em; margin: 0; opacity: 0.55; }
 
 .globe { left: 1%; top: 27%; width: 11em; z-index: 6; }
-.armillary { left: 73%; top: calc(80vh + 55vw); width: 8em; z-index: 6; }
+.armillary { left: 67%; top: calc(80vh + 57vw); width: 8em; z-index: 6; }
 .butterfly-case { --tilt: -5deg; left: 15%; top: 1%; width: 11em; z-index: 6; }
 .bottle { --tilt: 3deg; left: 26%; top: 60%; width: 4.4em; z-index: 6; }
 .nadia { --tilt: 4deg; right: 4%; top: 46%; width: 11em; z-index: 6; }
@@ -153,9 +153,9 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 /* The crow perches on the top right corner of the borsch. */
 .crow { left: 71.5%; top: calc(80vh + 17vw); width: 6em; z-index: 6; }
 .feather-light { --tilt: -18deg; --phase: 0.33; left: 35%; top: 52%; width: 9em; z-index: 6; }
-.feather-dark { --tilt: 26deg; --phase: 0.67; left: 55%; top: 33%; width: 4.2em; z-index: 6; }
+.feather-dark { --tilt: 26deg; --phase: 0.67; left: 60%; top: 33%; width: 4.2em; z-index: 6; }
 /* The red feather has blown down onto the map, by the windmill. */
-.feather-red { --tilt: 24deg; --phase: 0; left: 68%; top: calc(80vh + 30vw); width: 7em; z-index: 6; }
+.feather-red { --tilt: 24deg; --phase: 0; left: 72%; top: calc(80vh + 30vw); width: 7em; z-index: 6; }
 /* Fallen leaves: the yellow one on the train print, the rainbow one between it
    and the friendship print. They bob with the feathers. */
 .ginkgo-yellow { --tilt: -19deg; --phase: 0.5; left: 18%; top: calc(80vh + 42vw); width: 10em; z-index: 6; }
@@ -218,12 +218,16 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
   z-index: 9;
   pointer-events: none;
 }
-/* The shadow sits on the image, the element that bobs. On the drifter it would
-   wrap a moving child, and the browser would blur it afresh every frame. */
-.drifter img {
-  display: block;
-  width: 100%;
-  filter: drop-shadow(-0.8em 1.2em 0.8em rgba(0, 0, 0, 0.3));
+/* A drifting leaf turns, and a drop-shadow on it would turn too, away from the
+   light. Its shadow is instead a blackened copy of the image that turns with
+   the leaf from a fixed offset to the lower left, like every other shadow. */
+.drifter img { display: block; width: 100%; }
+.drifter .shade {
+  position: absolute;
+  left: -0.8em;
+  top: 1.2em;
+  filter: brightness(0) blur(0.4em);
+  opacity: 0.3;
 }
 
 /* Typography shared by the sheets on the desk and the opened reading sheet. */
