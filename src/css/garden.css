@@ -90,7 +90,7 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 .bedroom { --tilt: -6deg; right: -1%; top: 75%; width: 21em; }
 /* These lie on the lower half of the map, which starts 80vh down and is sized
    by width, so their offsets follow it rather than the desk's height. */
-.train { --tilt: -5deg; left: 16%; top: calc(80vh + 45vw); width: 15em; }
+.train { --tilt: -5deg; left: 21.5%; top: calc(80vh + 45vw); width: 15em; }
 .friendship { --tilt: 3deg; left: 37%; top: calc(80vh + 48vw); width: 22em; }
 .desk { --tilt: 6deg; right: 6%; top: calc(80vh + 52vw); width: 22em; }
 .meme { --tilt: 5deg; left: 59%; top: calc(80vh + 21vw); width: 13em; }
@@ -119,17 +119,17 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 }
 /* The intro is a calling card, not a note: it is as tall as its few lines and
    nothing fades out. Opening it reads the whole About page instead. */
-.intro { --tilt: -2deg; left: 38%; top: 10%; width: 23em; z-index: 3; }
+.intro { --tilt: -2deg; left: 38%; top: 7%; width: 23em; padding-bottom: 4em; z-index: 3; }
 .desk-ready .intro::after { display: none; }
 .intro .prose > :last-child { margin-bottom: 0; }
 .writing { --tilt: -6deg; left: 13%; top: 33%; width: 19em; height: 24em; z-index: 2; }
 .research { --tilt: 4deg; left: 63%; top: 27%; width: 22em; height: 23em; z-index: 2; }
 .places { --tilt: -4deg; left: 61%; top: 70%; width: 22em; height: 15em; z-index: 4; }
-.shelves { --tilt: 3deg; left: 38.5%; top: 56%; width: 21em; height: 19em; z-index: 5; }
-.friends { --tilt: 6deg; left: 25%; top: 80%; width: 14em; height: 13em; z-index: 4; padding: 1.4em 1.6em; }
+.shelves { --tilt: 3deg; left: 36%; top: 61%; width: 21em; height: 19em; z-index: 5; }
+.friends { --tilt: 6deg; left: 25%; top: 95%; width: 25em; height: 13em; z-index: 4; padding: 1.4em 1.6em; }
 /* Quotes lie on the map among the lower prints. There is a place for three. */
 .quote-1 { --tilt: -3deg; left: 34%; top: calc(80vh + 23vw); width: 21em; height: 17em; z-index: 2; }
-.quote-2 { --tilt: 4deg; left: 58%; top: calc(80vh + 40vw); width: 18em; height: 14em; z-index: 3; }
+.quote-2 { --tilt: 4deg; left: 70%; top: calc(80vh + 41vw); width: 18em; height: 14em; z-index: 3; }
 .quote-3 { --tilt: -5deg; right: 3%; top: calc(80vh + 26vw); width: 22em; height: 18em; z-index: 2; }
 
 /* Engravings have white fills; multiply prints them into the paper. */
@@ -142,22 +142,23 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 /* Places is too narrow to wrap text around a figure; it sits by the heading. */
 .places .engraving { position: absolute; float: none; right: 1.6em; top: 1.6em; width: 6em; margin: 0; opacity: 0.55; }
 
-.globe { left: 4%; top: calc(80vh + 18vw); width: 11em; z-index: 6; }
-.armillary { right: 2%; top: 27%; width: 8em; z-index: 6; }
+.globe { left: 1%; top: 27%; width: 11em; z-index: 6; }
+.armillary { left: 73%; top: calc(80vh + 55vw); width: 8em; z-index: 6; }
 .butterfly-case { --tilt: -5deg; left: 15%; top: 1%; width: 11em; z-index: 6; }
-.bottle { --tilt: 3deg; left: 15.5%; top: calc(80vh + 22vw); width: 4.4em; z-index: 6; }
-.nadia { --tilt: 4deg; right: 2.5%; top: 48%; width: 8.5em; z-index: 6; }
+.bottle { --tilt: 3deg; left: 26%; top: 60%; width: 4.4em; z-index: 6; }
+.nadia { --tilt: 4deg; right: 4%; top: 46%; width: 11em; z-index: 6; }
 .quill { left: 0; top: 62%; width: 27em; z-index: 7; }
 .compass { --tilt: 12deg; left: 79%; top: 64%; width: 8em; z-index: 7; }
-.spyglass { --tilt: -14deg; left: 61%; top: 92%; width: 24em; z-index: 8; }
-/* The crow perches on the bottom right corner of the desk print. */
-.crow { right: 3%; top: calc(80vh + 56vw); width: 6em; z-index: 6; }
-.feather-light { --tilt: -18deg; --phase: 0.33; left: 30%; top: 36%; width: 9em; z-index: 6; }
-.feather-dark { --tilt: 38deg; --phase: 0.67; left: 57%; top: 42%; width: 4.2em; z-index: 6; }
-.feather-red { --tilt: 24deg; --phase: 0; left: 55%; top: 1%; width: 7em; z-index: 6; }
+.spyglass { --tilt: -14deg; left: 61%; top: 90%; width: 24em; z-index: 8; }
+/* The crow perches on the top right corner of the borsch. */
+.crow { left: 71.5%; top: calc(80vh + 17vw); width: 6em; z-index: 6; }
+.feather-light { --tilt: -18deg; --phase: 0.33; left: 35%; top: 52%; width: 9em; z-index: 6; }
+.feather-dark { --tilt: 26deg; --phase: 0.67; left: 55%; top: 33%; width: 4.2em; z-index: 6; }
+/* The red feather has blown down onto the map, by the windmill. */
+.feather-red { --tilt: 24deg; --phase: 0; left: 68%; top: calc(80vh + 30vw); width: 7em; z-index: 6; }
 /* Fallen leaves: the yellow one on the train print, the rainbow one between it
    and the friendship print. They bob with the feathers. */
-.ginkgo-yellow { --tilt: -22deg; --phase: 0.5; left: 12.5%; top: calc(80vh + 42vw); width: 7em; z-index: 6; }
+.ginkgo-yellow { --tilt: -19deg; --phase: 0.5; left: 18%; top: calc(80vh + 42vw); width: 10em; z-index: 6; }
 .ginkgo-rainbow { --tilt: 18deg; --phase: 0.15; left: 32.5%; top: calc(80vh + 58vw); width: 7.5em; z-index: 6; }
 
 /* Feathers bob on a slow cycle. Easing each half-cycle with a sine curve makes
@@ -182,15 +183,16 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
   translate: 0 -1.6em;
   rotate: calc(var(--tilt) + 6deg);
 }
-/* Two kites fly over the balloons print at the top right of the desk. They
-   rise and fall further and more slowly than a feather, leaning as they go,
-   and fly above the leaves that drift across. */
-.kite-phoenix { --tilt: 8deg; --phase: 0; right: 8%; top: 12%; width: 12.5em; z-index: 10; }
-.kite-swallow { --tilt: -8deg; --phase: 0.4; left: 61%; top: 5%; width: 16em; z-index: 10; }
-/* Their strings run off the right edge to one unseen hand. The drawing spans
-   the desk, so its coordinates are percentages like the kites' offsets; each
-   string starts under its kite's body, which hides the end as the kite moves. */
-.kite-strings { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none; }
+/* Two kites fly at the left of the map below the desk, the phoenix above the
+   girl's head. They rise and fall further and more slowly than a feather,
+   leaning as they go, and fly above the leaves that drift across. */
+.kite-phoenix { --tilt: -10deg; --phase: 0; left: 21%; top: calc(80vh + 18vw); width: 12.5em; z-index: 10; }
+.kite-swallow { --tilt: -8deg; --phase: 0.4; left: 5%; top: calc(80vh + 15vw); width: 16em; z-index: 10; }
+/* Each string is its own small drawing, starting under the kite's body, which
+   hides that end as the kite moves. Both sag down to one unseen hand on
+   the left edge. A string ends at its box's bottom, top + height: the phoenix's
+   at 16vw + 22em below the map's start, the swallow's 0.5em lower than that. */
+.kite-strings { position: absolute; z-index: 5; pointer-events: none; }
 .kite-strings path {
   fill: none;
   stroke: rgba(255, 255, 255, 0.65);
@@ -198,6 +200,8 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
   stroke-dasharray: 7 6;
   vector-effect: non-scaling-stroke;
 }
+.phoenix-string { left: 0; top: calc(80vh + 15.5vw + 7em); width: calc(21% + 6.25em); height: calc(0.5vw + 15em); }
+.swallow-string { inset: calc(80vh + 10vw + 9em) auto auto 0; width: 11%; height: calc(6vw + 17em); }
 .kite-phoenix, .kite-swallow {
   --period: 7s;
   animation: soar var(--period) cubic-bezier(0.37, 0, 0.63, 1) infinite;

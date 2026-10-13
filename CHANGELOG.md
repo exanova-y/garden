@@ -9,11 +9,14 @@
   from `src/quotes.md`, where 11ty would have published it as `/quotes/`) is a
   sheet on the map that opens in the reader. `garden.css` has places for three
   (`.quote-1` to `.quote-3`). A `meme` print and a `crow` object join them.
-- Two Chinese kites (`kite-phoenix`, `kite-swallow`) fly over the balloons
-  print at the top right of the desk; the globe and bottle moved down onto the
-  map just below the desk. The kites follow a 7 second `soar` cycle that rises, falls
-  and leans. A yellow and a rainbow ginkgo leaf lie by the train and friendship
-  prints and bob with the feathers.
+- Two Chinese kites (`kite-phoenix`, `kite-swallow`) fly at the left of the map
+  below the desk, above the drifting leaves, with dashed strings that
+  sag to one point on the left edge. They follow a 7 second `soar` cycle that
+  rises, falls and leans. A yellow and a rainbow ginkgo leaf lie by the train
+  and friendship prints.
+- The desk's own feathers and leaves no longer bob; they float up on hover.
+- The intro card is longer and sits higher, and Shelves is wider and lower,
+  beside the Blog roll, so the card's last line shows.
 - Three more prints (`train`, `friendship`, `desk`) lie on the lower half of
   the map below the desk. Their offsets are `80vh + N vw` so they follow the
   map, which is sized by width, on any landscape screen.
