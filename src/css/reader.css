@@ -1,0 +1,54 @@
+/* An opened sheet: live text on one upright page. Long notes flow into further
+   pages as CSS columns, which are turned sideways rather than scrolled. */
+.reader {
+  width: min(46rem, 94vw);
+  height: min(56rem, 92dvh);
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background: none;
+  color: #2c2418;
+  font: 400 15px / 1.75 "Fira Code", monospace;
+}
+.reader::backdrop { background: rgba(20, 28, 34, 0.55); backdrop-filter: blur(3px); }
+.reader-sheet {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 3rem 3.2rem 1.2rem;
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(255, 244, 214, 0.9), transparent 60%),
+    radial-gradient(ellipse at 10% 95%, rgba(150, 110, 60, 0.3), transparent 55%),
+    #e6d9b8;
+  box-shadow: -14px 20px 40px rgba(0, 0, 0, 0.45);
+}
+.reader-clip { flex: 1; min-height: 0; overflow: hidden; }
+.reader-flow {
+  height: 100%;
+  columns: 1;
+  column-gap: 4rem;
+  column-fill: auto;
+  font-size: 1em;
+  transition: transform 0.35s ease;
+}
+.reader-flow > * { break-inside: avoid; }
+.reader-flow ul, .reader-flow details { break-inside: auto; }
+.reader-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  font-size: 0.8em;
+}
+.reader-controls button { padding: 0.2rem 0.5rem; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+.reader-controls button:hover:not(:disabled) { text-decoration: underline; }
+.reader-controls button:disabled { opacity: 0.3; cursor: default; }
+.reader-controls button:focus-visible { outline: 2px solid #14606f; }
+.reader-controls [data-close] { margin-left: auto; }
+
+@media (max-width: 600px) {
+  .reader-sheet { padding: 1.6rem 1.4rem 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reader-flow { transition: none; }
+}

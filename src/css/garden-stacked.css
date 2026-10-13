@@ -1,0 +1,27 @@
+/* Phones and narrow or portrait windows: the desk cannot be read at that
+   scale, so the sheets become a plain scrolling column. Kept in its own file
+   because the sheet shader inlines garden.css into a small SVG, where these
+   width queries would wrongly match. */
+html, body { height: auto; overflow: auto; }
+.table {
+  --unit: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding: 1.2em;
+  overflow: visible;
+}
+.table::after, .print, .object, .paper::after, .desk-ready .paper::after { display: none; }
+.paper, .desk-ready .paper {
+  position: static;
+  width: auto;
+  height: auto;
+  rotate: none;
+  overflow: visible;
+  cursor: auto;
+  filter: drop-shadow(-0.2em 0.3em 0.4em rgba(0, 0, 0, 0.35));
+}
+.paper:hover { translate: none; scale: none; }
+.intro { order: -1; }
+.prose { font-size: 1em; }
