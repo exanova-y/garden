@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>accelerando</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #000;
+      }
+
+      video {
+        display: block;
+        width: 100vw;
+        height: 100svh;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <video
+      id="accelerando-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="https://i.pinimg.com/736x/5b/ed/af/5bedaf3344b7e9219591140ac7156eec.jpg"
+      aria-hidden="true"
+    >
+      <source
+        src="https://v1.pinimg.com/videos/iht/expMp4/db/26/47/db2647f449a264be74b4f5fd5442252c_720w.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <script>
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.getElementById('accelerando-video')?.pause();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+bodyClass: page-forest
+---
+{% from "forest-tree.njk" import tree, toc, label %}
+{% set trees = collections[collectionName] | forestTrees %}
+
+{% include "forest-nav.njk" %}
+
+<div id="grid-wrapper">
+  <article class="markdown-content">
+    <section class="block">
+      <details id="{{ collectionName }}" open>
+        <summary>
+          <header>
+            <h1>{{ title }}</h1>
+            <div class="metadata">
+              <ul>
+                <li class="meta-item">{{ trees.length }} note{{ "" if trees.length == 1 else "s" }}</li>
+              </ul>
+            </div>
+          </header>
+        </summary>
+        <div class="tree-content">
+          {% if description %}<p class="forest-description">{{ description }}</p>{% endif %}
+          {{ content | safe }}
+          {%- for node in trees %}{{ tree(node) }}{% endfor -%}
+        </div>
+      </details>
+    </section>
+  </article>
+
+  {% if trees.length %}
+  <nav id="toc" aria-label="Table of contents">
+    <div class="block">
+      <h1>Table of Contents</h1>
+      {{ toc(trees) }}
+    </div>
+  </nav>
+  {% endif %}
+</div>
+
+<script src="/js/forest.js" defer></script>

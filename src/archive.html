@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: "Archive"
+bodyClass: "page-forest page-archive"
+permalink: /archive/index.html
+wallpaper: /assets/wallpapers/home.webp
+---
+{% include "forest-nav.njk" %}
+
+<div class="archive-page">
+  <header class="archive-header">
+    <h1>Archive</h1>
+    <p class="forest-description">
+        Graphs like cities in Rome
+      length: {{ collections.graph[0].nodes.length }}
+    </p>
+  </header>
+
+  <div class="archive-graph" data-graph="full" role="img" aria-label="Graph of every page on adiabatic.garden"></div>
+
+  <ul class="graph-legend" aria-label="Legend">
+    <li><span class="swatch" style="--swatch: #ffffff"></span>front door</li>
+    <li><span class="swatch" style="--swatch: #00fc50"></span>highlights</li>
+    <li><span class="swatch" style="--swatch: #7287fd"></span>lab notebook</li>
+    <li><span class="swatch" style="--swatch: #eba8ff"></span>big social problems</li>
+    <li><span class="swatch" style="--swatch: #9058f8"></span>stories</li>
+    <li><span class="swatch" style="--swatch: #00fcb5"></span>commonplace</li>
+    <li><span class="swatch" style="--swatch: #89dceb"></span>everything else</li>
+  </ul>
+
+  <noscript>
+    <ul>
+      {% for node in collections.graph[0].nodes %}
+      <li><a class="link local" href="{{ node.id }}">{{ node.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </noscript>
+</div>
+
+<script src="{{ '/js/archive-graph.js' | assetUrl }}" defer></script>

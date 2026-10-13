@@ -1,0 +1,156 @@
+---
+layout: layouts/base.njk
+title: "Gallery"
+---
+
+<div class="tab-panel">
+    <p>stuff</p>
+    <div class="gallery-grid">
+        <!-- <img src="/assets/images/chem0/bench.jpg" alt="Chem-0 bench initial setup"> -->
+        <!-- <img src="/assets/images/chem0/ui1.png" alt="Chem-0 old ui"> -->
+        <img src="/assets/images/chem0/multimeter.png" alt="Chem-0 opencv" />
+        <img src="/assets/images/chem0/pouring.jpg" alt="Chem-0 bench setup" />
+        <!-- <img src="/assets/images/chem0/sim.png" alt="Chem-0 UI"> -->
+        <img src="/assets/images/chem0/sim2.png" alt="Chem-0 UI" />
+        <img
+            src="/assets/noesis-gallery/fluid-sim-vis.jpg"
+            alt="smell visualizations from metal oxide sensors in a box with essential oil bottles (2025)"
+        />
+
+        <img
+            src="/assets/noesis-gallery/arxiv-wars-intros.webp"
+            alt="arxiv wars intro"
+        />
+        <img src="/assets/noesis-gallery/desk-reject.jpg" alt="desk rejecting" />
+        <!-- <img src="/assets/noesis-gallery/arxiv-wars-selection.png" alt="paper selection process"> -->
+        <img
+            src="/assets/images/arxiv-wars-tri-diagram.png"
+            alt="arxiv wars: where simulated experts argue over papers on my discord"
+        />
+        <img
+            src="/assets/images/miv/beautiful-lig.webp"
+            alt="DIY MEA: a low-cost microelectrode array, collaboration with eigenlucy"
+        />
+        <img
+            src="/assets/images/laser-cutter.jpg"
+            alt="assembling a laser cutter at 12 am"
+        />
+        <img
+            src="/assets/images/pso-unity.png"
+            alt="particle swarm optimization in unity"
+        />
+        <!-- <img src="/assets/images/drone-photogrammetry/drone-photogrammetry.jpg" alt="drone photogrammetry"> -->
+        <!-- <img src="/assets/images/openrouteservice-map.png" alt="openrouteservice map"> -->
+        <img
+            src="/assets/images/oil-pca.png"
+            alt="PCA of essential oil samples"
+        />
+        <img
+            src="/assets/images/acacia.png"
+            alt="Acacia tree art, manually coded using tkinter (2020)"
+        />
+        <img
+            src="/assets/images/magnify.png"
+            alt="Magnifying glass thermal simulation (2023)"
+        />
+    </div>
+</div>
+<br />
+<p>humans</p>
+<div class="tab-panel">
+    <div class="gallery-grid">
+        <img src="/assets/noesis-gallery/noesis.jpg" alt="Noesis at viv" />
+        <img
+            src="/assets/noesis-gallery/humanoid.jpg"
+            alt="motion replay on a humanoid robot at k-scale labs"
+        />
+        <img
+            src="/assets/noesis-gallery/pelmeni.jpg"
+            alt="a quest to maximize pelmeni per dollar"
+        />
+        <img
+            src="/assets/noesis-gallery/inventors-house.png"
+            alt="inventors house"
+        />
+        <!-- <img src="/assets/noesis-gallery/social.jpg" alt="social"> -->
+
+        <img
+            src="/assets/noesis-gallery/interfaces.jpg"
+            alt="exposed circuits of interfaces"
+        />
+        <img src="/assets/noesis-gallery/neuroglancer.jpg" alt="neuroglancer" />
+        <!-- <img src="/assets/noesis-gallery/fluid.jpg" alt="fluid visualization of human head"> -->
+        <img
+            src="/assets/noesis-gallery/e-waste.jpg"
+            alt="e-waste at mit underground"
+        />
+        <img src="/assets/noesis-gallery/izhikevich.png" alt="izhikevich" />
+        <img
+            src="/assets/noesis-gallery/foresight-guzey.jpg"
+            alt="foresight vision weekend"
+        />
+        <img src="/assets/noesis-gallery/feifei.jpg" alt="feifei li" />
+        <!-- <img src="/assets/noesis-gallery/dust-sensor-ces.jpg" alt="unhappy japanese dust sensor at ces 2025"> -->
+        <!-- <img src="/assets/noesis-gallery/network.jpg" alt="ftx main office network"> -->
+        <img
+            src="/assets/noesis-gallery/nyc-neuromod.jpg"
+            alt="neuromodulation in NYC"
+        />
+        <img src="/assets/noesis-gallery/borsch.jpg" alt="borsch" />
+        <img src="/assets/noesis-gallery/spookie.jpg" alt="friday the 13th" />
+        <!-- <img src="/assets/noesis-gallery/master-of-time.jpg" alt="master of time"> -->
+    </div>
+</div>
+
+<div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        &times;
+    </button>
+    <figure class="lightbox-figure">
+        <img id="lightbox-img" alt="" />
+        <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+    </figure>
+</div>
+
+<script>
+    (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+        const closeBtn = document.getElementById("lightbox-close");
+
+        function open(src, alt) {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || "";
+            lightboxCaption.textContent = alt || "";
+            lightbox.classList.add("open");
+            lightbox.setAttribute("aria-hidden", "false");
+        }
+
+        function close() {
+            lightbox.classList.remove("open");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImg.src = "";
+            lightboxCaption.textContent = "";
+        }
+
+        document.querySelectorAll(".gallery-grid img").forEach((img) => {
+            img.addEventListener("click", () => open(img.src, img.alt));
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox || e.target === lightboxImg) close();
+        });
+        closeBtn.addEventListener("click", close);
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && lightbox.classList.contains("open"))
+                close();
+        });
+    })();
+</script>

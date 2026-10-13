@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "adiabatic.garden" }}</title>
+    {% if page.url %}<link rel="canonical" href="https://adiabatic.garden{{ page.url }}">{% endif %}
+    {% if personPage or noteId %}<script type="application/ld+json">{{ person | jsonify | safe }}</script>{% endif %}
+    {% if noteId %}<script type="application/ld+json">{{ person | articleJsonLd(title, date, page.url) | jsonify | safe }}</script>{% endif %}
+    <link rel="stylesheet" href="{{ '/css/style.css' | assetUrl }}">
+    {#- Not deferred: the theme has to be settled before the first paint. -#}
+    <script src="/js/theme.js"></script>
+    {% if content | containsMath %}
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+    {% endif %}
+  </head>
+  <body class="dark-page fullscreen {{ bodyClass if bodyClass }}">
+    <div id="paper-wallpaper" aria-hidden="true"{% if wallpaper %} style="--wallpaper: url('{{ wallpaper }}')"{% endif %}></div>
+    <div class="landing-content">
+      <div class="pane">
+        {{ content | safe }}
+      </div>
+    </div>
+    {% if content | containsMath %}
+    <script>
+      // Runs wherever the KaTeX assets above were loaded, so math renders the
+      // same on a single note and in a composed forest view.
+      document.addEventListener("DOMContentLoaded", function () {
+        var pane = document.querySelector(".pane");
+        if (pane && typeof renderMathInElement === "function") {
+          renderMathInElement(pane, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false }
+            ],
+            throwOnError: false
+          });
+        }
+      });
+    </script>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<p><a href="https://feralscholars.substack.com">feralscholars.substack.com</a></p>
+<h3>Fiction</h3>
+<p>Errata of good news</p>
+<blockquote><p>Snippets to come.</p></blockquote>
+<h3>Readlogs</h3>
+<ul>
+  <li><a href="/pages/early-may-observelog/">Early May observelog</a></li>
+  <li><a href="/pages/september-readlog/">September readlog</a></li>
+  <li><a href="/pages/october-readlog/">October readlog</a></li>
+  <li><a href="/pages/november-readlogs/">November readlogs</a></li>
+  <li><a href="/pages/march-readlogs/">March readlogs</a></li>
+  <li><a href="https://feralscholars.substack.com/p/link-scrapbook">Link scrapbook</a></li>
+  <li><a href="https://feralscholars.substack.com/p/suffering-etiquette">Handling collapse</a></li>
+</ul>
+<h3>Writing archive</h3>
+<p><a href="/writing/">All {{ collections.notes.length }} notes →</a></p>
+{% for section in [
+  { key: "highlights", title: "Highlights", route: "highlights" },
+  { key: "lab", title: "Lab notebook", route: "lab-notebook" },
+  { key: "problems", title: "Big social problems!", route: "problems" },
+  { key: "stories", title: "Stories", route: "stories" },
+  { key: "slice-of-life", title: "Slice of life", route: "slice-of-life" },
+  { key: "commonplace", title: "Commonplace", route: "commonplace" },
+  { key: "unfiled", title: "Everything else", route: "other" }
+] %}
+<details>
+  <summary><a href="/writing/{{ section.route }}/">{{ section.title }}</a> · {{ collections[section.key].length }}</summary>
+  <ul>
+    {% for note in collections[section.key] %}
+    <li><a href="{{ note.url }}">{{ note.data.title or note.fileSlug }}</a></li>
+    {% endfor %}
+  </ul>
+</details>
+{% endfor %}
+<p><a href="/archive/">Archive graph →</a></p>

@@ -1,5 +1,5 @@
 .env
 .flox
-.vercel
 assets/fonts
 node_modules
+_site/

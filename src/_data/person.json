@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://adiabatic.garden/#person",
+  "name": "noesis",
+  "pronouns": "they/xe",
+  "description": "Noesis is a philosopher builder working on strong autoresearch and neurotechnology hardware.",
+  "url": "https://adiabatic.garden/",
+  "sameAs": [
+    "https://github.com/exanova-y",
+    "https://feralscholars.substack.com/",
+    "https://adiabatic.garden/pages/bookshelf.md",
+    "https://adiabatic.garden/about/"
+  ]
+}

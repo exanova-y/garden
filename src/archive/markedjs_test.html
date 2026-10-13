@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Marked.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <h1>Marked.js Test</h1>
+    <div id="output"></div>
+    
+    <script>
+        const markdown = `Line one
+Line two`;
+        
+        // Test without breaks
+        console.log('Without breaks:', marked.parse(markdown));
+        
+        // Test with breaks
+        const html = marked.parse(markdown, { breaks: true });
+        console.log('With breaks:', html);
+        
+        // Display result
+        document.getElementById('output').innerHTML = html;
+    </script>
+</body>
+</html>

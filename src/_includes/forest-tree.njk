@@ -1,0 +1,69 @@
+{#
+  Forester-style tree rendering, ported from forester's `tree.xsl`.
+
+  A tree is a `<section class="block">` wrapping a collapsible `<details>` whose
+  `<summary>` carries the heading and metadata. Because a tree's sections are
+  themselves trees, both macros recurse.
+
+  `tree(node)`  renders a tree and, beneath its own prose, its subtrees.
+  `toc(nodes)`  renders the sidebar: a bullet linking to each tree's canonical
+                address, and a title that scrolls to it in place.
+#}
+
+{#- The label forester prints ahead of a title: "Note 3", "3.1".
+
+    Only numbered trees get one. A note shown on its own page is the root, so it
+    has no number and no label — its title and address say everything, and its
+    taxon would only repeat what the address already says.
+
+    The gap after the label is a margin on `.taxon`, not a character. -#}
+{% macro label(node) %}
+  {%- if node.number -%}
+    <span class="taxon">{% if node.taxon %}{{ node.taxon }} {% endif %}{{ node.number }}</span>
+  {%- endif -%}
+{% endmacro %}
+
+{% macro metadata(node) %}
+  <div class="metadata">
+    <ul>
+      {%- if node.date %}<li class="meta-item">{{ node.date | formatDate }}</li>{% endif -%}
+      {%- if node.author %}<li class="meta-item"><address class="author">{{ node.author }}</address></li>{% endif -%}
+      {%- for tag in node.tags %}<li class="meta-item"><a class="link local" href="/tags/{{ tag | slugify }}/">#{{ tag }}</a></li>{% endfor -%}
+    </ul>
+  </div>
+{% endmacro %}
+
+{% macro tree(node) %}
+<section class="block{% if not node.showMetadata %} hide-metadata{% endif %}"{% if node.taxon %} data-taxon="{{ node.taxon }}"{% endif %}>
+  <details id="{{ node.anchor }}" open>
+    <summary>
+      <header>
+        <h1>{{ label(node) }}{{ node.title | safe }}
+          {%- if node.addr %} <a class="slug" href="{{ node.route }}" title="{{ node.text }}">[{{ node.addr }}]</a>{% endif -%}
+        </h1>
+        {% if node.showMetadata %}{{ metadata(node) }}{% endif %}
+      </header>
+    </summary>
+    <div class="tree-content">
+      {{ node.content | safe }}
+      {%- for child in node.children %}{{ tree(child) }}{% endfor -%}
+    </div>
+  </details>
+</section>
+{% endmacro %}
+
+{% macro toc(nodes) %}
+<ul class="block">
+  {%- for node in nodes %}
+  <li>
+    {%- if node.route %}
+    <a class="bullet" href="{{ node.route }}" title="{{ node.text }} [{{ node.addr }}]">■</a>
+    {%- else %}
+    <a class="bullet" href="#{{ node.anchor }}" title="{{ node.text }}">■</a>
+    {%- endif %}
+    <span class="link local" data-target="#{{ node.anchor }}">{{ label(node) }}{{ node.title | safe }}</span>
+    {%- if node.children.length %}{{ toc(node.children) }}{% endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{% endmacro %}

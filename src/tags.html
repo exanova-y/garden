@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+bodyClass: "page-forest page-tag"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - pages
+    - highlights
+    - lab
+    - problems
+    - stories
+    - commonplace
+    - notes
+    - unfiled
+    - graph
+permalink: /tags/{{ tag | slugify }}/
+wallpaper: /assets/wallpapers/home.webp
+eleventyComputed:
+  title: "#{{ tag }}"
+---
+{#- A tag is a forest: every note carrying it, composed into one document, each
+    note a separately-addressable tree. The same rendering as a section view —
+    see `layouts/forest.njk` — with the tag standing in for the collection. -#}
+{% from "forest-tree.njk" import tree, toc %}
+{% set trees = collections[tag] | forestTrees %}
+
+{% include "forest-nav.njk" %}
+
+<div id="grid-wrapper">
+  <article id="content" class="markdown-content">
+    <section class="block">
+      <details id="tag-{{ tag | slugify }}" open>
+        <summary>
+          <header>
+            <h1><span class="taxon">Tag</span>#{{ tag }}</h1>
+            <div class="metadata">
+              <ul>
+                <li class="meta-item">{{ trees.length }} note{{ "" if trees.length == 1 else "s" }}</li>
+              </ul>
+            </div>
+          </header>
+        </summary>
+        <div class="tree-content">
+          {% if not trees.length %}
+          <p class="forest-description">No notes carry this tag.</p>
+          {% endif %}
+          {%- for node in trees %}{{ tree(node) }}{% endfor -%}
+        </div>
+      </details>
+    </section>
+  </article>
+
+  {% if trees.length %}
+  <nav id="toc" aria-label="Table of contents">
+    <div class="block">
+      <h1>Table of Contents</h1>
+      {{ toc(trees) }}
+    </div>
+  </nav>
+  {% endif %}
+</div>
+
+<script src="/js/forest.js" defer></script>
