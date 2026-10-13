@@ -10,7 +10,7 @@
     "serve": "^14.2.5"
   },
   "scripts": {
-    "start": "eleventy --config=eleventy.home.cjs --serve --port=3000",
-    "build": "eleventy --config=eleventy.home.cjs"
+    "start": "eleventy --serve --port=3000",
+    "build": "eleventy"
   }
 }

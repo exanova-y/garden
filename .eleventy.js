@@ -81,7 +81,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/archive");
   eleventyConfig.addPassthroughCopy({
     "node_modules/computer-modern/fonts/cmu-typewriter-text-200-roman.woff2":
       "assets/fonts/cmu-typewriter-text-200-roman.woff2"
@@ -97,8 +96,9 @@ module.exports = function(eleventyConfig) {
     "src/pages/sleep-deprivation.pdf": "pages/sleep-deprivation.pdf"
   });
   eleventyConfig.addPassthroughCopy("src/highlights/*.md");
+  eleventyConfig.addPassthroughCopy("src/about.md");
+  eleventyConfig.addPassthroughCopy("src/sections/*.md");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
-  eleventyConfig.addPassthroughCopy({"03. Deep Space Travels.mp3": "03. Deep Space Travels.mp3"});
   eleventyConfig.addPassthroughCopy({"llms.txt": "llms.txt"});
 
   // YouTube embed shortcode
@@ -315,6 +315,9 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
+      // Kept outside src so that src holds only what is published.
+      includes: "../templates",
+      data: "../data",
       output: "_site"
     },
     markdownTemplateEngine: "njk",

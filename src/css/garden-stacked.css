@@ -2,10 +2,12 @@
    scale, so the sheets become a plain scrolling column. Kept in its own file
    because the sheet shader inlines garden.css into a small SVG, where these
    width queries would wrongly match. */
-html, body { height: auto; overflow: auto; }
+/* No map below the column: the wash goes back to filling the window. */
+.backdrop { position: fixed; inset: -2vw; height: auto; mask: none; }
+.map { display: none; }
 .table {
   --unit: 14px;
-  position: relative;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 1.2em;

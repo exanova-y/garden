@@ -13,11 +13,11 @@ Embed curius bookmarks + site pages with OpenAI, cluster bookmarks with HDBSCAN,
 and precompute per-page related bookmarks via embedding cosine similarity.
 
 Outputs (consumed by 11ty):
-  src/_data/related.json        page URL -> [related bookmark records]
-  src/_data/curius-clusters.json cluster id -> {label, size, bookmark ids}
+  data/related.json        page URL -> [related bookmark records]
+  data/curius-clusters.json cluster id -> {label, size, bookmark ids}
 
 Cache (not needed by 11ty, safe to gitignore):
-  src/_data/.embed-cache.json   id/path -> {hash, embedding}
+  data/.embed-cache.json   id/path -> {hash, embedding}
 
 Usage:
   uv run scripts/embed-curius.py          # reads scripts/.env or ./.env automatically
@@ -48,7 +48,7 @@ except ImportError:
     pass
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(ROOT, "src", "_data")
+DATA_DIR = os.path.join(ROOT, "data")
 BOOKMARKS = os.path.join(DATA_DIR, "curius.json")
 RELATED_OUT = os.path.join(DATA_DIR, "related.json")
 CLUSTERS_OUT = os.path.join(DATA_DIR, "curius-clusters.json")

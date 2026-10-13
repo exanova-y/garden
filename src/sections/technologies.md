@@ -6,7 +6,6 @@
 - Distributed computing
 - Embedded programming 
 
-
 ### Society
 - Mechanism design
 - Microeconomics 

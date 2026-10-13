@@ -1,1 +1,1 @@
-Shenzhen. Waterloo. San Francisco. Stockholm. Helsinki. Tokyo, etc. "Hungary" only in imagination
+Shenzhen. Waterloo. San Francisco. Stockholm. Helsinki. Tokyo, etc. "20th century Hungary" in my imagination.

@@ -1,5 +1,5 @@
 const USER_ID = 3782;
-const OUTPUT = 'src/_data/curius.json';
+const OUTPUT = 'data/curius.json';
 
 const fs = require('fs');
 

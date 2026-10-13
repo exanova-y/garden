@@ -16,32 +16,40 @@
       <figure class="print streets"><img src="assets/desk/streets.webp" alt=""></figure>
       <figure class="print balloons"><img src="assets/desk/balloons.webp" alt=""></figure>
       <figure class="print bedroom"><img src="assets/desk/bedroom.webp" alt=""></figure>
-
+      <figure class="print train"><img src="assets/desk/train.webp" alt=""></figure>
+      <figure class="print friendship"><img src="assets/desk/friendship.webp" alt=""></figure>
+      <figure class="print desk"><img src="assets/desk/desk.webp" alt=""></figure>
       <article class="paper writing" data-sheet="Writing">
-        <div class="sheet-body prose"><h2>Writing</h2>{% include "home-writing.njk" %}</div>
+        <div class="sheet-body prose"><h2>Writing</h2>{{ homepage.writing | safe }}{% include "writing-index.njk" %}</div>
       </article>
       <article class="paper research" data-sheet="Technologies">
         <img class="engraving" src="assets/desk/galvanometer.webp" alt="">
         <div class="sheet-body prose"><h2>Technologies</h2>{{ homepage.technologies | safe }}</div>
       </article>
-      <article class="paper intro" data-sheet="Introduction">
+      <article class="paper intro" data-sheet="About">
         <div class="sheet-body prose">
-          <p class="letterhead">adiabatic.garden φ</p>
           <h1>Yoyo. explorer!</h1>
           {{ homepage.intro | safe }}
         </div>
+        <div class="sheet-full prose" hidden><h2>About</h2>{{ homepage.about | safe }}</div>
       </article>
       <article class="paper places" data-sheet="Places traversed">
         <img class="engraving" src="assets/desk/geissler-tube.webp" alt="">
         <div class="sheet-body prose"><h2>Places traversed</h2>{{ homepage.places | safe }}</div>
       </article>
       <article class="paper friends" data-sheet="Friends">
-        <div class="sheet-body prose"><h2>Friends</h2>{{ homepage.friends | safe }}</div>
+        <div class="sheet-body prose"><h2>Blog roll</h2>{{ homepage.friends | safe }}</div>
       </article>
       <article class="paper shelves" data-sheet="Shelves">
         <img class="engraving" src="assets/desk/nixie-tube.webp" alt="">
         <div class="sheet-body prose"><h2>Shelves</h2>{{ homepage.shelves | safe }}</div>
       </article>
+
+      {% for quote in homepage.quotes %}
+      <article class="paper quote-{{ loop.index }}" data-sheet="Quote">
+        <div class="sheet-body prose">{{ quote | safe }}</div>
+      </article>
+      {% endfor %}
 
       <img class="object globe" src="assets/desk/globe.webp" alt="">
       <img class="object armillary" src="assets/desk/armillary.webp" alt="">
@@ -51,10 +59,14 @@
       <img class="object feather-red" src="assets/desk/feather-red.webp" alt="">
       <img class="object feather-light" src="assets/desk/feather-light.webp" alt="">
       <img class="object feather-dark" src="assets/desk/feather-dark.webp" alt="">
-      <img class="object quill" src="assets/desk/quill.webp" alt="">
-      <img class="object compass" src="assets/desk/compass.webp" alt="">
-      <img class="object spyglass" src="assets/desk/spyglass.webp" alt="">
+      <img class="object ginkgo-yellow" src="assets/desk/ginkgo-yellow.webp" alt="">
+      <img class="object ginkgo-rainbow" src="assets/desk/ginkgo-rainbow.webp" alt="">
+      <img class="object quill" data-opens="writing" src="assets/desk/quill.webp" alt="">
+      <img class="object compass" data-opens="places" src="assets/desk/compass.webp" alt="">
+      <img class="object spyglass" data-opens="places" src="assets/desk/spyglass.webp" alt="">
+      <img class="object crow" src="assets/desk/crow.webp" alt="">
     </main>
+    <img class="map" src="assets/desk/open-world.jpg" alt="">
 
     <dialog id="reader" class="reader" aria-label="Reading sheet">
       <div class="reader-sheet">

@@ -19,8 +19,10 @@ function turnTo(target) {
   dialog.querySelector('[data-turn="1"]').disabled = page === count - 1;
 }
 
+// A sheet whose desk face is only a summary carries the whole text in a
+// hidden .sheet-full; the reader shows that instead.
 export function openSheet(sheet) {
-  const body = sheet.querySelector(".sheet-body").cloneNode(true);
+  const body = (sheet.querySelector(".sheet-full") ?? sheet.querySelector(".sheet-body")).cloneNode(true);
   flow.replaceChildren(...body.childNodes);
   dialog.setAttribute("aria-label", sheet.dataset.sheet);
   dialog.showModal();
