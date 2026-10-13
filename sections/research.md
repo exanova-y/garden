@@ -1,4 +1,3 @@
-<small>[1] is nearest to my recent explorations. Branches group related interests.</small>
 
 ### Engineering
 

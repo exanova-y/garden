@@ -7,11 +7,9 @@ category: personal
 personPage: true
 ---
 
-This site provides basic information about Yoyo.
+This note provides basic information about Yoyo.
 
-I grew up around hackerspaces in Shenzhen, programming forums, UWaterloo libraries and the bay area internet. Some of my fondest memories were scrapping monitors in MIT tunnels and making friends from over 50+ countries. 
-
-I'm working on focused ultrasound and autoresearch coordination layers. When I received a Macbook and a Desktop GPU in 2025, I became even more self-taught.
+I grew up around hackerspaces in Shenzhen, programming forums, UWaterloo libraries and the bay area internet. Some of my fondest memories were scrapping monitors in MIT tunnels and making friends from over 50+ countries. When I received a Macbook and a Desktop GPU in 2025, I became even more of an autodidact.
 
 Bad infrastructure is evil; How we can architect strong infrastructure that creates abundance for my friends and I?
 

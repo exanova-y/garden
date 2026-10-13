@@ -920,7 +920,7 @@ body.dark-page .markdown-content li {
     line-height: 1.5;
 }
 
-/* Editorial bullet design — em-dash marker with hanging indent */
+/* Editorial bullet design — en-dash marker with hanging indent */
 body.dark-page .markdown-content ul {
     list-style: none;
     padding-left: 1.25em;
@@ -931,7 +931,7 @@ body.dark-page .markdown-content ul > li {
     padding-left: 0.75em;
 }
 body.dark-page .markdown-content ul > li::before {
-    content: "—";
+    content: "–";
     position: absolute;
     left: -0.55em;
     top: 0;

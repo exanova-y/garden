@@ -6,7 +6,7 @@ const sources = {
   intro: "src/about.md",
   shelves: "src/pages/bookshelf.md",
   friends: "src/pages/blog-roll.md",
-  research: "src/sections/research.md",
+  technologies: "src/sections/technologies.md",
   places: "src/sections/places.md",
 };
 

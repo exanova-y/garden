@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@paper-design/shaders':
+        specifier: ^0.0.81
+        version: 0.0.81
       computer-modern:
         specifier: ^0.1.3
         version: 0.1.3
@@ -65,6 +68,9 @@ packages:
   '@11ty/recursive-copy@4.0.4':
     resolution: {integrity: sha512-oI7m8pa7/IAU/3lqRU9vjBbs20iKFo7x+1K9kT3aVira6scc1X9MjBdgLCHzLJeJ7iB6wydioA+kr9/qPnvmlQ==}
     engines: {node: '>=18'}
+
+  '@paper-design/shaders@0.0.81':
+    resolution: {integrity: sha512-jeGdyjMscZ2bxmQdo8lhwUufHUf4iq3s1ayjh8PXU7Go42Rw8E3I0It1FZdc3HuWt5J82m//DRWaxsRqRfA4Gg==}
 
   '@sindresorhus/slugify@2.2.1':
     resolution: {integrity: sha512-MkngSCRZ8JdSOCHRaYd+D01XhvU3Hjy6MGl06zhOk614hp9EOAp5gIkBeQg7wtmxpitU6eAL4kdiRMcJa2dlrw==}
@@ -1005,6 +1011,8 @@ snapshots:
       junk: 3.1.0
       minimatch: 3.1.5
       slash: 3.0.0
+
+  '@paper-design/shaders@0.0.81': {}
 
   '@sindresorhus/slugify@2.2.1':
     dependencies:

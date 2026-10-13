@@ -11,16 +11,17 @@ from `homepage-map`. Run `pnpm start` for the preview at http://localhost:3000,
 or `pnpm run build` to generate `_site/`. About, the bookshelf, and the blog roll
 use the unchanged `src/about.md`, `src/pages/bookshelf.md`, and
 `src/pages/blog-roll.md`; homepage-only notes live in `src/sections/`.
-Layout and controls live in `src/css/garden.css` and `src/js/garden.js`.
-The first pass uses `open-world.jpg`, with
-no AMV or additional illustrations. Sections open from the icon rail on the left
-(icons live in `js/icons.js`; hover for the name). Pane visibility persists in this browser;
-use Reset layout to reopen everything. Panes use alternating BSP splits: one
-fills the container, two split left/right, and four form an equal 2×2 layout.
-Closing all panes reveals the scenery; Return to notes reopens the last pane(s).
-On phones, panes stack for readability. The research cladogram is generated from
-the nested lists in `src/sections/research.md`; its renderer and theme live in
-`src/js/research.js` and `src/css/research.css`. Numbers indicate recency, not prerequisites.
+The homepage is a desk: six sheets of paper (one per section) scattered among
+prints and instruments over a frosted `open-world.jpg`. 11ty renders the Markdown
+straight into each sheet in `src/index.html`. A sheet on the desk shows only its
+first page, folded by the Paper `paper-texture` shader (`src/js/sheet-shader.js`,
+settings at the top of that file); clicking it opens the full note in a paged
+reading sheet (`src/js/reader.js`, arrow keys turn pages). The Technologies
+sheet is plain Markdown from `src/sections/technologies.md`.
+Positions, tilts and hover effects live in `src/css/garden.css`; images are in
+`src/assets/desk/`. Below 1100px wide, or in portrait, the sheets become a plain
+scrolling column (`src/css/garden-stacked.css`) with no shader. Earlier layout
+studies are in `examples/desk-sketch*.html`.
 All Markdown articles, Forester layouts, stable note addresses, the archive graph,
 and Curius related-bookmark data from `homepage-map` are retained. Writing links
 use their existing 11ty URLs, with `.md` sources beside the rendered articles.

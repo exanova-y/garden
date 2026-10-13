@@ -35,7 +35,7 @@ Shelves:
 
 Images, interactive effects and other styles:
 - background: use walking.jpg
-- https://shaders.paper.design/paper-texture#colorBack=d3d2ab&colorPaper=ffffff&colorShadow=b3b3b3&blending=1&distortion=-0.5&clip=false&angle=60&seed=49&roughness=0.4&roughnessSize=0.25&roughnessRows=0&fiber=0.4&fiberSize=0.5&folds=0&foldSizeX=0.6&foldSizeY=0.89&foldOffsetX=0.59&foldOffsetY=1&wrinkles=0&wrinkleSize=0.65&crumples=1&crumpleCount=4&drops=0&scale=0.9&fit=contain paper shader.
+- https://shaders.paper.design/paper-texture#colorBack=d3d2ab&colorPaper=ffffff&colorShadow=b3b3b3&blending=1&distortion=-0.5&clip=false&angle=60&seed=49&roughness=0.4&roughnessSize=0.25&roughnessRows=0&fiber=0.4&fiberSize=0.5&folds=0&foldSizeX=1&foldSizeY=1&foldOffsetX=0.59&foldOffsetY=1&wrinkles=0&wrinkleSize=0.65&crumples=1&crumpleCount=4&drops=0&scale=0.9&fit=contain paper shader.
 - try: bsp tiling from md pages containing each section. each time loading, the tiling configuration is preserved. this tiling uses no corner rounding and no gap between panes.
 - an AMV is playing in a box inside the tiled page. there should be a shader applied to it to look coherent to the home page 
 - sample video: https://youtu.be/Snvkb-GOuBw?si=Q4JwdMT6RQ4tqDwG

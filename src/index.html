@@ -6,42 +6,66 @@
     <meta name="description" content="Yoyo's field notes: engineering, research, novels, and places traversed.">
     <title>adiabatic.garden — Yoyo</title>
     <link rel="stylesheet" href="css/garden.css">
-    <link rel="stylesheet" href="css/research.css">
+    <link rel="stylesheet" href="css/reader.css">
+    <link id="stacked-styles" rel="stylesheet" href="css/garden-stacked.css" media="(max-width: 1099px), (max-aspect-ratio: 1/1)">
     <script src="js/garden.js" type="module"></script>
   </head>
   <body>
-    <template id="note-intro"><h1>Yoyo. explorer!</h1>{{ homepage.intro | safe }}</template>
-    <template id="note-writing">{% include "home-writing.njk" %}</template>
-    <template id="note-research">{{ homepage.research | safe }}</template>
-    <template id="note-places">{{ homepage.places | safe }}</template>
-    <template id="note-shelves">{{ homepage.shelves | safe }}</template>
-    <template id="note-friends">{{ homepage.friends | safe }}</template>
-    <div class="landscape" aria-hidden="true"></div>
-    <div class="desktop">
-      <header class="masthead">
-        <a class="site-name" href="./">adiabatic.garden <span>φ</span></a>
-        <span class="masthead-note">engineering · novels · exploration</span>
-        <button id="scenery" type="button" aria-pressed="false">View scenery</button>
-      </header>
-      <div class="frame">
-        <nav class="rail" aria-label="Open sections">
-          <div id="section-menu"></div>
-          <div class="rail-end">
-            <a class="rail-button" href="/archive/" aria-label="Archives" data-icon="archive"></a>
-            <button id="reset-layout" class="rail-button" type="button" aria-label="Reset layout" data-icon="grid"></button>
-          </div>
-        </nav>
-        <main id="workspace" class="workspace" aria-label="Yoyo's field notes">
-          <p class="loading" role="status">Opening field notes…</p>
-        </main>
+    <div class="backdrop" aria-hidden="true"></div>
+    <main class="table" aria-label="Yoyo's desk">
+      <figure class="print streets"><img src="assets/desk/streets.webp" alt=""></figure>
+      <figure class="print balloons"><img src="assets/desk/balloons.webp" alt=""></figure>
+      <figure class="print bedroom"><img src="assets/desk/bedroom.webp" alt=""></figure>
+
+      <article class="paper writing" data-sheet="Writing">
+        <div class="sheet-body prose"><h2>Writing</h2>{% include "home-writing.njk" %}</div>
+      </article>
+      <article class="paper research" data-sheet="Technologies">
+        <img class="engraving" src="assets/desk/galvanometer.webp" alt="">
+        <div class="sheet-body prose"><h2>Technologies</h2>{{ homepage.technologies | safe }}</div>
+      </article>
+      <article class="paper intro" data-sheet="Introduction">
+        <div class="sheet-body prose">
+          <p class="letterhead">adiabatic.garden φ</p>
+          <h1>Yoyo. explorer!</h1>
+          {{ homepage.intro | safe }}
+        </div>
+      </article>
+      <article class="paper places" data-sheet="Places traversed">
+        <img class="engraving" src="assets/desk/geissler-tube.webp" alt="">
+        <div class="sheet-body prose"><h2>Places traversed</h2>{{ homepage.places | safe }}</div>
+      </article>
+      <article class="paper friends" data-sheet="Friends">
+        <div class="sheet-body prose"><h2>Friends</h2>{{ homepage.friends | safe }}</div>
+      </article>
+      <article class="paper shelves" data-sheet="Shelves">
+        <img class="engraving" src="assets/desk/nixie-tube.webp" alt="">
+        <div class="sheet-body prose"><h2>Shelves</h2>{{ homepage.shelves | safe }}</div>
+      </article>
+
+      <img class="object globe" src="assets/desk/globe.webp" alt="">
+      <img class="object armillary" src="assets/desk/armillary.webp" alt="">
+      <img class="object butterfly-case" src="assets/desk/butterfly-case.webp" alt="">
+      <img class="object bottle" src="assets/desk/bottle.webp" alt="">
+      <img class="object nadia" src="assets/desk/nadia.webp" alt="">
+      <img class="object feather-red" src="assets/desk/feather-red.webp" alt="">
+      <img class="object feather-light" src="assets/desk/feather-light.webp" alt="">
+      <img class="object feather-dark" src="assets/desk/feather-dark.webp" alt="">
+      <img class="object quill" src="assets/desk/quill.webp" alt="">
+      <img class="object compass" src="assets/desk/compass.webp" alt="">
+      <img class="object spyglass" src="assets/desk/spyglass.webp" alt="">
+    </main>
+
+    <dialog id="reader" class="reader" aria-label="Reading sheet">
+      <div class="reader-sheet">
+        <div class="reader-clip"><div class="reader-flow prose"></div></div>
+        <footer class="reader-controls">
+          <button type="button" data-turn="-1" aria-label="Previous page">←</button>
+          <span class="reader-folio" aria-live="polite"></span>
+          <button type="button" data-turn="1" aria-label="Next page">→</button>
+          <button type="button" data-close>close ×</button>
+        </footer>
       </div>
-      <noscript>
-        <p class="no-script"><a href="/about/">About</a> · <a href="/writing/">Writing</a> · <a href="/pages/bookshelf/">Bookshelf</a> · <a href="/pages/blog-roll/">Friends</a></p>
-      </noscript>
-      <footer class="desktop-footer">
-        <span>Yoyo · field notes, in progress</span>
-        <a href="mailto:hi@adiabatic.garden">hi@adiabatic.garden ↗</a>
-      </footer>
-    </div>
+    </dialog>
   </body>
 </html>
