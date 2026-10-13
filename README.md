@@ -1,3 +1,12 @@
+Layout:
+- `src/` — everything the site is built from (11ty input); `_site/` is the output
+- `lib/`, `.eleventy.js`, `eleventy.home.cjs` — build code and configuration
+- `scripts/` — Curius bookmark fetching and embedding
+- `examples/` — screenshots and standalone layout studies
+- `originals/` — full-size source art; web-sized copies live in `src/assets/desk/`
+- `archive/` — earlier homepages; `archive/legacy-root/` is the pre-11ty site
+  that used to sit in the project root, kept for reference and not built
+
 Packages used:
 - markdown to html 'marked'
 `npm install marked`

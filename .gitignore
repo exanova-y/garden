@@ -1,5 +1,6 @@
 .env
 .flox
-assets/fonts
+archive/legacy-root/assets/fonts
+.DS_Store
 node_modules
 _site/
