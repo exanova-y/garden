@@ -14,7 +14,7 @@
   padding: 1.2em;
   overflow: visible;
 }
-.table::after, .print, .object, .paper::after, .desk-ready .paper::after { display: none; }
+.table::after, .print, .object, .kite-strings, .paper::after, .desk-ready .paper::after { display: none; }
 .paper, .desk-ready .paper {
   position: static;
   width: auto;
