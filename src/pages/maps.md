@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Maps"
 date: 2026-09-26
-author: "noesis"
+author: "Yoyo"
 category: commonplace
 tags: ["commonplace"]
 ---

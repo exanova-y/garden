@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Bookshelf"
 date: 2026-07-23
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["literature"]
 ---

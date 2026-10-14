@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Bose-Einstein Condensate"
 date: 2021-07-29
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["physics"]
 ---

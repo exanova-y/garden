@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Roman streets for more tasteful autoresearch"
 date: 2026-08-10
-author: noesis 
+author: Yoyo 
 category: lab
 ---
 

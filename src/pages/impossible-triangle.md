@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Impossible triangle"
 date: 2022-11-19
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["simulation"]
 ---

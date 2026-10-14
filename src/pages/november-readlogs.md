@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "November readlogs!"
 date: 2025-12-01
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["readlogs"]
 ---
 
-*Source: [feralscholars.substack.com/p/november-readlogs](https://feralscholars.substack.com/p/november-readlogs) — noesis*
+*Source: [feralscholars.substack.com/p/november-readlogs](https://feralscholars.substack.com/p/november-readlogs) — Yoyo*
 
 *No analysis this time. Very tired and wrote this in 30 mins*
 

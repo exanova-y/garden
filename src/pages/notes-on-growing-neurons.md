@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Quick review of growing neurons for computation"
 date: 2025-01-01
-author: "noesis"
+author: "Yoyo"
 category: lab
 ---
 
@@ -86,7 +86,7 @@ Finally, we extract hiPSC colonies from the chip using chemical processes or mec
 Source: Microfluidic reprogramming to pluripotency of human somatic cells
 
 2) neuron differentiation
-![plates](/assets/images/plates.png)
+![plates](/assets/images/plates.jpg)
 Example well plates, where the stem cells start differentiating.
 Create a 2d sheet of neurons with the help of Neurogenin-2, taking 2 - 3 weeks
 Placing the hiPSCs on well plates coated with poly-L-ornithine (PLO) and laminin, which provide a supportive environment for cell growth

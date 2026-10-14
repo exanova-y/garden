@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Making low-cost microelectrode arrays"
 date: 2025-01-01
-author: "noesis and Eigenlucy"
+author: "Yoyo and Eigenlucy"
 category: favs
 tags: ["lab equipment", "neuroscience", "experimentalist-confetti"]
 ---

@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Properties of spin"
 date: 2021-08-02
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["physics"]
 ---

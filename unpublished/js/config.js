@@ -1,12 +1,12 @@
 // Site-wide configuration variables
 const siteConfig = {
     // Basic site information
-    siteName: "Noesis",
+    siteName: "Yoyo",
     siteTagline: "adiabatic.garden",
-    copyright: "Noesis",
+    copyright: "Yoyo",
     
     // Author information
-    author: "noesis",
+    author: "Yoyo",
     
     // Social links
     socialLinks: {

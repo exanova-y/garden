@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "About"
 date: 2026-08-23
-author: "noesis"
+author: "Yoyo"
 category: personal
 personPage: true
 ---

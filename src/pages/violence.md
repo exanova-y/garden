@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Domestic violence statistics"
 date: 2023-03-25
-author: "Elena Mishina, noesis"
+author: "Elena Mishina, Yoyo"
 category: problems
 tags: ["human-suffering"]
 ---

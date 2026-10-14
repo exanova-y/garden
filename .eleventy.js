@@ -77,6 +77,22 @@ module.exports = function(eleventyConfig) {
     return `${assetPath}?v=${version}`;
   });
 
+  // Markdown consumes the backslash in `\$`, after which KaTeX would pair two
+  // prices into one formula. Giving each escaped dollar its own element keeps
+  // it out of the text runs KaTeX searches for delimiters.
+  eleventyConfig.amendLibrary("md", (md) => {
+    md.core.ruler.before("text_join", "literal_dollar", (state) => {
+      for (const block of state.tokens) {
+        for (const token of block.children || []) {
+          if (token.type === "text_special" && token.markup === "\\$") {
+            token.type = "html_inline";
+            token.content = '<span class="dollar">$</span>';
+          }
+        }
+      }
+    });
+  });
+
   // Pass-through copy of static folders
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");

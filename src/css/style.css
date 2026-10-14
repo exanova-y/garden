@@ -1185,6 +1185,13 @@ body.page-forest .markdown-content ol > li::marker {
     font-family: "Open Sans", sans-serif;
 }
 
+/* The table of contents reads in the same face as the prose it lists. */
+body.page-forest #toc,
+body.page-forest #toc h1,
+body.page-forest #toc .taxon {
+    font-family: "Open Sans", sans-serif;
+}
+
 /* Headings inside a tree's prose sit below its own title. */
 body.dark-page .markdown-content .tree-content h1,
 body.dark-page .markdown-content .tree-content h2,

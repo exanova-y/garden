@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-14
+
+- `/writing/lab-notebook/` composed every note on the site; its
+  `collectionName` was `notes` and is now `lab`, so it shows the 26 lab notes.
+- The author is Yoyo again everywhere published (front matter, bylines,
+  `data/person.json`, `post.njk`, and the scripts in `unpublished/`).
+- No Markdown page (notes, highlights, about) shows the site navbar any more:
+  `post.njk` no longer includes `forest-nav.njk`. Only the composed section,
+  tag and archive pages keep it.
+- `/writing/` no longer has the site navbar.
+- Image paths: `notes-on-growing-neurons.md` pointed at `plates.png`; the file
+  is `plates.jpg`. `src/assets/noesis-gallery/` is now `yoyo-gallery/` (its
+  `noesis.jpg` is `yoyo.jpg`), with `unpublished/gallery.html` updated.
+- The table of contents on reading pages is set in Open Sans, like the prose.
+- Images were missing locally (the MEA photos among them): 311 assets were
+  Git LFS pointer files that had never been downloaded. `git lfs pull` fetched
+  them; the live site already had the real files.
+- `\$` in Markdown is a literal dollar again: `.eleventy.js` wraps it in
+  `<span class="dollar">` so KaTeX no longer turns "\$10k - \$50k" (and other
+  pairs of prices) into a formula.
+
 ## 2026-10-13
 
 - The intro card opens in the reader like the other sheets, showing all of
@@ -15,6 +36,9 @@
   rises, falls and leans. A yellow and a rainbow ginkgo leaf lie by the train
   and friendship prints.
 - The desk's own feathers and leaves no longer bob; they float up on hover.
+- A drifting leaf's shadow now stays to the lower left however the leaf turns:
+  it is a blackened copy of the image at a fixed offset (`.drifter .shade`),
+  not a drop-shadow that rotated with the leaf.
 - The intro card is longer and sits higher, and Shelves is wider and lower,
   beside the Blog roll, so the card's last line shows.
 - Three more prints (`train`, `friendship`, `desk`) lie on the lower half of

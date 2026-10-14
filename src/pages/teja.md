@@ -2,11 +2,11 @@
 layout: layouts/post.njk
 title: "Teja's failed attempt to interview potential users"
 date: 2023-02-26
-author: "noesis"
+author: "Yoyo"
 category: stories
 ---
 
-“Noesis!” Teja screamed into my face as his voice broke.
+“Yoyo!” Teja screamed into my face as his voice broke.
 
 “I was wondering if this was you!” I exclaimed, jumping up from my chair. “But my facial recognition system is broken!”
 

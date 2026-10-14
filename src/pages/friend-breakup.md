@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Complexity of friend break-up"
 date: 2026-09-26
-author: "noesis"
+author: "Yoyo"
 category: personal
 ---
 (in progress)

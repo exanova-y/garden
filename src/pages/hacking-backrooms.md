@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Hacking the backrooms"
 date: 2026-06-19
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["experimentalist-confetti"]
 ---

@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "sleep deprivation"
 date: 2025-12-19
-author: "noesis"
+author: "Yoyo"
 category: slice-of-life
 ---
 

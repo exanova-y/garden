@@ -2,11 +2,11 @@
 layout: layouts/post.njk
 title: "Early may observelog!"
 date: 2026-05-15
-author: "noesis"
+author: "Yoyo"
 category: lab
 tags: ["readlogs"]
 ---
-*Source: [feralscholars.substack.com/p/early-may-observelog](https://feralscholars.substack.com/p/early-may-observelog) — noesis*
+*Source: [feralscholars.substack.com/p/early-may-observelog](https://feralscholars.substack.com/p/early-may-observelog) — Yoyo*
 
 ---
 

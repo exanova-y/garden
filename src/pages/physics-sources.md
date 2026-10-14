@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Physics and math sources"
 date: 2020-07-16
-author: "noesis"
+author: "Yoyo"
 category: lab
 ---
 

@@ -2,12 +2,12 @@
 layout: layouts/post.njk
 title: "Arxiv wars"
 date: 2025-01-01
-author: "noesis"
+author: "Yoyo"
 category: favs
 tags: ["experimentalist-confetti", "feral-scholars", "autoresearch"]
 ---
 
-*by: noesis, Joe and Cassandra from Prototype • 2025-03-16*
+*by: Yoyo, Joe and Cassandra from Prototype • 2025-03-16*
 
 Arxiv wars: Where simulated ML experts fight over the best real paper of the day! 
 This takes place in an online forum, inspired by Hacker News with infinite backrooms aesthetics.

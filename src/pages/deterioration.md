@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Deterioration reading list"
 date: 2026-02-21
-author: "noesis"
+author: "Yoyo"
 category: stories
 tags: ["literature"]
 ---

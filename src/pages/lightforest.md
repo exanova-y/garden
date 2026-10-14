@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "Lightforest: The geek diaspora brightly glows"
 date: 2024-02-22
-author: "noesis"
+author: "Yoyo"
 category: stories
 tags: ["sci-fi", "literature", "isolation"]
 ---
