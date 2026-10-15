@@ -5,7 +5,7 @@ bodyClass: page-forest
 {% from "forest-tree.njk" import tree, toc, label %}
 {% set trees = collections[collectionName] | forestTrees %}
 
-{% include "forest-nav.njk" %}
+{% if not hideNav %}{% include "forest-nav.njk" %}{% endif %}
 
 <div id="grid-wrapper">
   <article class="markdown-content">

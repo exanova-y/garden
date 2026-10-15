@@ -54,7 +54,7 @@ RELATED_OUT = os.path.join(DATA_DIR, "related.json")
 CLUSTERS_OUT = os.path.join(DATA_DIR, "curius-clusters.json")
 CACHE = os.path.join(DATA_DIR, ".embed-cache.json")
 
-PAGE_GLOBS = ["src/pages/*.md", "src/favs/*.md"]
+PAGE_GLOBS = ["src/pages/*.md", "src/long/*.md"]
 LAYOUT_REQUIRED = "layouts/post.njk"
 
 EMBED_MODEL = "text-embedding-3-small"
@@ -137,7 +137,7 @@ def strip_markdown(md):
 
 
 def page_url(path):
-    # src/pages/bci.md -> /pages/bci/ ; src/favs/x.md -> /favs/x/
+    # src/pages/bci.md -> /pages/bci/ ; src/long/x.md -> /long/x/
     rel = os.path.relpath(path, os.path.join(ROOT, "src"))
     no_ext = os.path.splitext(rel)[0]
     return "/" + no_ext + "/"

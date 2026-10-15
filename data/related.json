@@ -1402,7 +1402,7 @@
       "score": 0.5975
     }
   ],
-  "/favs/simulators/": [
+  "/long/simulators/": [
     {
       "id": 204487,
       "link": "https://events.stanford.edu/event/applied-physicsphysics-colloquium-liang-fu-first-principles-ai-for-quantum-matter",
@@ -1452,9 +1452,9 @@
       "score": 0.5051
     }
   ],
-  "/favs/laser-cutter/": [],
-  "/favs/hikikomori/": [],
-  "/favs/arxiv-wars/": [
+  "/long/laser-cutter/": [],
+  "/long/hikikomori/": [],
+  "/long/arxiv-wars/": [
     {
       "id": 212469,
       "link": "https://www.clawrxiv.io",
@@ -1504,7 +1504,7 @@
       "score": 0.5708
     }
   ],
-  "/favs/neuralink-exposition/": [
+  "/long/neuralink-exposition/": [
     {
       "id": 147753,
       "link": "https://www.caltech.edu/about/news/improving-brain-machine-interfaces-with-machine-learning",
@@ -1554,7 +1554,7 @@
       "score": 0.5947
     }
   ],
-  "/favs/diy-mea/": [
+  "/long/diy-mea/": [
     {
       "id": 193687,
       "link": "https://www.nature.com/articles/s41593-025-02193-w",
@@ -1604,7 +1604,7 @@
       "score": 0.5449
     }
   ],
-  "/favs/microdrones/": [
+  "/long/microdrones/": [
     {
       "id": 101530,
       "link": "https://guava.physics.uiuc.edu/~nigel/courses/569/Essays_Fall2012/Files/Hu.pdf",
@@ -1654,7 +1654,7 @@
       "score": 0.467
     }
   ],
-  "/favs/swarm-mapping/": [
+  "/long/swarm-mapping/": [
     {
       "id": 119023,
       "link": "https://robotsguide.com/robots/rhex",

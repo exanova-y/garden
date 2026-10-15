@@ -8,6 +8,7 @@ const bookmarkIndexCache = new WeakMap();
 // The categories that have a section of their own under `/writing/`. Anything
 // else lands in `unfiled`, which the writing index lists as "Everything else".
 const SECTION_CATEGORIES = new Set([
+  "long",
   "lab",
   "problems",
   "stories",
@@ -15,10 +16,9 @@ const SECTION_CATEGORIES = new Set([
   "commonplace"
 ]);
 
-// The sections as the archive graph names them. `favs` is the old name of
-// `highlights`; notes still carry it.
+// The sections as the archive graph names them.
 const SECTIONS = {
-  highlights:  { title: "Highlights",        url: "/writing/highlights/" },
+  long:        { title: "Long",              url: "/writing/long/" },
   lab:         { title: "Lab notebook",      url: "/writing/lab-notebook/" },
   problems:    { title: "Big social problems!", url: "/writing/problems/" },
   stories:     { title: "Stories",           url: "/writing/stories/" },
@@ -29,16 +29,15 @@ const SECTIONS = {
 
 function sectionOf(item) {
   const category = item.data.category;
-  if (category === "favs" || category === "highlights") return "highlights";
   return SECTION_CATEGORIES.has(category) ? category : "unfiled";
 }
 
 // Internal links in a note's markdown, as site-absolute note URLs.
-const NOTE_LINK = /(?:https?:\/\/adiabatic\.garden)?(\/(?:pages|highlights|favs)\/[a-z0-9-]+)\/?(?=[\s)"'#>]|$)/g;
+const NOTE_LINK = /(?:https?:\/\/adiabatic\.garden)?(\/(?:pages|long|highlights|favs)\/[a-z0-9-]+)\/?(?=[\s)"'#>]|$)/g;
 function linkedNotes(raw) {
   const found = new Set();
   for (const match of String(raw || "").matchAll(NOTE_LINK)) {
-    found.add(match[1].replace(/^\/favs\//, "/highlights/") + "/");
+    found.add(match[1].replace(/^\/(?:favs|highlights)\//, "/long/") + "/");
   }
   return found;
 }
@@ -111,10 +110,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/pages/sleep-deprivation.pdf": "pages/sleep-deprivation.pdf"
   });
-  eleventyConfig.addPassthroughCopy("src/highlights/*.md");
+  eleventyConfig.addPassthroughCopy("src/long/*.md");
   eleventyConfig.addPassthroughCopy("src/about.md");
   eleventyConfig.addPassthroughCopy("src/sections/*.md");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+  eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy({"llms.txt": "llms.txt"});
 
   // YouTube embed shortcode
@@ -249,13 +249,13 @@ module.exports = function(eleventyConfig) {
   });
 
   // Dynamic collections sorted by date (newest first)
-  eleventyConfig.addCollection("highlights", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/highlights/*.md").sort((a, b) => b.date - a.date);
+  eleventyConfig.addCollection("long", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/long/*.md").sort((a, b) => b.date - a.date);
   });
 
   // Every note, whichever section claims it — the count the writing index prints.
   eleventyConfig.addCollection("notes", function(collectionApi) {
-    return collectionApi.getFilteredByGlob(["src/pages/*.md", "src/highlights/*.md"])
+    return collectionApi.getFilteredByGlob(["src/pages/*.md", "src/long/*.md"])
       .sort((a, b) => b.date - a.date);
   });
 
@@ -295,7 +295,7 @@ module.exports = function(eleventyConfig) {
   // the links between notes. `src/archive-graph.njk` serialises it and
   // `js/archive-graph.js` draws it.
   eleventyConfig.addCollection("graph", function(collectionApi) {
-    const notes = collectionApi.getFilteredByGlob(["src/pages/*.md", "src/highlights/*.md"]);
+    const notes = collectionApi.getFilteredByGlob(["src/pages/*.md", "src/long/*.md"]);
     const nodes = [
       { id: "/", title: "adiabatic.garden", group: "home" },
       { id: "/about/", title: "About", group: "home" },

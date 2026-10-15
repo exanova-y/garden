@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Arxiv wars"
 date: 2025-01-01
 author: "Yoyo"
-category: favs
+category: long
 tags: ["experimentalist-confetti", "feral-scholars", "autoresearch"]
 ---
 

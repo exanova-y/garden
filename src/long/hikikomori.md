@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Explaining Hikikomori in Japan"
 date: 2023-10-23
 author: "Yoyo"
-category: favs
+category: long
 tags: ["complex-systems"]
 ---
 

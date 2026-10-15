@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-15
+
+- `/writing/long/` has no navbar: `hideNav: true` in its front matter makes
+  `layouts/forest.njk` skip `forest-nav.njk`.
+- The highlights section is renamed `long` throughout: `src/long/`, category
+  `long`, collection `long`, title "Long", `wallpapers/long.webp`, and
+  `src/writing/long.njk`. Notes are served at `/long/<slug>/`, the section at
+  `/writing/long/`, and `data/related.json` is rekeyed to match. `src/_redirects` sends the old `/highlights/`, `/favs/`
+  and `/writing/highlights/` addresses there with a 301.
+
 ## 2026-10-14
 
 - `/writing/lab-notebook/` composed every note on the site; its

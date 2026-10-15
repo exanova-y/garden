@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Mapping haptic gestures to swarm robots"
 date: 2023-06-20
 author: "Sean Wang, Yoyo"
-category: favs
+category: long
 tags: ["swarm-algorithms", "robotics", "haptics", "ml"]
 ---
 

@@ -9,7 +9,7 @@ tags: ["eeg"]
 
 Completed during high school while under \$1000 budget. There were rarely any guided tutorials back then. So, I had to dig through documentation, numerous forums, debug software and hardware.
 
-### Article: [How Neuralink Works and Where It's Going](https://adiabatic.garden/favs/neuralink-exposition/)
+### Article: [How Neuralink Works and Where It's Going](https://adiabatic.garden/long/neuralink-exposition/)
 
 ![](/assets/images/neuralink.jpg)
 

@@ -9,9 +9,9 @@ Yoyo's site.
 - https://adiabatic.garden/pages/blog-roll.md - some blogs I like
 - https://adiabatic.garden/pages/rwx.md/ - my process of building researching and philosophizing
 - https://adiabatic.garden/writing hardware built, not that important, include:
-  - https://adiabatic.garden/highlights/laser-cutter
-  - https://adiabatic.garden/highlights/microdrones
-  - https://adiabatic.garden/highlights/swarm-mapping
+  - https://adiabatic.garden/long/laser-cutter
+  - https://adiabatic.garden/long/microdrones
+  - https://adiabatic.garden/long/swarm-mapping
 - https://github.com/exanova-y - github
 
 ## about this site

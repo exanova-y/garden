@@ -9,7 +9,7 @@
 (function () {
   const COLORS = {
     home: "#ffffff",
-    highlights: "#00fc50",
+    long: "#00fc50",
     lab: "#7287fd",
     problems: "#eba8ff",
     stories: "#9058f8",

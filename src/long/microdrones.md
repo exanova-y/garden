@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Assembling a microdrone"
 date: 2024-05-30
 author: "Yoyo"
-category: favs
+category: long
 tags: ["experimentalist-confetti", "UAVs"]
 ---
 

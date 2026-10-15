@@ -1,0 +1,3 @@
+/highlights/* /long/:splat 301
+/favs/* /long/:splat 301
+/writing/highlights/ /writing/long/ 301

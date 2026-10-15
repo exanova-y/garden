@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: "Reviewing ultracold atoms and integrated photonics simulators!"
 date: 2021-09-01
 author: Zheng Li, Chenxi Shi, Yoyo, Shuzhi Zhu
-category: favs
+category: long
 tags: ["quantum-simulation", "physics"]
 ---
 

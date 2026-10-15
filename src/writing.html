@@ -11,7 +11,7 @@ wallpaper: /assets/wallpapers/home.webp
     live at the section's own address, which its heading's slug points to. -#}
 
 {% set sections = [
-  { key: "highlights", title: "Highlights",                                 route: "/writing/highlights/" },
+  { key: "long",       title: "Long",                                       route: "/writing/long/" },
   { key: "lab",        title: "Lab notebook",                               route: "/writing/lab-notebook/" },
   { key: "problems",   title: "Big social problems!",                       route: "/writing/problems/" },
   { key: "stories",    title: "Stories existing purely in your imagination", route: "/writing/stories/" },
@@ -21,7 +21,7 @@ wallpaper: /assets/wallpapers/home.webp
 
 {#- Tag collections come from front matter, so `collections` also holds the
     sections and eleventy's own bookkeeping. Those are not tags. -#}
-{% set notTags = ["all", "post", "posts", "pages", "highlights", "lab", "problems", "stories", "slice-of-life", "commonplace", "notes", "unfiled", "graph"] %}
+{% set notTags = ["all", "post", "posts", "pages", "long", "lab", "problems", "stories", "slice-of-life", "commonplace", "notes", "unfiled", "graph"] %}
 
 <div id="grid-wrapper">
   <article id="content" class="markdown-content">
