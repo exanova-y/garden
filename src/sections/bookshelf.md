@@ -1,4 +1,7 @@
 Books and texts
+- Glass Bead Game (reading)
+- [Where is the cucumber? Object permanence in babies](https://www.youtube.com/watch?v=-gWJrZ7MHpY)
+- [No Boss, No Money: Chinese Gen-Z freelancers](https://www.youtube.com/watch?v=eJZFUEQebbI)
 - Emergent Mind Open Problems
 - Linus Pauling and the chemistry of life ⭐
 - Living Proof: Stories of Resilience in mathematics ⭐

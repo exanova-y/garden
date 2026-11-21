@@ -119,7 +119,7 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 }
 /* The intro is a calling card, not a note: it is as tall as its few lines and
    nothing fades out. Opening it reads the whole About page instead. */
-.intro { --tilt: -2deg; left: 38%; top: 7%; width: 23em; padding-bottom: 4em; z-index: 3; }
+.intro { --tilt: -2deg; left: calc(38% - 3em); top: 7%; width: 29em; padding-bottom: 4em; z-index: 3; }
 .desk-ready .intro::after { display: none; }
 .intro .prose > :last-child { margin-bottom: 0; }
 .writing { --tilt: -6deg; left: 13%; top: 33%; width: 19em; height: 24em; z-index: 2; }
@@ -250,7 +250,7 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 .prose summary { cursor: pointer; }
 /* A list whose items are pictures lies as a grid of small prints, each tilted
    a little and captioned by its title, as photographs pasted into a notebook. */
-.prose ul:has(> li > img, > li > a > img) { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3em 1.1em; padding: 0.4em 0 0; list-style: none; }
+.prose ul:has(> li > img, > li > a > img) { clear: both; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3em 1.1em; padding: 0.4em 0 0; list-style: none; }
 .prose li:has(> img, > a > img) { margin: 0; font-size: 0.9em; line-height: 1.4; }
 .prose li > img, .prose li > a > img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 0.5em; border: 0.3em solid #f4ecd6; box-shadow: -0.15em 0.3em 0.6em rgba(44, 36, 24, 0.35); rotate: -1.5deg; transition: rotate 0.2s ease, translate 0.2s ease; }
 .prose li:nth-child(even) > img, .prose li:nth-child(even) > a > img { rotate: 1.2deg; }
