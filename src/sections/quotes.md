@@ -1,3 +1,5 @@
+
+
 The world freezes and grows dim for a second. The black sun loses its smooth animation and begins to move in fuzzy stop-action. Clearly, [the] computer has just taken a major hit; All of its circuits are busy processing a huge bolus of data—the contents of the hypercard—and don’t have time to redraw the image of the Black Sun in it’s full breathtaking fidelity—
 *Snow Crash*
 

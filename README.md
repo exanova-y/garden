@@ -7,7 +7,6 @@ Layout:
 - `scripts/` — Curius bookmark fetching and embedding
 - `examples/` — screenshots and standalone layout studies
 - `originals/` — full-size source art; web-sized copies live in `src/assets/desk/`
-- `unpublished/` — pages nothing links to, and the scripts only they used; not built
 
 Run:
 - `git lfs pull` once after cloning: images, GIFs and PDFs are stored in Git LFS
@@ -36,10 +35,9 @@ Deploy:
 
 Homepage:
 The active homepage is `src/index.html`, built with the original 11ty pipeline
-from `homepage-map`. The bookshelf and the blog roll
-use the unchanged `src/pages/bookshelf.md` and `src/pages/blog-roll.md`;
-homepage-only notes (intro, writing, technologies, places, quotes) live in
-`src/sections/`. Every sheet is Markdown; the one template,
+from `homepage-map`. Homepage-only notes (intro, writing,
+technologies, places, quotes, blog roll, bookshelf) live in `src/sections/`;
+About is `src/about.md`. Every sheet is Markdown; the one template,
 `templates/writing-index.njk`, generates the list of notes under Writing.
 The homepage is a desk: six sheets of paper (one per section) scattered among
 prints and instruments over a frosted `open-world.jpg`. Scrolling down, the frost
@@ -48,7 +46,11 @@ straight into each sheet in `src/index.html`. A sheet on the desk shows only its
 first page, folded by the Paper `paper-texture` shader (`src/js/sheet-shader.js`,
 settings at the top of that file); clicking it opens the full note in a paged
 reading sheet (`src/js/reader.js`, arrow keys turn pages). The Technologies
-sheet is plain Markdown from `src/sections/technologies.md`.
+sheet is plain Markdown from `src/sections/technologies.md`. Its Projects
+list is pictures: any Markdown list whose items are images lies as a grid of
+small tilted prints (the `.prose` rules in `src/css/garden.css`). The tiles are
+400px square WebPs in `src/assets/images/technologies/`; `examples/technologies-grid.jpg`
+shows the opened sheet.
 Feathers bob in place and gusts of extra ones drift across (`src/js/drift.js`,
 timing constants at the top of that file).
 Positions, tilts and hover effects live in `src/css/garden.css`; images are in

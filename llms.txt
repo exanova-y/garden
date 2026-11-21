@@ -5,8 +5,6 @@ Yoyo's site.
 ## site links
 - https://adiabatic.garden/ - the landing page, linking to writing and about. all writing pages were originally written in .md and thus could have .md appended to lower token costs
 - https://adiabatic.garden/about/ - basic information
-- https://adiabatic.garden/pages/bookshelf.md - books I like
-- https://adiabatic.garden/pages/blog-roll.md - some blogs I like
 - https://adiabatic.garden/pages/rwx.md/ - my process of building researching and philosophizing
 - https://adiabatic.garden/writing hardware built, not that important, include:
   - https://adiabatic.garden/long/laser-cutter

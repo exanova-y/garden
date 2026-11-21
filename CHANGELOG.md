@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-04
+
+- Technologies: the Projects lines are now eight pictures, one per piece, set
+  as a grid of small tilted prints. A Markdown list whose items are images
+  becomes the grid anywhere in `.prose` (`src/css/garden.css`), three across,
+  two below 600px. Tiles are 400px square WebPs in
+  `src/assets/images/technologies/`.
+- Dropped from Technologies: arXiv wars, arXiv RAG, Chem-0, NFC at currents.fm
+  and microdrone assembly. The NYC neuromodulation notes moved to Writing,
+  beside the Early May observelog.
+- The Focused ultrasound link pointed at `/pages/eraly-may-observelog/`; it is
+  `/pages/early-may-observelog/`.
+
 ## 2026-10-15
 
 - `/writing/long/` has no navbar: `hideNav: true` in its front matter makes

@@ -248,6 +248,14 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 .prose code { font: inherit; }
 .prose hr { border: 0; border-top: 1px solid currentColor; opacity: 0.4; margin: 1.2em 0; }
 .prose summary { cursor: pointer; }
+/* A list whose items are pictures lies as a grid of small prints, each tilted
+   a little and captioned by its title, as photographs pasted into a notebook. */
+.prose ul:has(> li > img, > li > a > img) { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3em 1.1em; padding: 0.4em 0 0; list-style: none; }
+.prose li:has(> img, > a > img) { margin: 0; font-size: 0.9em; line-height: 1.4; }
+.prose li > img, .prose li > a > img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 0.5em; border: 0.3em solid #f4ecd6; box-shadow: -0.15em 0.3em 0.6em rgba(44, 36, 24, 0.35); rotate: -1.5deg; transition: rotate 0.2s ease, translate 0.2s ease; }
+.prose li:nth-child(even) > img, .prose li:nth-child(even) > a > img { rotate: 1.2deg; }
+.prose li > a:hover > img { rotate: 0deg; translate: 0 -0.2em; }
+@media (max-width: 600px) { .prose ul:has(> li > img, > li > a > img) { grid-template-columns: repeat(2, 1fr); } }
 
 /* Once the shader has redrawn a sheet, the DOM text stays in place but
    invisible. The host is oversized because the shader draws at 0.9 scale. */

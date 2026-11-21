@@ -3,14 +3,13 @@ const matter = require("gray-matter");
 const { marked } = require("marked");
 
 // Every sheet on the homepage is Markdown. Notes written only for the homepage
-// live in src/sections; Shelves, Friends and About reuse pages that also stand
-// alone.
+// live in src/sections; About reuses a page that also stands alone.
 const sources = {
   intro: "src/sections/intro.md",
   about: "src/about.md",
   writing: "src/sections/writing.md",
-  shelves: "src/pages/bookshelf.md",
-  friends: "src/pages/blog-roll.md",
+  shelves: "src/sections/bookshelf.md",
+  friends: "src/sections/blog-roll.md",
   technologies: "src/sections/technologies.md",
   places: "src/sections/places.md",
 };

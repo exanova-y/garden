@@ -4,3 +4,5 @@ archive/legacy-root/assets/fonts
 .DS_Store
 node_modules
 _site/
+data/.embed-cache.json
+__pycache__/

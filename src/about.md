@@ -9,23 +9,27 @@ personPage: true
 
 This note provides basic information about Yoyo.
 
-I grew up around hackerspaces in Shenzhen, programming forums, UWaterloo libraries and the bay area internet. Some of my fondest memories were scrapping monitors in MIT tunnels and making friends from over 50+ countries. When I received a Macbook and a Desktop GPU in 2025, I became even more of an autodidact.
+I grew up around hackerspaces in Shenzhen, programming forums, UWaterloo libraries and the bay area internet. Some of my fondest memories were scrapping monitors in MIT tunnels and making friends from over 50+ countries. 
 
-Bad infrastructure is evil; How we can architect strong infrastructure that creates abundance for my friends and I?
+I'm working on focused ultrasound and AI for science incentive structures. I got a Macbook and a Desktop GPU in 2025 for free, and it was high time to become more self-taught!!
+
+- I write a blog at feralscholars.substack.com (unupdated)
+
+I hate deteriorating infrastructure. How we can architect strong scientific infrastructure that creates abundance for my friends?
 
 I enjoy hanging out with people on the international superhighway and who have recalibrated between 5 - 6 subcultures. If you have read this far, reach out!
 
-`corpus.logica@gmail.com` or `adiabaticgarden` on X/Discord.
+`yoyoyuan1729 [at] gmail.com` or `adiabaticgarden` on X/Discord.
 
 
 ### research topics 
-- autoresearch infrastructure (coordination, credit assignment, verification, distributed computing)
-- focused ultrasound, acoustic physics, how neural circuits resemble control theory
-- hardware-software interfaces
+- focused ultrasound
+- microelectrode arrays
+- AI for science microeconomics
 
 ### appreciations
-- coordination problems (e.g. exit, voice and loyalty, local knowledge, incomplete markets)
-- sci-fi, fantasy, mythology, travelogues, historical, modernist literature. accelerando, glass bead game (reading), permutation city, [chaotic eras](https://three-body-problem.fandom.com/wiki/Chaotic_Era). [literature](https://adiabatic.garden/pages/bookshelf)
+- coordination problems. exit, voice and loyalty, local knowledge, incomplete markets)
+- sci-fi, fantasy, mythology, travelogues, historical, modernist literature. accelerando, glass bead game (reading), permutation city, [chaotic eras](https://three-body-problem.fandom.com/wiki/Chaotic_Era). [literature](https://adiabatic.garden/)
 - selective HRT, [simulators](https://estrannai.se/), brain modification
 - rhythm games, stellaris, music, breakbeats, drum and bass, hyperpop [unhinged song: psychosis 2019](https://x.com/adiabaticgarden/status/2088821244271698353?s=20)
 - a world with strong infrastructure, care, authenticity, less hostility, coercion and violence
@@ -66,8 +70,6 @@ I enjoy hanging out with people on the international superhighway and who have r
 - [Curius for bookmarking](https://curius.app/yoyo-yuan)
 - Goodreads
 - Beeper
-- Linear
-- Vivaldi
 - Openrouter
 - [Noisebridge bookshelf](https://x.com/adiabaticgarden/status/2087060661130215885?s=20)
 
