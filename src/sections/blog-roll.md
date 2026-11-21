@@ -1,12 +1,13 @@
-cool blogs
 
 people who make me think the theorist-experimentalist divide is no longer relevant:
-- paul erdos (does not have a blog)
+- Nicky Case (biggest inspiration ever)
+- xkcd
 - [jade wang](en.wikipedia.org/wiki/Jade_Wang) - 17 years of classical music, then cs, neuro phd, hacker hostels, science fiction memoirs
 - [nicole yunger halpern](https://quantumfrontiers.com/author/nyungerhalpern/) check out the blog quantum frontiers
 - [eigenlucy](https://eigenlucy.com/) - very underrated. electrical engineering, continental philosophy, activism. use voice, not exit.
 - [guillefix](https://guillefix.me/) - friendly transhumanist
 - tim roughgarden - too bad he doesn't own a `.garden` domain like this site!
+- paul erdos (does not have a blog)
 
 grad students roaming the streets of california
 - https://neuroscience.stanford.edu/people/max-kanwal
