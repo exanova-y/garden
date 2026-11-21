@@ -7,6 +7,6 @@
 - [November readlogs](/pages/november-readlogs/)
 - [March readlogs](/pages/march-readlogs/)
 - [Link scrapbook](https://feralscholars.substack.com/p/link-scrapbook)
-- [Handling collapse](https://feralscholars.substack.com/p/suffering-etiquette)
+- [I found a Hungarian novel in the dumpsters](https://feralscholars.substack.com/p/magyarficent-dumpster)
+- [Social collapse](https://feralscholars.substack.com/p/suffering-etiquette)
 - [Errata of good news](https://feralscholars.substack.com/p/errata-of-good-news)
-- [Depressing Hungarian novel in the dumpsters](https://feralscholars.substack.com/p/magyarficent-dumpster): speedreading Hungarian novel found in the dumpsters

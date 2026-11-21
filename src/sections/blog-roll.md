@@ -6,6 +6,7 @@ people who make me think the theorist-experimentalist divide is no longer releva
 - [nicole yunger halpern](https://quantumfrontiers.com/author/nyungerhalpern/) check out the blog quantum frontiers
 - [eigenlucy](https://eigenlucy.com/) - very underrated. electrical engineering, continental philosophy, activism. use voice, not exit.
 - [guillefix](https://guillefix.me/) - friendly transhumanist
+- tim roughgarden - too bad he doesn't own a `.garden` domain like this site!
 
 grad students roaming the streets of california
 - https://neuroscience.stanford.edu/people/max-kanwal
