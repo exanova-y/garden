@@ -4,7 +4,16 @@
     <title>Reads</title>
     <link>https://x.com</link>
     <description>Papers, research, books and projects surfaced from X</description>
-    <lastBuildDate>Mon, 23 Nov 2026 21:03:35 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 22:14:58 +0000</lastBuildDate>
+    <item>
+      <title>Learning optimal gaits and styles for terrain-adaptive quadruped locomotion</title>
+      <link>https://arxiv.org/abs/2611.25958</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2611.25958</guid>
+      <pubDate>Mon, 23 Nov 2026 21:40:56 +0000</pubDate>
+      <category>paper</category>
+      <category>engineering</category>
+      <description>Bellegarda and Ijspeert (EPFL) study how quadruped robots can learn to select and adapt gaits and locomotion styles across varied terrain, connecting bio-inspired gait theory with locomotion on legged robots.&#xA;&#xA;Via @OWW: https://x.com/i/status/2124981549162512808</description>
+    </item>
     <item>
       <title>Trilobite-inspired record-setting lenses from NIST</title>
       <link>https://www.nist.gov/news-events/news/2022/04/inspired-prehistoric-creatures-nist-researchers-make-record-setting-lenses</link>
