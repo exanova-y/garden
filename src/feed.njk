@@ -1,0 +1,76 @@
+---
+permalink: /feed/index.html
+topics: ["applied physics", "lab instrumentation", "ultrasound", "engineering"]
+websites:
+  - name: sarah constantin news source
+    url: https://twitternewsdigest.vercel.app/
+  - name: lcamtuf's thing
+    url: https://lcamtuf.substack.com/
+  - name: a16z frontier
+    url: https://a16zfrontier.substack.com/
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feed · adiabatic.garden</title>
+    <link rel="canonical" href="https://adiabatic.garden/feed/">
+    <style>
+      html, body { background: #fff; color: #000; }
+      body { margin: 2rem auto; max-width: 42rem; padding: 0 1rem; font: 16px/1.5 serif; }
+      * { font-weight: normal; font-style: normal; }
+      a { color: #000; text-decoration: none; }
+      ul { list-style: none; margin: 0; padding: 0; }
+      li { margin: 0 0 1.5rem; }
+      p { margin: 0; }
+      input { accent-color: #000; margin: 0 0.4rem 0 0; }
+      label { display: block; }
+      li[hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <p>feed</p>
+    <p>papers, research, books and projects, read from X</p>
+    <br>
+    <form id="topics">
+      {%- for topic in topics %}
+      <label><input type="checkbox" value="{{ topic }}" checked>{{ topic }} ({{ reads.count[topic] or 0 }})</label>
+      {%- endfor %}
+    </form>
+    <br>
+    <ul id="reads">
+      {%- for item in reads.items %}
+      <li data-topics="{{ item.categories | join('|') }}">
+        <p>{{ item.title }}</p>
+        <p>{{ item.date }} · {{ item.categories | join(", ") }}</p>
+        <p>{{ item.summary }}</p>
+        <p><a href="{{ item.link }}">{{ item.link }}</a></p>
+        {%- if item.via %}<p>{{ item.via }}</p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    <p>helpful websites:</p>
+    <ul id="websites">
+      {%- for site in websites %}
+      <li>
+        <p>{{ site.name }}</p>
+        <p><a href="{{ site.url }}">{{ site.url }}</a></p>
+      </li>
+      {%- endfor %}
+    </ul>
+    <script>
+      // An item stays listed while any of its topics is checked.
+      const form = document.getElementById("topics");
+      function filter() {
+        const on = new Set([...form.elements].filter((box) => box.checked).map((box) => box.value));
+        for (const li of document.querySelectorAll("#reads li")) {
+          li.hidden = !li.dataset.topics.split("|").some((topic) => on.has(topic));
+        }
+      }
+      form.addEventListener("change", filter);
+      filter();
+    </script>
+  </body>
+</html>

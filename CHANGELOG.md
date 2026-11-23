@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-23
+
+- `/feed/`: a plain text list of the digest's `reads.xml` items (title, date
+  and categories, summary, link, source post), black on white with no bold or
+  italics. Data in `data/reads.xml`, parsed by `data/reads.js` with cheerio.
+- `/feed/` topic checkboxes (applied physics, lab instrumentation, ultrasound,
+  engineering), all on by default; an item shows while any of its topics is
+  checked. Old `physics` tags read as `applied physics`.
+- `/feed/` ends with a "helpful websites" list (names and URLs in the page's
+  front matter).
+- Desk: a "site feed" paper strip by the spyglass eyepiece links to `/feed/`
+  (`.feed-label` in `src/css/garden.css`). Like the other objects, it is
+  hidden in the stacked layout.
+
 ## 2026-11-04
 
 - Technologies: the Projects lines are now eight pictures, one per piece, set

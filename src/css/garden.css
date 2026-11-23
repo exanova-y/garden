@@ -151,6 +151,8 @@ button { font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
 .quill { left: 0; top: 62%; width: 27em; z-index: 7; }
 .compass { --tilt: 12deg; left: 79%; top: 64%; width: 8em; z-index: 7; }
 .spyglass { --tilt: -14deg; left: 61%; top: 90%; width: 24em; z-index: 8; }
+/* A strip of paper by the spyglass's eyepiece, pointing to /feed/. */
+.feed-label { --tilt: -6deg; left: 60%; top: 97%; z-index: 9; padding: 0.25em 0.7em; background: #f1ead6; color: inherit; font-size: 0.85em; text-decoration: none; white-space: nowrap; filter: drop-shadow(-0.2em 0.3em 0.3em rgba(0, 0, 0, 0.4)); }
 /* The crow perches on the top right corner of the borsch. */
 .crow { left: 71.5%; top: calc(80vh + 17vw); width: 6em; z-index: 6; }
 /* Its motto, on a strip of paper tucked beside it. */

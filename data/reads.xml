@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Reads</title>
+    <link>https://x.com</link>
+    <description>Papers, research, books and projects surfaced from X</description>
+    <lastBuildDate>Mon, 23 Nov 2026 21:03:35 +0000</lastBuildDate>
+    <item>
+      <title>Trilobite-inspired record-setting lenses from NIST</title>
+      <link>https://www.nist.gov/news-events/news/2022/04/inspired-prehistoric-creatures-nist-researchers-make-record-setting-lenses</link>
+      <guid isPermaLink="false">https://www.nist.gov/news-events/news/2022/04/inspired-prehistoric-creatures-nist-researchers-make-record-setting-lenses</guid>
+      <pubDate>Mon, 23 Nov 2026 20:49:07 +0000</pubDate>
+      <category>research</category>
+      <category>physics</category>
+      <category>engineering</category>
+      <description>NIST researchers built record-setting lenses inspired by the eyes of prehistoric trilobites. It shows how biological optics can guide modern optical engineering.&#xA;&#xA;Via @krichard121212: https://x.com/i/status/2124968511894167795</description>
+    </item>
+    <item>
+      <title>Multiple-Camera Tracking of Rigid Objects</title>
+      <link>https://arxiv.org/abs/2611.25904</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2611.25904</guid>
+      <pubDate>Mon, 23 Nov 2026 20:48:52 +0000</pubDate>
+      <category>paper</category>
+      <category>engineering</category>
+      <description>Robotics and computer-vision preprint by Martin and Horaud on tracking rigid objects with multiple cameras. Relevant to motion capture and robot perception.&#xA;&#xA;Via @OWW: https://x.com/i/status/2124968446752383102</description>
+    </item>
+    <item>
+      <title>Principles of Power Electronics</title>
+      <link>https://link.amazon/B0iTGSLtY</link>
+      <guid isPermaLink="false">https://link.amazon/B0iTGSLtY</guid>
+      <pubDate>Mon, 23 Nov 2026 20:13:37 +0000</pubDate>
+      <category>book</category>
+      <category>engineering</category>
+      <description>Kassakian&#39;s text on power electronics circuits, magnetics, semiconductor devices, dynamic modeling and control. It includes modern SiC and GaN devices, advanced converters and EMI.&#xA;&#xA;Via @ebokify: https://x.com/i/status/2124959574725980596</description>
+    </item>
+    <item>
+      <title>Fundamentals of Power Electronics</title>
+      <link>https://link.amazon/B0ceC5xDO</link>
+      <guid isPermaLink="false">https://link.amazon/B0ceC5xDO</guid>
+      <pubDate>Mon, 23 Nov 2026 20:09:22 +0000</pubDate>
+      <category>book</category>
+      <category>engineering</category>
+      <description>Erickson&#39;s third-edition text on switching converters, semiconductor devices, digital control, circuit modeling and stability analysis. A standard reference for power electronics design.&#xA;&#xA;Via @ebokify: https://x.com/i/status/2124958505966670294</description>
+    </item>
+    <item>
+      <title>The Art of Electronics</title>
+      <link>https://link.amazon/B0iba7WAI</link>
+      <guid isPermaLink="false">https://link.amazon/B0iba7WAI</guid>
+      <pubDate>Mon, 23 Nov 2026 20:08:04 +0000</pubDate>
+      <category>book</category>
+      <category>engineering</category>
+      <description>Horowitz&#39;s classic reference on electronic circuit design. It covers practical circuit measurements, oscilloscope examples, component data and design insight for students and practicing engineers.&#xA;&#xA;Via @ebokify: https://x.com/i/status/2124958178609643958</description>
+    </item>
+    <item>
+      <title>GG-PA: composing single-molecule diffusion models with physics</title>
+      <link>https://weizhouwangw.github.io/posts/2026/11/ggpa/</link>
+      <guid isPermaLink="false">https://weizhouwangw.github.io/posts/2026/11/ggpa/</guid>
+      <pubDate>Mon, 23 Nov 2026 19:46:46 +0000</pubDate>
+      <category>research</category>
+      <category>physics</category>
+      <description>Blog post on a NeurIPS 2026 paper. Diffusion models trained only on single molecules are combined with physics at inference time to sample molecular complexes that none of the models saw in training.&#xA;&#xA;Via @weizhouwangw: https://x.com/i/status/2124952818905645133</description>
+    </item>
+    <item>
+      <title>HydroCore Design: CAD-designed electrodes for water electrolysis</title>
+      <link>https://youtu.be/bmvNte6UQxk?si=Du2bIniZMHZj5Met</link>
+      <guid isPermaLink="false">https://youtu.be/bmvNte6UQxk?si=Du2bIniZMHZj5Met</guid>
+      <pubDate>Mon, 23 Nov 2026 19:07:27 +0000</pubDate>
+      <category>project</category>
+      <category>engineering</category>
+      <description>Video on a project exploring CAD-designed electrode geometries with up to 148% more geometric surface area. The aim is to improve efficiency in hydrogen-producing water electrolysis.&#xA;&#xA;Via @BuicanGeor10049: https://x.com/i/status/2124942924358033412</description>
+    </item>
+    <item>
+      <title>FORCE GPU physics engine benchmark</title>
+      <link>https://rock-biter.github.io/force/bench/</link>
+      <guid isPermaLink="false">https://rock-biter.github.io/force/bench/</guid>
+      <pubDate>Mon, 23 Nov 2026 18:45:09 +0000</pubDate>
+      <category>project</category>
+      <category>physics</category>
+      <category>engineering</category>
+      <description>Open-source, GPU-based physics engine with a browser benchmark. You can run it on any device and submit results through a prefilled GitHub issue to help profile performance across hardware.&#xA;&#xA;Via @__rockbiter: https://x.com/i/status/2124937313021022629</description>
+    </item>
+    <item>
+      <title>Quantum physics can prove where you are</title>
+      <link>https://www.nature.com/articles/d41586-026-03378-4</link>
+      <guid isPermaLink="false">https://www.nature.com/articles/d41586-026-03378-4</guid>
+      <pubDate>Mon, 23 Nov 2026 17:20:20 +0000</pubDate>
+      <category>research</category>
+      <category>physics</category>
+      <description>Nature piece on research using quantum physics to verify a party&#39;s physical location. Of interest as an application of quantum effects to position verification and secure location-based protocols.&#xA;&#xA;Via @x3int1: https://x.com/i/status/2124915969772716379</description>
+    </item>
+    <item>
+      <title>From Blueprint to Twin: A Scientometric and Systematic Review of Digital Twins in Infrastructure Operation and Maintenance</title>
+      <link>https://www.mdpi.com/2075-5309/16/23/4672</link>
+      <guid isPermaLink="false">https://www.mdpi.com/2075-5309/16/23/4672</guid>
+      <pubDate>Mon, 23 Nov 2026 17:06:27 +0000</pubDate>
+      <category>paper</category>
+      <category>engineering</category>
+      <description>Review of 263 papers on digital twins for infrastructure maintenance. It identifies five research themes, including BIM, predictive maintenance and structural health monitoring, and sets priorities such as physics-informed, uncertainty-aware models.&#xA;&#xA;Via @arnaudmercier: https://x.com/i/status/2124912473698439388</description>
+    </item>
+    <item>
+      <title>If tiny primordial black holes exist, here&#39;s how we might find them</title>
+      <link>https://news.mit.edu/2026/if-tiny-primordial-black-holes-exist-heres-how-we-might-find-them-1119</link>
+      <guid isPermaLink="false">https://news.mit.edu/2026/if-tiny-primordial-black-holes-exist-heres-how-we-might-find-them-1119</guid>
+      <pubDate>Mon, 23 Nov 2026 14:01:18 +0000</pubDate>
+      <category>research</category>
+      <category>physics</category>
+      <description>MIT researchers propose that a primordial black hole captured by a sun-like star would make it explode, producing a blue/UV flash detectable by current telescopes. This offers a new observational test for primordial black holes.&#xA;&#xA;Via @MIT: https://x.com/i/status/2124865881192661282</description>
+    </item>
+    <item>
+      <title>Dry, stretchy material for gel-free ultrasound imaging</title>
+      <link>https://news.mit.edu/2026/ultrasound-imaging-without-gel-1119</link>
+      <guid isPermaLink="false">https://news.mit.edu/2026/ultrasound-imaging-without-gel-1119</guid>
+      <pubDate>Fri, 20 Nov 2026 14:59:11 +0000</pubDate>
+      <category>research</category>
+      <category>ultrasound</category>
+      <category>engineering</category>
+      <description>MIT mechanical engineers developed a dry, stretchable acoustic coupling material that could replace wet ultrasound gel. It may enable wearable ultrasound patches for continuous imaging at home or on the go.&#xA;&#xA;Via @MIT: https://x.com/i/status/2123793284413763624</description>
+    </item>
+  </channel>
+</rss>

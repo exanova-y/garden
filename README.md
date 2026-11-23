@@ -33,6 +33,12 @@ Deploy:
 - Files that are missing on Pages come back as the homepage with status 200,
   so a broken image or script does not show up as a 404.
 
+Feed:
+- `/feed/` lists the items of `data/reads.xml` as plain black-on-white text
+  (`src/feed.njk`, parsed by `data/reads.js`). `data/reads.xml` is a copy of
+  `reads.xml` from the digest repo (`go run ./scan reads`); copy it over and
+  push to update the page.
+
 Homepage:
 The active homepage is `src/index.html`, built with the original 11ty pipeline
 from `homepage-map`. Homepage-only notes (intro, writing,
