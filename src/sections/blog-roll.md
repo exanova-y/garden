@@ -1,13 +1,16 @@
 
 people who make me think the theorist-experimentalist divide is no longer relevant:
-- Nicky Case (biggest inspiration ever)
-- xkcd
 - [jade wang](en.wikipedia.org/wiki/Jade_Wang) - 17 years of classical music, then cs, neuro phd, hacker hostels, science fiction memoirs
+- carver mead
 - [nicole yunger halpern](https://quantumfrontiers.com/author/nyungerhalpern/) check out the blog quantum frontiers
+- tim roughgarden - too bad he doesn't own a `.garden` domain like this site!
 - [eigenlucy](https://eigenlucy.com/) - very underrated. electrical engineering, continental philosophy, activism. use voice, not exit.
 - [guillefix](https://guillefix.me/) - friendly transhumanist
-- tim roughgarden - too bad he doesn't own a `.garden` domain like this site!
 - paul erdos (does not have a blog)
+
+inspirations for the longest time:
+- xkcd
+- Nicky Case
 
 grad students roaming the streets of california
 - https://neuroscience.stanford.edu/people/max-kanwal
@@ -39,7 +42,6 @@ peer websites (most recent goes to top of list)
 - [mylatent.space](https://mylatent.space/) 
 - [mesityl](https://mesityl.net/)
 - [vmfunc](https://vmfunc.re/) 
-- [wendi yan](https://wendiyan.com/)
 - janet shin from uc berkeley
 - [sudarsh](https://sudarsh.com/)
 - [lev](https://lev.la/)
@@ -48,27 +50,24 @@ peer websites (most recent goes to top of list)
 - trinity dysis
 - samir - working on focused ultrasound at university of illinois
 
-
 unhinged people from twitter
 - [infinite modal noah](https://x.com/NoahChrein) - category theory
-- [yuxi on the wired](https://yuxi.ml) - scaling laws
-- https://zackmdavis.net/
 - [plurigrid](https://plurigrid.com/) 
 - [schlynthesis](https://x.com/schlynthesis)
 - [sichu](https://x.com/lu_sichu)
 - croissanthology
 
-substack, literature and design and music
+literature, design and music
+- [wendi yan](https://wendiyan.com/)
 - [rovier chen](https://rovierchen.com/)
-- [lydia nottingham](https://lydianottingham.substack.com/) 
-- [ada, adaptive good](https://adaptivegood.substack.com/)
+- ada/adaptive good
 - [conq](https://serialsevens.substack.com/)
 - [arbor](https://derrekchow.com/) - design engineering, lighting systems across countries, ctheory
 - [bananaslug](https://zatsuon.substack.com/)
 - alexey guzey
 - [naia](https://a.nyc/)
 - [beat of doomemacs](https://beathagenlocher.com/me/) 
-- [ihar](https://x.com/iharabukhouski) - ran into him at california institute of machine consciousness event
+- [ihar](https://x.com/iharabukhouski)
 - [aryl](https://aryl.org/)
 
 
