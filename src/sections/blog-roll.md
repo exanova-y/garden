@@ -39,6 +39,7 @@ peer websites (most recent goes to top of list)
 - [hashmitha physics](https://x.com/Physicla_)
 - [yudhister](https://www.yudhister.me/notes/)
 - [aryan, leading user on curius](https://aryannnaik.xyz)
+- [arsenii iatskar](https://x.com/iatskar)
 - [mylatent.space](https://mylatent.space/) 
 - [mesityl](https://mesityl.net/)
 - [vmfunc](https://vmfunc.re/) 
@@ -57,7 +58,7 @@ unhinged people from twitter
 - [sichu](https://x.com/lu_sichu)
 - croissanthology
 
-literature, design and music
+literature, design, chem, econ, other
 - [wendi yan](https://wendiyan.com/)
 - [rovier chen](https://rovierchen.com/)
 - ada/adaptive good
